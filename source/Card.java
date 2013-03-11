@@ -30,6 +30,29 @@ public class Card
 
 	out.print(""); 
     }
+    
+
+    public String toString()
+    {
+        String ourCard = "";
+        
+        if(!face.equals(cardFace.BLANK))
+		ourCard += face + " ";
+
+	if(!color.equals(cardColor.BLANK))
+		ourCard += color + " ";
+            
+
+	if(!spec.equals(cardSpecial.BLANK))
+	        ourCard += color + " ";
+		 
+	if(!wild.equals(cardWild.BLANK))
+	    ourCard += wild + " " ;
+
+	ourCard += ""; 
+        return ourCard; 
+    }
+    
 
     public Card(cardColor newColor, cardFace newFace, String newSide)
     {

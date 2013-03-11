@@ -1,14 +1,12 @@
 /*Source of how many cards in the deck: http://www.squidoo.com/how-many-cards-in-a-deck */
 
-import java.util.*;
+import java.util.*; 
 
 public class Deck
 {
-    private final int MAX_CARD = 108;
-    private int discard = 0; 
-    
-    public int totalCardNotPlayed = MAX_CARD;
-    public Stack newDeck = new Stack();  
+    private final int MAX_CARD = 108; 
+    private Stack<Card> deck = new Stack();  
+    private Stack<Card> discardDeck = new Stack();
     
     public void CreateDeck()
     {
@@ -25,15 +23,15 @@ public class Deck
 			if(value == Card.cardFace.ZERO)
 			    {
 				tmpCard = new Card(color, value, " ");
-                                newDeck.push(tmpCard);
+                                deck.push(tmpCard);
                                
 			    }
 			else
 			    {
 				tmpCard = new Card(color, value, " ");
-				newDeck.push(tmpCard);
+				deck.push(tmpCard);
 				tmpCard = new Card(color, value, " "); 
-				newDeck.push(tmpCard); 
+				deck.push(tmpCard); 
 			    }
 		    }
 		}
@@ -45,9 +43,9 @@ public class Deck
 		if(special != Card.cardSpecial.BLANK)
 		    {
 			tmpCard = new Card(color, special, " ");
-			newDeck.push(tmpCard); 
+			deck.push(tmpCard); 
 			tmpCard = new Card(color, special, " ");
-			newDeck.push(tmpCard);
+			deck.push(tmpCard);
 		    }
 	    }
 	}	
@@ -58,7 +56,7 @@ public class Deck
 		    if(sp != Card.cardWild.BLANK)
 			{
 			    tmpCard = new Card(sp, " ");
-			    newDeck.push(tmpCard);
+			    deck.push(tmpCard);
 			}
 		}
 	}
@@ -66,12 +64,46 @@ public class Deck
 	 
     }
 
+    //TODO: Check for an empty deck. 
     public Card DrawNext()
     {
-	Card c = newDeck.pop();  
-	totalCardNotPlayed--; 
+        Card c = new Card(Card.cardColor.BLANK, Card.cardFace.BLANK, "" ); 
+        if(!deck.isEmpty())
+        {
+            c = (Card)deck.pop();
+        }
+        else
+        {
+            System.out.println("This deck is done. Need to shuffle and replace deck.");
+        }
 	return c; 
     }
     
-   
+    public void AddDiscard(Card c)
+    {
+       discardDeck.push(c);
+    }
+    
+    public int getSize(String deckName)
+    {
+       int size = 0; 
+       if(deckName.equals("discard"))
+       {
+           size = discardDeck.size(); 
+       }
+       else if(deckName.equals("regular"))
+       {
+           size = deck.size(); 
+       }
+        return size; 
+    }
+    
+    
+    public void PrintDeck()
+    {
+        Iterator<Card> it = deck.iterator();
+        while(it.hasNext())
+            System.out.println(it.Print()); 
+    }
+    
 }
