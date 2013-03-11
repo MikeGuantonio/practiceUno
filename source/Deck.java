@@ -101,9 +101,11 @@ public class Deck
     
     public void PrintDeck()
     {
-        Iterator<Card> it = deck.iterator();
-        while(it.hasNext())
-            System.out.println(it.Print()); 
+        for(Card c : deck)
+        {
+            c.Print();
+            System.out.println("");
+        }
     }
     
 }
