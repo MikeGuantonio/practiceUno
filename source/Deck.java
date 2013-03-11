@@ -5,11 +5,12 @@ import java.util.*;
 public class Deck
 {
     private final int MAX_CARD = 108;
-    public int totalCardNotPlayed = MAX_CARD; 
     private int discard = 0; 
-    public ArrayList<Card> deck = new ArrayList<Card>(); 
-
-    public void ValidateDeck()
+    
+    public int totalCardNotPlayed = MAX_CARD;
+    public Stack newDeck = new Stack();  
+    
+    public void CreateDeck()
     {
 	Card tmpCard; 
 
@@ -24,14 +25,15 @@ public class Deck
 			if(value == Card.cardFace.ZERO)
 			    {
 				tmpCard = new Card(color, value, " ");
-				deck.add(tmpCard);  
+                                newDeck.push(tmpCard);
+                               
 			    }
 			else
 			    {
 				tmpCard = new Card(color, value, " ");
-				deck.add(tmpCard); 
+				newDeck.push(tmpCard);
 				tmpCard = new Card(color, value, " "); 
-				deck.add(tmpCard); 
+				newDeck.push(tmpCard); 
 			    }
 		    }
 		}
@@ -43,9 +45,9 @@ public class Deck
 		if(special != Card.cardSpecial.BLANK)
 		    {
 			tmpCard = new Card(color, special, " ");
-			deck.add(tmpCard); 
+			newDeck.push(tmpCard); 
 			tmpCard = new Card(color, special, " ");
-			deck.add(tmpCard);
+			newDeck.push(tmpCard);
 		    }
 	    }
 	}	
@@ -56,7 +58,7 @@ public class Deck
 		    if(sp != Card.cardWild.BLANK)
 			{
 			    tmpCard = new Card(sp, " ");
-			    deck.add(tmpCard);
+			    newDeck.push(tmpCard);
 			}
 		}
 	}
@@ -66,8 +68,7 @@ public class Deck
 
     public Card DrawNext()
     {
-	Card c = deck.get(0);
-	deck.remove(0); 
+	Card c = newDeck.pop();  
 	totalCardNotPlayed--; 
 	return c; 
     }
