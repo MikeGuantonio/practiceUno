@@ -5,10 +5,11 @@ public class DeckTest
 	Deck d = new Deck();
 	Card c;
  
-	d.CreateDeck();
 	d.PrintDeck(); 
- 
 	c = d.DrawNext(); 
-	c.Print(); 
+	System.out.print("I got a "); 
+        c.Print();
+        System.out.println("");
+        
     }
 }

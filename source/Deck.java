@@ -8,7 +8,19 @@ public class Deck
     private Stack<Card> deck = new Stack();  
     private Stack<Card> discardDeck = new Stack();
     
-    public void CreateDeck()
+    
+    public Deck()
+    {   
+        CreateDeck(); 
+    }
+    
+    private void AddToDeck(Card c, int numberOfCards)
+    {
+        for(int i = 0; i < numberOfCards; i++)
+            deck.push(c);
+    }
+     
+    private void CreateDeck()
     {
 	Card tmpCard; 
 
@@ -21,18 +33,9 @@ public class Deck
 		    if(value != Card.cardFace.BLANK)
 		    {
 			if(value == Card.cardFace.ZERO)
-			    {
-				tmpCard = new Card(color, value, " ");
-                                deck.push(tmpCard);
-                               
-			    }
+                            AddToDeck(new Card(color, value, ""), 1);
 			else
-			    {
-				tmpCard = new Card(color, value, " ");
-				deck.push(tmpCard);
-				tmpCard = new Card(color, value, " "); 
-				deck.push(tmpCard); 
-			    }
+                            AddToDeck(new Card(color, value, ""), 2);
 		    }
 		}
 	    }
@@ -41,30 +44,18 @@ public class Deck
 	    for(Card.cardSpecial special : Card.cardSpecial.values())
 	    {
 		if(special != Card.cardSpecial.BLANK)
-		    {
-			tmpCard = new Card(color, special, " ");
-			deck.push(tmpCard); 
-			tmpCard = new Card(color, special, " ");
-			deck.push(tmpCard);
-		    }
+			AddToDeck(new Card(color, special, ""), 2);
 	    }
-	}	
-	for(Card.cardWild sp : Card.cardWild.values())
-	{
-	    for(int k  = 0; k < 4; k++)
-		{
-		    if(sp != Card.cardWild.BLANK)
-			{
-			    tmpCard = new Card(sp, " ");
-			    deck.push(tmpCard);
-			}
-		}
 	}
-	System.out.println("Deck Built"); 
+        
+	for(Card.cardWild sp : Card.cardWild.values())
+        {
+		    if(sp != Card.cardWild.BLANK)
+                        AddToDeck(new Card(sp, ""), 4);	
+        }
 	 
     }
 
-    //TODO: Check for an empty deck. 
     public Card DrawNext()
     {
         Card c = new Card(Card.cardColor.BLANK, Card.cardFace.BLANK, "" ); 
@@ -100,7 +91,7 @@ public class Deck
     
     
     public void PrintDeck()
-    {
+    {  
         for(Card c : deck)
         {
             c.Print();
@@ -108,4 +99,5 @@ public class Deck
         }
     }
     
+   
 }
