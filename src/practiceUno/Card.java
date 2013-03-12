@@ -2,7 +2,7 @@
   Find a way to return the face and what not in a way that makes sense so 
   * that it can be removed from the deck test and still retain functionality.
   */
-  package practiceUno; 
+package practiceUno; 
   
 import static java.lang.System.out; 
 

@@ -18,7 +18,10 @@ public class Dealer extends Player
     public void ShowDeck(Deck d)
     {
 	for(Card c : d.GetDeck())
-	    c.Print();
+        {
+	    c.Print(); 
+            System.out.println("");
+        }
     }
 
     /**

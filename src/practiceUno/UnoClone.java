@@ -16,6 +16,14 @@ public class UnoClone {
         Dealer d = new Dealer(); 
         Deck deck = new Deck(); 
         
-        d.ShowDeck(deck);
+        //d.ShowDeck(deck);
+        
+        d.Shuffle(deck);
+        for (int i = 0; i < 7; i++) {
+            p.GetCard(d.Deal(deck)); 
+        }
+        p.ShowHand();
+        
+        
     }
 }

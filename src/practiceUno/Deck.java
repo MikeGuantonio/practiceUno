@@ -62,6 +62,10 @@ public class Deck
 		    if(sp != Card.cardWild.BLANK)
                         AddToDeck(new Card(sp, ""), 4);	
         }
+        if(deck.size()== MAX_CARD)
+            System.out.println("Deck is correct");
+        else
+            System.out.println("Size: " + deck.size());
 	 
     }
 
