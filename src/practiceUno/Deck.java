@@ -93,7 +93,18 @@ public class Deck
      */
     public void AddDiscard(Card c)
     {
+       System.out.println("Looking at the card that was added.");
+       c.Print();
+       
+       System.out.print("Card on top of discard");
        discardDeck.push(c);
+       discardDeck.peek().Print();
+       System.out.println("");
+       
+       if(discardDeck.empty()) //assuming the start of a game
+       {
+           discardDeck.push(c);
+       }
     }
     
     /**

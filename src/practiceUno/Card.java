@@ -133,17 +133,17 @@ public class Card
     public void Print()
     {
 	if(!face.equals(cardFace.BLANK))
-		out.print(face.ordinal() + " ");
+		out.print(face.ordinal());
 
 	if(!color.equals(cardColor.BLANK))
-		out.print(color.toString().charAt(0) + " ");
+		out.print(color.toString().charAt(0));
             
 
 	if(!spec.equals(cardSpecial.BLANK))
-	        out.print(color + " ");
+	        out.print(color);
 		 
 	if(!wild.equals(cardWild.BLANK))
-	    out.print(wild + " " );
+	    out.print(wild);
 
 	out.print(""); 
     }

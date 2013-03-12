@@ -23,14 +23,8 @@ public class Dealer extends Player
             System.out.println("");
         }
     }
-
-    /**
-     *
-     * @param d
-     * @return
-     */
-    public Card Deal(Deck d)
-    {
-	return d.DrawNext(); 
-    }
+    
+    //Dealer's deal method may be able to check to see if the deck needs
+    //to be reshuffled first
 }
+    
