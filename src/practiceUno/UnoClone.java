@@ -10,20 +10,27 @@ package practiceUno;
  */
 public class UnoClone {
     public static void main(String[] args)
-    {
-        //Creating a simple player and dealer. 
+    { 
         Player p = new Player(); 
+        Player p2 = new Player(); 
         Dealer d = new Dealer(); 
         Deck deck = new Deck(); 
         
-        //d.ShowDeck(deck);
-        
         d.Shuffle(deck);
         for (int i = 0; i < 7; i++) {
-            p.GetCard(d.Deal(deck)); 
+            p.GetCard(d.Deal(deck));
+            p2.GetCard(d.Deal(deck));
         }
         p.ShowHand();
+        System.out.println("");
+        p2.ShowHand();
         
+        System.out.println("Removeing the third card");
+        deck.AddDiscard(p2.Discard(2)); 
+        System.out.println(p2.TotalCards());
+        p2.ShowHand();
+        System.out.println(deck.getSize("discard"));
+        deck.PrintDeck("discard");
         
     }
 }

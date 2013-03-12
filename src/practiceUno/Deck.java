@@ -11,8 +11,8 @@ import java.util.*;
 public class Deck
 {
     private final int MAX_CARD = 108; 
-    private Stack<Card> deck = new Stack();  
-    private Stack<Card> discardDeck = new Stack();
+    private Stack<Card> deck = new Stack<Card>();  
+    private Stack<Card> discardDeck = new Stack<Card>();
     
     
     /**
@@ -118,9 +118,15 @@ public class Deck
     /**
      *
      */
-    public void PrintDeck()
+    public void PrintDeck(String deckName)
     {  
-        for(Card c : deck)
+        Stack<Card> tmpDeck = new Stack<Card>(); 
+        if(deckName.equals("discard"))
+            tmpDeck = discardDeck; 
+        else if(deckName.equals("regular"))
+            tmpDeck = deck; 
+        
+        for(Card c : tmpDeck)
         {
             c.Print();
             System.out.println("");

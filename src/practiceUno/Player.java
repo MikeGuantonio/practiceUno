@@ -9,7 +9,6 @@ import java.util.*;
 public class Player
 {
     private ArrayList<Card> hand = new ArrayList<Card>(); 
-    private int totalCards = 0; 
     private int isDealer; 
     private String name; 
 
@@ -32,13 +31,7 @@ public class Player
      */
     public void GetCard(Card c)
     {
-	System.out.print("I recieved " );
-	c.Print(); 
 	hand.add(c);
-	totalCards = hand.size(); 
-	System.out.println(" My Total is: " + totalCards);
-        
-         
     }
 
     /**
@@ -46,11 +39,12 @@ public class Player
      * @param card
      * @return
      */
-    public boolean Discard(Card card)
+    public Card Discard(int dex)
     {
-        totalCards--; 
-	return hand.remove(card);
-        
+        System.out.print("Removing " );
+        hand.get(dex).Print();
+        System.out.println("");
+	return hand.remove(dex);
     }
 
     /**
