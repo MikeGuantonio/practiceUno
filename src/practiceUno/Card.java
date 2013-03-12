@@ -128,15 +128,15 @@ public class Card
     private cardWild wild; 
 
     /**
-     *
+     *  TODO: Fix the print method
      */
     public void Print()
     {
 	if(!face.equals(cardFace.BLANK))
-		out.print(face + " ");
+		out.print(face.ordinal() + " ");
 
 	if(!color.equals(cardColor.BLANK))
-		out.print(color + " ");
+		out.print(color.toString().charAt(0) + " ");
             
 
 	if(!spec.equals(cardSpecial.BLANK))
