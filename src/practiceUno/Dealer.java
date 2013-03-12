@@ -1,3 +1,5 @@
+package practiceUno; 
+
 import java.util.*;
 
 public class Dealer extends Player
@@ -5,8 +7,9 @@ public class Dealer extends Player
     
     public Deck Shuffle(Deck d)
     {
+        
 	long seed = System.nanoTime(); 
-	Collections.shuffle(d.deck);
+	Collections.shuffle(d.GetDeck());
 	return d; 
     }
 

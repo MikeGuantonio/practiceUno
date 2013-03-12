@@ -1,5 +1,7 @@
 /*Source of how many cards in the deck: http://www.squidoo.com/how-many-cards-in-a-deck */
 
+package practiceUno; 
+
 import java.util.*; 
 
 public class Deck
@@ -89,7 +91,6 @@ public class Deck
         return size; 
     }
     
-    
     public void PrintDeck()
     {  
         for(Card c : deck)
@@ -99,5 +100,9 @@ public class Deck
         }
     }
     
+   public Stack<Card> GetDeck() 
+   {
+       return deck; 
+   }
    
 }

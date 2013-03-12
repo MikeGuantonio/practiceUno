@@ -1,4 +1,0 @@
-practiceUno
-===========
-
-simpleUnoClone
