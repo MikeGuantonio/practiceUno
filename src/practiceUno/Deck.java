@@ -4,6 +4,10 @@ package practiceUno;
 
 import java.util.*; 
 
+/**
+ *
+ * @author mike
+ */
 public class Deck
 {
     private final int MAX_CARD = 108; 
@@ -11,6 +15,9 @@ public class Deck
     private Stack<Card> discardDeck = new Stack();
     
     
+    /**
+     *
+     */
     public Deck()
     {   
         CreateDeck(); 
@@ -58,6 +65,10 @@ public class Deck
 	 
     }
 
+    /**
+     *
+     * @return
+     */
     public Card DrawNext()
     {
         Card c = new Card(Card.cardColor.BLANK, Card.cardFace.BLANK, "" ); 
@@ -72,11 +83,20 @@ public class Deck
 	return c; 
     }
     
+    /**
+     *
+     * @param c
+     */
     public void AddDiscard(Card c)
     {
        discardDeck.push(c);
     }
     
+    /**
+     *
+     * @param deckName
+     * @return
+     */
     public int getSize(String deckName)
     {
        int size = 0; 
@@ -91,6 +111,9 @@ public class Deck
         return size; 
     }
     
+    /**
+     *
+     */
     public void PrintDeck()
     {  
         for(Card c : deck)
@@ -100,7 +123,11 @@ public class Deck
         }
     }
     
-   public Stack<Card> GetDeck() 
+    /**
+     *
+     * @return
+     */
+    public Stack<Card> GetDeck() 
    {
        return deck; 
    }

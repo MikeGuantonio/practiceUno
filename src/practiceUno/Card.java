@@ -6,12 +6,120 @@
   
 import static java.lang.System.out; 
 
+/**
+ *
+ * @author mike
+ */
 public class Card
 {
-    public  enum cardColor {BLANK, BLUE, RED, GREEN, YELLOW}; 
-    public  enum cardFace {BLANK, ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE}
-    public  enum cardSpecial {BLANK, REVERSE, SKIP, DRTWO}
-    public  enum cardWild {BLANK, WILD, WILDDRFOUR};
+    /**
+     *
+     */
+    public  enum cardColor {
+        /**
+         *
+         */
+        BLANK,
+        /**
+         *
+         */
+        BLUE,
+        /**
+         *
+         */
+        RED,
+        /**
+         *
+         */
+        GREEN,
+        /**
+         *
+         */
+        YELLOW}; 
+    /**
+     *
+     */
+    public  enum cardFace {
+        /**
+         *
+         */
+        BLANK,
+        /**
+         *
+         */
+        ZERO,
+        /**
+         *
+         */
+        ONE,
+        /**
+         *
+         */
+        TWO,
+        /**
+         *
+         */
+        THREE,
+        /**
+         *
+         */
+        FOUR,
+        /**
+         *
+         */
+        FIVE,
+        /**
+         *
+         */
+        SIX,
+        /**
+         *
+         */
+        SEVEN,
+        /**
+         *
+         */
+        EIGHT,
+        /**
+         *
+         */
+        NINE}
+    /**
+     *
+     */
+    public  enum cardSpecial {
+        /**
+         *
+         */
+        BLANK,
+        /**
+         *
+         */
+        REVERSE,
+        /**
+         *
+         */
+        SKIP,
+        /**
+         *
+         */
+        DRTWO}
+    /**
+     *
+     */
+    public  enum cardWild {
+        /**
+         *
+         */
+        BLANK,
+        /**
+         *
+         */
+        WILD,
+        /**
+         *
+         */
+        WILDDRFOUR};
  
     private String sideEffect; 
     private cardFace face;
@@ -19,6 +127,9 @@ public class Card
     private cardSpecial spec;
     private cardWild wild; 
 
+    /**
+     *
+     */
     public void Print()
     {
 	if(!face.equals(cardFace.BLANK))
@@ -38,6 +149,12 @@ public class Card
     }
    
 
+    /**
+     *
+     * @param newColor
+     * @param newFace
+     * @param newSide
+     */
     public Card(cardColor newColor, cardFace newFace, String newSide)
     {
 	face = newFace; 
@@ -47,6 +164,12 @@ public class Card
 	color = newColor;
     }
 
+    /**
+     *
+     * @param c
+     * @param s
+     * @param newSide
+     */
     public Card(cardColor c, cardSpecial s, String newSide)
     {
 	face = cardFace.BLANK; 
@@ -56,6 +179,11 @@ public class Card
 	sideEffect = newSide; 
     }
 
+    /**
+     *
+     * @param w
+     * @param newSide
+     */
     public Card(cardWild w, String newSide)
     {
 	face = cardFace.BLANK; 

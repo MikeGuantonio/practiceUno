@@ -2,6 +2,10 @@ package practiceUno;
 
 import java.util.*;
 
+/**
+ *
+ * @author mike
+ */
 public class Player
 {
     private ArrayList<Card> hand = new ArrayList<Card>(); 
@@ -9,6 +13,9 @@ public class Player
     private int isDealer; 
     private String name; 
 
+    /**
+     *
+     */
     public void ShowHand()
     {
 	System.out.println("I have " + hand.size() + " cards.");
@@ -19,6 +26,10 @@ public class Player
 	}
     }
 
+    /**
+     *
+     * @param c
+     */
     public void GetCard(Card c)
     {
 	System.out.print("I recieved " );
@@ -30,6 +41,11 @@ public class Player
          
     }
 
+    /**
+     *
+     * @param card
+     * @return
+     */
     public boolean Discard(Card card)
     {
         totalCards--; 
@@ -37,6 +53,10 @@ public class Player
         
     }
 
+    /**
+     *
+     * @return
+     */
     public int TotalCards()
     {
 	return hand.size(); 

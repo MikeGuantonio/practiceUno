@@ -6,19 +6,26 @@ public class Dealer extends Player
 {
     
     public Deck Shuffle(Deck d)
-    {
-        
-	long seed = System.nanoTime(); 
+    { 
 	Collections.shuffle(d.GetDeck());
 	return d; 
     }
 
+    /**
+     *
+     * @param d
+     */
     public void ShowDeck(Deck d)
     {
-	for(Card c : d.deck)
-	    c.Print(); 
+	for(Card c : d.GetDeck())
+	    c.Print();
     }
 
+    /**
+     *
+     * @param d
+     * @return
+     */
     public Card Deal(Deck d)
     {
 	return d.DrawNext(); 
