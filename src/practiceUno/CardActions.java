@@ -13,6 +13,5 @@ public interface CardActions {
     //void Skip();
     //void Reverse();
     //void DrawTwo(); 
-    //void Wild(); 
-    //void DrawFour(); 
+   
 }
