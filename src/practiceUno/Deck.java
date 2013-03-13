@@ -81,28 +81,62 @@ public class Deck
      */
     public void AddDiscard(Card c)
     {
-       System.out.println("Looking at the card that was added.");
-       c.Print();
-        System.out.println("");
+       boolean canPlace = false; 
+       Card discard = discardDeck.peek();
        
        if(c.getClass().equals(NumberCard.class))
        {
-           System.out.println("Number Card Played");
+           canPlace = CheckNumber(discard, c); 
        }
        else if(c.getClass().equals(SpecialCard.class))
        {
-           System.out.println("Special Card Played");
+           canPlace = CheckSpecial(); //Need behavior and checks.
        }
        else if(c.getClass().equals(WildCard.class))
        {
-           System.out.println("Wild Card Played");
+           canPlace = CheckWild(); //Can always place. Just need behavior
        }
        else
        {
            System.out.println("No matching cards available");
        }
-       discardDeck.push(c);
+       if(canPlace)
+        discardDeck.push(c);
 
+    }
+    
+    private boolean CheckNumber(Card discard, Card c)
+    {
+        boolean canPlace = false; 
+        if(discard.getClass().equals(NumberCard.class))
+        {
+               NumberCard pushNum = (NumberCard) c; 
+               NumberCard topCard = (NumberCard) discard; 
+               
+                System.out.println("On Top: "  + topCard.GetColor() + " " + topCard.GetNumber());
+            if(pushNum.GetColor().equals(topCard.GetColor()) )
+            {
+                System.out.println("Match on color");
+                canPlace = true;
+            }
+            else if(pushNum.GetNumber() == topCard.GetNumber())
+            {
+                System.out.println("Match in number");
+                canPlace = true; 
+            }
+         }
+         System.out.println("Number Card Played");
+         return canPlace; 
+    }
+    
+    private boolean CheckSpecial()
+    {
+        return true; 
+    }
+    
+    private boolean CheckWild()
+    {
+        return true; 
     }
     
     /**

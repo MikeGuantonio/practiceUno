@@ -16,4 +16,5 @@ abstract class Card
    protected cardColor color; 
 
     abstract void Print();
+    abstract cardColor GetColor(); 
 }

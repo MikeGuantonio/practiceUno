@@ -21,6 +21,17 @@ public class NumberCard extends Card {
         super.color = color; 
     }
     
+    public int GetNumber()
+    {
+        return face; 
+    }
+    
+    public Card.cardColor GetColor()
+    {
+        return color; 
+    }
+    
+    
     /**
      *
      */

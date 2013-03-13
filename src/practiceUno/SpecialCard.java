@@ -31,4 +31,9 @@ public class SpecialCard extends Card implements CardActions
    {
        System.out.print(sp + " " + color);
    }
+    
+    public Card.cardColor GetColor()
+    {
+        return color; 
+    }
 }

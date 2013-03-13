@@ -24,4 +24,9 @@ public class WildCard extends Card implements WildActions
     {
         System.out.print(wild);
     }
+    
+    public Card.cardColor GetColor()
+    {
+        return color; 
+    }
 }
