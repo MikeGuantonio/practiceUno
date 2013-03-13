@@ -16,7 +16,7 @@ import org.junit.runners.Suite;
  * @author mike
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({DeckTest.class, DealerTest.class, CardTest.class, UnoCloneTest.class, PlayerTest.class})
+@Suite.SuiteClasses({SpecialCardTest.class, DeckTest.class, UnoCloneTest.class, NumberCardTest.class, DealerTest.class, PlayerTest.class, CardTest.class})
 public class PracticeUnoSuite {
 
     @BeforeClass

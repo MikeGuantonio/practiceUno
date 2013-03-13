@@ -22,6 +22,7 @@ public class Deck
     {   
        CreateNumbers(); 
        CreateSpecial(); 
+       CreateWild(); 
     }
     
     private void AddToDeck(Card c, int numberOfCards)
@@ -34,9 +35,9 @@ public class Deck
     {
         for(Card.cardColor color : Card.cardColor.values())
         {
-            AddToDeck( new NumberCard (0, color), 1);
-            for (int i = 1; i < 10; i++) 
-                AddToDeck( new NumberCard (i, color), 2);
+                AddToDeck( new NumberCard (0, color), 1);
+                for (int i = 1; i < 10; i++) 
+                    AddToDeck( new NumberCard (i, color), 2);
         }      
     }
     
@@ -44,12 +45,18 @@ public class Deck
     {
         for(SpecialCard.cardValues sp : SpecialCard.cardValues.values())
         {
-            for(Card.cardColor color : Card.cardColor.values())
-            {
-                AddToDeck(new SpecialCard(sp, color), 2);
-            }
+                for(Card.cardColor color : Card.cardColor.values())
+                {
+                    AddToDeck(new SpecialCard(sp, color), 2);
+                }
         }
-    }    
+    }
+    
+    private void CreateWild()
+    {
+        for(WildCard.cardWild wild : WildCard.cardWild.values())
+            AddToDeck(new WildCard(wild), 4);
+    }
 
     /**
      *
@@ -58,21 +65,10 @@ public class Deck
     public Card DrawNext()
     {
         Card c; 
-        
-        c = deck.pop(); 
-        if(c.getClass().equals(SpecialCard.class))
-                {
-                    System.out.println("This is correct ");
-                    c.Print();
-                }
         if(!deck.isEmpty())
-        {
             return (Card)deck.pop();
-        }
         else
-        {
             System.out.println("This deck is done. Need to shuffle and replace deck.");
-        }
         return null;
 
     }

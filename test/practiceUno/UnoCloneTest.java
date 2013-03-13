@@ -4,6 +4,7 @@
  */
 package practiceUno;
 
+import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -44,6 +45,19 @@ public class UnoCloneTest {
         System.out.println("main");
         String[] args = null;
         UnoClone.main(args);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of SetUpPlayers method, of class UnoClone.
+     */
+    @Test
+    public void testSetUpPlayers() {
+        System.out.println("SetUpPlayers");
+        ArrayList<Player> players = null;
+        Deck deck = null;
+        UnoClone.SetUpPlayers(players, deck);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

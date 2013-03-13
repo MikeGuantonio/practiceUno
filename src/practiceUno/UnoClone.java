@@ -20,10 +20,11 @@ public class UnoClone {
         ArrayList<Player> players = new ArrayList<Player>();
         Dealer d = new Dealer(); 
         Deck deck = new Deck(); 
-                  
+          
         d.Shuffle(deck);
         deck.AddDiscard(deck.DrawNext());
         SetUpPlayers(players, deck);
+        
         
         
     }
