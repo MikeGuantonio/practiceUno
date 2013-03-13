@@ -26,6 +26,9 @@ public class UnoClone {
         deck.SetUpDiscard();
         
         players.get(5).ShowHand();
+        deck.ShowDiscard(); System.out.println("");
+        deck.AddDiscard(players.get(0).Discard(1)); 
+        deck.ShowDiscard(); System.out.println("");
     }
     
     public static void SetUpPlayers(ArrayList<Player> players, Deck deck)

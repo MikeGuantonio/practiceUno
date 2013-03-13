@@ -10,10 +10,12 @@ import java.util.*;
  */
 public class Deck
 {
+    enum deckType {DEAL, DISCARD}; 
+    
     private final int MAX_CARD = 108; 
     private Stack<Card> deck = new Stack<Card>();  
     private Stack<Card> discardDeck = new Stack<Card>();
-    
+    private deckType whichDeck;
     
     /**
      *
@@ -81,16 +83,26 @@ public class Deck
     {
        System.out.println("Looking at the card that was added.");
        c.Print();
+        System.out.println("");
        
-       System.out.print("Card on top of discard");
-       discardDeck.push(c);
-       discardDeck.peek().Print();
-       System.out.println("");
-       
-       if(discardDeck.empty()) //assuming the start of a game
+       if(c.getClass().equals(NumberCard.class))
        {
-           discardDeck.push(c);
+           System.out.println("Number Card Played");
        }
+       else if(c.getClass().equals(SpecialCard.class))
+       {
+           System.out.println("Special Card Played");
+       }
+       else if(c.getClass().equals(WildCard.class))
+       {
+           System.out.println("Wild Card Played");
+       }
+       else
+       {
+           System.out.println("No matching cards available");
+       }
+       discardDeck.push(c);
+
     }
     
     /**
@@ -110,6 +122,12 @@ public class Deck
            size = deck.size(); 
        }
         return size; 
+    }
+    
+    public void ShowDiscard()
+    {
+        System.out.print("Top Card: ");
+        discardDeck.peek().Print();
     }
     
     public void SetUpDiscard()
