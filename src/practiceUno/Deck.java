@@ -112,7 +112,7 @@ public class Deck
         return size; 
     }
     
-    private void SetUpDiscard()
+    public void SetUpDiscard()
     {
         discardDeck.add(DrawNext());
     }

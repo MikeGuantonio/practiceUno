@@ -27,6 +27,6 @@ public class NumberCard extends Card {
     @Override
     public void Print()
     {
-        System.out.println(face + " " + color);
+        System.out.print(face + " " + color);
     }
 }

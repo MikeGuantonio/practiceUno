@@ -22,11 +22,10 @@ public class UnoClone {
         Deck deck = new Deck(); 
           
         d.Shuffle(deck);
-        deck.AddDiscard(deck.DrawNext());
         SetUpPlayers(players, deck);
+        deck.SetUpDiscard();
         
-        
-        
+        players.get(5).ShowHand();
     }
     
     public static void SetUpPlayers(ArrayList<Player> players, Deck deck)
