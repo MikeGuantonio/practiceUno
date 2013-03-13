@@ -57,6 +57,14 @@ public class Deck
      */
     public Card DrawNext()
     {
+        Card c; 
+        
+        c = deck.pop(); 
+        if(c.getClass().equals(SpecialCard.class))
+                {
+                    System.out.println("This is correct ");
+                    c.Print();
+                }
         if(!deck.isEmpty())
         {
             return (Card)deck.pop();
