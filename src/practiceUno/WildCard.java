@@ -8,7 +8,7 @@ package practiceUno;
  *
  * @author mike
  */
-public class WildCard extends Card 
+public class WildCard extends Card implements CardActions
 {
     enum cardWild {WILD, WILDDRFOUR}; 
     cardWild wild; 

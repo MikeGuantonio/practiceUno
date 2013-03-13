@@ -8,7 +8,7 @@ package practiceUno;
  *
  * @author mike
  */
-public class SpecialCard extends Card 
+public class SpecialCard extends Card implements CardActions
 {
    enum cardValues {REVERSE,SKIP,DRTWO} 
    cardValues sp; 
