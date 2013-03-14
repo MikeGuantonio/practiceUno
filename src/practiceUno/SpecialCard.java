@@ -36,4 +36,9 @@ public class SpecialCard extends Card implements CardActions
     {
         return color; 
     }
+    
+    public cardValues GetSpecial()
+    {
+        return sp; 
+    }
 }

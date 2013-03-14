@@ -90,11 +90,11 @@ public class Deck
        }
        else if(c.getClass().equals(SpecialCard.class))
        {
-           canPlace = CheckSpecial(); //Need behavior and checks.
+           canPlace = CheckSpecial(discard, c); //Need behavior 
        }
        else if(c.getClass().equals(WildCard.class))
        {
-           canPlace = CheckWild(); //Can always place. Just need behavior
+           canPlace = CheckWild(discard, c); //Can always place. Just need behavior
        }
        else
        {
@@ -129,14 +129,37 @@ public class Deck
          return canPlace; 
     }
     
-    private boolean CheckSpecial()
+    private boolean CheckSpecial(Card discard, Card c)
     {
-        return true; 
+        boolean canPlace = false; 
+        
+        if(discard.getClass().equals(SpecialCard.class))
+        {
+            System.out.print("On Top: ");
+            discardDeck.peek().Print();
+            System.out.println("");
+            
+            SpecialCard inPlay = (SpecialCard)c; 
+            SpecialCard top = (SpecialCard)discard;
+            
+            if(c.GetColor().equals(discard.GetColor()))
+            {
+                canPlace = true; 
+            }
+            else if(inPlay.GetSpecial().equals(top.GetSpecial()))
+            {
+                canPlace = true; 
+            }
+        }
+        System.out.println("Special Card Played.");
+        return canPlace; 
     }
     
-    private boolean CheckWild()
+    private boolean CheckWild(Card discard, Card c)
     {
-        return true; 
+        boolean canPlace = true; 
+        
+        return canPlace; 
     }
     
     /**
