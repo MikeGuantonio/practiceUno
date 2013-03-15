@@ -36,7 +36,10 @@ public class UnoClone {
     public static void SetUpPlayers(ArrayList<Player> players, Deck deck)
     {
        for (int i = 0; i < 10; i++) 
+       {
            players.add(new Player());
+           players.get(i).SetPlayerPos(i);
+       }
 
         for (int i = 0; i < 7; i++)
         {

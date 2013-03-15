@@ -235,12 +235,12 @@ public class Deck
     
   public void SideEffect(SpecialCard special, Player p)
   {
-      //TODO: Should check for the Wild Side effect as well
+      //TODO: cShould check for the Wild Side effect as well
       switch(special.GetSpecial())
       {
-          case SKIP: special.Skip();
+          case SKIP: special.Skip(p.GetPlayerPos());
               break; 
-          case REVERSE: special.Reverse();
+          case REVERSE: special.Reverse(p.GetPlayerPos());
               break;
           case DRTWO: special.DrawTwo(p, this);
               break;

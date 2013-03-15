@@ -11,7 +11,7 @@ public class Player
     private ArrayList<Card> hand = new ArrayList<Card>(); 
     private int isDealer; 
     private String name; 
-
+    private int playerPos; 
     /**
      *
      */
@@ -54,6 +54,16 @@ public class Player
     public int TotalCards()
     {
 	return hand.size(); 
+    }
+    
+    public void SetPlayerPos(int newPos)
+    {
+        playerPos = newPos; 
+    }
+    
+    public int GetPlayerPos()
+    {
+        return playerPos; 
     }
 }
 

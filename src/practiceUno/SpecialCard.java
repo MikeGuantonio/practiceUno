@@ -42,14 +42,14 @@ public class SpecialCard extends Card implements SpecialActions
         return sp; 
     }
     
-    public void Skip()
+    public int Skip(int currentPlayerIndex)
     {
-        
+        return (currentPlayerIndex++);
     }
     
-    public void Reverse()
+    public int Reverse(int currentPlayerIndex)
     {
-        
+        return (currentPlayerIndex -1); 
     }
     
     public void DrawTwo(Player ourPlayer, Deck theDeck)
