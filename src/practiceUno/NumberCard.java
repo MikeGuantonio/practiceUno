@@ -15,10 +15,13 @@ public class NumberCard extends Card {
     public NumberCard(int newNum, Card.cardColor color)
     {
         if(newNum >= 0 && newNum <= 9)
+        {
             face = newNum;
+             super.color = color;
+        }
         else
             System.out.println("Cannot create a card");
-        super.color = color; 
+        
     }
     
     public int GetNumber()
