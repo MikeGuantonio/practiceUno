@@ -35,7 +35,7 @@ public class UnoClone {
        
         //Set up the playing field
         deck.Shuffle();
-        SetUpPlayers(players, deck);
+        SetUpPlayers(players, deck, Integer.parseInt(uno.GetInput("How many people are playing?") ));
         deck.SetUpDiscard();
         players.get(0).SetName(uno.GetInput("What is your name"));
         players.get(1).SetName(uno.GetInput("What is your name player 2"));
@@ -84,9 +84,15 @@ public class UnoClone {
      * @param players
      * @param deck
      */
-    public static void SetUpPlayers(ArrayList<Player> players, Deck deck)
+    public static void SetUpPlayers(ArrayList<Player> players, Deck deck, int numPlayers)
     {
-       for (int i = 0; i < 10; i++) 
+       if(numPlayers < 2 || numPlayers > 10)
+       {
+           System.out.println("Cannot play this game!");
+           System.exit(345);
+       }
+       
+       for (int i = 0; i < numPlayers; i++) 
        {
            players.add(new Player());
            players.get(i).SetPlayerPos(i);
@@ -94,7 +100,7 @@ public class UnoClone {
 
         for (int i = 0; i < 7; i++)
         {
-            for (int j = 0; j < 10; j++)
+            for (int j = 0; j < numPlayers; j++)
             {
                 players.get(j).GetCard(deck.DrawNext());
             }

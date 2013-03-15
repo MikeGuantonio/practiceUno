@@ -1,3 +1,8 @@
+TODO: 
+    Review all tests and check each and every behavior. This should take 
+    a long time. 
+    Implement the newly created methods in the UnoClone program.
+
 Refactoring List 
 A list of all of the things that I want to fix. 
 
@@ -17,8 +22,8 @@ SpecialCard.java
     Find a way to change the problems with not completing a turn
 
 UnoClone.java
-    Allow user to choose how many players there are
-    Add a second player (human)
+    Allow user to choose how many players there are X
+    Add a second player (human) X
     Behavior when dealing with another player
 
 WildActions.java

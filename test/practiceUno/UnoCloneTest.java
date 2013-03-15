@@ -71,7 +71,7 @@ public class UnoCloneTest {
         System.out.println("SetUpPlayers");
         ArrayList<Player> players = null;
         Deck deck = new Deck();
-        UnoClone.SetUpPlayers(players, deck);
+        UnoClone.SetUpPlayers(players, deck, 3);
         
     }
 
