@@ -41,7 +41,6 @@ public class SpecialCardTest {
         players.add(ourPlayer);
         ourPlayer = new Player();
         players.add(ourPlayer);
-        System.out.println("Size: " + players.size() );
         
     }
     

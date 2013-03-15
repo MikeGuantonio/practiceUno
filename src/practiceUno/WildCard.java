@@ -23,6 +23,7 @@ public class WildCard extends Card implements WildActions
     public WildCard(cardWild w)
     {
         wild = w; 
+        color = null; 
     }
     
     /**
