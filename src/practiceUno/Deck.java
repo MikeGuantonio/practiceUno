@@ -95,11 +95,11 @@ public class Deck
        }
        else if(c.getClass().equals(SpecialCard.class))
        {
-           canPlace = CheckSpecial(discard, c); //Need behavior 
+           canPlace = CheckSpecial(discard, c);  
        }
        else if(c.getClass().equals(WildCard.class))
        {
-           canPlace = CheckWild(discard, c, play); //Can always place. Just need behavior
+           canPlace = CheckWild(discard, c, play); 
        }
        else
        {

@@ -1,0 +1,23 @@
+Refactoring List 
+A list of all of the things that I want to fix. 
+
+Card.java
+
+Deck.java
+
+NumberCard.java
+
+Player.java
+    Create player as abstract
+        Inherit human and robot
+
+SpecialActions.java
+
+SpecialCard.java
+
+UnoClone.java
+    Allow user to choose how many players there are
+
+WildActions.java
+
+WildCard.java
