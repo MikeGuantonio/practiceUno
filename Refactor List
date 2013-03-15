@@ -17,6 +17,8 @@ SpecialCard.java
 
 UnoClone.java
     Allow user to choose how many players there are
+    Add a second player (human)
+    Behavior when dealing with another player
 
 WildActions.java
 

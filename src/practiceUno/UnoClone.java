@@ -24,42 +24,54 @@ public class UnoClone {
      */
     public static void main(String[] args)
     { 
+        int maxPlayers = 2; //Only a testing variable
+     
         //Initalize local player variables. 
         UnoClone uno = new UnoClone(); 
         ArrayList<Player> players = new ArrayList<Player>(); 
         Deck deck = new Deck(); 
-        int choice; 
+        
        
         //Set up the playing field
         deck.Shuffle();
         SetUpPlayers(players, deck);
         deck.SetUpDiscard();
         players.get(0).SetName(uno.GetInput("What is your name"));
-        
+        players.get(1).SetName(uno.GetInput("What is your name player 2"));
         
         System.out.println(players.get(0).GetName() + ". Welcome to UNO!" );
         while(true)
         {
-            choice = uno.Menu(deck);
-            
-            switch(choice)
+            for (int i = 0; i < maxPlayers; i++)
             {
-                case 1: players.get(0).ShowHand();
-                        break; 
-                case 2: deck.ShowDiscard();
-                        break; 
-                case 3: uno.DrawAndPlay(players.get(0), deck);
-                        break; 
-                case 4: uno.Play(players.get(0), deck);
-                        break; 
-                case 5:  
-                        break; 
-                default: System.out.println("Cannot process!");
+                uno.PlayerTurn(players.get(i), deck);
             }
              
         }
     }
     
+    
+    public void PlayerTurn(Player p, Deck d)
+    {
+        int choice; 
+        choice = Menu(d);
+            
+            switch(choice)
+            {
+                case 1: p.ShowHand();
+                        break; 
+                case 2: d.ShowDiscard();
+                        break; 
+                case 3: DrawAndPlay(p, d);
+                        break; 
+                case 4: Play(p, d);
+                        break; 
+                case 5:  
+                        break; 
+                default: System.out.println("Cannot process!");
+                        break; 
+            }
+    }
     /**
      *
      * @param players

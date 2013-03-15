@@ -4,27 +4,15 @@ practiceUno
 simpleUnoClone
 Rules: http://www.noprivilege.com/ab/uno-howto.html
 
-TODO
-    1. Add behavior to Wild Cards X
-    2. Add behavior to Special Cards X
-    3. Add method to ask player what they want to do next X
-    4. Graphical Interface
-    5. Networking Interface
-    6. Reliable method to remove a card from the hand or otherwise ask the
-       Player to choose again X
-    7. Add ability to store color of the wild card. X
-    8. Checking color of the wild card on the discard pile
-    9. Setting up the current player to use in main game.
-    10. Wild draw four : you can only play this card if you do not have a card in
-        your hand that matches the previous color played. 
-    11. Extendable input scanner that handles both ints and floats. 
-    12. Possibly need a way to say UNO... basically since its the name of the game...
-    
+A simple UNO game that will go from a command line implementation to the java
+graphical library. I wanted to learn java and proper TDD so I developed this simple
+game. While this might not be the most cleaver way to implement this, I hope that
+with a good set of refactoring and application of design patterns I will be able
+to move the project forward. Once I have the basics working, I will be able to 
+handle other odd behavior. 
 
 
-
-
-     CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE. 
+CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE. 
 
 License
 
