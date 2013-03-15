@@ -11,7 +11,7 @@ package practiceUno;
 
 //All actions that are not implemented in the class can be declared abstract...
 //passin the buck.
-public class SpecialCard extends Card implements CardActions
+public class SpecialCard extends Card implements SpecialActions
 {
    enum cardValues {REVERSE,SKIP,DRTWO} 
    cardValues sp; 
@@ -40,5 +40,24 @@ public class SpecialCard extends Card implements CardActions
     public cardValues GetSpecial()
     {
         return sp; 
+    }
+    
+    public void Skip()
+    {
+        
+    }
+    
+    public void Reverse()
+    {
+        
+    }
+    
+    public void DrawTwo(Player ourPlayer, Deck theDeck)
+    {
+         //Need a way to handle matching colors as well. 
+         for (int i = 0; i < 2; i++) 
+         {
+            ourPlayer.GetCard(theDeck.DrawNext());   
+        }
     }
 }

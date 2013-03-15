@@ -232,4 +232,19 @@ public class Deck
        return deck; 
    }
    
+    
+  public void SideEffect(SpecialCard special, Player p)
+  {
+      //TODO: Should check for the Wild Side effect as well
+      switch(special.GetSpecial())
+      {
+          case SKIP: special.Skip();
+              break; 
+          case REVERSE: special.Reverse();
+              break;
+          case DRTWO: special.DrawTwo(p, this);
+              break;
+      }
+  }
+   
 }

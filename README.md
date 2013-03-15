@@ -4,14 +4,14 @@ practiceUno
 simpleUnoClone
 
 TODO
-    1. Add behavior to Wild Cards
+    1. Add behavior to Wild Cards X
     2. Add behavior to Special Cards
     3. Add method to ask player what they want to do next
     4. Graphical Interface
     5. Networking Interface
     6. Reliable method to remove a card from the hand or otherwise ask the
        Player to choose again
-    7. Add ability to store color of the wild card. 
+    7. Add ability to store color of the wild card. X
     8. Checking color of the wild card on the discard pile
     
 
