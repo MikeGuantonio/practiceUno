@@ -79,7 +79,7 @@ public class Deck
      *
      * @param c
      */
-    public void AddDiscard(Card c)
+    public void AddDiscard(Card c, Player play)
     {
        boolean canPlace = false; 
        Card discard = discardDeck.peek();
@@ -94,7 +94,7 @@ public class Deck
        }
        else if(c.getClass().equals(WildCard.class))
        {
-           canPlace = CheckWild(discard, c); //Can always place. Just need behavior
+           canPlace = CheckWild(discard, c, play); //Can always place. Just need behavior
        }
        else
        {
@@ -155,12 +155,21 @@ public class Deck
         return canPlace; 
     }
     
-    private boolean CheckWild(Card discard, Card c)
+    private boolean CheckWild(Card discard, Card c, Player thisPlayer)
     {
         boolean canPlace = true; 
         
         WildCard wild = (WildCard)c;
-        wild.Wild();
+        
+        if(wild.GetWild().equals(WildCard.cardWild.WILD))
+        {
+            wild.Wild();
+        }
+        else if(wild.GetWild().equals(WildCard.cardWild.WILDDRFOUR))
+        {
+          wild.DrawFour(thisPlayer, this);
+        }
+        
         
         return canPlace; 
     }

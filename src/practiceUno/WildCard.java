@@ -31,6 +31,11 @@ public class WildCard extends Card implements WildActions
         return color; 
     }
     
+    public cardWild GetWild()
+    {
+        return wild;
+    }
+    
     public Card.cardColor Wild()
     {
         System.out.println("Please choose a color!");
@@ -42,4 +47,16 @@ public class WildCard extends Card implements WildActions
         color = wildColor; 
         return wildColor; 
     } 
+    
+    public Card.cardColor DrawFour(Player newPlayer, Deck copyDeck)
+    {
+        Card.cardColor newColor; 
+        newColor = Wild();
+        
+        for (int i = 0; i < 4; i++) {
+            newPlayer.GetCard(copyDeck.DrawNext());
+            
+        }
+        return newColor; 
+    }
 }

@@ -25,10 +25,12 @@ public class UnoClone {
         SetUpPlayers(players, deck);
         deck.SetUpDiscard();
         
-        players.get(0).ShowHand();
+        players.get(1).ShowHand();
         deck.ShowDiscard(); System.out.println("");
-        deck.AddDiscard(players.get(0).Discard(1)); 
+        deck.AddDiscard(players.get(0).Discard(1), players.get(1)); 
         deck.ShowDiscard(); System.out.println("");
+        
+        players.get(1).ShowHand();
     }
     
     public static void SetUpPlayers(ArrayList<Player> players, Deck deck)
@@ -40,9 +42,9 @@ public class UnoClone {
         {
             for (int j = 0; j < 10; j++)
             {
-                if(i == 0 )
+                if(j == 0 )
                 {
-                    players.get(i).GetCard((Card)new WildCard(WildCard.cardWild.WILD) );
+                    players.get(j).GetCard((Card)new WildCard(WildCard.cardWild.WILDDRFOUR));
                 }
                 else
                     players.get(j).GetCard(deck.DrawNext());
