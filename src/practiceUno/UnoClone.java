@@ -36,7 +36,6 @@ public class UnoClone {
         System.out.println(players.get(0).GetName() + ". Welcome to UNO!" );
         while(true)
         {
-            System.out.println("What would you like to do?");
             choice = uno.Menu();
             
             switch(choice)
@@ -45,9 +44,11 @@ public class UnoClone {
                         break; 
                 case 2: deck.ShowDiscard();
                         break; 
-                case 3: players.get(0).GetCard(deck.DrawNext());
+                case 3: uno.DrawAndPlay(players.get(0), deck);
                         break; 
                 case 4: uno.Play(players.get(0), deck);
+                        break; 
+                case 5:  
                         break; 
                 default: System.out.println("Cannot process!");
             }
@@ -93,6 +94,7 @@ public class UnoClone {
         System.out.println("2. Show Top of Deck");
         System.out.println("3. Draw A Card");
         System.out.println("4. Play A Card");
+        System.out.println("5. Skip turn");
         choice = input.nextInt();
         return choice; 
     }
@@ -103,7 +105,33 @@ public class UnoClone {
         System.out.println("Remember index starts at 0");
         p.ShowHand();
         d.AddDiscard(p.Discard(input.nextInt()), p); 
+    }
+    
+    public void DrawAndPlay(Player p, Deck d)
+    {
+        int choice; 
+        System.out.println("Looks like you need to draw a card!");
         p.GetCard(d.DrawNext());
+        System.out.println("You drew a new card. This is your hand");
+        p.ShowHand();
+        System.out.println("What do you want to do?");
+        System.out.println("Play a card");
+        System.out.println("Skip a turn");
+        choice = input.nextInt(); 
+        
+        switch(choice)
+        {
+            case 1: Play(p, d); 
+                    break;
+            case 2: Skip(p, d);
+                    break;
+        }
+        
+    }
+    
+    public void Skip(Player p, Deck d)
+    {
+        System.out.println("Turn has ended");
     }
     
 }

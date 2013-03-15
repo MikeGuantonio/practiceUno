@@ -18,6 +18,7 @@ TODO
     10. Wild draw four : you can only play this card if you do not have a card in
         your hand that matches the previous color played. 
     11. Extendable input scanner that handles both ints and floats. 
+    12. Possibly need a way to say UNO... basically since its the name of the game...
     
 
 
