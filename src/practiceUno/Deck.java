@@ -168,11 +168,11 @@ public class Deck
         
         if(wild.GetWild().equals(WildCard.cardWild.WILD))
         {
-            wild.Wild();
+            wild.Wild(new Scanner(System.in));
         }
         else if(wild.GetWild().equals(WildCard.cardWild.WILDDRFOUR))
         {
-          wild.DrawFour(thisPlayer, this);
+          wild.DrawFour(thisPlayer, this, new Scanner(System.in));
         }
         
         

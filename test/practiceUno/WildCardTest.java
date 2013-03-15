@@ -4,7 +4,9 @@
  */
 package practiceUno;
 
+import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
+import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -89,10 +91,13 @@ public class WildCardTest {
     @Test
     public void testWild()
     {
+        ByteArrayInputStream in = new ByteArrayInputStream("Green".getBytes());
+        System.setIn(in);
+        
         System.out.println("Wild");
         WildCard instance = new WildCard(WildCard.cardWild.WILD);
         Card.cardColor expResult = Card.cardColor.GREEN;
-        Card.cardColor result = instance.Wild();
+        Card.cardColor result = instance.Wild(new Scanner(System.in));
         assertEquals(expResult, result);
         
     }
@@ -101,15 +106,20 @@ public class WildCardTest {
      * Test of DrawFour method, of class WildCard.
      */
     @Test
-    public void testDrawFour() {
+    public void testDrawFour() 
+    {
+        setUpClass(); 
+        ByteArrayInputStream in = new ByteArrayInputStream("Red".getBytes());
+        System.setIn(in);
+        
         System.out.println("DrawFour");
-        Player newPlayer = players.get(0);
+        Player newPlayer = new Player(); 
         Deck copyDeck = new Deck();
+        copyDeck.Shuffle();
         WildCard instance = new WildCard(WildCard.cardWild.WILDDRFOUR);
         Card.cardColor expResult = Card.cardColor.RED;
-        Card.cardColor result = instance.DrawFour(newPlayer, copyDeck);
+        Card.cardColor result = instance.DrawFour(newPlayer, copyDeck, new Scanner(System.in));
         assertEquals(expResult, result);
         newPlayer.ShowHand();
-        
     }
 }

@@ -14,7 +14,6 @@ public class WildCard extends Card implements WildActions
     enum cardWild {WILD, WILDDRFOUR}; 
     cardWild wild; 
     
-    private static  Scanner scan = new Scanner(System.in);
     
     /**
      *
@@ -56,7 +55,7 @@ public class WildCard extends Card implements WildActions
      *
      * @return
      */
-    public Card.cardColor Wild()
+    public Card.cardColor Wild(Scanner scan)
     {
         System.out.println("Please choose a color!");
         System.out.println("Red, Green, Yellow, Blue");
@@ -74,10 +73,10 @@ public class WildCard extends Card implements WildActions
      * @param copyDeck
      * @return
      */
-    public Card.cardColor DrawFour(Player newPlayer, Deck copyDeck)
+    public Card.cardColor DrawFour(Player newPlayer, Deck copyDeck, Scanner scan)
     {
         Card.cardColor newColor; 
-        newColor = Wild();
+        newColor = Wild(scan);
         
         for (int i = 0; i < 4; i++) {
             newPlayer.GetCard(copyDeck.DrawNext());

@@ -4,13 +4,15 @@
  */
 package practiceUno;
 
+import java.util.Scanner;
+
 /**
  *
  * @author mike
  */
 public interface WildActions {
     
-     Card.cardColor Wild(); 
-     Card.cardColor DrawFour(Player nextPlayer, Deck copyDeck); 
+     Card.cardColor Wild(Scanner scan); 
+     Card.cardColor DrawFour(Player nextPlayer, Deck copyDeck, Scanner scan); 
     
 }
