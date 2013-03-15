@@ -4,13 +4,13 @@
  */
 package practiceUno;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author mike
  */
 
-//All actions that are not implemented in the class can be declared abstract...
-//passin the buck.
 public class SpecialCard extends Card implements SpecialActions
 {
    enum cardValues {REVERSE,SKIP,DRTWO} 
@@ -52,12 +52,12 @@ public class SpecialCard extends Card implements SpecialActions
         return (currentPlayerIndex -1); 
     }
     
-    public void DrawTwo(Player ourPlayer, Deck theDeck)
+    public void DrawTwo(ArrayList<Player> players, Deck theDeck, int pos)
     {
          //Need a way to handle matching colors as well. 
          for (int i = 0; i < 2; i++) 
          {
-            ourPlayer.GetCard(theDeck.DrawNext());   
-        }
+            players.get(pos +1).GetCard(theDeck.DrawNext());   
+         }
     }
 }

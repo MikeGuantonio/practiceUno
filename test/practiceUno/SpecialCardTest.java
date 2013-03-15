@@ -9,6 +9,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import java.util.ArrayList; 
 import static org.junit.Assert.*;
 
 /**
@@ -42,10 +43,9 @@ public class SpecialCardTest {
     @Test
     public void testPrint() {
         System.out.println("Print");
-        SpecialCard instance = null;
+        SpecialCard instance = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED);
         instance.Print();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -54,12 +54,10 @@ public class SpecialCardTest {
     @Test
     public void testGetColor() {
         System.out.println("GetColor");
-        SpecialCard instance = null;
-        Card.cardColor expResult = null;
+        SpecialCard instance = new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.BLUE);
+        Card.cardColor expResult = Card.cardColor.BLUE;
         Card.cardColor result = instance.GetColor();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -68,27 +66,25 @@ public class SpecialCardTest {
     @Test
     public void testGetSpecial() {
         System.out.println("GetSpecial");
-        SpecialCard instance = null;
-        SpecialCard.cardValues expResult = null;
+        SpecialCard instance = new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.RED);
+        SpecialCard.cardValues expResult = SpecialCard.cardValues.SKIP;
         SpecialCard.cardValues result = instance.GetSpecial();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of Skip method, of class SpecialCard.
      */
     @Test
-    public void testSkip() {
+    public void testSkip() 
+    {
         System.out.println("Skip");
         int currentPlayerIndex = 0;
-        SpecialCard instance = null;
-        int expResult = 0;
+        SpecialCard instance = new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.RED);
+        int expResult = 1;
         int result = instance.Skip(currentPlayerIndex);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -98,12 +94,11 @@ public class SpecialCardTest {
     public void testReverse() {
         System.out.println("Reverse");
         int currentPlayerIndex = 0;
-        SpecialCard instance = null;
+        SpecialCard instance = new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.YELLOW);
         int expResult = 0;
         int result = instance.Reverse(currentPlayerIndex);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -112,11 +107,37 @@ public class SpecialCardTest {
     @Test
     public void testDrawTwo() {
         System.out.println("DrawTwo");
-        Player ourPlayer = null;
-        Deck theDeck = null;
-        SpecialCard instance = null;
-        instance.DrawTwo(ourPlayer, theDeck);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        ArrayList<Player> players = new ArrayList<Player>();
+        
+        Player ourPlayer = new Player();
+        players.add(ourPlayer);
+        ourPlayer = new Player();
+        players.add(ourPlayer);
+        Deck theDeck = new Deck();
+        
+        for (int i = 0; i < 7; i++) 
+        {
+            for (int j = 0; j < 2; j++) 
+                players.get(j).GetCard(theDeck.DrawNext());
+        }
+        SpecialCard instance = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE);
+        
+        System.out.println("Player 1 Hand");
+        players.get(0).ShowHand();
+        System.out.println("");
+        
+        System.out.println("Player 2 Hand");
+        players.get(1).ShowHand();
+        System.out.println("");
+        
+        System.out.println("Player 1 played Draw Two");
+        instance.DrawTwo(players, theDeck, players.get(0).GetPlayerPos());
+        System.out.println("Player 1 Hand");
+        players.get(0).ShowHand();
+        System.out.println("");
+        
+        System.out.println("Player 2 Hand");
+        players.get(1).ShowHand();
+        System.out.println("");
     }
 }
