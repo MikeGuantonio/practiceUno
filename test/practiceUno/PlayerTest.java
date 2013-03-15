@@ -56,11 +56,10 @@ public class PlayerTest {
     @Test
     public void testGetCard() {
         System.out.println("GetCard");
-        Card c = null;
+        Card c = new WildCard(WildCard.cardWild.WILD);
         Player instance = new Player();
         instance.GetCard(c);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance.ShowHand();
     }
 
     /**
@@ -71,11 +70,12 @@ public class PlayerTest {
         System.out.println("Discard");
         int dex = 0;
         Player instance = new Player();
-        Card expResult = null;
+        Deck d = new Deck(); 
+        Card expResult = d.DrawNext();
+        instance.GetCard(expResult);
         Card result = instance.Discard(dex);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -88,8 +88,7 @@ public class PlayerTest {
         int expResult = 0;
         int result = instance.TotalCards();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -101,8 +100,7 @@ public class PlayerTest {
         int newPos = 0;
         Player instance = new Player();
         instance.SetPlayerPos(newPos);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -113,10 +111,10 @@ public class PlayerTest {
         System.out.println("GetPlayerPos");
         Player instance = new Player();
         int expResult = 0;
+        instance.SetPlayerPos(expResult);
         int result = instance.GetPlayerPos();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -127,8 +125,7 @@ public class PlayerTest {
         System.out.println("NextAction");
         Player instance = new Player();
         instance.NextAction();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -137,11 +134,10 @@ public class PlayerTest {
     @Test
     public void testSetName() {
         System.out.println("SetName");
-        String newName = "";
+        String newName = "Stupid Halvanja";
         Player instance = new Player();
         instance.SetName(newName);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -151,10 +147,9 @@ public class PlayerTest {
     public void testGetName() {
         System.out.println("GetName");
         Player instance = new Player();
-        String expResult = "";
+        String expResult = "Halavanja";
+        instance.SetName("Halavanja");
         String result = instance.GetName();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+     }
 }
