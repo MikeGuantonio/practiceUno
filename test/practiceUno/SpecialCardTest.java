@@ -37,17 +37,12 @@ public class SpecialCardTest {
     public void  setUp() 
     {
         
-        Player ourPlayer = new Player();
-        players.add(ourPlayer);
-        ourPlayer = new Player();
-        players.add(ourPlayer);
-        
     }
     
     @After
     public void tearDown() 
     {
-        players.clear();
+       
     }
 
     /**
@@ -145,35 +140,18 @@ public class SpecialCardTest {
     @Test
     public void testDrawTwo() 
     {
-        setUp(); 
+
         System.out.println("DrawTwo");
          
         Deck theDeck = new Deck();
         
-        for (int i = 0; i < 7; i++) 
+        for(SpecialCard.cardColor c : SpecialCard.cardColor.values())
         {
-            for (int j = 0; j < 2; j++) 
-                players.get(j).GetCard(theDeck.DrawNext());
+            SpecialCard instance = new SpecialCard(SpecialCard.cardValues.DRTWO, c);
+            instance.DrawTwo(players, theDeck, 0);
         }
-        SpecialCard instance = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE);
         
-        System.out.println("Player 1 Hand");
-        players.get(0).ShowHand();
-        System.out.println("");
+       
         
-        System.out.println("Player 2 Hand");
-        players.get(1).ShowHand();
-        System.out.println("");
-        
-        System.out.println("Player 1 played Draw Two");
-        instance.DrawTwo(players, theDeck, players.get(0).GetPlayerPos());
-        System.out.println("Player 1 Hand");
-        players.get(0).ShowHand();
-        System.out.println("");
-        
-        System.out.println("Player 2 Hand");
-        players.get(1).ShowHand();
-        System.out.println("");
-        tearDown(); 
     }
 }

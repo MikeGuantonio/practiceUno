@@ -6,6 +6,9 @@ TODO:
 Refactoring List 
 A list of all of the things that I want to fix. 
 
+Overall: Make the names more meaningful within the code
+         Create JavaDoc
+
 Card.java
 
 Deck.java
@@ -20,6 +23,8 @@ SpecialActions.java
 
 SpecialCard.java
     Find a way to change the problems with not completing a turn
+    Will only need one player. There is no need to pass in an entier grouping
+    of players
 
 UnoClone.java
     Allow user to choose how many players there are X
@@ -28,4 +33,5 @@ UnoClone.java
 
 WildActions.java
     Draw four and wild need work. Hangs when it happens.
+    Make certain that the correct player is moved. 
 WildCard.java
