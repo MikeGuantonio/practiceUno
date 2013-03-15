@@ -24,19 +24,21 @@ public class UnoClone {
         UnoClone uno = new UnoClone(); 
         ArrayList<Player> players = new ArrayList<Player>(); 
         Deck deck = new Deck(); 
+        int choice; 
        
         //Set up the playing field
         deck.Shuffle();
         SetUpPlayers(players, deck);
         deck.SetUpDiscard();
-        players.get(0).SetName(uno.GetInput("What is your name?"));
+        players.get(0).SetName(uno.GetInput("What is your name"));
         
         
         System.out.println(players.get(0).GetName() + ". Welcome to UNO!" );
         while(true)
         {
             System.out.println("What would you like to do?");
-            int choice = 0; 
+            choice = uno.Menu();
+            
             switch(choice)
             {
                 case 1: players.get(0).ShowHand();
@@ -45,7 +47,7 @@ public class UnoClone {
                         break; 
                 case 3: players.get(0).GetCard(deck.DrawNext());
                         break; 
-                case 4: players.get(0).Discard(0); //Discard a card. Possible draw
+                case 4: uno.Play(players.get(0), deck);
                         break; 
                 default: System.out.println("Cannot process!");
             }
@@ -78,7 +80,7 @@ public class UnoClone {
     public String GetInput(String prompt)
     {
         String output;
-        System.out.println(prompt);
+        System.out.print(prompt + ">");
         output = input.nextLine();
         return output; 
     }
@@ -94,6 +96,16 @@ public class UnoClone {
         choice = input.nextInt();
         return choice; 
     }
+    
+    public void Play(Player p, Deck d)
+    {
+        System.out.println("Which card would you like to play?");
+        System.out.println("Remember index starts at 0");
+        p.ShowHand();
+        d.AddDiscard(p.Discard(input.nextInt()), p); 
+        p.GetCard(d.DrawNext());
+    }
+    
 }
 
 
