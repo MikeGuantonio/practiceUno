@@ -42,9 +42,18 @@ public class SpecialCard extends Card implements SpecialActions
         return sp; 
     }
     
-    public int Skip(int currentPlayerIndex)
+   @Override
+    public int Skip(int currentPlayerIndex, ArrayList<Player> players)
     {
-        return (currentPlayerIndex++);
+        int index = 0; 
+        if((currentPlayerIndex-1) < 0)
+            index  = (players.size() +2);
+        else if(currentPlayerIndex == (players.size()-1) )
+            index = 1;
+        else
+            index = (currentPlayerIndex +2); 
+        return index; 
+        
     }
     
    @Override
@@ -58,7 +67,6 @@ public class SpecialCard extends Card implements SpecialActions
             index = 0;
         else
             index = (currentPlayerIndex -1); 
-        System.out.println("New index: " + index );
         return index; 
     }
     

@@ -93,10 +93,10 @@ public class SpecialCardTest {
     public void testSkip() 
     {
         System.out.println("Skip");
-        int currentPlayerIndex = 0;
+        int currentPlayerIndex = players.size()-1;
         SpecialCard instance = new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.RED);
-        int expResult = 0;
-        int result = instance.Skip(currentPlayerIndex);
+        int expResult = 1;
+        int result = instance.Skip(currentPlayerIndex, players);
         assertEquals(expResult, result);
         
     }
@@ -112,8 +112,6 @@ public class SpecialCardTest {
         int currentPlayerIndex = 0;
         SpecialCard instance = new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.YELLOW);
         
-        if(players == null)
-            System.out.println("This is null"); 
         int expResult = players.size() -1;
         int result = instance.Reverse(currentPlayerIndex, players);
         tearDown(); 
