@@ -29,7 +29,14 @@ public class Deck
     
     public void Shuffle()
     { 
-	Collections.shuffle(deck);
+        try
+        {
+            Collections.shuffle(deck);
+        }
+        catch(Exception ex)
+        {
+        }
+       
     }
     
     private void AddToDeck(Card c, int numberOfCards)
