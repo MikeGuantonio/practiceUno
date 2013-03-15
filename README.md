@@ -11,6 +11,8 @@ TODO
     5. Networking Interface
     6. Reliable method to remove a card from the hand or otherwise ask the
        Player to choose again
+    7. Add ability to store color of the wild card. 
+    8. Checking color of the wild card on the discard pile
     
 
 

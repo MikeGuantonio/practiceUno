@@ -31,14 +31,15 @@ public class WildCard extends Card implements WildActions
         return color; 
     }
     
-    public void Wild()
+    public Card.cardColor Wild()
     {
         System.out.println("Please choose a color!");
         System.out.println("Red, Green, Yellow, Blue");
         
         String input = scan.nextLine(); 
-        Card.cardColor color = Card.cardColor.valueOf(input);
+        Card.cardColor wildColor = Card.cardColor.valueOf(input.toUpperCase());
         
-        System.out.println(color);
+        color = wildColor; 
+        return wildColor; 
     } 
 }
