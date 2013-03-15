@@ -3,6 +3,13 @@ practiceUno
 
 simpleUnoClone
 
+TODO
+    1. Add behavior to Wild Cards
+    2. Add behavior to Special Cards
+    3. Add method to ask player what they want to do next
+    4. Graphical Interface
+    5. Networking Interface
+    
 
 
 
