@@ -6,7 +6,7 @@ Rules: http://www.noprivilege.com/ab/uno-howto.html
 
 TODO
     1. Add behavior to Wild Cards X
-    2. Add behavior to Special Cards
+    2. Add behavior to Special Cards X
     3. Add method to ask player what they want to do next
     4. Graphical Interface
     5. Networking Interface
@@ -17,6 +17,7 @@ TODO
     9. Setting up the current player to use in main game.
     10. Wild draw four : you can only play this card if you do not have a card in
         your hand that matches the previous color played. 
+    11. Extendable input scanner that handles both ints and floats. 
     
 
 

@@ -65,5 +65,20 @@ public class Player
     {
         return playerPos; 
     }
+    
+    public void NextAction()
+    {
+        System.out.println("What do you want to do next?");
+    }
+    
+    public void SetName(String newName)
+    {
+        name = newName; 
+    }
+    
+    public String GetName()
+    {
+        return name; 
+    }
 }
 

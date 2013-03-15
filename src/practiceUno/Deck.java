@@ -27,6 +27,11 @@ public class Deck
        CreateWild(); 
     }
     
+    public void Shuffle()
+    { 
+	Collections.shuffle(deck);
+    }
+    
     private void AddToDeck(Card c, int numberOfCards)
     {
         for(int i = 0; i < numberOfCards; i++)
