@@ -28,12 +28,7 @@ public class WildCardTest {
     @BeforeClass
     public static void setUpClass() 
     {
-        WildCardTest w = new WildCardTest(); 
-        Player ourPlayer = new Player();
-        w.players.add(ourPlayer);
-        ourPlayer = new Player();
-        w.players.add(ourPlayer);
-        System.out.println("Size: " + w.players.size() );
+       
     }
     
     @AfterClass
@@ -55,8 +50,13 @@ public class WildCardTest {
     public void testPrint()
     {
         System.out.println("Print");
-        WildCard instance = new WildCard(WildCard.cardWild.WILD);
-        instance.Print();    
+        for(WildCard.cardWild c : WildCard.cardWild.values())
+        {
+            WildCard instance = new WildCard(c);
+            instance.Print();
+            System.out.println("");
+        }
+       
     }
 
     /**
@@ -66,10 +66,25 @@ public class WildCardTest {
     public void testGetColor() 
     {
         System.out.println("GetColor");
-        WildCard instance = new WildCard(WildCard.cardWild.WILDDRFOUR);
-        Card.cardColor expResult = null;
-        Card.cardColor result = instance.GetColor();
-        assertEquals(expResult, result);
+        
+        for(WildCard.cardWild c : WildCard.cardWild.values())
+        {
+            WildCard instance = new WildCard(c);
+            Card.cardColor expResult = null;
+            Card.cardColor result = instance.GetColor();
+            assertEquals(expResult, result);
+            
+            
+            for(Card.cardColor cc : Card.cardColor.values())
+            {
+                ByteArrayInputStream in = new ByteArrayInputStream(cc.toString().getBytes());
+                System.setIn(in);
+                expResult = cc;
+                instance.Wild(new Scanner(System.in));
+                result = instance.GetColor();
+                assertEquals(expResult, result);
+            }
+        }
     }
 
     /**
@@ -79,10 +94,13 @@ public class WildCardTest {
     public void testGetWild()
     {
         System.out.println("GetWild");
-        WildCard instance = new WildCard(WildCard.cardWild.WILD);
-        WildCard.cardWild expResult = WildCard.cardWild.WILD;
-        WildCard.cardWild result = instance.GetWild();
-        assertEquals(expResult, result);
+        for(WildCard.cardWild c : WildCard.cardWild.values())
+        {
+            WildCard instance = new WildCard(c);
+            WildCard.cardWild expResult = c;
+            WildCard.cardWild result = instance.GetWild();
+            assertEquals(expResult, result);
+        }
      }
 
     /**
@@ -91,14 +109,16 @@ public class WildCardTest {
     @Test
     public void testWild()
     {
-        ByteArrayInputStream in = new ByteArrayInputStream("Green".getBytes());
-        System.setIn(in);
-        
         System.out.println("Wild");
-        WildCard instance = new WildCard(WildCard.cardWild.WILD);
-        Card.cardColor expResult = Card.cardColor.GREEN;
-        Card.cardColor result = instance.Wild(new Scanner(System.in));
-        assertEquals(expResult, result);
+        for(Card.cardColor c : Card.cardColor.values())
+        {
+            ByteArrayInputStream in = new ByteArrayInputStream(c.toString().getBytes());
+            System.setIn(in);
+            WildCard instance = new WildCard(WildCard.cardWild.WILD);
+            Card.cardColor expResult = c;
+            Card.cardColor result = instance.Wild(new Scanner(System.in));
+            assertEquals(expResult, result);
+        }
         
     }
 
@@ -108,18 +128,20 @@ public class WildCardTest {
     @Test
     public void testDrawFour() 
     {
-        setUpClass(); 
-        ByteArrayInputStream in = new ByteArrayInputStream("Red".getBytes());
-        System.setIn(in);
-        
         System.out.println("DrawFour");
         Player newPlayer = new Player(); 
         Deck copyDeck = new Deck();
         copyDeck.Shuffle();
-        WildCard instance = new WildCard(WildCard.cardWild.WILDDRFOUR);
-        Card.cardColor expResult = Card.cardColor.RED;
-        Card.cardColor result = instance.DrawFour(newPlayer, copyDeck, new Scanner(System.in));
-        assertEquals(expResult, result);
-        newPlayer.ShowHand();
+        
+        for(Card.cardColor c : Card.cardColor.values())
+        {
+            ByteArrayInputStream in = new ByteArrayInputStream(c.toString().getBytes());
+            System.setIn(in);
+            WildCard instance = new WildCard(WildCard.cardWild.WILDDRFOUR);
+            Card.cardColor expResult = c;
+            Card.cardColor result = instance.DrawFour(newPlayer, copyDeck, new Scanner(System.in));
+            assertEquals(expResult, result);
+        }
+        assertEquals(16, newPlayer.TotalCards());
     }
 }

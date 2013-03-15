@@ -27,5 +27,5 @@ UnoClone.java
     Behavior when dealing with another player
 
 WildActions.java
-
+    Draw four and wild need work. Hangs when it happens.
 WildCard.java
