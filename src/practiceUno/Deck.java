@@ -249,16 +249,16 @@ public class Deck
      * @param special
      * @param p
      */
-    public void SideEffect(SpecialCard special, Player p)
+    public void SideEffect(SpecialCard special, ArrayList<Player> players, int pos)
   {
       //TODO: cShould check for the Wild Side effect as well
       switch(special.GetSpecial())
       {
-          case SKIP: special.Skip(p.GetPlayerPos());
+          case SKIP: special.Skip(pos);
               break; 
-          case REVERSE: special.Reverse(p.GetPlayerPos());
+          case REVERSE: special.Reverse(pos, players);
               break;
-          case DRTWO: special.DrawTwo(p, this);
+          case DRTWO: special.DrawTwo(players, this, pos);
               break;
       }
   }

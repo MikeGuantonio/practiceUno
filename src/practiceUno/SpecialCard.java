@@ -47,9 +47,19 @@ public class SpecialCard extends Card implements SpecialActions
         return (currentPlayerIndex++);
     }
     
-    public int Reverse(int currentPlayerIndex)
+   @Override
+    public int Reverse(int currentPlayerIndex, ArrayList<Player> players)
     {
-        return (currentPlayerIndex -1); 
+        int index = 0; 
+        
+        if((currentPlayerIndex-1) < 0)
+            index  = (players.size()-1);
+        else if(currentPlayerIndex == (players.size()-1) )
+            index = 0;
+        else
+            index = (currentPlayerIndex -1); 
+        System.out.println("New index: " + index );
+        return index; 
     }
     
     public void DrawTwo(ArrayList<Player> players, Deck theDeck, int pos)

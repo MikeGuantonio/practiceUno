@@ -18,11 +18,15 @@ import static org.junit.Assert.*;
  */
 public class SpecialCardTest {
     
+    ArrayList<Player> players = new ArrayList<Player>(); 
+    
     public SpecialCardTest() {
     }
     
     @BeforeClass
-    public static void setUpClass() {
+    public static void setUpClass()
+    {
+       
     }
     
     @AfterClass
@@ -30,11 +34,21 @@ public class SpecialCardTest {
     }
     
     @Before
-    public void setUp() {
+    public void  setUp() 
+    {
+        
+        Player ourPlayer = new Player();
+        players.add(ourPlayer);
+        ourPlayer = new Player();
+        players.add(ourPlayer);
+        System.out.println("Size: " + players.size() );
+        
     }
     
     @After
-    public void tearDown() {
+    public void tearDown() 
+    {
+        players.clear();
     }
 
     /**
@@ -81,7 +95,7 @@ public class SpecialCardTest {
         System.out.println("Skip");
         int currentPlayerIndex = 0;
         SpecialCard instance = new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.RED);
-        int expResult = 1;
+        int expResult = 0;
         int result = instance.Skip(currentPlayerIndex);
         assertEquals(expResult, result);
         
@@ -91,13 +105,20 @@ public class SpecialCardTest {
      * Test of Reverse method, of class SpecialCard.
      */
     @Test
-    public void testReverse() {
+    public void testReverse() 
+    {
         System.out.println("Reverse");
+          
         int currentPlayerIndex = 0;
         SpecialCard instance = new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.YELLOW);
-        int expResult = 0;
-        int result = instance.Reverse(currentPlayerIndex);
+        
+        if(players == null)
+            System.out.println("This is null"); 
+        int expResult = players.size() -1;
+        int result = instance.Reverse(currentPlayerIndex, players);
+        tearDown(); 
         assertEquals(expResult, result);
+       
         
     }
 
@@ -105,14 +126,11 @@ public class SpecialCardTest {
      * Test of DrawTwo method, of class SpecialCard.
      */
     @Test
-    public void testDrawTwo() {
+    public void testDrawTwo() 
+    {
+        setUp(); 
         System.out.println("DrawTwo");
-        ArrayList<Player> players = new ArrayList<Player>();
-        
-        Player ourPlayer = new Player();
-        players.add(ourPlayer);
-        ourPlayer = new Player();
-        players.add(ourPlayer);
+         
         Deck theDeck = new Deck();
         
         for (int i = 0; i < 7; i++) 
@@ -139,5 +157,6 @@ public class SpecialCardTest {
         System.out.println("Player 2 Hand");
         players.get(1).ShowHand();
         System.out.println("");
+        tearDown(); 
     }
 }

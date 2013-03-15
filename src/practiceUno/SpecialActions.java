@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public interface SpecialActions {
     
     int Skip(int currentPlayerIndex); //Skips the player. player index plus 1
-    int Reverse(int currentPlayerIndex); //Decrement player index by 1
+    int Reverse(int currentPlayerIndex, ArrayList<Player> players); //Decrement player index by 1
     void DrawTwo(ArrayList<Player> p, Deck d, int pos); // Player plus 1 and draw two. 
    
 }
