@@ -159,6 +159,9 @@ public class Deck
     {
         boolean canPlace = true; 
         
+        WildCard wild = (WildCard)c;
+        wild.Wild();
+        
         return canPlace; 
     }
     

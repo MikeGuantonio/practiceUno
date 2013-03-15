@@ -9,6 +9,8 @@ TODO
     3. Add method to ask player what they want to do next
     4. Graphical Interface
     5. Networking Interface
+    6. Reliable method to remove a card from the hand or otherwise ask the
+       Player to choose again
     
 
 
