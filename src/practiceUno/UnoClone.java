@@ -33,13 +33,24 @@ public class UnoClone {
         
         
         System.out.println(players.get(0).GetName() + ". Welcome to UNO!" );
-        System.out.println("Print menu...");
-        players.get(1).ShowHand();
-        deck.ShowDiscard(); System.out.println("");
-        deck.AddDiscard(players.get(0).Discard(1), players.get(1)); 
-        deck.ShowDiscard(); System.out.println("");
-        
-        players.get(1).ShowHand();
+        while(true)
+        {
+            System.out.println("What would you like to do?");
+            int choice = 0; 
+            switch(choice)
+            {
+                case 1: players.get(0).ShowHand();
+                        break; 
+                case 2: deck.ShowDiscard();
+                        break; 
+                case 3: players.get(0).GetCard(deck.DrawNext());
+                        break; 
+                case 4: players.get(0).Discard(0); //Discard a card. Possible draw
+                        break; 
+                default: System.out.println("Cannot process!");
+            }
+             
+        }
     }
     
     public static void SetUpPlayers(ArrayList<Player> players, Deck deck)
@@ -71,4 +82,18 @@ public class UnoClone {
         output = input.nextLine();
         return output; 
     }
+    
+    public int Menu()
+    {
+        int choice; 
+        System.out.println("What would you like to do? ");
+        System.out.println("1. Show Hand");
+        System.out.println("2. Show Top of Deck");
+        System.out.println("3. Draw A Card");
+        System.out.println("4. Play A Card");
+        choice = input.nextInt();
+        return choice; 
+    }
 }
+
+
