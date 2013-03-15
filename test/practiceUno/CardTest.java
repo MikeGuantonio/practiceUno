@@ -53,6 +53,7 @@ public class CardTest {
     public void testGetColor() {
         System.out.println("GetColor");
         Card instance = new CardImpl(); 
+        
         Card.cardColor expResult = Card.cardColor.BLUE;
         Card.cardColor result = instance.GetColor();
         assertEquals("Checks to see if the color of the card matches", expResult, result);

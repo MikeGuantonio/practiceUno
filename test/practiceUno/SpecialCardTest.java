@@ -56,8 +56,15 @@ public class SpecialCardTest {
     @Test
     public void testPrint() {
         System.out.println("Print");
-        SpecialCard instance = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED);
-        instance.Print();
+        for(SpecialCard.cardValues v : SpecialCard.cardValues.values())
+        {
+            for(Card.cardColor c : Card.cardColor.values())
+            {
+                SpecialCard instance = new SpecialCard(v, c);
+                instance.Print();
+                System.out.println("");
+            }
+        }
         
     }
 
@@ -67,10 +74,17 @@ public class SpecialCardTest {
     @Test
     public void testGetColor() {
         System.out.println("GetColor");
-        SpecialCard instance = new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.BLUE);
-        Card.cardColor expResult = Card.cardColor.BLUE;
-        Card.cardColor result = instance.GetColor();
-        assertEquals(expResult, result);
+        for(SpecialCard.cardColor c : SpecialCard.cardColor.values())
+        {
+            for(SpecialCard.cardValues v: SpecialCard.cardValues.values())
+            {
+                SpecialCard instance = new SpecialCard(v, c);
+                Card.cardColor expResult = c;
+                Card.cardColor result = instance.GetColor();
+                assertEquals(expResult, result);
+            }
+        }
+        
     }
 
     /**
@@ -79,10 +93,16 @@ public class SpecialCardTest {
     @Test
     public void testGetSpecial() {
         System.out.println("GetSpecial");
-        SpecialCard instance = new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.RED);
-        SpecialCard.cardValues expResult = SpecialCard.cardValues.SKIP;
-        SpecialCard.cardValues result = instance.GetSpecial();
-        assertEquals(expResult, result);
+        for(SpecialCard.cardValues v : SpecialCard.cardValues.values())
+        {
+            for(SpecialCard.cardColor c : SpecialCard.cardColor.values())
+            {
+                SpecialCard instance = new SpecialCard(v, c);
+                SpecialCard.cardValues expResult = v;
+                SpecialCard.cardValues result = instance.GetSpecial();
+                assertEquals(expResult, result);
+            }
+        }
     }
 
     /**
