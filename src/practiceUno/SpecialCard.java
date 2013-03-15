@@ -70,12 +70,12 @@ public class SpecialCard extends Card implements SpecialActions
         return index; 
     }
     
-    public void DrawTwo(ArrayList<Player> players, Deck theDeck, int pos)
+    public void DrawTwo(Player affectedPlayer, Deck theDeck)
     {
          //Need a way to handle matching colors as well. 
          for (int i = 0; i < 2; i++) 
          {
-            players.get(pos +1).GetCard(theDeck.DrawNext());   
+            affectedPlayer.GetCard(theDeck.DrawNext());   
          }
     }
 }

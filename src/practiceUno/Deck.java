@@ -265,7 +265,7 @@ public class Deck
               break; 
           case REVERSE: special.Reverse(pos, players);
               break;
-          case DRTWO: special.DrawTwo(players, this, pos);
+          case DRTWO: special.DrawTwo(players.get(pos + 1 ), this);
               break;
       }
   }

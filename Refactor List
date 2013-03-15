@@ -8,6 +8,8 @@ A list of all of the things that I want to fix.
 
 Overall: Make the names more meaningful within the code
          Create JavaDoc
+         Currently an unsafe API as the person using it can do a draw two on a reverse and
+             other problems
 
 Card.java
 

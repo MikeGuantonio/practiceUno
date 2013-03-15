@@ -144,11 +144,12 @@ public class SpecialCardTest {
         System.out.println("DrawTwo");
          
         Deck theDeck = new Deck();
+        Player affectedPlayer = new Player(); 
         
         for(SpecialCard.cardColor c : SpecialCard.cardColor.values())
         {
             SpecialCard instance = new SpecialCard(SpecialCard.cardValues.DRTWO, c);
-            instance.DrawTwo(players, theDeck, 0);
+            instance.DrawTwo(affectedPlayer, theDeck);
         }
         
        
