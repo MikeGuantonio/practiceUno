@@ -203,7 +203,6 @@ public class Deck
      */
     public void ShowDiscard()
     {
-        System.out.print("Top Card: ");
         discardDeck.peek().Print();
         System.out.println("");
     }

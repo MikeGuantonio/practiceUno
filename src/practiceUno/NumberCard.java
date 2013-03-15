@@ -38,6 +38,6 @@ public class NumberCard extends Card {
     @Override
     public void Print()
     {
-        System.out.print(face + " " + color);
+        System.out.print(" " + face + " " + color);
     }
 }

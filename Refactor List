@@ -14,6 +14,7 @@ Player.java
 SpecialActions.java
 
 SpecialCard.java
+    Find a way to change the problems with not completing a turn
 
 UnoClone.java
     Allow user to choose how many players there are

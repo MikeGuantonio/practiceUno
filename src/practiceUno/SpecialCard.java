@@ -29,7 +29,7 @@ public class SpecialCard extends Card implements SpecialActions
     @Override
    public void Print()
    {
-       System.out.print(sp + " " + color);
+       System.out.print(" " + sp + " " + color);
    }
     
     public Card.cardColor GetColor()

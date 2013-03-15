@@ -25,7 +25,8 @@ public class UnoClone {
     public static void main(String[] args)
     { 
         int maxPlayers = 2; //Only a testing variable
-     
+        boolean endTurn = false; 
+        
         //Initalize local player variables. 
         UnoClone uno = new UnoClone(); 
         ArrayList<Player> players = new ArrayList<Player>(); 
@@ -44,18 +45,23 @@ public class UnoClone {
         {
             for (int i = 0; i < maxPlayers; i++)
             {
-                uno.PlayerTurn(players.get(i), deck);
+                while(!endTurn)
+                {
+                    endTurn = uno.PlayerTurn(players.get(i), deck);
+                }
             }
              
         }
     }
     
     
-    public void PlayerTurn(Player p, Deck d)
+    public boolean PlayerTurn(Player p, Deck d)
     {
         int choice; 
-        choice = Menu(d);
-            
+        boolean turnStatus = false; 
+        
+        choice = Menu(p, d);
+        
             switch(choice)
             {
                 case 1: p.ShowHand();
@@ -63,14 +69,15 @@ public class UnoClone {
                 case 2: d.ShowDiscard();
                         break; 
                 case 3: DrawAndPlay(p, d);
+                        turnStatus = true; 
                         break; 
                 case 4: Play(p, d);
-                        break; 
-                case 5:  
-                        break; 
+                        turnStatus = true; 
+                        break;  
                 default: System.out.println("Cannot process!");
                         break; 
             }
+            return turnStatus; 
     }
     /**
      *
@@ -112,12 +119,12 @@ public class UnoClone {
      * @param d
      * @return
      */
-    public int Menu(Deck d)
+    public int Menu(Player p, Deck d)
     {
         int choice; 
         System.out.print("Card on top of the deck is"); 
         d.ShowDiscard();
-        System.out.println("What would you like to do? ");
+        System.out.println(p.GetName() + ", what would you like to do? ");
         System.out.println("1. Show Hand");
         System.out.println("2. Show Top of Deck");
         System.out.println("3. Draw A Card");
@@ -136,7 +143,7 @@ public class UnoClone {
     {
         System.out.println("Which card would you like to play?");
         System.out.println("Remember index starts at 0");
-        System.out.print("The card on the top of the deck is ");
+        System.out.print("The card on the top of the deck is  ");
         d.ShowDiscard();
         p.ShowHand();
         d.AddDiscard(p.Discard(input.nextInt()), p); 

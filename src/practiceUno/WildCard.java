@@ -30,7 +30,7 @@ public class WildCard extends Card implements WildActions
      */
     public void Print()
     {
-        System.out.print(wild);
+        System.out.print(" " + wild);
     }
     
     /**
