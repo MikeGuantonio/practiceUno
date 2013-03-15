@@ -198,6 +198,9 @@ public class Deck
         return size; 
     }
     
+    /**
+     *
+     */
     public void ShowDiscard()
     {
         System.out.print("Top Card: ");
@@ -205,6 +208,9 @@ public class Deck
         System.out.println("");
     }
     
+    /**
+     *
+     */
     public void SetUpDiscard()
     {
         discardDeck.add(DrawNext());
@@ -239,7 +245,12 @@ public class Deck
    }
    
     
-  public void SideEffect(SpecialCard special, Player p)
+    /**
+     *
+     * @param special
+     * @param p
+     */
+    public void SideEffect(SpecialCard special, Player p)
   {
       //TODO: cShould check for the Wild Side effect as well
       switch(special.GetSpecial())

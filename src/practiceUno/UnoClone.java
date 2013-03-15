@@ -18,6 +18,10 @@ public class UnoClone {
      */
     Scanner input= new Scanner(System.in); 
     
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args)
     { 
         //Initalize local player variables. 
@@ -36,7 +40,7 @@ public class UnoClone {
         System.out.println(players.get(0).GetName() + ". Welcome to UNO!" );
         while(true)
         {
-            choice = uno.Menu();
+            choice = uno.Menu(deck);
             
             switch(choice)
             {
@@ -56,6 +60,11 @@ public class UnoClone {
         }
     }
     
+    /**
+     *
+     * @param players
+     * @param deck
+     */
     public static void SetUpPlayers(ArrayList<Player> players, Deck deck)
     {
        for (int i = 0; i < 10; i++) 
@@ -68,27 +77,34 @@ public class UnoClone {
         {
             for (int j = 0; j < 10; j++)
             {
-                /*if(j == 0 )
-                {
-                    players.get(j).GetCard((Card)new WildCard(WildCard.cardWild.WILDDRFOUR));
-                }
-                else*/
-                    players.get(j).GetCard(deck.DrawNext());
+                players.get(j).GetCard(deck.DrawNext());
             }
         }
     }
     
+    /**
+     *
+     * @param prompt
+     * @return
+     */
     public String GetInput(String prompt)
     {
         String output;
-        System.out.print(prompt + ">");
+        System.out.print(prompt + "> ");
         output = input.nextLine();
         return output; 
     }
     
-    public int Menu()
+    /**
+     *
+     * @param d
+     * @return
+     */
+    public int Menu(Deck d)
     {
         int choice; 
+        System.out.print("Card on top of the deck is"); 
+        d.ShowDiscard();
         System.out.println("What would you like to do? ");
         System.out.println("1. Show Hand");
         System.out.println("2. Show Top of Deck");
@@ -99,14 +115,26 @@ public class UnoClone {
         return choice; 
     }
     
+    /**
+     *
+     * @param p
+     * @param d
+     */
     public void Play(Player p, Deck d)
     {
         System.out.println("Which card would you like to play?");
         System.out.println("Remember index starts at 0");
+        System.out.print("The card on the top of the deck is ");
+        d.ShowDiscard();
         p.ShowHand();
         d.AddDiscard(p.Discard(input.nextInt()), p); 
     }
     
+    /**
+     *
+     * @param p
+     * @param d
+     */
     public void DrawAndPlay(Player p, Deck d)
     {
         int choice; 
@@ -129,6 +157,11 @@ public class UnoClone {
         
     }
     
+    /**
+     *
+     * @param p
+     * @param d
+     */
     public void Skip(Player p, Deck d)
     {
         System.out.println("Turn has ended");

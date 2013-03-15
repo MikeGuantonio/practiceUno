@@ -16,26 +16,45 @@ public class WildCard extends Card implements WildActions
     
     private static  Scanner scan = new Scanner(System.in);
     
+    /**
+     *
+     * @param w
+     */
     public WildCard(cardWild w)
     {
         wild = w; 
     }
     
+    /**
+     *
+     */
     public void Print()
     {
         System.out.print(wild);
     }
     
+    /**
+     *
+     * @return
+     */
     public Card.cardColor GetColor()
     {
         return color; 
     }
     
+    /**
+     *
+     * @return
+     */
     public cardWild GetWild()
     {
         return wild;
     }
     
+    /**
+     *
+     * @return
+     */
     public Card.cardColor Wild()
     {
         System.out.println("Please choose a color!");
@@ -48,6 +67,12 @@ public class WildCard extends Card implements WildActions
         return wildColor; 
     } 
     
+    /**
+     *
+     * @param newPlayer
+     * @param copyDeck
+     * @return
+     */
     public Card.cardColor DrawFour(Player newPlayer, Deck copyDeck)
     {
         Card.cardColor newColor; 

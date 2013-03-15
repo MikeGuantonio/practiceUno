@@ -7,11 +7,11 @@ Rules: http://www.noprivilege.com/ab/uno-howto.html
 TODO
     1. Add behavior to Wild Cards X
     2. Add behavior to Special Cards X
-    3. Add method to ask player what they want to do next
+    3. Add method to ask player what they want to do next X
     4. Graphical Interface
     5. Networking Interface
     6. Reliable method to remove a card from the hand or otherwise ask the
-       Player to choose again
+       Player to choose again X
     7. Add ability to store color of the wild card. X
     8. Checking color of the wild card on the discard pile
     9. Setting up the current player to use in main game.
