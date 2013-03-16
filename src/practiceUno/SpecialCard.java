@@ -72,10 +72,7 @@ public class SpecialCard extends Card implements SpecialActions
     
     public void DrawTwo(Player affectedPlayer, Deck theDeck)
     {
-         //Need a way to handle matching colors as well. 
          for (int i = 0; i < 2; i++) 
-         {
             affectedPlayer.GetCard(theDeck.DrawNext());   
-         }
     }
 }

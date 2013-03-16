@@ -109,7 +109,7 @@ public class SpecialCardTest {
         System.out.println("Skip");
         int currentPlayerIndex = players.size()-1;
         SpecialCard instance = new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.RED);
-        int expResult = 1;
+        int expResult = 2;
         int result = instance.Skip(currentPlayerIndex, players);
         assertEquals(expResult, result);
         
@@ -142,15 +142,22 @@ public class SpecialCardTest {
     {
 
         System.out.println("DrawTwo");
-         
+        int handSize = 0; 
+        int expected = 2; 
+        
         Deck theDeck = new Deck();
         Player affectedPlayer = new Player(); 
+        
         
         for(SpecialCard.cardColor c : SpecialCard.cardColor.values())
         {
             SpecialCard instance = new SpecialCard(SpecialCard.cardValues.DRTWO, c);
             instance.DrawTwo(affectedPlayer, theDeck);
+            handSize = affectedPlayer.TotalCards();
+            assertEquals(expected, handSize);
+            expected += 2; 
         }
+        
         
        
         
