@@ -47,6 +47,7 @@ public class PlayerTest {
         for (int i = 0; i < 7; i++) 
             instance.GetCard(d.DrawNext());
         instance.ShowHand();
+        assertEquals(7, instance.TotalCards());
         
     }
 
@@ -59,7 +60,7 @@ public class PlayerTest {
         Card c = new WildCard(WildCard.cardWild.WILD);
         Player instance = new Player();
         instance.GetCard(c);
-        instance.ShowHand();
+        assertEquals(1, instance.TotalCards());
     }
 
     /**
@@ -75,7 +76,6 @@ public class PlayerTest {
         instance.GetCard(expResult);
         Card result = instance.Discard(dex);
         assertEquals(expResult, result);
-        
     }
 
     /**

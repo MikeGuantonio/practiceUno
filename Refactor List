@@ -27,6 +27,7 @@ SpecialCard.java
     Find a way to change the problems with not completing a turn
     Will only need one player. There is no need to pass in an entier grouping
     of players
+    Check for players at 2, 5, and 10
 
 UnoClone.java
     Allow user to choose how many players there are X

@@ -152,13 +152,15 @@ public class SpecialCardTest {
     }
     /**
      * Test of Reverse method, of class SpecialCard.
+     * Need to test upperbound players and lower bound players for completeness.
+     * 2 and 10 with 5 thrown in for good measure. 
      */
     @Test
     public void testReverse() 
     {
         System.out.println("Reverse");
           
-        int maxPlayers = 4; 
+        int maxPlayers = 10; 
         SpecialCard instance = new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.YELLOW);
         for(int playerIndex = 0; playerIndex < maxPlayers-1; playerIndex++)
         {

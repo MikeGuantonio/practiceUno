@@ -9,7 +9,6 @@ import java.util.*;
 public class Player
 {
     private ArrayList<Card> hand = new ArrayList<Card>(); 
-    private int isDealer; 
     private String name; 
     private int playerPos; 
     /**
