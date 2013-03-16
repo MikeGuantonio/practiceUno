@@ -58,17 +58,18 @@ public class SpecialCard extends Card implements SpecialActions
     }
     
    @Override
-    public int Reverse(int currentPlayerIndex, ArrayList<Player> players)
+    public int Reverse(int currentPlayerIndex, int playerSize)
     {
         int index = 0;  
-        int direction = -1; 
-        if(currentPlayerIndex >= (players.size()+ direction)) //Last player to first
-            index = direction; 
-        else if(currentPlayerIndex == 0) //first player to last
-            index = players.size() + direction ; 
+        int actualPlayers = playerSize -1; 
+        
+        if(currentPlayerIndex == 0) 
+            index = actualPlayers;
+        else if(currentPlayerIndex == actualPlayers)
+            index = 0;
         else
-            index = currentPlayerIndex + direction;
-        return index; 
+            index = currentPlayerIndex-1;
+        return index;  
     }
     
     public void DrawTwo(Player affectedPlayer, Deck theDeck)

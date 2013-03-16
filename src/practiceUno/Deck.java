@@ -263,7 +263,7 @@ public class Deck
       {
           case SKIP: special.Skip(pos, players.size());
               break; 
-          case REVERSE: special.Reverse(pos, players);
+          case REVERSE: special.Reverse(pos, players.size());
               break;
           case DRTWO: special.DrawTwo(players.get(pos + 1 ), this);
               break;

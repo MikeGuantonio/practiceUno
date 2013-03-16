@@ -122,11 +122,11 @@ public class SpecialCardTest {
         int maxPlayerSize = 5; //Assume that there are 5 max players.
         int expResult = 0; 
         
-        /*for(Card.cardColor c : Card.cardColor.values())
-        {*/
+        for(Card.cardColor c : Card.cardColor.values())
+        {
             for (int playerIndex = 0; playerIndex < maxPlayerSize-1; playerIndex++)
             {    
-                SpecialCard instance = new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.BLUE);
+                SpecialCard instance = new SpecialCard(SpecialCard.cardValues.SKIP, c);
                 expResult = Wrap(maxPlayerSize-1, playerIndex+2);
                 
                 int result = instance.Skip(playerIndex, maxPlayerSize);
@@ -136,10 +136,20 @@ public class SpecialCardTest {
                 assertEquals(expResult, result);
                 
             }
-        //}
+        }
    
     }
 
+     private int RevWrap(int maxSize, int newNum) //New num is the next player after math applied
+    {
+        int index = 0;  
+        
+        if(newNum < 0) 
+            index = maxSize;
+        else
+            index = newNum;
+        return index; 
+    }
     /**
      * Test of Reverse method, of class SpecialCard.
      */
@@ -148,15 +158,16 @@ public class SpecialCardTest {
     {
         System.out.println("Reverse");
           
-        int currentPlayerIndex = 0;
+        int maxPlayers = 4; 
         SpecialCard instance = new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.YELLOW);
-        
-        int expResult = players.size() -1;
-        int result = instance.Reverse(currentPlayerIndex, players);
-        tearDown(); 
-        assertEquals(expResult, result);
-       
-        
+        for(int playerIndex = 0; playerIndex < maxPlayers-1; playerIndex++)
+        {
+            int expResult = RevWrap(maxPlayers-1, playerIndex-1);
+            int result = instance.Reverse(playerIndex, maxPlayers);
+            System.out.println("Current Player: " + playerIndex);
+            System.out.println("Next Player: " + result);
+            assertEquals(expResult, result);
+        }
     }
 
     /**
