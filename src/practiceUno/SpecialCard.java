@@ -45,10 +45,13 @@ public class SpecialCard extends Card implements SpecialActions
    @Override
     public int Skip(int currentPlayerIndex, int playerSize)
     {
-        //Need to think about edge case when you move one more past the size
         int index = 0;  
-        if(currentPlayerIndex >= (playerSize -1)) //Last player to first
-            index = 2; 
+        int actualPlayers = playerSize -1; 
+        
+        if(currentPlayerIndex == actualPlayers-2) 
+            index = 0;
+        else if(currentPlayerIndex == actualPlayers-1)
+            index = 1;
         else
             index = currentPlayerIndex + 2;
         return index; 

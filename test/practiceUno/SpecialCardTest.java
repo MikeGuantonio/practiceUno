@@ -100,6 +100,18 @@ public class SpecialCardTest {
         }
     }
 
+    private int Wrap(int maxSize, int newNum)
+    {
+        int index = 0;  
+        if(newNum-2 == (maxSize-2)) 
+            index = 0;
+        else if(newNum-2 == (maxSize -1))
+            index = 1;
+        else
+            index = newNum;
+        return index; 
+    }
+    
     /**
      * Test of Skip method, of class SpecialCard.
      */
@@ -108,21 +120,24 @@ public class SpecialCardTest {
     {
         System.out.println("Skip");
         int maxPlayerSize = 5; //Assume that there are 5 max players.
+        int expResult = 0; 
         
         /*for(Card.cardColor c : Card.cardColor.values())
         {*/
             for (int playerIndex = 0; playerIndex < maxPlayerSize-1; playerIndex++)
             {    
                 SpecialCard instance = new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.BLUE);
-                int expResult = playerIndex + 2 ;
+                expResult = Wrap(maxPlayerSize-1, playerIndex+2);
+                
                 int result = instance.Skip(playerIndex, maxPlayerSize);
-                assertEquals(expResult, result);
+                
                 System.out.println("Current Player: " + playerIndex);
-                System.out.println("Result: " + result);
+                System.out.println("Next Player: " + result);
+                assertEquals(expResult, result);
+                
             }
         //}
-        
-        
+   
     }
 
     /**
