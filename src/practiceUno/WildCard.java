@@ -59,10 +59,19 @@ public class WildCard extends Card implements WildActions
     {
         System.out.println("Please choose a color!");
         System.out.println("Red, Green, Yellow, Blue");
+        Card.cardColor wildColor = null; 
         
         String input = scan.nextLine(); 
-        Card.cardColor wildColor = Card.cardColor.valueOf(input.toUpperCase());
-        
+        try
+        {
+             wildColor = Card.cardColor.valueOf(input.toUpperCase());
+        }
+        catch(Exception ex)
+        {
+            //Find a way to ask this again.
+            System.out.println("Incompatible color");
+        }
+       
         color = wildColor; 
         return wildColor; 
     } 

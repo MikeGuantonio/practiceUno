@@ -107,11 +107,21 @@ public class SpecialCardTest {
     public void testSkip() 
     {
         System.out.println("Skip");
-        int currentPlayerIndex = players.size()-1;
-        SpecialCard instance = new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.RED);
-        int expResult = 2;
-        int result = instance.Skip(currentPlayerIndex, players);
-        assertEquals(expResult, result);
+        int maxPlayerSize = 5; //Assume that there are 5 max players.
+        
+        /*for(Card.cardColor c : Card.cardColor.values())
+        {*/
+            for (int playerIndex = 0; playerIndex < maxPlayerSize-1; playerIndex++)
+            {    
+                SpecialCard instance = new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.BLUE);
+                int expResult = playerIndex + 2 ;
+                int result = instance.Skip(playerIndex, maxPlayerSize);
+                assertEquals(expResult, result);
+                System.out.println("Current Player: " + playerIndex);
+                System.out.println("Result: " + result);
+            }
+        //}
+        
         
     }
 
@@ -157,9 +167,9 @@ public class SpecialCardTest {
             assertEquals(expected, handSize);
             expected += 2; 
         }
-        
-        
-       
+
         
     }
+    
+    
 }

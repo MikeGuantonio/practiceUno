@@ -261,7 +261,7 @@ public class Deck
       //TODO: cShould check for the Wild Side effect as well
       switch(special.GetSpecial())
       {
-          case SKIP: special.Skip(pos, players);
+          case SKIP: special.Skip(pos, players.size());
               break; 
           case REVERSE: special.Reverse(pos, players);
               break;

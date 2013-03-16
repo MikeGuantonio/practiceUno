@@ -119,6 +119,12 @@ public class WildCardTest {
             Card.cardColor result = instance.Wild(new Scanner(System.in));
             assertEquals(expResult, result);
         }
+        ByteArrayInputStream in = new ByteArrayInputStream("Purple".getBytes());
+        System.setIn(in);
+        WildCard instance = new WildCard(WildCard.cardWild.WILD);
+        Card.cardColor expResult = null; 
+        Card.cardColor result = instance.Wild(new Scanner(System.in));
+        assertEquals(expResult, result);
         
     }
 
