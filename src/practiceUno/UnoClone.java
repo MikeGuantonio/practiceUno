@@ -24,7 +24,6 @@ public class UnoClone {
      */
     public static void main(String[] args)
     { 
-        int maxPlayers = 2; //Only a testing variable
         boolean endTurn = false; 
         
         //Initalize local player variables. 
@@ -38,12 +37,11 @@ public class UnoClone {
         SetUpPlayers(players, deck, Integer.parseInt(uno.GetInput("How many people are playing?") ));
         deck.SetUpDiscard();
         players.get(0).SetName(uno.GetInput("What is your name"));
-        players.get(1).SetName(uno.GetInput("What is your name player 2"));
         
         System.out.println(players.get(0).GetName() + ". Welcome to UNO!" );
         while(true)
         {
-            for (int i = 0; i < maxPlayers; i++)
+            for (int i = 0; i < players.size(); i++)
             {
                 while(!endTurn)
                 {
@@ -96,6 +94,8 @@ public class UnoClone {
        {
            players.add(new Player());
            players.get(i).SetPlayerPos(i);
+           if(i != 0)
+               players.get(i).SetName("Com"+i);
        }
 
         for (int i = 0; i < 7; i++)
@@ -152,7 +152,15 @@ public class UnoClone {
         System.out.print("The card on the top of the deck is  ");
         d.ShowDiscard();
         p.ShowHand();
-        d.AddDiscard(p.Discard(input.nextInt()), p); 
+        try
+        {
+            d.AddDiscard(p.Discard(input.nextInt()), p);
+        }
+        catch(Exception ex)
+        {
+            ex.fillInStackTrace();
+            System.out.println("This discard card is no good. Try again.");
+        }
     }
     
     /**

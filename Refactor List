@@ -33,7 +33,8 @@ UnoClone.java
     Allow user to choose how many players there are X
     Add a second player (human) X
     Behavior when dealing with another player
-    Factor out a method that checks the wrap around for the player circle. 
+    Factor out a method that checks the wrap around for the player circle.
+    Handle errors more gracefully
 
 WildActions.java
     Draw four and wild need work. Hangs when it happens.

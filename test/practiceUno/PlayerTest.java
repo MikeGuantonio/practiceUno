@@ -67,13 +67,26 @@ public class PlayerTest {
      * Test of Discard method, of class Player.
      */
     @Test
-    public void testDiscard() {
+    public void testDiscardValid() {
         System.out.println("Discard");
         int dex = 0;
         Player instance = new Player();
         Deck d = new Deck(); 
         Card expResult = d.DrawNext();
         instance.GetCard(expResult);
+        Card result = instance.Discard(dex);
+        assertEquals(expResult, result);
+    }
+    
+    /**
+     * Test of Invalid Discard, of class Player. 
+     */
+    @Test
+    public void testDiscardInvalid(){
+        System.out.println("Discard -- invalid");
+        int dex = 0; 
+        Player instance = new Player(); 
+        Card expResult = null; 
         Card result = instance.Discard(dex);
         assertEquals(expResult, result);
     }
