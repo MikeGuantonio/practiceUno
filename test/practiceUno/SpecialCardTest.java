@@ -146,8 +146,10 @@ public class SpecialCardTest {
         
         if(newNum < 0) 
             index = maxSize;
-        else
+        else if(newNum > maxSize)
             index = newNum;
+        else
+            index -= 1;
         return index; 
     }
     /**
@@ -160,12 +162,12 @@ public class SpecialCardTest {
     {
         System.out.println("Reverse");
           
-        int maxPlayers = 10; 
+        int maxPlayers = 3; 
         SpecialCard instance = new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.YELLOW);
         for(int playerIndex = 0; playerIndex < maxPlayers-1; playerIndex++)
         {
             int expResult = RevWrap(maxPlayers-1, playerIndex-1);
-            int result = instance.Reverse(playerIndex, maxPlayers);
+            int result = instance.Reverse(playerIndex-1, maxPlayers);
             System.out.println("Current Player: " + playerIndex);
             System.out.println("Next Player: " + result);
             assertEquals(expResult, result);
@@ -183,6 +185,7 @@ public class SpecialCardTest {
         int handSize = 0; 
         int expected = 2; 
         
+        ArrayList<Player> p = new ArrayList<Player>();  
         Deck theDeck = new Deck();
         Player affectedPlayer = new Player(); 
         
@@ -190,7 +193,7 @@ public class SpecialCardTest {
         for(SpecialCard.cardColor c : SpecialCard.cardColor.values())
         {
             SpecialCard instance = new SpecialCard(SpecialCard.cardValues.DRTWO, c);
-            instance.DrawTwo(affectedPlayer, theDeck);
+            instance.DrawTwo(p, theDeck, affectedPlayer.GetPlayerPos(), p.size());
             handSize = affectedPlayer.TotalCards();
             assertEquals(expected, handSize);
             expected += 2; 

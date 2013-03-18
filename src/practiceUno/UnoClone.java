@@ -32,14 +32,13 @@ public class UnoClone {
         ArrayList<Player> players = new ArrayList<Player>(); 
         Deck deck = new Deck(); 
         
-       
         //Set up the playing field
         deck.Shuffle();
-        SetUpPlayers(players, deck, Integer.parseInt(uno.GetInput("How many people are playing?") ));
+        SetUpPlayers(players, deck, Integer.parseInt(uno.GetInput("How many people are playing?") ));//Ask for robots.
         deck.SetUpDiscard(uno.input);
         
+        //Start with player 0. Need logic to choose best out of all players.
         players.get(0).SetName(uno.GetInput("What is your name"));
-        
         System.out.println(players.get(0).GetName() + ". Welcome to UNO!" );
         int pos = 0; 
         
@@ -50,6 +49,7 @@ public class UnoClone {
                 while(!endTurn)
                 {
                     endTurn = uno.PlayerTurn(players, deck, pos);
+                    pos = uno.Wrap((pos+1), players.size());
                 }
                 endTurn = false;
             }
@@ -57,6 +57,16 @@ public class UnoClone {
         }
     }
     
+    public int Wrap(int pos, int maxSize)
+    {
+        System.out.println("New position: " + pos);
+        System.out.println("Max Size: " + maxSize);
+        if(pos > maxSize-1)
+            pos = 0; 
+        else if(pos < 0)
+            pos = maxSize; 
+        return pos; 
+    }
     
     public boolean PlayerTurn(ArrayList<Player> p, Deck d, int playerPos)
     {
@@ -98,7 +108,10 @@ public class UnoClone {
             if(c != null)
             {
                 if(d.AddDiscard(c, p.get(currentPlayer), input))
+                {
                     done = true;
+                    d.SideEffect(c, p, currentPlayer);
+                }
                 else
                     p.get(currentPlayer).GetCard(c);
             }

@@ -61,21 +61,35 @@ public class SpecialCard extends Card implements SpecialActions
     public int Reverse(int currentPlayerIndex, int playerSize)
     {
         int index = 0;  
-        int actualPlayers = playerSize -1; 
+        int actualPlayers = playerSize-1; 
         
-        if(currentPlayerIndex == 0) 
+        System.out.println("CurrentPlayer index: " + currentPlayerIndex );
+        
+        if(currentPlayerIndex < 0){
+            System.out.println("In 0");
             index = actualPlayers;
-        else if(currentPlayerIndex == actualPlayers)
+        }
+        else if(currentPlayerIndex > actualPlayers)
+        {
             index = 0;
+            System.out.println("Index was actual players");
+        }
         else
             index = currentPlayerIndex-1;
         return index;  
     }
     
-    public void DrawTwo(Player affectedPlayer, Deck theDeck)
+   //Update with other code.
+    public void DrawTwo(ArrayList<Player> p, Deck theDeck, int currPos, int maxSize)
     {
+        int newPos = currPos +1;
+        if(newPos > maxSize)
+            newPos = 0; 
+        else if(newPos < 0)
+            newPos = maxSize; 
+               
          for (int i = 0; i < 2; i++) 
-            affectedPlayer.GetCard(theDeck.DrawNext());   
+            p.get(newPos).GetCard(theDeck.DrawNext());   
     }
     
     

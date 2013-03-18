@@ -309,16 +309,20 @@ public class Deck
      * @param special
      * @param p
      */
-    public void SideEffect(SpecialCard special, ArrayList<Player> players, int pos)
+    public void SideEffect(Card c, ArrayList<Player> players, int pos)
   {
-      switch(special.GetSpecial())
+      if(c.getClass().equals(SpecialCard.class))
       {
+        SpecialCard special = (SpecialCard)c; 
+        switch(special.GetSpecial())
+        {
           case SKIP: special.Skip(pos, players.size());
               break; 
           case REVERSE: special.Reverse(pos, players.size());
               break;
-          case DRTWO: special.DrawTwo(players.get(pos + 1 ), this);
+          case DRTWO: special.DrawTwo(players, this, pos, players.size());
               break;
+        }
       }
   }
    
