@@ -68,11 +68,12 @@ public class UnoCloneTest {
      */
     @Test
     public void testSetUpPlayers() {
+        int maxPlayers = 5;   
         System.out.println("SetUpPlayers");
-        ArrayList<Player> players = null;
+        ArrayList<Player> players = new ArrayList<Player>();
         Deck deck = new Deck();
-        UnoClone.SetUpPlayers(players, deck, 3);
-        
+        UnoClone.SetUpPlayers(players, deck, maxPlayers);
+        assertEquals(players.size(), maxPlayers); 
     }
 
     /**

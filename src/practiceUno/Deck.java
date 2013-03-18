@@ -91,7 +91,7 @@ public class Deck
      *
      * @param c
      */
-    public void AddDiscard(Card c, Player play)
+    public boolean AddDiscard(Card c, Player play)
     {
        boolean canPlace = false; 
        Card discard = discardDeck.peek();
@@ -114,6 +114,7 @@ public class Deck
        }
        if(canPlace)
         discardDeck.push(c);
+       return canPlace; 
 
     }
     
@@ -122,22 +123,18 @@ public class Deck
         boolean canPlace = false; 
         if(discard.getClass().equals(NumberCard.class))
         {
-               NumberCard pushNum = (NumberCard) c; 
-               NumberCard topCard = (NumberCard) discard; 
+            NumberCard pushNum = (NumberCard) c; 
+            NumberCard topCard = (NumberCard) discard; 
                
-                System.out.println("On Top: "  + topCard.GetColor() + " " + topCard.GetNumber());
             if(pushNum.GetColor().equals(topCard.GetColor()) )
             {
-                System.out.println("Match on color");
                 canPlace = true;
             }
             else if(pushNum.GetNumber() == topCard.GetNumber())
             {
-                System.out.println("Match in number");
                 canPlace = true; 
             }
          }
-         System.out.println("Number Card Played");
          return canPlace; 
     }
     

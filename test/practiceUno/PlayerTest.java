@@ -44,10 +44,13 @@ public class PlayerTest {
         System.out.println("ShowHand");
         Deck d = new Deck(); 
         Player instance = new Player();
-        for (int i = 0; i < 7; i++) 
-            instance.GetCard(d.DrawNext());
-        instance.ShowHand();
-        assertEquals(7, instance.TotalCards());
+        for (int i = 0; i < 8; i++) 
+        {
+            if(i != 0 )
+                instance.GetCard(d.DrawNext());
+            instance.ShowHand();
+            assertEquals(i, instance.TotalCards());
+        }
         
     }
 

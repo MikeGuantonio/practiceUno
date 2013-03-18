@@ -39,6 +39,8 @@ public class UnoClone {
         players.get(0).SetName(uno.GetInput("What is your name"));
         
         System.out.println(players.get(0).GetName() + ". Welcome to UNO!" );
+        int turnCnt = 0; 
+        
         while(true)
         {
             for (int i = 0; i < players.size(); i++)
@@ -46,6 +48,8 @@ public class UnoClone {
                 while(!endTurn)
                 {
                     endTurn = uno.PlayerTurn(players.get(i), deck);
+                    turnCnt++;
+                    System.out.println(turnCnt);
                 }
             }
              
@@ -71,7 +75,11 @@ public class UnoClone {
                         break; 
                 case 4: Play(p, d);
                         turnStatus = true; 
+                        System.out.println("Turn over");
                         break;  
+                case 5: Skip(p, d);
+                        turnStatus = true;
+                        break; 
                 default: System.out.println("Cannot process!");
                         break; 
             }
@@ -147,20 +155,29 @@ public class UnoClone {
      */
     public void Play(Player p, Deck d)
     {
-        System.out.println("Which card would you like to play?");
-        System.out.println("Remember index starts at 0");
-        System.out.print("The card on the top of the deck is  ");
-        d.ShowDiscard();
-        p.ShowHand();
-        try
+        boolean done = false; 
+        
+        do
         {
-            d.AddDiscard(p.Discard(input.nextInt()), p);
-        }
-        catch(Exception ex)
-        {
-            ex.fillInStackTrace();
-            System.out.println("This discard card is no good. Try again.");
-        }
+            System.out.println("Which card would you like to play?");
+            System.out.println("Remember index starts at 0");
+            System.out.print("The card on the top of the deck is  ");
+            d.ShowDiscard();
+            p.ShowHand();
+        
+            Card c = p.Discard(input.nextInt());
+            if(c != null)
+            {
+                if(d.AddDiscard(c, p))
+                    done = true;
+                else
+                    p.GetCard(c);
+            }
+            else
+                System.out.println("That doesn't seem to be a card.");
+        }while(!done);
+        
+         
     }
     
     /**
@@ -195,9 +212,10 @@ public class UnoClone {
      * @param p
      * @param d
      */
-    public void Skip(Player p, Deck d)
-    {
+    public boolean Skip(Player p, Deck d)
+    { 
         System.out.println("Turn has ended");
+        return true;
     }
     
 }
