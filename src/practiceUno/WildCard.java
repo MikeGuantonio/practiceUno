@@ -70,7 +70,6 @@ public class WildCard extends Card implements WildActions
         }
         catch(Exception ex)
         {
-            //Find a way to ask this again.
             System.out.println("Incompatible color");
         }
        
