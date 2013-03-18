@@ -102,10 +102,12 @@ public class Deck
        }
        else if(c.getClass().equals(SpecialCard.class))
        {
+           System.out.println("Special Card");
            canPlace = CheckSpecial(discard, c);  
        }
        else if(c.getClass().equals(WildCard.class))
        {
+           System.out.println("Wild Card");
            canPlace = CheckWild(discard, c, play); 
        }
        else
@@ -128,12 +130,30 @@ public class Deck
                
             if(pushNum.GetColor().equals(topCard.GetColor()) )
             {
+                System.out.println("Match color");
                 canPlace = true;
             }
             else if(pushNum.GetNumber() == topCard.GetNumber())
             {
+                System.out.println("Match number");
                 canPlace = true; 
             }
+            else
+            {
+                System.out.print("Cannot play the card");
+                c.Print();
+                System.out.println("");
+            }
+         }
+         else if(discard.getClass().equals(SpecialCard.class))
+         {
+             SpecialCard sp = (SpecialCard)discard; 
+             NumberCard n = (NumberCard)c;
+             
+             if(c.GetColor().equals(discard.GetColor()))
+                 canPlace = true; 
+             else
+                 System.out.println("Cannot Play");
          }
          return canPlace; 
     }
@@ -219,6 +239,10 @@ public class Deck
         discardDeck.add(DrawNext());
     }
 
+    public void testSetupDiscard(Card c)
+    {
+        discardDeck.add(c);
+    }
     
     /**
      *

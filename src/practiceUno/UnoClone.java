@@ -155,7 +155,7 @@ public class UnoClone {
             System.out.println("Remember index starts at 0");
             System.out.print("The card on the top of the deck is  ");
             d.ShowDiscard();
-            p.ShowHand();
+            p.ShowHand(); 
         
             Card c = p.Discard(input.nextInt());
             if(c != null)

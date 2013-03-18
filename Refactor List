@@ -10,6 +10,7 @@ Overall: Make the names more meaningful within the code
          Create JavaDoc
          Currently an unsafe API as the person using it can do a draw two on a reverse and
              other problems
+         Use regular expressions for matching
 
 Card.java
 
@@ -35,6 +36,7 @@ UnoClone.java
     Behavior when dealing with another player
     Factor out a method that checks the wrap around for the player circle.
     Handle errors more gracefully
+    Skip needs handled
 
 WildActions.java
     Draw four and wild need work. Hangs when it happens.

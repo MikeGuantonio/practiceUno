@@ -67,13 +67,72 @@ public class DeckTest {
      * Test of AddDiscard method, of class Deck.
      */
     @Test
-    public void testAddDiscard() {
+    public void testAddDiscard() 
+    {
         System.out.println("AddDiscard");
         Card c = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE);
         Player play = new Player();
         Deck instance = new Deck();
         instance.SetUpDiscard();
         instance.AddDiscard(c, play);
+    }
+    
+    @Test
+    public void testAddDiscardNumberOnNumber()
+    {
+        System.out.println("AddDiscard Number and Number");
+        Deck d = new Deck();
+         
+        //Number on Number
+        NumberCard nc = new NumberCard(5, Card.cardColor.BLUE);
+        d.testSetupDiscard(nc);
+        
+        for(Card.cardColor c : Card.cardColor.values())
+        {
+            for (int i = 0; i < 10; i++) 
+            {
+                NumberCard n = new NumberCard(i, c); 
+                d.AddDiscard(n, null);
+                d.ShowDiscard();
+            }
+        }
+        
+        //Number on Wild      
+    }
+    
+    @Test
+    public void testDiscardNumberOnSpecial()
+    {
+        System.out.println("Discard Number on Special");
+        Deck d = new Deck(); 
+        
+        SpecialCard c = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.YELLOW);
+        d.testSetupDiscard(c);
+        
+        for(Card.cardColor oc : Card.cardColor.values())
+        {
+            NumberCard n = new NumberCard(5, oc);
+            d.AddDiscard(n, null);
+            d.ShowDiscard();
+        }
+    }
+    
+    @Test
+    public void testAddDiscardSpecial()
+    {
+        fail("Need to implement this");
+        //Special on number
+        //Special on Wild
+        //Special on Special
+    }
+    
+    @Test
+    public void testAddDiscardWild()
+    {
+        fail("Need to implelent this");
+        //Wild on Special
+        //Wild on Number
+        //Wild on Wild
     }
 
     /**
