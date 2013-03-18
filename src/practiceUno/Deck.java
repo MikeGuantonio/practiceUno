@@ -91,7 +91,7 @@ public class Deck
      *
      * @param c
      */
-    public boolean AddDiscard(Card c, Player play)
+    public boolean AddDiscard(Card c, Player play, Scanner in)
     {
        boolean canPlace = false; 
        Card discard = discardDeck.peek();
@@ -106,8 +106,7 @@ public class Deck
        }
        else if(c.getClass().equals(WildCard.class))
        {
-           System.out.println("Wild Card");
-           canPlace = CheckWild(discard, c, play); 
+           canPlace = CheckWild(discard, c, play, in); 
        }
        else
        {
@@ -212,7 +211,7 @@ public class Deck
         return canPlace; 
     }
     
-    private boolean CheckWild(Card discard, Card c, Player thisPlayer)
+    private boolean CheckWild(Card discard, Card c, Player thisPlayer, Scanner in)
     {
         boolean canPlace = true; 
         
@@ -224,7 +223,7 @@ public class Deck
         }
         else if(wild.GetWild().equals(WildCard.cardWild.WILDDRFOUR))
         {
-          wild.DrawFour(thisPlayer, this, new Scanner(System.in));
+          wild.DrawFour(thisPlayer, this, in);
         }
         
         

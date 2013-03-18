@@ -160,7 +160,7 @@ public class UnoClone {
             Card c = p.Discard(input.nextInt());
             if(c != null)
             {
-                if(d.AddDiscard(c, p))
+                if(d.AddDiscard(c, p, input))
                     done = true;
                 else
                     p.GetCard(c);

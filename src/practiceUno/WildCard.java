@@ -31,6 +31,8 @@ public class WildCard extends Card implements WildActions
     public void Print()
     {
         System.out.print(" " + wild);
+        if(color != null)
+            System.out.print(" " + color);
     }
     
     /**

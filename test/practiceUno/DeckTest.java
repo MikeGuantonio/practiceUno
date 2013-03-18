@@ -76,7 +76,7 @@ public class DeckTest {
         Player play = new Player();
         Deck instance = new Deck();
         instance.SetUpDiscard();
-        instance.AddDiscard(c, play);
+        instance.AddDiscard(c, play, new Scanner(System.in));
     }
     
     @Test
@@ -94,7 +94,7 @@ public class DeckTest {
             for (int i = 0; i < 10; i++) 
             {
                 NumberCard n = new NumberCard(i, c); 
-                d.AddDiscard(n, null);
+                d.AddDiscard(n, null, new Scanner(System.in));
                 d.ShowDiscard();
             }
         }
@@ -114,7 +114,7 @@ public class DeckTest {
         for(Card.cardColor oc : Card.cardColor.values())
         {
             NumberCard n = new NumberCard(5, oc);
-            d.AddDiscard(n, null);
+            d.AddDiscard(n, null, new Scanner(System.in));
             d.ShowDiscard();
         }
     }
@@ -133,7 +133,7 @@ public class DeckTest {
         for(Card.cardColor c : Card.cardColor.values())
         {
             NumberCard n = new NumberCard(9, c); 
-            d.AddDiscard(n, null);
+            d.AddDiscard(n, null, new Scanner(System.in));
             d.ShowDiscard();
         }
     }
@@ -149,7 +149,7 @@ public class DeckTest {
        for(Card.cardColor c: Card.cardColor.values())
        {
            SpecialCard discard = new SpecialCard(SpecialCard.cardValues.SKIP, c);
-           d.AddDiscard(discard, null);
+           d.AddDiscard(discard, null, new Scanner(System.in));
            d.ShowDiscard();
        }
        
@@ -169,7 +169,7 @@ public class DeckTest {
         for(Card.cardColor c : Card.cardColor.values())
         {
             SpecialCard sp = new SpecialCard(SpecialCard.cardValues.DRTWO, c);
-            d.AddDiscard(sp, null);
+            d.AddDiscard(sp, null, new Scanner(System.in));
             d.ShowDiscard();
         }
     }
@@ -186,7 +186,7 @@ public class DeckTest {
             for(SpecialCard.cardValues v : SpecialCard.cardValues.values())
             {
                 SpecialCard s = new SpecialCard(v, c);
-                d.AddDiscard(s, null);
+                d.AddDiscard(s, null, new Scanner(System.in));
                 d.ShowDiscard();
             }
         }
@@ -194,12 +194,56 @@ public class DeckTest {
     }
     
     @Test
-    public void testAddDiscardWild()
+    public void testAddDiscardWildOnSpecial()
     {
-        fail("Need to implelent this");
-        //Wild on Special
-        //Wild on Number
-        //Wild on Wild
+        System.out.println("Add Discard Wild on Special");
+        Deck d = new Deck(); 
+        SpecialCard sp = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.YELLOW);
+        d.testSetupDiscard(sp);
+        ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
+        System.setIn(in);
+        
+        d.ShowDiscard();
+        WildCard w = new WildCard(WildCard.cardWild.WILD);
+        d.AddDiscard(w, null, new Scanner(System.in));
+        d.ShowDiscard();
+        
+    }
+    
+    @Test
+    public void testAddDiscardWildOnNumber()
+    {
+        System.out.println("Add Discard Wild on Number");
+        Deck d = new Deck(); 
+        NumberCard n = new NumberCard(9, Card.cardColor.BLUE);
+        d.testSetupDiscard(n);
+        ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
+        System.setIn(in);
+        
+        d.ShowDiscard();
+        WildCard w = new WildCard(WildCard.cardWild.WILD);
+        d.AddDiscard(w, null, new Scanner(System.in));
+        d.ShowDiscard();
+    }
+    
+    @Test
+    public void testAddDiscardWildOnWild()
+    {
+        System.out.println("Add Discard Wild on Wild");
+        Deck d = new Deck(); 
+        WildCard w = new WildCard(WildCard.cardWild.WILD);
+        d.testSetupDiscard(w);
+        
+        Player p = new Player(); 
+        
+        for(WildCard.cardWild wc : WildCard.cardWild.values())
+        {
+            ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
+            System.setIn(in);
+            WildCard discard = new WildCard(wc);
+            d.AddDiscard(discard, p, new Scanner(System.in));
+            d.ShowDiscard();
+        }
     }
 
     /**
