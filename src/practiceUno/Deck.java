@@ -102,7 +102,6 @@ public class Deck
        }
        else if(c.getClass().equals(SpecialCard.class))
        {
-           System.out.println("Special Card");
            canPlace = CheckSpecial(discard, c);  
        }
        else if(c.getClass().equals(WildCard.class))
@@ -153,7 +152,16 @@ public class Deck
              if(c.GetColor().equals(discard.GetColor()))
                  canPlace = true; 
              else
-                 System.out.println("Cannot Play");
+                 System.out.println("Cannot Play "+ n.GetColor());
+         }
+         else if(discard.getClass().equals(WildCard.class))
+         {
+             WildCard w = (WildCard)discard;
+             NumberCard n = (NumberCard)c; 
+             if(w.GetColor().equals(n.GetColor()))
+                 canPlace = true; 
+             else 
+                 System.out.println("Cannot Place " + n.GetColor());
          }
          return canPlace; 
     }
@@ -164,7 +172,7 @@ public class Deck
         
         if(discard.getClass().equals(SpecialCard.class))
         {
-            System.out.print("On Top: ");
+            System.out.println("Discard is a special card");
             discardDeck.peek().Print();
             System.out.println("");
             
@@ -173,14 +181,27 @@ public class Deck
             
             if(c.GetColor().equals(discard.GetColor()))
             {
+                System.out.println("Match Color");
                 canPlace = true; 
             }
             else if(inPlay.GetSpecial().equals(top.GetSpecial()))
             {
+                System.out.println("Match Special");
                 canPlace = true; 
             }
         }
-        System.out.println("Special Card Played.");
+        else if(discard.getClass().equals(NumberCard.class))
+        {
+            if(c.GetColor().equals(discard.GetColor()))
+            {
+                System.out.println("Can Place on color");
+                canPlace = true; 
+            }
+            else
+                System.out.println("Cannot place" + c.GetColor());
+        }
+        else
+            System.out.println("No match");
         return canPlace; 
     }
     

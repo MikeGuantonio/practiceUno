@@ -4,7 +4,9 @@
  */
 package practiceUno;
 
+import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.Stack;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -118,12 +120,64 @@ public class DeckTest {
     }
     
     @Test
-    public void testAddDiscardSpecial()
+    public void testDiscardNumberOnWild()
+    {
+        System.out.println("Discard Number on Wild");
+        Deck d = new Deck(); 
+        WildCard w = new WildCard(WildCard.cardWild.WILD);
+        d.testSetupDiscard(w);
+        ByteArrayInputStream in = new ByteArrayInputStream("RED".getBytes());
+        System.setIn(in);
+        w.Wild(new Scanner(System.in));
+        
+        for(Card.cardColor c : Card.cardColor.values())
+        {
+            NumberCard n = new NumberCard(9, c); 
+            d.AddDiscard(n, null);
+            d.ShowDiscard();
+        }
+    }
+    
+    @Test
+    public void testAddDiscardSpecialOnNumber()
+    {
+        System.out.println("Add Discard Special on Number");
+       Deck d = new Deck(); 
+       NumberCard n = new NumberCard(7, Card.cardColor.GREEN);
+       d.testSetupDiscard(n);
+       
+       for(Card.cardColor c: Card.cardColor.values())
+       {
+           SpecialCard discard = new SpecialCard(SpecialCard.cardValues.SKIP, c);
+           d.AddDiscard(discard, null);
+           d.ShowDiscard();
+       }
+       
+    }
+    
+    @Test
+    public void testAddDiscardSpecialOnWild()
     {
         fail("Need to implement this");
-        //Special on number
-        //Special on Wild
-        //Special on Special
+    }
+    
+    @Test
+    public void testAddDiscardSpecialOnSpecial()
+    {
+        System.out.println("Add Discard Special On Special");
+        Deck d = new Deck(); 
+        d.testSetupDiscard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.RED ));
+        
+        for(Card.cardColor c : Card.cardColor.values())
+        {
+            for(SpecialCard.cardValues v : SpecialCard.cardValues.values())
+            {
+                SpecialCard s = new SpecialCard(v, c);
+                d.AddDiscard(s, null);
+                d.ShowDiscard();
+            }
+        }
+        
     }
     
     @Test
