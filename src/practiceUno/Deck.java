@@ -261,9 +261,14 @@ public class Deck
     /**
      *
      */
-    public void SetUpDiscard()
+    public void SetUpDiscard(Scanner in)
     {
         discardDeck.add(DrawNext());
+        if(discardDeck.peek().getClass().equals(WildCard.class))
+        {
+            WildCard w = (WildCard)discardDeck.peek();
+            w.Wild(in);
+        }
     }
 
     public void testSetupDiscard(Card c)

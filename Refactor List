@@ -1,8 +1,6 @@
 TODO: 
-    Review all tests and check each and every behavior. This should take 
-    a long time. 
-    Implement the newly created methods in the UnoClone program.
-
+    
+    
 Refactoring List 
 A list of all of the things that I want to fix. 
 
@@ -26,19 +24,15 @@ SpecialActions.java
 
 SpecialCard.java
     Find a way to change the problems with not completing a turn
-    Will only need one player. There is no need to pass in an entier grouping
-    of players
     Check for players at 2, 5, and 10
 
 UnoClone.java
-    Allow user to choose how many players there are X
-    Add a second player (human) X
     Behavior when dealing with another player
-    Factor out a method that checks the wrap around for the player circle.
     Handle errors more gracefully
     Skip needs handled
 
 WildActions.java
-    Draw four and wild need work. Hangs when it happens.
     Make certain that the correct player is moved. 
+
 WildCard.java
+

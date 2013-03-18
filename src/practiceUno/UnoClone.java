@@ -35,7 +35,8 @@ public class UnoClone {
         //Set up the playing field
         deck.Shuffle();
         SetUpPlayers(players, deck, Integer.parseInt(uno.GetInput("How many people are playing?") ));
-        deck.SetUpDiscard();
+        deck.SetUpDiscard(uno.input);
+        
         players.get(0).SetName(uno.GetInput("What is your name"));
         
         System.out.println(players.get(0).GetName() + ". Welcome to UNO!" );
