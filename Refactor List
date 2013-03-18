@@ -9,6 +9,7 @@ Overall: Make the names more meaningful within the code
          Currently an unsafe API as the person using it can do a draw two on a reverse and
              other problems
          Use regular expressions for matching
+         Passing in a player. Need to actually pass in the player array.
 
 Card.java
 

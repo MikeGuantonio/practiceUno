@@ -311,7 +311,6 @@ public class Deck
      */
     public void SideEffect(SpecialCard special, ArrayList<Player> players, int pos)
   {
-      //TODO: cShould check for the Wild Side effect as well
       switch(special.GetSpecial())
       {
           case SKIP: special.Skip(pos, players.size());

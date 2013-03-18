@@ -5,6 +5,7 @@
 package practiceUno;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -40,7 +41,7 @@ public class UnoClone {
         players.get(0).SetName(uno.GetInput("What is your name"));
         
         System.out.println(players.get(0).GetName() + ". Welcome to UNO!" );
-        int turnCnt = 0; 
+        int pos = 0; 
         
         while(true)
         {
@@ -48,9 +49,7 @@ public class UnoClone {
             {
                 while(!endTurn)
                 {
-                    endTurn = uno.PlayerTurn(players.get(i), deck);
-                    turnCnt++;
-                    System.out.println(turnCnt);
+                    endTurn = uno.PlayerTurn(players, deck, pos);
                 }
                 endTurn = false;
             }
@@ -59,28 +58,100 @@ public class UnoClone {
     }
     
     
-    public boolean PlayerTurn(Player p, Deck d)
+    public boolean PlayerTurn(ArrayList<Player> p, Deck d, int playerPos)
     {
         int choice; 
         boolean turnStatus = false; 
         
-        choice = Menu(p, d);
+        choice = Menu(p, d, playerPos);
         
             switch(choice)
             {
-                case 1: DrawAndPlay(p, d);
+                case 1: DrawAndPlay(p, d, playerPos);
                         turnStatus = true; 
                         break; 
-                case 2: System.out.println("Before Play method");
-                        Play(p, d);
-                        turnStatus = true; 
-                        System.out.println("Turn over");
+                case 2: turnStatus = Play(p, d, playerPos);
                         break;  
                 default: System.out.println("Cannot process!");
                         break; 
             }
             return turnStatus; 
     }
+    
+    
+    /**
+     *
+     * @param p
+     * @param d
+     */
+    public boolean Play(ArrayList<Player> p, Deck d, int currentPlayer)
+    {
+        boolean done = false; 
+        
+            System.out.println("Which card would you like to play?");
+            System.out.println("Remember index starts at 0");
+            System.out.print("The card on the top of the deck is  ");
+            d.ShowDiscard();
+            p.get(currentPlayer).ShowHand(); 
+        
+            Card c = p.get(currentPlayer).Discard(input.nextInt());
+            if(c != null)
+            {
+                if(d.AddDiscard(c, p.get(currentPlayer), input))
+                    done = true;
+                else
+                    p.get(currentPlayer).GetCard(c);
+            }
+            else
+                System.out.println("That doesn't seem to be a card.");
+        
+        return done; 
+    }
+    
+    /**
+     *
+     * @param p
+     * @param d
+     */
+    public void DrawAndPlay(ArrayList<Player> p, Deck d, int playerPos)
+    {
+        int choice; 
+        System.out.println("Looks like you need to draw a card!");
+        p.get(playerPos).GetCard(d.DrawNext());
+        System.out.println("You drew a new card. This is your hand");
+        p.get(playerPos).ShowHand();
+        System.out.println("Card on the top of discard is: ");
+        d.ShowDiscard();
+        System.out.println("");
+        
+        System.out.println("What do you want to do?");
+        System.out.println("1. Play a card");
+        System.out.println("2. Skip a turn");
+        choice = input.nextInt(); 
+        
+        switch(choice)
+        {
+            case 1: Play(p, d, playerPos); 
+                    break;
+            case 2: Skip(p.get(playerPos), d);
+                    break;
+            default: System.out.println("This is not a vaild choice.");
+        }
+        
+    }
+    
+    /**
+     *
+     * @param p
+     * @param d
+     */
+    public boolean Skip(Player p, Deck d)
+    { 
+        System.out.println("Turn has ended");
+        return true;
+    }
+    
+    
     /**
      *
      * @param players
@@ -129,88 +200,17 @@ public class UnoClone {
      * @param d
      * @return
      */
-    public int Menu(Player p, Deck d)
+    public int Menu(ArrayList<Player> p, Deck d, int currPos)
     {
         int choice; 
         System.out.print("Card on top of the deck is"); 
         d.ShowDiscard();
-        System.out.println(p.GetName() + ", what would you like to do? ");
+        System.out.println(p.get(currPos).GetName() + ", what would you like to do? ");
         System.out.println("1. Draw A Card");
         System.out.println("2. Play A Card");
         choice = input.nextInt();
         return choice; 
     }
-    
-    /**
-     *
-     * @param p
-     * @param d
-     */
-    public void Play(Player p, Deck d)
-    {
-        boolean done = false; 
-        
-        do
-        {
-            System.out.println("Which card would you like to play?");
-            System.out.println("Remember index starts at 0");
-            System.out.print("The card on the top of the deck is  ");
-            d.ShowDiscard();
-            p.ShowHand(); 
-        
-            Card c = p.Discard(input.nextInt());
-            if(c != null)
-            {
-                if(d.AddDiscard(c, p, input))
-                    done = true;
-                else
-                    p.GetCard(c);
-            }
-            else
-                System.out.println("That doesn't seem to be a card.");
-        }while(!done);
-        
-         
-    }
-    
-    /**
-     *
-     * @param p
-     * @param d
-     */
-    public void DrawAndPlay(Player p, Deck d)
-    {
-        int choice; 
-        System.out.println("Looks like you need to draw a card!");
-        p.GetCard(d.DrawNext());
-        System.out.println("You drew a new card. This is your hand");
-        p.ShowHand();
-        System.out.println("What do you want to do?");
-        System.out.println("Play a card");
-        System.out.println("Skip a turn");
-        choice = input.nextInt(); 
-        
-        switch(choice)
-        {
-            case 1: Play(p, d); 
-                    break;
-            case 2: Skip(p, d);
-                    break;
-        }
-        
-    }
-    
-    /**
-     *
-     * @param p
-     * @param d
-     */
-    public boolean Skip(Player p, Deck d)
-    { 
-        System.out.println("Turn has ended");
-        return true;
-    }
-    
 }
 
 
