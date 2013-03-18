@@ -66,20 +66,14 @@ public class UnoClone {
         
             switch(choice)
             {
-                case 1: p.ShowHand();
-                        break; 
-                case 2: d.ShowDiscard();
-                        break; 
-                case 3: DrawAndPlay(p, d);
+                case 1: DrawAndPlay(p, d);
                         turnStatus = true; 
                         break; 
-                case 4: Play(p, d);
+                case 2: System.out.println("Before Play method");
+                        Play(p, d);
                         turnStatus = true; 
                         System.out.println("Turn over");
                         break;  
-                case 5: Skip(p, d);
-                        turnStatus = true;
-                        break; 
                 default: System.out.println("Cannot process!");
                         break; 
             }
@@ -139,11 +133,8 @@ public class UnoClone {
         System.out.print("Card on top of the deck is"); 
         d.ShowDiscard();
         System.out.println(p.GetName() + ", what would you like to do? ");
-        System.out.println("1. Show Hand");
-        System.out.println("2. Show Top of Deck");
-        System.out.println("3. Draw A Card");
-        System.out.println("4. Play A Card");
-        System.out.println("5. Skip turn");
+        System.out.println("1. Draw A Card");
+        System.out.println("2. Play A Card");
         choice = input.nextInt();
         return choice; 
     }
