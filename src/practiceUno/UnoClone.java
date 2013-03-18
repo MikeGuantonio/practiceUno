@@ -51,6 +51,7 @@ public class UnoClone {
                     turnCnt++;
                     System.out.println(turnCnt);
                 }
+                endTurn = false;
             }
              
         }
