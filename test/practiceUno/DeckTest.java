@@ -158,7 +158,20 @@ public class DeckTest {
     @Test
     public void testAddDiscardSpecialOnWild()
     {
-        fail("Need to implement this");
+        System.out.println("Add Discard on Special on Wild");
+        Deck d = new Deck(); 
+        WildCard w = new WildCard(WildCard.cardWild.WILD);
+        d.testSetupDiscard(w);
+        ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
+        System.setIn(in);
+        w.Wild(new Scanner(System.in));
+        
+        for(Card.cardColor c : Card.cardColor.values())
+        {
+            SpecialCard sp = new SpecialCard(SpecialCard.cardValues.DRTWO, c);
+            d.AddDiscard(sp, null);
+            d.ShowDiscard();
+        }
     }
     
     @Test

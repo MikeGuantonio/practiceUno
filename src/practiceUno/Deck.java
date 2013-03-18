@@ -200,6 +200,13 @@ public class Deck
             else
                 System.out.println("Cannot place" + c.GetColor());
         }
+        else if(discard.getClass().equals(WildCard.class))
+        {
+            if(c.GetColor().equals(discard.GetColor()))
+                canPlace = true; 
+            else
+                System.out.println("Cannot place" + c.GetColor());
+        }
         else
             System.out.println("No match");
         return canPlace; 
