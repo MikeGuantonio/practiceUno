@@ -73,7 +73,7 @@ public class DeckTest {
     {
         System.out.println("AddDiscard");
         Card c = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE);
-        Player play = new Player();
+        Player play = new Human();
         Deck instance = new Deck();
         Scanner in = new Scanner(System.in);
         instance.SetUpDiscard(in);

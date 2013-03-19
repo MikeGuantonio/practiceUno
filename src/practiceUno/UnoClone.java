@@ -37,7 +37,7 @@ public class UnoClone {
         deck.SetUpDiscard(uno.input);
         
         //Start with player 0. Need logic to choose best out of all players.
-        players.get(0).SetName(uno.GetInput("What is your name"));
+        
         System.out.println(players.get(0).GetName() + ". Welcome to UNO!" );
         int pos = 0; 
         
@@ -49,6 +49,7 @@ public class UnoClone {
                 {
                     endTurn = uno.PlayerTurn(players, deck, pos);
                     pos = uno.Wrap((pos+1), players.size());
+                    System.out.println("Turn over");
                 }
                 endTurn = false;
             }
@@ -71,8 +72,19 @@ public class UnoClone {
     {
         int choice; 
         boolean turnStatus = false; 
+        Player tmp = p.get(playerPos);
         
-        choice = Menu(p, d, playerPos);
+        if(tmp.equals(Robot.class))
+        {
+            Robot r = (Robot)tmp; 
+            choice = r.Decide(d.TopCard());
+            System.out.println("Robot Turn");
+        }
+        else
+        {
+            choice = Menu(p, d, playerPos);
+            System.out.println("Human Turn");
+        }
         
             switch(choice)
             {
@@ -171,6 +183,8 @@ public class UnoClone {
      */
     public static void SetUpPlayers(ArrayList<Player> players, Deck deck, int numPlayers)
     {
+       UnoClone uno = new UnoClone(); 
+       
        if(numPlayers < 2 || numPlayers > 10)
        {
            System.out.println("Cannot play this game!");
@@ -179,10 +193,11 @@ public class UnoClone {
        
        for (int i = 0; i < numPlayers; i++) 
        {
-           players.add(new Player());
-           players.get(i).SetPlayerPos(i);
+           
            if(i != 0)
-               players.get(i).SetName("Com"+i);
+               players.add(new Robot("Com"+i, i));
+           else
+               players.add(new Human(uno.GetInput("What is your name"), i));    
        }
 
         for (int i = 0; i < 7; i++)

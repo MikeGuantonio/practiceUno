@@ -258,6 +258,10 @@ public class Deck
         System.out.println("");
     }
     
+    public Card TopCard()
+    {
+        return discardDeck.peek();
+    }
     /**
      *
      */
