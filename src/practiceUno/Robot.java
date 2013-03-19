@@ -4,13 +4,7 @@
  */
 package practiceUno;
 
-import java.io.IOException;
-import java.io.PipedInputStream;
-import java.io.PipedOutputStream;
-import java.io.PrintStream;
 import java.util.Stack;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -34,12 +28,7 @@ public class Robot extends Player
        for(Card v : hand)
        {
            if(v.getClass().equals(c.getClass()))
-           {
-               System.out.println("Match");
                possibleMatches.push(v);
-           }
-           else
-               System.out.println("NO match");
        }
        
        if(possibleMatches.size() != 0 )
@@ -57,9 +46,7 @@ public class Robot extends Player
        
        if(possibleMatches.size() != 0)
        {
-           System.out.println("Match found");
-           retC = possibleMatches.pop();
-           possibleMatches.clear(); 
+           retC = possibleMatches.pop(); 
        }
        else
            retC = null;
@@ -69,6 +56,11 @@ public class Robot extends Player
    public int PossMatch()
    {
        return possibleMatches.size(); 
+   }
+   
+   public void Forget()
+   {
+       possibleMatches.clear();
    }
    
    

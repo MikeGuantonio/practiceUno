@@ -59,8 +59,6 @@ public class UnoClone {
     
     public int Wrap(int pos, int maxSize)
     {
-        System.out.println("New position: " + pos);
-        System.out.println("Max Size: " + maxSize);
         if(pos > maxSize-1)
             pos = 0; 
         else if(pos < 0)
@@ -79,8 +77,6 @@ public class UnoClone {
         {
             Robot r = (Robot)p.get(playerPos); 
             choice = r.Decide(d.TopCard());
-            System.out.println("choice: " + choice );
-            r.ShowHand();
         }
         else if(tmp.getClass().equals(Human.class))
         {
@@ -89,10 +85,10 @@ public class UnoClone {
         
             switch(choice)
             {
-                case 1: DrawAndPlay(p, d, playerPos);
+                case 2: DrawAndPlay(p, d, playerPos);
                         turnStatus = true; 
                         break; 
-                case 2: turnStatus = Play(p, d, playerPos);
+                case 1: turnStatus = Play(p, d, playerPos);
                         break;  
                 default: s.nextLine();
                         System.out.println("Cannot process!");
@@ -139,12 +135,16 @@ public class UnoClone {
         }
         else if(tmp.getClass().equals(Robot.class))
         {
+            boolean possible = false; 
             System.out.println("Robot Turn");
             Robot r = (Robot)p.get(currentPlayer); 
-            r.ShowHand();
-            p.get(currentPlayer).ShowHand();
             System.out.println("Possible Matches: " + r.PossMatch());
-            d.AddDiscard(r.Discard(0), tmp, input);
+            while(!possible && r.PossMatch() != 0)
+            {
+                System.out.println("Trying a card");
+                possible = d.AddDiscard(r.Discard(0), tmp, input);
+            }
+            r.Forget();
             done = true; 
         }
         return done; 
@@ -157,19 +157,29 @@ public class UnoClone {
      */
     public void DrawAndPlay(ArrayList<Player> p, Deck d, int playerPos)
     {
-        int choice; 
-        System.out.println("Looks like you need to draw a card!");
-        p.get(playerPos).GetCard(d.DrawNext());
-        System.out.println("You drew a new card. This is your hand");
-        p.get(playerPos).ShowHand();
-        System.out.println("Card on the top of discard is: ");
-        d.ShowDiscard();
-        System.out.println("");
+        int choice = 0; 
+        Player tmp = p.get(playerPos);
         
-        System.out.println("What do you want to do?");
-        System.out.println("1. Play a card");
-        System.out.println("2. Skip a turn");
-        choice = input.nextInt(); 
+        if(tmp.getClass().equals(Human.class))
+        {
+            System.out.println("Looks like you need to draw a card!");
+            p.get(playerPos).GetCard(d.DrawNext());
+            System.out.println("You drew a new card. This is your hand");
+            p.get(playerPos).ShowHand();
+            System.out.println("Card on the top of discard is: ");
+            d.ShowDiscard();
+            System.out.println("");
+        
+            System.out.println("What do you want to do?");
+            System.out.println("1. Play a card");
+            System.out.println("2. Skip a turn");
+            choice = input.nextInt();
+        }
+        else if(tmp.getClass().equals(Robot.class))
+        {
+            Robot r = (Robot)tmp; 
+            choice = r.Decide(d.TopCard());
+        }
         
         switch(choice)
         {
@@ -251,8 +261,8 @@ public class UnoClone {
         System.out.print("Card on top of the deck is"); 
         d.ShowDiscard();
         System.out.println(p.get(currPos).GetName() + ", what would you like to do? ");
-        System.out.println("1. Draw A Card");
-        System.out.println("2. Play A Card");
+        System.out.println("1. Play A Card");
+        System.out.println("2. Draw A Card");
         choice = input.nextInt();
         return choice; 
     }
