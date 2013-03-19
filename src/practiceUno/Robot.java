@@ -33,8 +33,13 @@ public class Robot extends Player
        int choice = 0;  
        for(Card v : hand)
        {
-           if(c.equals(v))
-               possibleMatches.push(v);       
+           if(v.getClass().equals(c.getClass()))
+           {
+               System.out.println("Match");
+               possibleMatches.push(v);
+           }
+           else
+               System.out.println("NO match");
        }
        
        if(possibleMatches.size() != 0 )
@@ -52,12 +57,18 @@ public class Robot extends Player
        
        if(possibleMatches.size() != 0)
        {
+           System.out.println("Match found");
            retC = possibleMatches.pop();
            possibleMatches.clear(); 
        }
        else
            retC = null;
       return retC; 
+   }
+   
+   public int PossMatch()
+   {
+       return possibleMatches.size(); 
    }
    
    

@@ -70,20 +70,21 @@ public class UnoClone {
     
     public boolean PlayerTurn(ArrayList<Player> p, Deck d, int playerPos)
     {
-        int choice; 
+        Scanner s = new Scanner(System.in);
+        int choice = 0; 
         boolean turnStatus = false; 
         Player tmp = p.get(playerPos);
         
-        if(tmp.equals(Robot.class))
+        if(tmp.getClass().equals(Robot.class))
         {
-            Robot r = (Robot)tmp; 
+            Robot r = (Robot)p.get(playerPos); 
             choice = r.Decide(d.TopCard());
-            System.out.println("Robot Turn");
+            System.out.println("choice: " + choice );
+            r.ShowHand();
         }
-        else
+        else if(tmp.getClass().equals(Human.class))
         {
             choice = Menu(p, d, playerPos);
-            System.out.println("Human Turn");
         }
         
             switch(choice)
@@ -93,7 +94,8 @@ public class UnoClone {
                         break; 
                 case 2: turnStatus = Play(p, d, playerPos);
                         break;  
-                default: System.out.println("Cannot process!");
+                default: s.nextLine();
+                        System.out.println("Cannot process!");
                         break; 
             }
             return turnStatus; 
@@ -108,27 +110,43 @@ public class UnoClone {
     public boolean Play(ArrayList<Player> p, Deck d, int currentPlayer)
     {
         boolean done = false; 
+        Player tmp = p.get(currentPlayer);
         
+        if(tmp.getClass().equals(Human.class))
+        {
+            System.out.println("Human Turn");
+            Human h = (Human)tmp; 
+            
             System.out.println("Which card would you like to play?");
             System.out.println("Remember index starts at 0");
             System.out.print("The card on the top of the deck is  ");
             d.ShowDiscard();
-            p.get(currentPlayer).ShowHand(); 
+            h.ShowHand(); 
         
             Card c = p.get(currentPlayer).Discard(input.nextInt());
             if(c != null)
             {
-                if(d.AddDiscard(c, p.get(currentPlayer), input))
+                if(d.AddDiscard(c, h, input))
                 {
                     done = true;
                     d.SideEffect(c, p, currentPlayer);
                 }
                 else
-                    p.get(currentPlayer).GetCard(c);
+                    h.GetCard(c);
             }
             else
                 System.out.println("That doesn't seem to be a card.");
-        
+        }
+        else if(tmp.getClass().equals(Robot.class))
+        {
+            System.out.println("Robot Turn");
+            Robot r = (Robot)p.get(currentPlayer); 
+            r.ShowHand();
+            p.get(currentPlayer).ShowHand();
+            System.out.println("Possible Matches: " + r.PossMatch());
+            d.AddDiscard(r.Discard(0), tmp, input);
+            done = true; 
+        }
         return done; 
     }
     
