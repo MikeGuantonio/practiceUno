@@ -82,7 +82,18 @@ public class Deck
         if(!deck.isEmpty())
             return (Card)deck.pop();
         else
+        {
             System.out.println("This deck is done. Need to shuffle and replace deck.");
+            System.out.println("Normal Deck: " + deck.size());
+            System.out.println("Discard Deck: " + discardDeck.size());
+            deck = new Stack<Card>(); 
+            deck.addAll(discardDeck);
+            Shuffle();
+            discardDeck.clear();
+            discardDeck.add(deck.pop());
+            System.out.println("Normal Deck: " + deck.size());
+            System.out.println("Discard Deck: " + discardDeck.size());
+        }
         return null;
 
     }
