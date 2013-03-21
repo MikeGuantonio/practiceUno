@@ -33,11 +33,10 @@ public class UnoClone {
         
         //Set up the playing field
         deck.Shuffle();
-        SetUpPlayers(players, deck, Integer.parseInt(uno.GetInput("How many people are playing?") ));//Ask for robots.
+       // SetUpPlayers(players, deck, Integer.parseInt(uno.GetInput("How many people are playing?") ));//Ask for robots.
+        SetUpPlayers(players, deck, 2);
         deck.SetUpDiscard(uno.input);
-        
-        //Start with player 0. Need logic to choose best out of all players.
-        
+                
         System.out.println(players.get(0).GetName() + ". Welcome to UNO!" );
         int pos = 0; 
         
@@ -48,8 +47,9 @@ public class UnoClone {
                 while(!endTurn)
                 {
                     endTurn = uno.PlayerTurn(players, deck, pos);
+                    System.out.println("Turn over " + players.get(pos).TotalCards());
                     pos = uno.Wrap((pos+1), players.size());
-                    System.out.println("Turn over");
+                    
                 }
                 endTurn = false;
             }
@@ -90,9 +90,13 @@ public class UnoClone {
                         break; 
                 case 1: turnStatus = Play(p, d, playerPos);
                         break;  
-                default: s.nextLine();
-                        System.out.println("Cannot process!");
+                default:System.out.println("Cannot process!");
                         break; 
+            }
+            
+            if(!turnStatus){
+               DrawAndPlay(p, d, playerPos);
+               turnStatus = true; 
             }
             return turnStatus; 
     }
@@ -136,13 +140,21 @@ public class UnoClone {
         else if(tmp.getClass().equals(Robot.class))
         {
             boolean possible = false; 
-            System.out.println("Robot Turn");
             Robot r = (Robot)p.get(currentPlayer); 
-            System.out.println("Possible Matches: " + r.PossMatch());
+            System.out.print(r.GetName() + "'s Turn ");
+            System.out.println("Possible Matches: " + r.PossMatch() + " Cards: " + r.TotalCards());
             while(!possible && r.PossMatch() != 0)
             {
-                System.out.println("Trying a card");
-                possible = d.AddDiscard(r.Discard(0), tmp, input);
+                Card printer = r.Discard(0);
+                System.out.print("Trying ");
+                printer.Print();
+                System.out.print(" ");
+                d.ShowDiscard();
+                possible = d.AddDiscard(printer, tmp, input);
+                if(!possible)
+                {
+                    r.GetCard(printer);
+                }
             }
             r.Forget();
             done = true; 
@@ -210,8 +222,7 @@ public class UnoClone {
      * @param deck
      */
     public static void SetUpPlayers(ArrayList<Player> players, Deck deck, int numPlayers)
-    {
-       UnoClone uno = new UnoClone(); 
+    { 
        
        if(numPlayers < 2 || numPlayers > 10)
        {
@@ -221,11 +232,11 @@ public class UnoClone {
        
        for (int i = 0; i < numPlayers; i++) 
        {
-           
-           if(i != 0)
+           players.add(new Robot("Com"+i, i));
+          /* if(i != 0)
                players.add(new Robot("Com"+i, i));
            else
-               players.add(new Human(uno.GetInput("What is your name"), i));    
+               players.add(new Human(uno.GetInput("What is your name"), i)); */   
        }
 
         for (int i = 0; i < 7; i++)
