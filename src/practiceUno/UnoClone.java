@@ -46,7 +46,15 @@ public class UnoClone {
             {
                 while(!endTurn)
                 {
-                    endTurn = uno.PlayerTurn(players, deck, pos);
+                    if(players.get(pos).getClass().equals(Robot.class))
+                    {
+                        Robot r = (Robot)players.get(pos);
+                        endTurn = r.PlayAHand(deck);
+                    }
+                    else
+                    {
+                        endTurn = uno.PlayerTurn(players, deck, pos);
+                    }
                     System.out.println("Turn over " + players.get(pos).TotalCards());
                     pos = uno.Wrap((pos+1), players.size());
                     
@@ -73,12 +81,7 @@ public class UnoClone {
         boolean turnStatus = false; 
         Player tmp = p.get(playerPos);
         
-        if(tmp.getClass().equals(Robot.class))
-        {
-            Robot r = (Robot)p.get(playerPos); 
-            choice = r.Decide(d.TopCard());
-        }
-        else if(tmp.getClass().equals(Human.class))
+        if(tmp.getClass().equals(Human.class))
         {
             choice = Menu(p, d, playerPos);
         }
@@ -137,28 +140,6 @@ public class UnoClone {
             else
                 System.out.println("That doesn't seem to be a card.");
         }
-        else if(tmp.getClass().equals(Robot.class))
-        {
-            boolean possible = false; 
-            Robot r = (Robot)p.get(currentPlayer); 
-            System.out.print(r.GetName() + "'s Turn ");
-            System.out.println("Possible Matches: " + r.PossMatch() + " Cards: " + r.TotalCards());
-            while(!possible && r.PossMatch() != 0)
-            {
-                Card printer = r.Discard(0);
-                System.out.print("Trying ");
-                printer.Print();
-                System.out.print(" ");
-                d.ShowDiscard();
-                possible = d.AddDiscard(printer, tmp, input);
-                if(!possible)
-                {
-                    r.GetCard(printer);
-                }
-            }
-            r.Forget();
-            done = true; 
-        }
         return done; 
     }
     
@@ -186,11 +167,6 @@ public class UnoClone {
             System.out.println("1. Play a card");
             System.out.println("2. Skip a turn");
             choice = input.nextInt();
-        }
-        else if(tmp.getClass().equals(Robot.class))
-        {
-            Robot r = (Robot)tmp; 
-            choice = r.Decide(d.TopCard());
         }
         
         switch(choice)
