@@ -6,6 +6,7 @@ package practiceUno;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 
 /**
@@ -13,11 +14,7 @@ import java.util.Scanner;
  * @author mike
  */
 public class UnoClone {
-    /**
-     *
-     * @param args
-     */
-    Scanner input= new Scanner(System.in); 
+    private static final Logger LOG = Logger.getLogger(UnoClone.class.getName()); 
     
     /**
      *
@@ -34,7 +31,6 @@ public class UnoClone {
         
         //Set up the playing field
         deck.Shuffle();
-       // SetUpPlayers(players, deck, Integer.parseInt(uno.GetInput("How many people are playing?") ));//Ask for robots.
         SetUpPlayers(players, deck, 2);
         deck.SetUpDiscard(uno.input);
                 
@@ -66,6 +62,51 @@ public class UnoClone {
         }
     }
     
+    
+    /**
+     *
+     * @param players
+     * @param deck
+     * @param numPlayers  
+     */
+    public static void SetUpPlayers(ArrayList<Player> players, Deck deck, int numPlayers)
+    { 
+       
+       if(numPlayers < 2 || numPlayers > 10)
+       {
+           System.out.println("Cannot play this game!");
+           System.exit(345);
+       }
+       
+       for (int i = 0; i < numPlayers; i++) 
+       {
+           players.add(new Robot("Com"+i, i));
+          /* if(i != 0)
+               players.add(new Robot("Com"+i, i));
+           else
+               players.add(new Human(uno.GetInput("What is your name"), i)); */   
+       }
+
+        for (int i = 0; i < 7; i++)
+        {
+            for (int j = 0; j < numPlayers; j++)
+            {
+                players.get(j).GetCard(deck.DrawNext());
+            }
+        }
+    }
+    /**
+     *
+     * @param args
+     */
+    Scanner input= new Scanner(System.in); 
+    
+    /**
+     *
+     * @param pos
+     * @param maxSize
+     * @return
+     */
     public int Wrap(int pos, int maxSize)
     {
         if(pos > maxSize-1)
@@ -75,9 +116,16 @@ public class UnoClone {
         return pos; 
     }
     
+    /**
+     *
+     * @param p
+     * @param d
+     * @param playerPos
+     * @return
+     */
     public boolean PlayerTurn(ArrayList<Player> p, Deck d, int playerPos)
     {
-        Scanner s = new Scanner(System.in);
+        
         int choice = 0; 
         boolean turnStatus = false; 
         Player tmp = p.get(playerPos);
@@ -105,11 +153,12 @@ public class UnoClone {
             return turnStatus; 
     }
     
-    
     /**
      *
      * @param p
      * @param d
+     * @param currentPlayer
+     * @return  
      */
     public boolean Play(ArrayList<Player> p, Deck d, int currentPlayer)
     {
@@ -144,10 +193,12 @@ public class UnoClone {
         return done; 
     }
     
+    
     /**
      *
      * @param p
      * @param d
+     * @param playerPos  
      */
     public void DrawAndPlay(ArrayList<Player> p, Deck d, int playerPos)
     {
@@ -185,44 +236,12 @@ public class UnoClone {
      *
      * @param p
      * @param d
+     * @return  
      */
     public boolean Skip(Player p, Deck d)
     { 
         System.out.println("Turn has ended");
         return true;
-    }
-    
-    
-    /**
-     *
-     * @param players
-     * @param deck
-     */
-    public static void SetUpPlayers(ArrayList<Player> players, Deck deck, int numPlayers)
-    { 
-       
-       if(numPlayers < 2 || numPlayers > 10)
-       {
-           System.out.println("Cannot play this game!");
-           System.exit(345);
-       }
-       
-       for (int i = 0; i < numPlayers; i++) 
-       {
-           players.add(new Robot("Com"+i, i));
-          /* if(i != 0)
-               players.add(new Robot("Com"+i, i));
-           else
-               players.add(new Human(uno.GetInput("What is your name"), i)); */   
-       }
-
-        for (int i = 0; i < 7; i++)
-        {
-            for (int j = 0; j < numPlayers; j++)
-            {
-                players.get(j).GetCard(deck.DrawNext());
-            }
-        }
     }
     
     /**
@@ -238,9 +257,12 @@ public class UnoClone {
         return output; 
     }
     
+    
     /**
      *
+     * @param p 
      * @param d
+     * @param currPos 
      * @return
      */
     public int Menu(ArrayList<Player> p, Deck d, int currPos)

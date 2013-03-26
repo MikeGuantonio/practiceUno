@@ -11,10 +11,10 @@ package practiceUno;
  */
 abstract class Card
 {
-   enum cardColor {BLUE,RED,GREEN, YELLOW}; 
    
    protected cardColor color; 
 
     abstract void Print();
     abstract cardColor GetColor(); 
+   enum cardColor {BLUE,RED,GREEN, YELLOW}; 
 }

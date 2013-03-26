@@ -4,7 +4,7 @@
  */
 package practiceUno;
 
-import java.util.ArrayList;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,11 +13,16 @@ import java.util.ArrayList;
 
 public class SpecialCard extends Card implements SpecialActions
 {
-   enum cardValues {REVERSE,SKIP,DRTWO} 
+    private static final Logger LOG = Logger.getLogger(SpecialCard.class.getName()); 
    cardValues sp; 
 
    
-   public SpecialCard(cardValues newSp, cardColor newColor)
+    /**
+     *
+     * @param newSp
+     * @param newColor
+     */
+    public SpecialCard(cardValues newSp, cardColor newColor)
    {
        sp = newSp; 
        color = newColor; 
@@ -32,17 +37,31 @@ public class SpecialCard extends Card implements SpecialActions
        System.out.print(" " + sp + " " + color);
    }
     
+    /**
+     *
+     * @return
+     */
     public Card.cardColor GetColor()
     {
         return color; 
     }
     
+    /**
+     *
+     * @return
+     */
     public cardValues GetSpecial()
     {
         return sp; 
     }
     
-   @Override
+    /**
+     *
+     * @param currentPlayerIndex
+     * @param playerSize
+     * @return
+     */
+    @Override
     public int Skip(int currentPlayerIndex, int playerSize)
     {
         int index = 0;  
@@ -57,7 +76,13 @@ public class SpecialCard extends Card implements SpecialActions
         return index; 
     }
     
-   @Override
+    /**
+     *
+     * @param currentPlayerIndex
+     * @param playerSize
+     * @return
+     */
+    @Override
     public int Reverse(int currentPlayerIndex, int playerSize)
     {
         int index = 0;  
@@ -81,11 +106,17 @@ public class SpecialCard extends Card implements SpecialActions
     
     //Put in the next player. Draw two.
     //Need to do all player manipulation before the call to draw two.
+    /**
+     *
+     * @param theDeck
+     * @param p
+     */
     public void DrawTwo(Deck theDeck, Player p)
     {          
          for (int i = 0; i < 2; i++) 
             p.GetCard(theDeck.DrawNext());   
     }
+   enum cardValues {REVERSE,SKIP,DRTWO}
     
     
 }

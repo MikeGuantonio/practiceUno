@@ -12,7 +12,19 @@ import java.util.Scanner;
  */
 public interface WildActions {
     
-     Card.cardColor Wild(Scanner scan); 
-     Card.cardColor DrawFour(Player nextPlayer, Deck copyDeck, Scanner scan); 
+     /**
+     *
+     * @param scan
+     * @return
+     */
+    Card.cardColor Wild(Scanner scan); 
+     /**
+     *
+     * @param nextPlayer
+     * @param copyDeck
+     * @param scan
+     * @return
+     */
+    Card.cardColor DrawFour(Player nextPlayer, Deck copyDeck, Scanner scan); 
     
 }

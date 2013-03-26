@@ -5,13 +5,14 @@
 package practiceUno;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 /**
  *
  * @author mike
  */
 public class WildCard extends Card implements WildActions
 {
-    enum cardWild {WILD, WILDDRFOUR}; 
+    private static final Logger LOG = Logger.getLogger(WildCard.class.getName()); 
     cardWild wild; 
     
     
@@ -55,6 +56,7 @@ public class WildCard extends Card implements WildActions
     
     /**
      *
+     * @param scan 
      * @return
      */
     public Card.cardColor Wild(Scanner scan)
@@ -81,6 +83,7 @@ public class WildCard extends Card implements WildActions
      *
      * @param newPlayer
      * @param copyDeck
+     * @param scan 
      * @return
      */
     public Card.cardColor DrawFour(Player newPlayer, Deck copyDeck, Scanner scan)
@@ -94,4 +97,5 @@ public class WildCard extends Card implements WildActions
         }
         return newColor; 
     }
+    enum cardWild {WILD, WILDDRFOUR};
 }

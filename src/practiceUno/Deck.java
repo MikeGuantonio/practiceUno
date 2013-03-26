@@ -3,6 +3,7 @@
 package practiceUno; 
 
 import java.util.*; 
+import java.util.logging.Logger;
 
 /**
  *
@@ -10,7 +11,7 @@ import java.util.*;
  */
 public class Deck
 {
-    enum deckType {DEAL, DISCARD}; 
+    private static final Logger LOG = Logger.getLogger(Deck.class.getName()); 
     
     private final int MAX_CARD = 108; 
     private Stack<Card> deck = new Stack<Card>();  
@@ -27,6 +28,9 @@ public class Deck
        CreateWild(); 
     }
     
+    /**
+     *
+     */
     public void Shuffle()
     { 
         try
@@ -101,6 +105,9 @@ public class Deck
     /**
      *
      * @param c
+     * @param play 
+     * @param in 
+     * @return  
      */
     public boolean AddDiscard(Card c, Player play, Scanner in)
     {
@@ -269,12 +276,17 @@ public class Deck
         System.out.println("");
     }
     
+    /**
+     *
+     * @return
+     */
     public Card TopCard()
     {
         return discardDeck.peek();
     }
     /**
      *
+     * @param in 
      */
     public void SetUpDiscard(Scanner in)
     {
@@ -286,6 +298,10 @@ public class Deck
         }
     }
 
+    /**
+     *
+     * @param c
+     */
     public void testSetupDiscard(Card c)
     {
         discardDeck.add(c);
@@ -293,6 +309,7 @@ public class Deck
     
     /**
      *
+     * @param deckName 
      */
     public void PrintDeck(String deckName)
     {  
@@ -321,8 +338,9 @@ public class Deck
     
     /**
      *
-     * @param special
-     * @param p
+     * @param c 
+     * @param players
+     * @param pos  
      */
     public void SideEffect(Card c, ArrayList<Player> players, int pos)
   {
@@ -340,5 +358,6 @@ public class Deck
         }
       }
   }
+    enum deckType {DEAL, DISCARD};
    
 }

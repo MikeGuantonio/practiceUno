@@ -4,8 +4,10 @@
  */
 package practiceUno;
 
+import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 import java.util.Stack;
+import java.util.logging.Logger;
 
 
 /**
@@ -14,11 +16,17 @@ import java.util.Stack;
  */
 public class Robot extends Player
 {
+    private static final Logger LOG = Logger.getLogger(Robot.class.getName());
    private Card.cardColor[] c = Card.cardColor.values();
    private Stack<Card> possibleMatches = new Stack<Card>(); 
    
  
-   public Robot(String name, int pos)
+    /**
+     *
+     * @param name
+     * @param pos
+     */
+    public Robot(String name, int pos)
    {
        super.name = name; 
        super.playerPos = pos;
@@ -40,17 +48,29 @@ public class Robot extends Player
       return retC; 
    }
    
-   public int PossMatch()
+    /**
+     *
+     * @return
+     */
+    public int PossMatch()
    {
        return possibleMatches.size(); 
    }
    
-   public void Forget()
+    /**
+     *
+     */
+    public void Forget()
    {
        possibleMatches.clear();
    }
    
-   public boolean PlayAHand(Deck d)
+    /**
+     *
+     * @param d
+     * @return
+     */
+    public boolean PlayAHand(Deck d)
    {
        boolean done = false; 
        boolean possible = false; 
@@ -70,7 +90,7 @@ public class Robot extends Player
                             else
                             {
                                 Forget(); 
-                                state = 4;
+                                state = 5;
                             }
                         }
                         else
@@ -83,10 +103,14 @@ public class Robot extends Player
                             state = 3; 
                         break; 
                     
-                case 3: state = 4; 
+                case 3: state = 5; 
                         break;
                     
-                case 4: done = true; 
+                case 4: ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
+                        System.setIn(in);
+                        break; 
+                    
+                case 5: done = true; 
                         break; 
             }
         }
