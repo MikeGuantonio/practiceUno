@@ -79,17 +79,12 @@ public class SpecialCard extends Card implements SpecialActions
         return index;  
     }
     
-   //Update with other code.
-    public void DrawTwo(ArrayList<Player> p, Deck theDeck, int currPos, int maxSize)
-    {
-        int newPos = currPos +1;
-        if(newPos > maxSize)
-            newPos = 0; 
-        else if(newPos < 0)
-            newPos = maxSize; 
-               
+    //Put in the next player. Draw two.
+    //Need to do all player manipulation before the call to draw two.
+    public void DrawTwo(Deck theDeck, Player p)
+    {          
          for (int i = 0; i < 2; i++) 
-            p.get(newPos).GetCard(theDeck.DrawNext());   
+            p.GetCard(theDeck.DrawNext());   
     }
     
     

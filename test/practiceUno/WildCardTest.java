@@ -135,7 +135,7 @@ public class WildCardTest {
     public void testDrawFour() 
     {
         System.out.println("DrawFour");
-        Player newPlayer = new Player(); 
+        Player newPlayer = new Human("Steve", 1);
         Deck copyDeck = new Deck();
         copyDeck.Shuffle();
         

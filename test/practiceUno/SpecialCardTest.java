@@ -184,16 +184,15 @@ public class SpecialCardTest {
         System.out.println("DrawTwo");
         int handSize = 0; 
         int expected = 2; 
-        
-        ArrayList<Player> p = new ArrayList<Player>();  
+          
         Deck theDeck = new Deck();
-        Player affectedPlayer = new Player(); 
-        
+        Player affectedPlayer = new Human("steve", 1); 
+       
         
         for(SpecialCard.cardColor c : SpecialCard.cardColor.values())
         {
             SpecialCard instance = new SpecialCard(SpecialCard.cardValues.DRTWO, c);
-            instance.DrawTwo(p, theDeck, affectedPlayer.GetPlayerPos(), p.size());
+            instance.DrawTwo(theDeck, affectedPlayer);
             handSize = affectedPlayer.TotalCards();
             assertEquals(expected, handSize);
             expected += 2; 

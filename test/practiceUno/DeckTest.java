@@ -75,8 +75,9 @@ public class DeckTest {
         Card c = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE);
         Player play = new Human("Steve", 1);
         Deck instance = new Deck();
-        Scanner in = new Scanner(System.in);
-        instance.SetUpDiscard(in);
+        ByteArrayInputStream in = new ByteArrayInputStream("RED".getBytes());
+        System.setIn(in);
+        instance.SetUpDiscard(new Scanner(System.in));
         instance.AddDiscard(c, play, new Scanner(System.in));
     }
     
@@ -270,8 +271,9 @@ public class DeckTest {
     {
         System.out.println("ShowDiscard");
         Deck instance = new Deck();
-        Scanner in = new Scanner(System.in);
-        instance.SetUpDiscard(in);
+        ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
+        System.setIn(in);
+        instance.SetUpDiscard(new Scanner(System.in));
         instance.ShowDiscard();
     }
 
@@ -283,8 +285,9 @@ public class DeckTest {
     {
         System.out.println("SetUpDiscard");
         Deck instance = new Deck();
-        Scanner in = new Scanner(System.in);
-        instance.SetUpDiscard(in);
+        ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
+        System.setIn(in);
+        instance.SetUpDiscard(new Scanner(System.in));
     }
 
     /**
