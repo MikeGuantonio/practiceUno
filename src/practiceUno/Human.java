@@ -16,6 +16,10 @@ public class Human extends Player
         super.name= name;
         super.playerPos = pos; 
     }
+
+    Human() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public Card Discard(int dex)
     {

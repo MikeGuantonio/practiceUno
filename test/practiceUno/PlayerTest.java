@@ -43,7 +43,7 @@ public class PlayerTest {
     public void testShowHand() {
         System.out.println("ShowHand");
         Deck d = new Deck(); 
-        Player instance = new Player();
+        Player instance = new Human("Steve", 1);
         for (int i = 0; i < 8; i++) 
         {
             if(i != 0 )
@@ -61,7 +61,7 @@ public class PlayerTest {
     public void testGetCard() {
         System.out.println("GetCard");
         Card c = new WildCard(WildCard.cardWild.WILD);
-        Player instance = new Player();
+        Player instance = new Human("Steve", 1);
         instance.GetCard(c);
         assertEquals(1, instance.TotalCards());
     }
@@ -73,7 +73,7 @@ public class PlayerTest {
     public void testDiscardValid() {
         System.out.println("Discard");
         int dex = 0;
-        Player instance = new Player();
+        Player instance = new Human("Bro", 1);
         Deck d = new Deck(); 
         Card expResult = d.DrawNext();
         instance.GetCard(expResult);
@@ -88,7 +88,7 @@ public class PlayerTest {
     public void testDiscardInvalid(){
         System.out.println("Discard -- invalid");
         int dex = 0; 
-        Player instance = new Player(); 
+        Player instance = new Human("Foo", 1); 
         Card expResult = null; 
         Card result = instance.Discard(dex);
         assertEquals(expResult, result);
@@ -100,7 +100,7 @@ public class PlayerTest {
     @Test
     public void testTotalCards() {
         System.out.println("TotalCards");
-        Player instance = new Player();
+        Player instance = new Human("Bar", 1);
         int expResult = 0;
         int result = instance.TotalCards();
         assertEquals(expResult, result);
@@ -114,8 +114,7 @@ public class PlayerTest {
     public void testSetPlayerPos() {
         System.out.println("SetPlayerPos");
         int newPos = 0;
-        Player instance = new Player();
-        instance.SetPlayerPos(newPos);
+        Player instance = new Human("Bax", 1);
         
     }
 
@@ -125,9 +124,8 @@ public class PlayerTest {
     @Test
     public void testGetPlayerPos() {
         System.out.println("GetPlayerPos");
-        Player instance = new Player();
+        Player instance = new Human("Steve", 0);
         int expResult = 0;
-        instance.SetPlayerPos(expResult);
         int result = instance.GetPlayerPos();
         assertEquals(expResult, result);
         
@@ -139,8 +137,7 @@ public class PlayerTest {
     @Test
     public void testNextAction() {
         System.out.println("NextAction");
-        Player instance = new Player();
-        instance.NextAction();
+        Player instance = new Human("Steve", 1);
         
     }
 
@@ -151,8 +148,8 @@ public class PlayerTest {
     public void testSetName() {
         System.out.println("SetName");
         String newName = "Stupid Halvanja";
-        Player instance = new Player();
-        instance.SetName(newName);
+        Player instance = new Human(newName, 1);
+        
         
     }
 
@@ -162,9 +159,9 @@ public class PlayerTest {
     @Test
     public void testGetName() {
         System.out.println("GetName");
-        Player instance = new Player();
+        Player instance = new Human("Halavanja", 1);
         String expResult = "Halavanja";
-        instance.SetName("Halavanja");
+        
         String result = instance.GetName();
         assertEquals(expResult, result);
      }

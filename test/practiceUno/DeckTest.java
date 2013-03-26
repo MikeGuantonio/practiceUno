@@ -73,7 +73,7 @@ public class DeckTest {
     {
         System.out.println("AddDiscard");
         Card c = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE);
-        Player play = new Human();
+        Player play = new Human("Steve", 1);
         Deck instance = new Deck();
         Scanner in = new Scanner(System.in);
         instance.SetUpDiscard(in);
@@ -235,7 +235,7 @@ public class DeckTest {
         WildCard w = new WildCard(WildCard.cardWild.WILD);
         d.testSetupDiscard(w);
         
-        Player p = new Player(); 
+        Player p = new Human("steve", 1); 
         
         for(WildCard.cardWild wc : WildCard.cardWild.values())
         {
@@ -321,8 +321,8 @@ public class DeckTest {
         System.out.println("SideEffect");
         SpecialCard special = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE);
         ArrayList<Player> players = new ArrayList<Player>() ;
-        players.add(new Player());
-        players.add(new Player());
+        players.add(new Human("Steve", 1));
+        players.add(new Human("John", 1));
         int pos = 0;
         Deck instance = new Deck();
         instance.SideEffect(special, players, pos);       
