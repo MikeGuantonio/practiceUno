@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  */
 public class Deck
 {
-    private static final Logger LOG = Logger.getLogger(Deck.class.getName()); 
+    private static final Logger log = Logger.getLogger(Deck.class.getName()); 
     
     private Stack<Card> deck = new Stack<Card>();  
     private Stack<Card> discardDeck = new Stack<Card>();

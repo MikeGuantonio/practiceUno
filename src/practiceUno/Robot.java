@@ -75,7 +75,7 @@ public class Robot extends Player
        boolean done = false; 
        boolean possible = false; 
        int state = Decide(d.TopCard());
-       Card c; 
+       Card c = null; 
        
        while(!done)
        {
@@ -83,18 +83,25 @@ public class Robot extends Player
             {
                 case 1: if(possibleMatches.size() != 0)
                         {
-                            c = Discard(0);
-                            possible = d.AddDiscard(c, this, new Scanner(System.in));
-                            if(!possible)
-                                super.GetCard(c);
+                            c = Discard(0); //Should check for a wild card.
+                            if(c.getClass().equals(WildCard.class))
+                            {
+                                state = 4;
+                            }
                             else
                             {
-                                Forget(); 
-                                state = 5;
+                                possible = d.AddDiscard(c, this, new Scanner(System.in));
+                                if(!possible)
+                                    super.GetCard(c);
+                                else
+                                {
+                                    Forget(); 
+                                    state = 5;
+                                }
                             }
                         }
                         else
-                           state = 2; 
+                            state = 2; 
                         break;
                     
                 case 2: super.GetCard(d.DrawNext());
@@ -108,6 +115,8 @@ public class Robot extends Player
                     
                 case 4: ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
                         System.setIn(in);
+                        d.AddDiscard(c, this, new Scanner(System.in));
+                        state = 5;
                         break; 
                     
                 case 5: done = true; 

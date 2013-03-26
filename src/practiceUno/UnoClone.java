@@ -61,7 +61,6 @@ public class UnoClone {
                     if(players.get(pos).getClass().equals(Robot.class))
                     {
                         Robot r = (Robot)players.get(pos);
-                        log.severe(MessageFormat.format("TotalCards: {0}", r.TotalCards()));
                         endTurn = r.PlayAHand(deck);
                     }
                     else
