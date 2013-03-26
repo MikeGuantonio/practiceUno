@@ -61,4 +61,10 @@ public class NumberCard extends Card {
         String faceValue = face +" " +color.toString(); 
         System.out.println(faceValue); 
     }
+    
+    public String toString()
+    {
+        String faceValue = String.format("%s %s", face, color.toString()); 
+        return faceValue;
+    }
 }

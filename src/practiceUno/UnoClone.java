@@ -5,11 +5,11 @@
 package practiceUno;
 
 import java.io.IOException;
-import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
+import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 
@@ -28,6 +28,7 @@ public class UnoClone {
      */
     public static void main(String[] args)
     { 
+        //LogManager.getLogManager().reset();
         log.setLevel(Level.ALL);
         try {
             textLog = new FileHandler("unoClone.xml");
@@ -40,6 +41,7 @@ public class UnoClone {
         boolean endTurn = false; 
         int pos = 0; 
         
+        
         log.config("Creating players, deck"); 
         UnoClone uno = new UnoClone(); 
         ArrayList<Player> players = new ArrayList<Player>(); 
@@ -51,30 +53,26 @@ public class UnoClone {
         deck.SetUpDiscard(uno.input);
         
         log.fine("Game loop");
-        while(true)
+        System.out.println("Players " + players.size());
+        for (int i = 0; i < players.size(); i++)
         {
-            for (int i = 0; i < players.size(); i++)
+               
+            log.info("Start of player turn");
+            if(players.get(pos).getClass().equals(Robot.class))
             {
-                while(!endTurn)
-                {
-                    log.info("Start of player turn");
-                    if(players.get(pos).getClass().equals(Robot.class))
-                    {
-                        Robot r = (Robot)players.get(pos);
-                        endTurn = r.PlayAHand(deck);
-                    }
-                    else
-                    {
-                        endTurn = uno.PlayerTurn(players, deck, pos);
-                    }
-                    pos = uno.Wrap((pos+1), players.size());
-                    log.info("End player turn");
-                    
-                }
-                endTurn = false;
+                  Robot r = (Robot)players.get(pos);
+                  endTurn = r.PlayAHand(deck);
             }
-             
+            else
+            {
+                endTurn = uno.PlayerTurn(players, deck, pos);
+            }
+            pos = uno.Wrap((pos+1), players.size());
+            log.info("End player turn");
+        
+            endTurn = false;
         }
+              
     }
     
     

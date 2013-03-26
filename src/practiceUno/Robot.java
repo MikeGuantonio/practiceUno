@@ -16,9 +16,10 @@ import java.util.logging.Logger;
  */
 public class Robot extends Player
 {
-    private static final Logger LOG = Logger.getLogger(Robot.class.getName());
+    private static final Logger log = Logger.getLogger(Robot.class.getName());
    private Card.cardColor[] c = Card.cardColor.values();
    private Stack<Card> possibleMatches = new Stack<Card>(); 
+   private Card playingCard = null; 
    
  
     /**
@@ -72,6 +73,7 @@ public class Robot extends Player
      */
     public boolean PlayAHand(Deck d)
    {
+       log.entering("Play a hand", name);
        boolean done = false; 
        boolean possible = false; 
        int state = Decide(d.TopCard());
@@ -81,64 +83,87 @@ public class Robot extends Player
        {
             switch(state)
             {
-                case 1: if(possibleMatches.size() != 0)
+                case 1: log.info("Looing for possible match"); //May just return match.
+                        if(possibleMatches.size() != 0)
                         {
-                            c = Discard(0); //Should check for a wild card.
+                            c = Discard(0); 
                             if(c.getClass().equals(WildCard.class))
                             {
+                                log.info("Found a wild card. Moving to state 4");
                                 state = 4;
                             }
                             else
                             {
                                 possible = d.AddDiscard(c, this, new Scanner(System.in));
                                 if(!possible)
+                                {
                                     super.GetCard(c);
+                                    log.info("Card was not match. Return to hand");
+                                }
                                 else
                                 {
+                                    log.info("Found Match");
                                     Forget(); 
                                     state = 5;
                                 }
                             }
                         }
                         else
-                            state = 2; 
+                        {
+                            state = 2;
+                            log.info("No possible matches. Drawing a card.");
+                        }
                         break;
                     
-                case 2: super.GetCard(d.DrawNext());
+                case 2: log.info("No possible matches found. Drawing a card");
+                        log.info("Then going to try to play card again");
+                        super.GetCard(d.DrawNext());
                         state = Decide(d.TopCard());
                         if(state == 2)
                             state = 3; 
                         break; 
                     
-                case 3: state = 5; 
+                case 3: log.info("Pass");
+                        state = 5; 
                         break;
                     
-                case 4: ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
+                case 4: log.info("Time for a wild card. Choosing yellow");
+                        ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
                         System.setIn(in);
                         d.AddDiscard(c, this, new Scanner(System.in));
                         state = 5;
                         break; 
                     
-                case 5: done = true; 
+                case 5: log.info("End turn");
+                        done = true; 
                         break; 
             }
         }
+       log.exiting("Play a Hand", name);
        return done; 
    }
    
     private int Decide(Card c)
     {
+       log.entering("Decide", name);
        int choice = 0;  
-       for (int i = 0; i < hand.size(); i++) {
+       Forget(); 
+       for (int i = 0; i < hand.size(); i++)
+       {
            
            if(hand.get(i).getClass().equals(c.getClass()))
+           {
                possibleMatches.push(hand.remove(i));
+           }
+           
        }
        
        if(possibleMatches.size() != 0 )
            choice = 1;
        else
            choice = 2; 
+       
+       log.exiting("Decide", name);
         return choice; 
    }
       

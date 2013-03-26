@@ -45,4 +45,21 @@ public class RobotTest {
         Card v = r.Discard(0);
         assertNull("This card should be null", v);
     }
+    
+    @Test
+    public void testPlayAHand()
+    {
+        Robot r = new Robot("Steve", 0); 
+        Deck d = new Deck();
+        d.Shuffle();
+        d.testSetupDiscard(d.DrawNext());
+        
+        for (int i = 0; i < 7; i++) {
+            r.GetCard(d.DrawNext());
+        }
+        
+        r.PlayAHand(d);
+        
+        
+    }
 }

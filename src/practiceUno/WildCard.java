@@ -91,5 +91,11 @@ public class WildCard extends Card implements WildActions
         }
         return newColor; 
     }
+    
+    public String toString()
+    {
+        String faceValue = wild.toString() +" " +color.toString(); 
+        return faceValue; 
+    }
     enum cardWild {WILD, WILDDRFOUR};
 }

@@ -16,5 +16,7 @@ abstract class Card
 
     abstract void Print();
     abstract cardColor GetColor(); 
+   @Override
+    public abstract String toString(); 
     enum cardColor {BLUE,RED,GREEN, YELLOW}; 
 }

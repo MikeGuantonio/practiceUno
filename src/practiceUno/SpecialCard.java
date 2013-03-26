@@ -34,6 +34,7 @@ public class SpecialCard extends Card implements SpecialActions
     @Override
    public void Print()
    {
+       
    }
     
     /**
@@ -110,6 +111,12 @@ public class SpecialCard extends Card implements SpecialActions
     {          
          for (int i = 0; i < 2; i++) 
             p.GetCard(theDeck.DrawNext());   
+    }
+    
+    public String toString()
+    {
+        String faceValue = String.format("%s %s", sp.toString(), color.toString()); 
+        return faceValue; 
     }
    enum cardValues {REVERSE,SKIP,DRTWO}
     

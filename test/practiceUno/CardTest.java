@@ -68,5 +68,11 @@ public class CardTest {
         public cardColor GetColor() {
             return cardColor.BLUE;
         }
+        
+        public String toString()
+        {
+            String faceValue = String.format("%s %s", 5, color.toString()); 
+            return faceValue; 
+        }
     }
 }

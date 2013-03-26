@@ -86,11 +86,14 @@ public class Deck
             return (Card)deck.pop();
         else
         {
-            deck = new Stack<Card>(); 
-            deck.addAll(discardDeck);
+            log.info("Need to shuffle deck");
+            deck.clear();
+            deck = (Stack)discardDeck.clone(); 
             Shuffle();
             discardDeck.clear();
             discardDeck.add(deck.pop());
+            log.info(discardDeck.peek().toString());
+            log.info(deck.size()+"");
         }
         return null;
 
@@ -243,8 +246,7 @@ public class Deck
      */
     public void testSetupDiscard(Card c)
     {
-        System.out.println("Adding: ");
-        c.Print();
+        System.out.println("Adding: " + c.toString());
         discardDeck.add(c);
     }
     
