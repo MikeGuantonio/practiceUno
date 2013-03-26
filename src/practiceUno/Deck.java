@@ -13,10 +13,8 @@ public class Deck
 {
     private static final Logger LOG = Logger.getLogger(Deck.class.getName()); 
     
-    private final int MAX_CARD = 108; 
     private Stack<Card> deck = new Stack<Card>();  
     private Stack<Card> discardDeck = new Stack<Card>();
-    private deckType whichDeck;
     
     /**
      *
@@ -26,6 +24,7 @@ public class Deck
        CreateNumbers(); 
        CreateSpecial(); 
        CreateWild(); 
+      
     }
     
     /**
@@ -87,16 +86,11 @@ public class Deck
             return (Card)deck.pop();
         else
         {
-            System.out.println("This deck is done. Need to shuffle and replace deck.");
-            System.out.println("Normal Deck: " + deck.size());
-            System.out.println("Discard Deck: " + discardDeck.size());
             deck = new Stack<Card>(); 
             deck.addAll(discardDeck);
             Shuffle();
             discardDeck.clear();
             discardDeck.add(deck.pop());
-            System.out.println("Normal Deck: " + deck.size());
-            System.out.println("Discard Deck: " + discardDeck.size());
         }
         return null;
 
@@ -128,7 +122,6 @@ public class Deck
        }
        else
        {
-           System.out.println("No matching cards available");
        }
        if(canPlace)
         discardDeck.push(c);
@@ -146,39 +139,26 @@ public class Deck
                
             if(pushNum.GetColor().equals(topCard.GetColor()) )
             {
-                System.out.println("Match color");
                 canPlace = true;
             }
             else if(pushNum.GetNumber() == topCard.GetNumber())
             {
-                System.out.println("Match number");
                 canPlace = true; 
             }
             else
             {
-                System.out.print("Cannot play the card");
                 c.Print();
-                System.out.println("");
             }
          }
          else if(discard.getClass().equals(SpecialCard.class))
          {
              SpecialCard sp = (SpecialCard)discard; 
              NumberCard n = (NumberCard)c;
-             
-             if(c.GetColor().equals(discard.GetColor()))
-                 canPlace = true; 
-             else
-                 System.out.println("Cannot Play "+ n.GetColor());
          }
          else if(discard.getClass().equals(WildCard.class))
          {
              WildCard w = (WildCard)discard;
              NumberCard n = (NumberCard)c; 
-             if(w.GetColor().equals(n.GetColor()))
-                 canPlace = true; 
-             else 
-                 System.out.println("Cannot Place " + n.GetColor());
          }
          return canPlace; 
     }
@@ -186,46 +166,6 @@ public class Deck
     private boolean CheckSpecial(Card discard, Card c)
     {
         boolean canPlace = false; 
-        
-        if(discard.getClass().equals(SpecialCard.class))
-        {
-            System.out.println("Discard is a special card");
-            discardDeck.peek().Print();
-            System.out.println("");
-            
-            SpecialCard inPlay = (SpecialCard)c; 
-            SpecialCard top = (SpecialCard)discard;
-            
-            if(c.GetColor().equals(discard.GetColor()))
-            {
-                System.out.println("Match Color");
-                canPlace = true; 
-            }
-            else if(inPlay.GetSpecial().equals(top.GetSpecial()))
-            {
-                System.out.println("Match Special");
-                canPlace = true; 
-            }
-        }
-        else if(discard.getClass().equals(NumberCard.class))
-        {
-            if(c.GetColor().equals(discard.GetColor()))
-            {
-                System.out.println("Can Place on color");
-                canPlace = true; 
-            }
-            else
-                System.out.println("Cannot place" + c.GetColor());
-        }
-        else if(discard.getClass().equals(WildCard.class))
-        {
-            if(c.GetColor().equals(discard.GetColor()))
-                canPlace = true; 
-            else
-                System.out.println("Cannot place" + c.GetColor());
-        }
-        else
-            System.out.println("No match");
         return canPlace; 
     }
     
@@ -273,7 +213,6 @@ public class Deck
     public void ShowDiscard()
     {
         discardDeck.peek().Print();
-        System.out.println("");
     }
     
     /**
@@ -322,7 +261,6 @@ public class Deck
         for(Card c : tmpDeck)
         {
             c.Print();
-            System.out.println("");
         }
     }
     

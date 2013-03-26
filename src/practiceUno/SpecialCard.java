@@ -34,7 +34,6 @@ public class SpecialCard extends Card implements SpecialActions
     @Override
    public void Print()
    {
-       System.out.print(" " + sp + " " + color);
    }
     
     /**
@@ -88,16 +87,12 @@ public class SpecialCard extends Card implements SpecialActions
         int index = 0;  
         int actualPlayers = playerSize-1; 
         
-        System.out.println("CurrentPlayer index: " + currentPlayerIndex );
-        
         if(currentPlayerIndex < 0){
-            System.out.println("In 0");
             index = actualPlayers;
         }
         else if(currentPlayerIndex > actualPlayers)
         {
             index = 0;
-            System.out.println("Index was actual players");
         }
         else
             index = currentPlayerIndex-1;

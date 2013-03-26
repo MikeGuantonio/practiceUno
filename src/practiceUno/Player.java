@@ -16,14 +16,10 @@ abstract class Player
      */
     public void ShowHand()
     {
-	System.out.println(name + " has " + hand.size() + " cards.");
-        if(hand.size() == 1)
-            System.out.println(name + " also has uno.");
         
 	for(Card c : hand)
 	{
 	    c.Print();
-	    System.out.println(""); 
 	}
     }
 

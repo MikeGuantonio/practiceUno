@@ -36,14 +36,11 @@ public class Human extends Player
         Card c; 
         if(dex >= hand.size())
         {
-            System.out.println("Card does not exsist.");
             c = null; 
         }
         else
         {
-            System.out.print("Removing " );
             hand.get(dex).Print();
-            System.out.println("");
             c = hand.remove(dex);
         }
 	return c;

@@ -33,8 +33,6 @@ public class UnoClone {
         deck.Shuffle();
         SetUpPlayers(players, deck, 2);
         deck.SetUpDiscard(uno.input);
-                
-        System.out.println(players.get(0).GetName() + ". Welcome to UNO!" );
         int pos = 0; 
         
         while(true)
@@ -52,7 +50,6 @@ public class UnoClone {
                     {
                         endTurn = uno.PlayerTurn(players, deck, pos);
                     }
-                    System.out.println("Turn over " + players.get(pos).TotalCards());
                     pos = uno.Wrap((pos+1), players.size());
                     
                 }
@@ -74,7 +71,6 @@ public class UnoClone {
        
        if(numPlayers < 2 || numPlayers > 10)
        {
-           System.out.println("Cannot play this game!");
            System.exit(345);
        }
        
@@ -134,17 +130,6 @@ public class UnoClone {
         {
             choice = Menu(p, d, playerPos);
         }
-        
-            switch(choice)
-            {
-                case 2: DrawAndPlay(p, d, playerPos);
-                        turnStatus = true; 
-                        break; 
-                case 1: turnStatus = Play(p, d, playerPos);
-                        break;  
-                default:System.out.println("Cannot process!");
-                        break; 
-            }
             
             if(!turnStatus){
                DrawAndPlay(p, d, playerPos);
@@ -167,28 +152,11 @@ public class UnoClone {
         
         if(tmp.getClass().equals(Human.class))
         {
-            System.out.println("Human Turn");
             Human h = (Human)tmp; 
-            
-            System.out.println("Which card would you like to play?");
-            System.out.println("Remember index starts at 0");
-            System.out.print("The card on the top of the deck is  ");
             d.ShowDiscard();
             h.ShowHand(); 
         
             Card c = p.get(currentPlayer).Discard(input.nextInt());
-            if(c != null)
-            {
-                if(d.AddDiscard(c, h, input))
-                {
-                    done = true;
-                    d.SideEffect(c, p, currentPlayer);
-                }
-                else
-                    h.GetCard(c);
-            }
-            else
-                System.out.println("That doesn't seem to be a card.");
         }
         return done; 
     }
@@ -207,27 +175,10 @@ public class UnoClone {
         
         if(tmp.getClass().equals(Human.class))
         {
-            System.out.println("Looks like you need to draw a card!");
             p.get(playerPos).GetCard(d.DrawNext());
-            System.out.println("You drew a new card. This is your hand");
             p.get(playerPos).ShowHand();
-            System.out.println("Card on the top of discard is: ");
             d.ShowDiscard();
-            System.out.println("");
-        
-            System.out.println("What do you want to do?");
-            System.out.println("1. Play a card");
-            System.out.println("2. Skip a turn");
             choice = input.nextInt();
-        }
-        
-        switch(choice)
-        {
-            case 1: Play(p, d, playerPos); 
-                    break;
-            case 2: Skip(p.get(playerPos), d);
-                    break;
-            default: System.out.println("This is not a vaild choice.");
         }
         
     }
@@ -240,7 +191,6 @@ public class UnoClone {
      */
     public boolean Skip(Player p, Deck d)
     { 
-        System.out.println("Turn has ended");
         return true;
     }
     
@@ -252,7 +202,6 @@ public class UnoClone {
     public String GetInput(String prompt)
     {
         String output;
-        System.out.print(prompt + "> ");
         output = input.nextLine();
         return output; 
     }
@@ -268,11 +217,7 @@ public class UnoClone {
     public int Menu(ArrayList<Player> p, Deck d, int currPos)
     {
         int choice; 
-        System.out.print("Card on top of the deck is"); 
         d.ShowDiscard();
-        System.out.println(p.get(currPos).GetName() + ", what would you like to do? ");
-        System.out.println("1. Play A Card");
-        System.out.println("2. Draw A Card");
         choice = input.nextInt();
         return choice; 
     }

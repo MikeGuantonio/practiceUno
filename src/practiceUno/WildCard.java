@@ -31,9 +31,6 @@ public class WildCard extends Card implements WildActions
      */
     public void Print()
     {
-        System.out.print(" " + wild);
-        if(color != null)
-            System.out.print(" " + color);
     }
     
     /**
@@ -61,8 +58,6 @@ public class WildCard extends Card implements WildActions
      */
     public Card.cardColor Wild(Scanner scan)
     {
-        System.out.println("Please choose a color!");
-        System.out.println("Red, Green, Yellow, Blue");
         Card.cardColor wildColor = null; 
         
         String input = scan.nextLine(); 
@@ -72,7 +67,6 @@ public class WildCard extends Card implements WildActions
         }
         catch(Exception ex)
         {
-            System.out.println("Incompatible color");
         }
        
         color = wildColor; 
