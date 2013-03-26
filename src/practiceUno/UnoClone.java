@@ -14,8 +14,8 @@ import java.util.logging.Logger;
  * @author mike
  */
 public class UnoClone {
-    private static final Logger LOG = Logger.getLogger(UnoClone.class.getName()); 
-    
+    private static final Logger log = Logger.getLogger(UnoClone.class.getName()); 
+    public Scanner input= new Scanner(System.in); 
     /**
      *
      * @param args
@@ -23,24 +23,26 @@ public class UnoClone {
     public static void main(String[] args)
     { 
         boolean endTurn = false; 
+        int pos = 0; 
         
-        //Initalize local player variables. 
+        log.config("Creating players, deck"); 
         UnoClone uno = new UnoClone(); 
         ArrayList<Player> players = new ArrayList<Player>(); 
         Deck deck = new Deck(); 
         
-        //Set up the playing field
+        log.config("Initalizing players, deck");
         deck.Shuffle();
         SetUpPlayers(players, deck, 2);
         deck.SetUpDiscard(uno.input);
-        int pos = 0; 
         
+        log.fine("Game loop");
         while(true)
         {
             for (int i = 0; i < players.size(); i++)
             {
                 while(!endTurn)
                 {
+                    log.info("Start of player turn");
                     if(players.get(pos).getClass().equals(Robot.class))
                     {
                         Robot r = (Robot)players.get(pos);
@@ -51,6 +53,7 @@ public class UnoClone {
                         endTurn = uno.PlayerTurn(players, deck, pos);
                     }
                     pos = uno.Wrap((pos+1), players.size());
+                    log.info("End player turn");
                     
                 }
                 endTurn = false;
@@ -68,7 +71,7 @@ public class UnoClone {
      */
     public static void SetUpPlayers(ArrayList<Player> players, Deck deck, int numPlayers)
     { 
-       
+       log.entering("SetupPlayers", "Main");
        if(numPlayers < 2 || numPlayers > 10)
        {
            System.exit(345);
@@ -76,11 +79,7 @@ public class UnoClone {
        
        for (int i = 0; i < numPlayers; i++) 
        {
-           players.add(new Robot("Com"+i, i));
-          /* if(i != 0)
-               players.add(new Robot("Com"+i, i));
-           else
-               players.add(new Human(uno.GetInput("What is your name"), i)); */   
+           players.add(new Robot("Com"+i, i));   
        }
 
         for (int i = 0; i < 7; i++)
@@ -90,12 +89,10 @@ public class UnoClone {
                 players.get(j).GetCard(deck.DrawNext());
             }
         }
+        log.exiting("SetupPlayers", "Main");
     }
-    /**
-     *
-     * @param args
-     */
-    Scanner input= new Scanner(System.in); 
+    
+   
     
     /**
      *
@@ -105,11 +102,14 @@ public class UnoClone {
      */
     public int Wrap(int pos, int maxSize)
     {
+        log.entering("Wrap", null);
         if(pos > maxSize-1)
             pos = 0; 
         else if(pos < 0)
             pos = maxSize; 
+        log.exiting("Wrap", null);
         return pos; 
+        
     }
     
     /**
@@ -121,7 +121,7 @@ public class UnoClone {
      */
     public boolean PlayerTurn(ArrayList<Player> p, Deck d, int playerPos)
     {
-        
+        log.entering("Player Turn", null);
         int choice = 0; 
         boolean turnStatus = false; 
         Player tmp = p.get(playerPos);
@@ -135,6 +135,7 @@ public class UnoClone {
                DrawAndPlay(p, d, playerPos);
                turnStatus = true; 
             }
+            log.exiting("Player Turn", null);
             return turnStatus; 
     }
     
@@ -147,6 +148,7 @@ public class UnoClone {
      */
     public boolean Play(ArrayList<Player> p, Deck d, int currentPlayer)
     {
+        log.entering("Play", null);
         boolean done = false; 
         Player tmp = p.get(currentPlayer);
         
@@ -158,6 +160,7 @@ public class UnoClone {
         
             Card c = p.get(currentPlayer).Discard(input.nextInt());
         }
+        log.exiting("Play", null);
         return done; 
     }
     
@@ -170,6 +173,7 @@ public class UnoClone {
      */
     public void DrawAndPlay(ArrayList<Player> p, Deck d, int playerPos)
     {
+        log.entering("Draw and Play", null);
         int choice = 0; 
         Player tmp = p.get(playerPos);
         
@@ -180,6 +184,7 @@ public class UnoClone {
             d.ShowDiscard();
             choice = input.nextInt();
         }
+        log.exiting("Draw and Play", null);
         
     }
     
@@ -191,6 +196,7 @@ public class UnoClone {
      */
     public boolean Skip(Player p, Deck d)
     { 
+        log.entering("Skip -- Needs removed", null);
         return true;
     }
     
@@ -201,8 +207,9 @@ public class UnoClone {
      */
     public String GetInput(String prompt)
     {
-        String output;
-        output = input.nextLine();
+        log.entering("GetInput", prompt);
+        String output = input.nextLine();
+        log.exiting("Get Input", output);
         return output; 
     }
     
@@ -216,9 +223,11 @@ public class UnoClone {
      */
     public int Menu(ArrayList<Player> p, Deck d, int currPos)
     {
+        log.entering("menu", null);
         int choice; 
         d.ShowDiscard();
         choice = input.nextInt();
+        log.exiting("menu", null);
         return choice; 
     }
 }
