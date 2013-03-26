@@ -16,5 +16,5 @@ abstract class Card
 
     abstract void Print();
     abstract cardColor GetColor(); 
-   enum cardColor {BLUE,RED,GREEN, YELLOW}; 
+    enum cardColor {BLUE,RED,GREEN, YELLOW}; 
 }

@@ -4,8 +4,12 @@
  */
 package practiceUno;
 
+import java.io.IOException;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
@@ -14,14 +18,25 @@ import java.util.logging.Logger;
  * @author mike
  */
 public class UnoClone {
+    static private FileHandler textLog; 
     private static final Logger log = Logger.getLogger(UnoClone.class.getName()); 
     public Scanner input= new Scanner(System.in); 
+    
     /**
      *
      * @param args
      */
     public static void main(String[] args)
     { 
+        log.setLevel(Level.ALL);
+        try {
+            textLog = new FileHandler("unoClone.xml");
+        } catch (IOException ex) {
+            Logger.getLogger(UnoClone.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
+            Logger.getLogger(UnoClone.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        log.addHandler(textLog);
         boolean endTurn = false; 
         int pos = 0; 
         
@@ -46,6 +61,7 @@ public class UnoClone {
                     if(players.get(pos).getClass().equals(Robot.class))
                     {
                         Robot r = (Robot)players.get(pos);
+                        log.severe(MessageFormat.format("TotalCards: {0}", r.TotalCards()));
                         endTurn = r.PlayAHand(deck);
                     }
                     else

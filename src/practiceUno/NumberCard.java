@@ -4,6 +4,9 @@
  */
 package practiceUno;
 
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -11,9 +14,9 @@ import java.util.logging.Logger;
  * @author mike
  */
 public class NumberCard extends Card {
-    private static final Logger LOG = Logger.getLogger(NumberCard.class.getName());
-    
+    private static final Logger log = Logger.getLogger(NumberCard.class.getName());
     private int face;
+    static private FileHandler logText;
     
     /**
      *
@@ -22,6 +25,11 @@ public class NumberCard extends Card {
      */
     public NumberCard(int newNum, Card.cardColor color)
     {
+        //Don't want that for the constructor. Creates one on every instance.
+        //Need to find a way to log it in one place. 
+        
+        face = newNum; 
+        super.color = color; 
     }
     
     /**
@@ -49,5 +57,7 @@ public class NumberCard extends Card {
     @Override
     public void Print()
     {
+        String faceValue = face +" " +color.toString(); 
+        System.out.println(faceValue); 
     }
 }

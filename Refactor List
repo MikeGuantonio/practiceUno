@@ -10,6 +10,7 @@ Overall: Make the names more meaningful within the code
              other problems
          Use regular expressions for matching
          Passing in a player. Need to actually pass in the player array.
+         Need a formated print method that returns a string. 
 
 Card.java
 

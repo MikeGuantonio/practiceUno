@@ -87,9 +87,8 @@ public class DeckTest {
         System.out.println("AddDiscard Number and Number");
         Deck d = new Deck();
          
-        //Number on Number
         NumberCard nc = new NumberCard(5, Card.cardColor.BLUE);
-        d.testSetupDiscard(nc);
+        d.testSetupDiscard((Card)nc);
         
         for(Card.cardColor c : Card.cardColor.values())
         {

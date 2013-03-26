@@ -243,6 +243,8 @@ public class Deck
      */
     public void testSetupDiscard(Card c)
     {
+        System.out.println("Adding: ");
+        c.Print();
         discardDeck.add(c);
     }
     
