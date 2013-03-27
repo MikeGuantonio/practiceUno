@@ -86,7 +86,7 @@ public class Deck
             return (Card)deck.pop();
         else
         {
-            log.info("Need to shuffle deck");
+            log.info("Need to shuffle deck"); //Clone dos not make a copy. Need deep.
             deck.clear();
             deck = (Stack)discardDeck.clone(); 
             Shuffle();

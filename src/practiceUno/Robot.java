@@ -6,7 +6,6 @@ package practiceUno;
 
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
-import java.util.Stack;
 import java.util.logging.Logger;
 
 
@@ -18,7 +17,6 @@ public class Robot extends Player
 {
     private static final Logger log = Logger.getLogger(Robot.class.getName());
    private Card.cardColor[] c = Card.cardColor.values();
-   private Stack<Card> possibleMatches = new Stack<Card>(); 
    private Card playingCard = null; 
    
  
@@ -34,37 +32,27 @@ public class Robot extends Player
    }
    
    
+   public int FindCard(Card c)
+   {
+       return hand.indexOf(c);
+   }
    
    @Override
    public Card Discard(int dex)
    {
        Card retC; 
-       
-       if(possibleMatches.size() != 0)
+       if(dex == -1)
        {
-           retC = possibleMatches.pop(); 
+           retC = null; 
        }
        else
-           retC = null;
+       {
+           retC = hand.get(dex); 
+       }
       return retC; 
    }
    
-    /**
-     *
-     * @return
-     */
-    public int PossMatch()
-   {
-       return possibleMatches.size(); 
-   }
    
-    /**
-     *
-     */
-    public void Forget()
-   {
-       possibleMatches.clear();
-   }
    
     /**
      *
@@ -77,48 +65,21 @@ public class Robot extends Player
        boolean done = false; 
        boolean possible = false; 
        int state = Decide(d.TopCard());
-       Card c = null; 
+       boolean tried = false; 
        
        while(!done)
        {
             switch(state)
             {
-                case 1: log.info("Looing for possible match"); //May just return match.
-                        if(possibleMatches.size() != 0)
-                        {
-                            c = Discard(0); 
-                            if(c.getClass().equals(WildCard.class))
-                            {
-                                log.info("Found a wild card. Moving to state 4");
-                                state = 4;
-                            }
-                            else
-                            {
-                                possible = d.AddDiscard(c, this, new Scanner(System.in));
-                                if(!possible)
-                                {
-                                    super.GetCard(c);
-                                    log.info("Card was not match. Return to hand");
-                                }
-                                else
-                                {
-                                    log.info("Found Match");
-                                    Forget(); 
-                                    state = 5;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            state = 2;
-                            log.info("No possible matches. Drawing a card.");
-                        }
+                case 1: log.info("Trying to play a card"); //need to check for wild.
+                        d.AddDiscard(playingCard, this, null);
+                        state = 5; 
                         break;
                     
-                case 2: log.info("No possible matches found. Drawing a card");
-                        log.info("Then going to try to play card again");
+                case 2: log.info("Need to draw a card");
                         super.GetCard(d.DrawNext());
                         state = Decide(d.TopCard());
+                        tried = true;
                         if(state == 2)
                             state = 3; 
                         break; 
@@ -130,7 +91,7 @@ public class Robot extends Player
                 case 4: log.info("Time for a wild card. Choosing yellow");
                         ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
                         System.setIn(in);
-                        d.AddDiscard(c, this, new Scanner(System.in));
+                        d.AddDiscard(playingCard, this, new Scanner(System.in));
                         state = 5;
                         break; 
                     
@@ -147,18 +108,28 @@ public class Robot extends Player
     {
        log.entering("Decide", name);
        int choice = 0;  
-       Forget(); 
-       for (int i = 0; i < hand.size(); i++)
-       {
            
-           if(hand.get(i).getClass().equals(c.getClass()))
+       for(Card play : hand)
+       {
+           if(play.GetColor().equals(c.GetColor())) //match color
            {
-               possibleMatches.push(hand.remove(i));
+               playingCard = play; 
+               break; 
+           }
+           else if(c.getClass().equals(NumberCard.class)) //match number
+           {
+               NumberCard n = (NumberCard)play; 
+               NumberCard top = (NumberCard)c;
+               if(n.GetNumber() == top.GetNumber())
+               {
+                   playingCard = play;
+                   break; 
+               }
            }
            
        }
-       
-       if(possibleMatches.size() != 0 )
+           
+       if(playingCard != null)
            choice = 1;
        else
            choice = 2; 
