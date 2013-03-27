@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2013-03-27T13:23:47</date>
+  <millis>1364405027820</millis>
+  <sequence>0</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>CONFIG</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>Creating players, deck</message>
+</record>
+<record>
+  <date>2013-03-27T13:23:47</date>
+  <millis>1364405027840</millis>
+  <sequence>1</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>CONFIG</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>Initalizing players, deck</message>
+</record>
+<record>
+  <date>2013-03-27T13:23:47</date>
+  <millis>1364405027841</millis>
+  <sequence>2</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>FINER</level>
+  <class>SetupPlayers</class>
+  <method>Main</method>
+  <thread>10</thread>
+  <message>ENTRY</message>
+</record>
+<record>
+  <date>2013-03-27T13:23:47</date>
+  <millis>1364405027842</millis>
+  <sequence>3</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>FINER</level>
+  <class>SetupPlayers</class>
+  <method>Main</method>
+  <thread>10</thread>
+  <message>RETURN</message>
+</record>
+<record>
+  <date>2013-03-27T13:23:47</date>
+  <millis>1364405027849</millis>
+  <sequence>5</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>FINE</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>Game loop</message>
+</record>
+<record>
+  <date>2013-03-27T13:23:47</date>
+  <millis>1364405027851</millis>
+  <sequence>6</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>INFO</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>Start of player turn 6 BLUE</message>
+</record>
+<record>
+  <date>2013-03-27T13:23:47</date>
+  <millis>1364405027853</millis>
+  <sequence>14</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>FINER</level>
+  <class>Wrap</class>
+  <thread>10</thread>
+  <message>ENTRY</message>
+</record>
+<record>
+  <date>2013-03-27T13:23:47</date>
+  <millis>1364405027853</millis>
+  <sequence>15</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>FINER</level>
+  <class>Wrap</class>
+  <thread>10</thread>
+  <message>RETURN</message>
+</record>
+<record>
+  <date>2013-03-27T13:23:47</date>
+  <millis>1364405027854</millis>
+  <sequence>16</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>INFO</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>End player turn</message>
+</record>
+<record>
+  <date>2013-03-27T13:23:47</date>
+  <millis>1364405027854</millis>
+  <sequence>17</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>INFO</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>Start of player turn 6 YELLOW</message>
+</record>
+</log>

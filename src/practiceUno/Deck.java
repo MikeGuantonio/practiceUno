@@ -2,6 +2,7 @@
 
 package practiceUno; 
 
+import java.io.ByteArrayInputStream;
 import java.util.*; 
 import java.util.logging.Logger;
 
@@ -232,12 +233,16 @@ public class Deck
      */
     public void SetUpDiscard(Scanner in)
     {
+        log.info("Setting up discard.");
         discardDeck.add(DrawNext());
         if(discardDeck.peek().getClass().equals(WildCard.class))
         {
+            ByteArrayInputStream choose = new ByteArrayInputStream("RED".getBytes());
+            System.setIn(choose);
             WildCard w = (WildCard)discardDeck.peek();
-            w.Wild(in);
+            w.Wild(new Scanner(System.in));
         }
+        
     }
 
     /**

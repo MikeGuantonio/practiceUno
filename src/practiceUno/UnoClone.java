@@ -38,6 +38,7 @@ public class UnoClone {
             Logger.getLogger(UnoClone.class.getName()).log(Level.SEVERE, null, ex);
         }
         log.addHandler(textLog);
+        
         boolean endTurn = false; 
         int pos = 0; 
         
@@ -57,7 +58,7 @@ public class UnoClone {
         for (int i = 0; i < players.size(); i++)
         {
                
-            log.info("Start of player turn");
+            log.info("Start of player turn " + deck.TopCard().toString());
             if(players.get(pos).getClass().equals(Robot.class))
             {
                   Robot r = (Robot)players.get(pos);

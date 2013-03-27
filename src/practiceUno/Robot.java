@@ -64,14 +64,17 @@ public class Robot extends Player
        log.entering("Play a hand", name);
        boolean done = false; 
        boolean possible = false; 
+       
+       log.info("Trying to decide");
        int state = Decide(d.TopCard());
+       log.info("Decided " + state);
        boolean tried = false; 
        
        while(!done)
        {
             switch(state)
             {
-                case 1: log.info("Trying to play a card"); //need to check for wild.
+                case 1: log.info("Trying to play a card " + playingCard.toString()); //need to check for wild
                         d.AddDiscard(playingCard, this, null);
                         state = 5; 
                         break;
@@ -107,27 +110,45 @@ public class Robot extends Player
     private int Decide(Card c)
     {
        log.entering("Decide", name);
-       int choice = 0;  
-           
+       int choice;  
+       
+       if(c != null)
+       {
        for(Card play : hand)
        {
-           if(play.GetColor().equals(c.GetColor())) //match color
-           {
+              
+           if((play.GetColor() == null || c.GetColor() == null) || !play.GetColor().equals(c.GetColor())) //match color
+           if(play.getClass().equals(NumberCard.class) && c.getClass().equals(NumberCard.class))
+      {
+          log.info(String.format("Trying to match a number %s %s", play.toString(), c.toString()));
+          NumberCard n = (NumberCard)play; 
+          NumberCard top = (NumberCard)c;
+          if(n.GetNumber() == top.GetNumber())
+          {
+              playingCard = play;
+              break; 
+          }
+      }
+      else if(play.getClass().equals(SpecialCard.class) && c.getClass().equals(SpecialCard.class))
+      {
+          log.info(String.format("Trying to match a special card %s %s", play.toString(), c.toString()));
+          SpecialCard s = (SpecialCard)play;
+          SpecialCard top = (SpecialCard)c; 
+          if(s.GetSpecial().equals(top.GetSpecial()))
+          {
+              playingCard = play;
+              break;
+          }
+      }
+           else {
+               log.info("Trying to match a color");
                playingCard = play; 
-               break; 
-           }
-           else if(c.getClass().equals(NumberCard.class)) //match number
-           {
-               NumberCard n = (NumberCard)play; 
-               NumberCard top = (NumberCard)c;
-               if(n.GetNumber() == top.GetNumber())
-               {
-                   playingCard = play;
-                   break; 
-               }
+               break;
            }
            
        }
+       }
+       
            
        if(playingCard != null)
            choice = 1;

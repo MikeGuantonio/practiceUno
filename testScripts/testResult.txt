@@ -1,0 +1,32 @@
+Mar 27, 2013 1:23:47 PM practiceUno.Deck SetUpDiscard
+INFO: Setting up discard.
+Mar 27, 2013 1:23:47 PM practiceUno.UnoClone main
+INFO: Start of player turn 6 BLUE
+Mar 27, 2013 1:23:47 PM practiceUno.Robot PlayAHand
+INFO: Trying to decide
+Mar 27, 2013 1:23:47 PM practiceUno.Robot Decide
+INFO: Trying to match a number 1 YELLOW 6 BLUE
+Mar 27, 2013 1:23:47 PM practiceUno.Robot Decide
+INFO: Trying to match a number 1 YELLOW 6 BLUE
+Mar 27, 2013 1:23:47 PM practiceUno.Robot Decide
+INFO: Trying to match a number 6 YELLOW 6 BLUE
+Mar 27, 2013 1:23:47 PM practiceUno.Robot PlayAHand
+INFO: Decided 1
+Mar 27, 2013 1:23:47 PM practiceUno.Robot PlayAHand
+INFO: Trying to play a card 6 YELLOW
+Mar 27, 2013 1:23:47 PM practiceUno.Robot PlayAHand
+INFO: End turn
+Mar 27, 2013 1:23:47 PM practiceUno.UnoClone main
+INFO: End player turn
+Mar 27, 2013 1:23:47 PM practiceUno.UnoClone main
+INFO: Start of player turn 6 YELLOW
+Mar 27, 2013 1:23:47 PM practiceUno.Robot PlayAHand
+INFO: Trying to decide
+Mar 27, 2013 1:23:47 PM practiceUno.Robot Decide
+INFO: Trying to match a color
+Mar 27, 2013 1:23:47 PM practiceUno.Robot PlayAHand
+INFO: Decided 1
+Exception in thread "main" java.lang.NullPointerException
+	at practiceUno.WildCard.toString(WildCard.java:97)
+	at practiceUno.Robot.PlayAHand(Robot.java:77)
+	at practiceUno.UnoClone.main(UnoClone.java:65)
