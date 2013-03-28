@@ -242,6 +242,7 @@ public class Deck
             WildCard w = (WildCard)discardDeck.peek();
             w.Wild(new Scanner(System.in));
         }
+        log.info("Top card: " + TopCard());
         
     }
 

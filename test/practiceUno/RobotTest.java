@@ -41,8 +41,9 @@ public class RobotTest {
     public void testDiscard()
     {
         Robot r = new Robot("Steve", 2);
+        Card tmp = new NumberCard(5, Card.cardColor.BLUE);
         
-        Card v = r.Discard(0);
+        Card v = r.Discard(r.FindCard(tmp));
         assertNull("This card should be null", v);
     }
     
@@ -60,6 +61,45 @@ public class RobotTest {
         
         r.PlayAHand(d);
         
+    }
+    
+    @Test
+    public void testPlayNoShuffle()
+    {
+        Robot r = new Robot("Steve", 0);
+        Deck d = new Deck(); 
+        d.SetUpDiscard(null);
+        
+        System.out.println("Showing hand...");
+        r.ShowHand();
+        for(int i = 0; i < 7; i++)
+        {
+            r.GetCard(d.DrawNext());
+        }
+        r.PlayAHand(d);
+    }
+    
+    public void testPlayKnownHand()
+    {
+        Robot r = new Robot("steve", 0);
+        Deck d = new Deck(); 
+        d.SetUpDiscard(null);
+        
+        r.GetCard(new NumberCard(5, Card.cardColor.BLUE));
+        r.GetCard(new NumberCard(5, Card.cardColor.GREEN));
+        r.GetCard(new NumberCard(5, Card.cardColor.YELLOW));
+        r.GetCard(new NumberCard(5, Card.cardColor.RED));
+        r.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE));
+        r.GetCard(new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.RED));
+        r.GetCard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.GREEN));
+
+        d.testSetupDiscard(new NumberCard(5, Card.cardColor.BLUE));
+       
+        boolean done = false; 
+        while(!done)
+        {
+            done = r.PlayAHand(d);
+        }
         
     }
 }

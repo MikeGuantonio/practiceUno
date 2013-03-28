@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  */
 public class WildCard extends Card implements WildActions
 {
-    private static final Logger LOG = Logger.getLogger(WildCard.class.getName()); 
+    private static final Logger log = Logger.getLogger(WildCard.class.getName()); 
     cardWild wild; 
     
     
@@ -58,6 +58,7 @@ public class WildCard extends Card implements WildActions
      */
     public Card.cardColor Wild(Scanner scan)
     {
+        log.info("Call for wild called");
         Card.cardColor wildColor = null; 
         
         String input = scan.nextLine(); 

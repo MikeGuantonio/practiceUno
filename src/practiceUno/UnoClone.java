@@ -54,7 +54,7 @@ public class UnoClone {
         deck.SetUpDiscard(uno.input);
         
         log.fine("Game loop");
-        System.out.println("Players " + players.size());
+        log.info("Players " + players.size());
         for (int i = 0; i < players.size(); i++)
         {
                
