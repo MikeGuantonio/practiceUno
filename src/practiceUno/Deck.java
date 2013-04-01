@@ -39,14 +39,16 @@ public class Deck
         }
         catch(Exception ex)
         {
+            log.severe("There is no valid deck to shuffle!");
         }
        
     }
     
     private void AddToDeck(Card c, int numberOfCards)
     {
-        for(int i = 0; i < numberOfCards; i++)
+        for(int i = 0; i < numberOfCards; i++) {
             deck.push(c);
+        }
     }
      
     private void CreateNumbers()
@@ -54,8 +56,9 @@ public class Deck
         for(Card.cardColor color : Card.cardColor.values())
         {
                 AddToDeck( new NumberCard (0, color), 1);
-                for (int i = 1; i < 10; i++) 
+                for (int i = 1; i < 10; i++) {
                     AddToDeck( new NumberCard (i, color), 2);
+                }
         }      
     }
     
@@ -72,8 +75,9 @@ public class Deck
     
     private void CreateWild()
     {
-        for(WildCard.cardWild wild : WildCard.cardWild.values())
+        for(WildCard.cardWild wild : WildCard.cardWild.values()) {
             AddToDeck(new WildCard(wild), 4);
+        }
     }
 
     /**
@@ -82,9 +86,10 @@ public class Deck
      */
     public Card DrawNext()
     {
-        Card c; 
-        if(!deck.isEmpty())
-            return (Card)deck.pop();
+        Card c = null; 
+        if(!deck.isEmpty()) {
+            c = (Card)deck.pop();
+        }
         else
         {
             log.info("Need to shuffle deck"); //Clone dos not make a copy. Need deep.
@@ -96,7 +101,7 @@ public class Deck
             log.info(discardDeck.peek().toString());
             log.info(deck.size()+"");
         }
-        return null;
+        return c;
 
     }
     
@@ -124,11 +129,10 @@ public class Deck
        {
            canPlace = CheckWild(discard, c, play, in); 
        }
-       else
-       {
+       
+       if(canPlace) {
+           discardDeck.push(c);
        }
-       if(canPlace)
-        discardDeck.push(c);
        return canPlace; 
 
     }
@@ -169,12 +173,14 @@ public class Deck
     
     private boolean CheckSpecial(Card discard, Card c)
     {
+        //Actually fill this is with code...
         boolean canPlace = false; 
         return canPlace; 
     }
     
     private boolean CheckWild(Card discard, Card c, Player thisPlayer, Scanner in)
     {
+        //Why am I using a discard?
         boolean canPlace = true; 
         
         WildCard wild = (WildCard)c;
@@ -186,9 +192,7 @@ public class Deck
         else if(wild.GetWild().equals(WildCard.cardWild.WILDDRFOUR))
         {
           wild.DrawFour(thisPlayer, this, in);
-        }
-        
-        
+        }   
         return canPlace; 
     }
     
@@ -263,10 +267,12 @@ public class Deck
     public void PrintDeck(String deckName)
     {  
         Stack<Card> tmpDeck = new Stack<Card>(); 
-        if(deckName.equals("discard"))
+        if(deckName.equals("discard")) {
             tmpDeck = discardDeck; 
-        else if(deckName.equals("regular"))
-            tmpDeck = deck; 
+        } 
+        else if(deckName.equals("regular")) {
+            tmpDeck = deck;
+        } 
         
         for(Card c : tmpDeck)
         {

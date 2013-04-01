@@ -68,6 +68,7 @@ public class WildCard extends Card implements WildActions
         }
         catch(Exception ex)
         {
+            log.severe("The color value is null!");
         }
        
         color = wildColor; 

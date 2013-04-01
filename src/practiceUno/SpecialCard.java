@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 public class SpecialCard extends Card implements SpecialActions
 {
-    private static final Logger LOG = Logger.getLogger(SpecialCard.class.getName()); 
+    private static final Logger log = Logger.getLogger(SpecialCard.class.getName()); 
    cardValues sp; 
 
    
@@ -24,6 +24,7 @@ public class SpecialCard extends Card implements SpecialActions
      */
     public SpecialCard(cardValues newSp, cardColor newColor)
    {
+       log.fine("Special card");
        sp = newSp; 
        color = newColor; 
    }
@@ -67,12 +68,15 @@ public class SpecialCard extends Card implements SpecialActions
         int index = 0;  
         int actualPlayers = playerSize -1; 
         
-        if(currentPlayerIndex == actualPlayers-2) 
+        if(currentPlayerIndex == actualPlayers-2) { 
             index = 0;
-        else if(currentPlayerIndex == actualPlayers-1)
+        }
+        else if(currentPlayerIndex == actualPlayers-1) {
             index = 1;
-        else
+        }
+        else {
             index = currentPlayerIndex + 2;
+        }
         return index; 
     }
     
@@ -95,8 +99,9 @@ public class SpecialCard extends Card implements SpecialActions
         {
             index = 0;
         }
-        else
+        else {
             index = currentPlayerIndex-1;
+        }
         return index;  
     }
     
@@ -109,8 +114,9 @@ public class SpecialCard extends Card implements SpecialActions
      */
     public void DrawTwo(Deck theDeck, Player p)
     {          
-         for (int i = 0; i < 2; i++) 
-            p.GetCard(theDeck.DrawNext());   
+         for (int i = 0; i < 2; i++) {
+             p.GetCard(theDeck.DrawNext());
+         }   
     }
     
     public String toString()

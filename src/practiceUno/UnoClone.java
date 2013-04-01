@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
-import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 
@@ -117,10 +116,12 @@ public class UnoClone {
     public int Wrap(int pos, int maxSize)
     {
         log.entering("Wrap", null);
-        if(pos > maxSize-1)
+        if(pos > maxSize-1) {
             pos = 0; 
-        else if(pos < 0)
-            pos = maxSize; 
+        } 
+        else if(pos < 0) {
+            pos = maxSize;
+        } 
         log.exiting("Wrap", null);
         return pos; 
         
@@ -136,13 +137,13 @@ public class UnoClone {
     public boolean PlayerTurn(ArrayList<Player> p, Deck d, int playerPos)
     {
         log.entering("Player Turn", null);
-        int choice = 0; 
+        
         boolean turnStatus = false; 
         Player tmp = p.get(playerPos);
         
         if(tmp.getClass().equals(Human.class))
         {
-            choice = Menu(p, d, playerPos);
+            int choice = Menu(p, d, playerPos);
         }
             
             if(!turnStatus){
@@ -172,7 +173,7 @@ public class UnoClone {
             d.ShowDiscard();
             h.ShowHand(); 
         
-            Card c = p.get(currentPlayer).Discard(input.nextInt());
+            //Card c = p.get(currentPlayer).Discard(input.nextInt());
         }
         log.exiting("Play", null);
         return done; 
@@ -188,7 +189,7 @@ public class UnoClone {
     public void DrawAndPlay(ArrayList<Player> p, Deck d, int playerPos)
     {
         log.entering("Draw and Play", null);
-        int choice = 0; 
+ 
         Player tmp = p.get(playerPos);
         
         if(tmp.getClass().equals(Human.class))
@@ -196,7 +197,7 @@ public class UnoClone {
             p.get(playerPos).GetCard(d.DrawNext());
             p.get(playerPos).ShowHand();
             d.ShowDiscard();
-            choice = input.nextInt();
+            //int choice = input.nextInt();
         }
         log.exiting("Draw and Play", null);
         
