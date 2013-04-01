@@ -96,7 +96,10 @@ public class WildCard extends Card implements WildActions
     
     public String toString()
     {
-        String faceValue = wild.toString() +" " +color.toString(); 
+        if(color == null)
+            System.out.println("Wild card color is null!");
+        
+        String faceValue = String.format("%s %s", wild.toString(), color.toString()); 
         return faceValue; 
     }
     enum cardWild {WILD, WILDDRFOUR};

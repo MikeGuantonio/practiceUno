@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2013-03-27T17:38:20</date>
-  <millis>1364420300406</millis>
+  <date>2013-04-01T14:32:33</date>
+  <millis>1364841153615</millis>
   <sequence>0</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>CONFIG</level>
@@ -13,8 +13,8 @@
   <message>Creating players, deck</message>
 </record>
 <record>
-  <date>2013-03-27T17:38:20</date>
-  <millis>1364420300430</millis>
+  <date>2013-04-01T14:32:33</date>
+  <millis>1364841153638</millis>
   <sequence>1</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>CONFIG</level>
@@ -24,8 +24,8 @@
   <message>Initalizing players, deck</message>
 </record>
 <record>
-  <date>2013-03-27T17:38:20</date>
-  <millis>1364420300432</millis>
+  <date>2013-04-01T14:32:33</date>
+  <millis>1364841153639</millis>
   <sequence>2</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
@@ -35,8 +35,8 @@
   <message>ENTRY</message>
 </record>
 <record>
-  <date>2013-03-27T17:38:20</date>
-  <millis>1364420300433</millis>
+  <date>2013-04-01T14:32:33</date>
+  <millis>1364841153641</millis>
   <sequence>3</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
@@ -46,8 +46,8 @@
   <message>RETURN</message>
 </record>
 <record>
-  <date>2013-03-27T17:38:20</date>
-  <millis>1364420300443</millis>
+  <date>2013-04-01T14:32:33</date>
+  <millis>1364841153651</millis>
   <sequence>6</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINE</level>
@@ -57,8 +57,8 @@
   <message>Game loop</message>
 </record>
 <record>
-  <date>2013-03-27T17:38:20</date>
-  <millis>1364420300444</millis>
+  <date>2013-04-01T14:32:33</date>
+  <millis>1364841153651</millis>
   <sequence>7</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>INFO</level>
@@ -68,56 +68,14 @@
   <message>Players 2</message>
 </record>
 <record>
-  <date>2013-03-27T17:38:20</date>
-  <millis>1364420300444</millis>
+  <date>2013-04-01T14:32:33</date>
+  <millis>1364841153651</millis>
   <sequence>8</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>INFO</level>
   <class>practiceUno.UnoClone</class>
   <method>main</method>
   <thread>10</thread>
-  <message>Start of player turn 4 BLUE</message>
-</record>
-<record>
-  <date>2013-03-27T17:38:20</date>
-  <millis>1364420300447</millis>
-  <sequence>15</sequence>
-  <logger>practiceUno.UnoClone</logger>
-  <level>FINER</level>
-  <class>Wrap</class>
-  <thread>10</thread>
-  <message>ENTRY</message>
-</record>
-<record>
-  <date>2013-03-27T17:38:20</date>
-  <millis>1364420300447</millis>
-  <sequence>16</sequence>
-  <logger>practiceUno.UnoClone</logger>
-  <level>FINER</level>
-  <class>Wrap</class>
-  <thread>10</thread>
-  <message>RETURN</message>
-</record>
-<record>
-  <date>2013-03-27T17:38:20</date>
-  <millis>1364420300447</millis>
-  <sequence>17</sequence>
-  <logger>practiceUno.UnoClone</logger>
-  <level>INFO</level>
-  <class>practiceUno.UnoClone</class>
-  <method>main</method>
-  <thread>10</thread>
-  <message>End player turn</message>
-</record>
-<record>
-  <date>2013-03-27T17:38:20</date>
-  <millis>1364420300447</millis>
-  <sequence>18</sequence>
-  <logger>practiceUno.UnoClone</logger>
-  <level>INFO</level>
-  <class>practiceUno.UnoClone</class>
-  <method>main</method>
-  <thread>10</thread>
-  <message>Start of player turn 4 BLUE</message>
+  <message>Start of player turn DRTWO RED</message>
 </record>
 </log>
