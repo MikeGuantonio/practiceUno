@@ -31,6 +31,7 @@ public class Human extends Player
     }
     
     
+    @Override
     public Card Discard(int dex)
     {
         Card c; 

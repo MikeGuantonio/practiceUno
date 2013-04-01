@@ -42,6 +42,7 @@ public class SpecialCard extends Card implements SpecialActions
      *
      * @return
      */
+    @Override
     public Card.cardColor GetColor()
     {
         return color; 
@@ -112,6 +113,7 @@ public class SpecialCard extends Card implements SpecialActions
      * @param theDeck
      * @param p
      */
+    @Override
     public void DrawTwo(Deck theDeck, Player p)
     {          
          for (int i = 0; i < 2; i++) {
@@ -119,6 +121,11 @@ public class SpecialCard extends Card implements SpecialActions
          }   
     }
     
+    /**
+     *
+     * @return
+     */
+    @Override
     public String toString()
     {
         String faceValue = String.format("%s %s", sp.toString(), color.toString()); 

@@ -140,33 +140,50 @@ public class Deck
     private boolean CheckNumber(Card discard, Card c)
     {
         boolean canPlace = false; 
+        NumberCard cardToPlay = (NumberCard) c;
+        
         if(discard.getClass().equals(NumberCard.class))
         {
-            NumberCard pushNum = (NumberCard) c; 
+             
             NumberCard topCard = (NumberCard) discard; 
                
-            if(pushNum.GetColor().equals(topCard.GetColor()) )
+            if(cardToPlay.GetColor().equals(topCard.GetColor()) )
             {
                 canPlace = true;
             }
-            else if(pushNum.GetNumber() == topCard.GetNumber())
+            else if(cardToPlay.GetNumber() == topCard.GetNumber())
             {
                 canPlace = true; 
             }
             else
             {
-                c.Print();
+               log.info("Tried to place a number on a number");
+               log.info(discard.toString());
             }
          }
          else if(discard.getClass().equals(SpecialCard.class))
-         {
-             SpecialCard sp = (SpecialCard)discard; 
-             NumberCard n = (NumberCard)c;
+         { 
+             if(cardToPlay.GetColor().equals(discard.GetColor()))
+             {
+                 canPlace = true;
+             }
+             else
+             {
+                 log.info("Tried to place a number card on special");
+                 log.info(discard.toString());
+             }
          }
          else if(discard.getClass().equals(WildCard.class))
          {
-             WildCard w = (WildCard)discard;
-             NumberCard n = (NumberCard)c; 
+             if(cardToPlay.GetColor().equals(discard.GetColor()))
+             {
+                 canPlace = true; 
+             }
+             else
+             {
+                 log.info("Tried to place a number card on wild.");
+                 log.info(discard.toString());
+             }
          }
          return canPlace; 
     }
