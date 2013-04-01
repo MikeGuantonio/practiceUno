@@ -4,6 +4,8 @@
  */
 package practiceUno;
 
+import java.io.ByteArrayInputStream;
+import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -36,6 +38,11 @@ public class RobotTest {
     public void tearDown() {
     }
  
+    @Test
+    public void testDecide()
+    {
+        
+    }
     
     @Test
     public void testDiscard()
@@ -79,6 +86,7 @@ public class RobotTest {
         r.PlayAHand(d);
     }
     
+    @Test
     public void testPlayKnownHand()
     {
         Robot r = new Robot("steve", 0);
@@ -100,6 +108,36 @@ public class RobotTest {
         {
             done = r.PlayAHand(d);
         }
+        
+    }
+    
+    @Test
+    public void testWildonDiscard()
+    {
+        Deck d = new Deck(); 
+        Robot r = new Robot("Steve", 0);
+        
+        d.testSetupDiscard(new WildCard(WildCard.cardWild.WILD));
+        WildCard w = (WildCard)d.TopCard();
+        ByteArrayInputStream in = new ByteArrayInputStream("Red".getBytes());
+        System.setIn(in);
+        w.Wild(new Scanner(System.in));
+        r.GetCard(new NumberCard(5, Card.cardColor.BLUE));
+        r.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED));
+        
+        r.PlayAHand(d);
+        
+    }
+    
+    @Test
+    public void testNumberonDiscard()
+    {
+        
+    }
+    
+    @Test
+    public void testSpecialonDiscard()
+    {
         
     }
 }
