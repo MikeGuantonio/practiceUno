@@ -8,7 +8,6 @@ package practiceUno;
 //~--- JDK imports ------------------------------------------------------------
 
 import java.io.ByteArrayInputStream;
-
 import java.util.Scanner;
 import java.util.logging.Logger;
 

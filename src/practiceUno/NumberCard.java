@@ -4,9 +4,6 @@
  */
 package practiceUno;
 
-import java.io.IOException;
-import java.util.logging.FileHandler;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -16,7 +13,7 @@ import java.util.logging.Logger;
 public class NumberCard extends Card {
     private static final Logger log = Logger.getLogger(NumberCard.class.getName());
     private int face;
-    static private FileHandler logText;
+    //static private FileHandler logText;
     
     /**
      *
