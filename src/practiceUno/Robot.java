@@ -1,24 +1,35 @@
 
 /*
-* To change this template, choose Tools | Templates
-* and open the template in the editor.
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
 package practiceUno;
 
 //~--- JDK imports ------------------------------------------------------------
-
 import java.io.ByteArrayInputStream;
+
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+//~--- classes ----------------------------------------------------------------
 /**
  *
  * @author mike
  */
 public class Robot extends Player {
-    private static final Logger log         = Logger.getLogger(Robot.class.getName());
-    private Card.cardColor[]    colorValues = Card.cardColor.values();
-    private Card                playingCard = null;
+
+    /**
+     * Field description
+     */
+    private static final Logger log = Logger.getLogger(Robot.class.getName());
+    /**
+     * Field description
+     */
+    private Card.cardColor[] colorValues = Card.cardColor.values();
+    /**
+     * Field description
+     */
+    private Card playingCard = null;
 
     /**
      *
@@ -26,14 +37,30 @@ public class Robot extends Player {
      * @param pos
      */
     public Robot(String name, int pos) {
-        super.name      = name;
+        super.name = name;
         super.playerPos = pos;
     }
 
+    /**
+     * Method description
+     *
+     *
+     * @param c
+     *
+     * @return
+     */
     public int FindCard(Card c) {
         return hand.indexOf(c);
     }
 
+    /**
+     * Method description
+     *
+     *
+     * @param dex
+     *
+     * @return
+     */
     @Override
     public Card Discard(int dex) {
         Card retC;
@@ -56,7 +83,7 @@ public class Robot extends Player {
         log.entering("Play a hand", name);
 
         boolean done = false;
-        boolean tried = false; 
+        boolean tried = false;
 
         log.info("Trying to decide");
 
@@ -70,51 +97,55 @@ public class Robot extends Player {
 
         while (!done) {
             switch (state) {
-            case 1 :
-                log.info("Trying to play a card " + playingCard.toString() + " " + d.TopCard().toString());                  if(playingCard.getClass().equals(WildCard.class))
-                {
-                    state = 4;  
-                }
-                d.AddDiscard(playingCard, this, null);
-                state = 5;
-                break;
+                case 1:
+                    log.info("Trying to play a card " + playingCard.toString() + " " + d.TopCard().toString());
 
-            case 2 :
-                log.info("Need to draw a card");
-                super.GetCard(d.DrawNext());
-                state = Decide(d.TopCard());
-                tried = true;
+                    if (playingCard.getClass().equals(WildCard.class)) {
+                        state = 4;
+                    }
 
-                if (state == 2) {
-                    state = 3;
-                }
+                    d.AddDiscard(playingCard, this, null);
+                    state = 5;
 
-                break;
+                    break;
 
-            case 3 :
-                log.info("Pass");
-                state = 5;
+                case 2:
+                    log.info("Need to draw a card");
+                    super.GetCard(d.DrawNext());
+                    state = Decide(d.TopCard());
+                    tried = true;
 
-                break;
+                    if (state == 2) {
+                        state = 3;
+                    }
 
-            case 4 :
-                log.info("Time for a wild card. Choosing yellow");
+                    break;
 
-                ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
+                case 3:
+                    log.info("Pass");
+                    state = 5;
 
-                System.setIn(in);
-                d.AddDiscard(playingCard, this, new Scanner(System.in));
-                state = 5;
-                break;
+                    break;
 
-            case 5 :
-                log.info("End turn");
-                done = true;
+                case 4:
+                    log.info("Time for a wild card. Choosing yellow");
 
-                break;
+                    ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
 
-            default :
-                log.severe("I don't know what to do");
+                    System.setIn(in);
+                    d.AddDiscard(playingCard, this, new Scanner(System.in));
+                    state = 5;
+
+                    break;
+
+                case 5:
+                    log.info("End turn");
+                    done = true;
+
+                    break;
+
+                default:
+                    log.severe("I don't know what to do");
             }
         }
 
@@ -123,55 +154,56 @@ public class Robot extends Player {
         return done;
     }
 
-    private int Decide(Card c)
-    {
+    /**
+     * Method description
+     *
+     *
+     * @param c
+     *
+     * @return
+     */
+    private int Decide(Card c) {
         log.entering("Decide", name);
-        System.out.println("Entering function");
+        log.info("Entering robot decide function");
 
         int choice;
 
-        System.out.println("Trying to show my hand.");
-        super.ShowHand();
-
-        if (c != null)
+        log.info(String.format("I have %s cards. ", super.TotalCards()));
+        for (int i = 0; i < hand.size(); i++)
         {
-            System.out.println("After card check for null");
+            log.info(String.format("Card %s: %s", i, hand.get(i).toString())); 
+        }
 
-            for (Card play : hand) 
-            {
-                System.out.println("Inside for loop " + c.toString() + " " + play.toString());
+        if (c != null) {
+            log.info(String.format("Card at top of deck is not null %s", c.toString()));
 
-                if (((play.GetColor() == null) || (c.GetColor() == null)) ||!play.GetColor().equals(c.GetColor()))
-                {
+            for (Card play : hand) {
+                log.info(String.format("Inside for loop %s %s", c.toString(), play.toString()));
+
+                if (((play.GetColor() == null) || (c.GetColor() == null)) || !play.GetColor().equals(c.GetColor())) {
                     log.info(String.format("Trying to match a color %s %s", play.GetColor().toString(),
-                                           c.GetColor().toString()));
+                            c.GetColor().toString()));
                     playingCard = play;
 
                     break;
-                }
-                else if (play.getClass().equals(NumberCard.class) && c.getClass().equals(NumberCard.class)) 
-                {
+                } else if (play.getClass().equals(NumberCard.class) && c.getClass().equals(NumberCard.class)) {
                     log.info(String.format("Trying to match a number %s %s", play.toString(), c.toString()));
 
-                    NumberCard n   = (NumberCard) play;
+                    NumberCard n = (NumberCard) play;
                     NumberCard top = (NumberCard) c;
 
-                    if (n.GetNumber() == top.GetNumber())
-                    {
+                    if (n.GetNumber() == top.GetNumber()) {
                         playingCard = play;
 
                         break;
                     }
-                } 
-                else if (play.getClass().equals(SpecialCard.class) && c.getClass().equals(SpecialCard.class)) 
-                {
+                } else if (play.getClass().equals(SpecialCard.class) && c.getClass().equals(SpecialCard.class)) {
                     log.info(String.format("Trying to match a special card %s %s", play.toString(), c.toString()));
 
-                    SpecialCard s   = (SpecialCard) play;
+                    SpecialCard s = (SpecialCard) play;
                     SpecialCard top = (SpecialCard) c;
 
-                    if (s.GetSpecial().equals(top.GetSpecial())) 
-                    {
+                    if (s.GetSpecial().equals(top.GetSpecial())) {
                         playingCard = play;
 
                         break;
@@ -180,19 +212,19 @@ public class Robot extends Player {
             }
         }
 
-        if (playingCard != null)
-        {
+        if (playingCard != null) {
             choice = 1;
-        } 
-        else 
-        {
+        } else {
             choice = 2;
         }
 
-        System.out.println("Exiting function");
+        log.info("Done deciding");
         log.exiting("Decide", name);
 
         return choice;
     }
 }
+
+
+
 

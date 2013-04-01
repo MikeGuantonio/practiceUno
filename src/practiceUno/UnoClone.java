@@ -53,11 +53,11 @@ public class UnoClone {
         deck.SetUpDiscard(uno.input);
         
         log.fine("Game loop");
-        log.info("Players " + players.size());
+        log.info(String.format("Number of Players %s", players.size()));
         for (int i = 0; i < players.size(); i++)
         {
                
-            log.info("Start of player turn " + deck.TopCard().toString());
+            log.info(String.format("%s's turn Deck Shows:  %s", players.get(i).GetName(), deck.TopCard().toString()));
             if(players.get(pos).getClass().equals(Robot.class))
             {
                   Robot r = (Robot)players.get(pos);

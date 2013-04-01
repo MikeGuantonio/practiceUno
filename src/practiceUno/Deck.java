@@ -247,7 +247,7 @@ public class Deck {
             w.Wild(new Scanner(System.in));
         }
 
-        log.info("Top card: " + TopCard());
+        log.info("Deck shows: " + TopCard());
     }
 
     /**

@@ -1,106 +1,127 @@
+
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
-*/
+* To change this template, choose Tools | Templates
+* and open the template in the editor.
+ */
 package practiceUno;
+
+//~--- JDK imports ------------------------------------------------------------
 
 import java.util.Scanner;
 import java.util.logging.Logger;
+
+//~--- classes ----------------------------------------------------------------
+
 /**
  *
  * @author mike
  */
 public class WildCard extends Card implements WildActions
 {
-    private static final Logger log = Logger.getLogger(WildCard.class.getName()); 
-    cardWild wild; 
-    
-    
+    /**
+     * Field description
+     */
+    private static final Logger	log = Logger.getLogger(WildCard.class.getName());
+
+    /**
+     * Field description
+     */
+    cardWild	wild;
+
+    /**
+     * Enum description
+     *
+     */
+    enum cardWild { WILD, WILDDRFOUR }
+
     /**
      *
      * @param w
      */
-    public WildCard(cardWild w)
-    {
-        wild = w; 
-        color = null; 
+    public WildCard(cardWild w) {
+        wild  = w;
+        color = null;
     }
-    
+
     /**
      *
      */
-    public void Print()
-    {
-    }
-    
+    public void Print() {}
+
     /**
      *
      * @return
      */
-    public Card.cardColor GetColor()
-    {
-        return color; 
+    public Card.cardColor GetColor() {
+        return color;
     }
-    
+
     /**
      *
      * @return
      */
-    public cardWild GetWild()
-    {
+    public cardWild GetWild() {
         return wild;
     }
-    
+
     /**
      *
-     * @param scan 
+     * @param scan
      * @return
      */
-    public Card.cardColor Wild(Scanner scan)
-    {
+    public Card.cardColor Wild(Scanner scan) {
         log.info("Call for wild called");
-        Card.cardColor wildColor = null; 
-        
-        String input = scan.nextLine(); 
-        try
-        {
-             wildColor = Card.cardColor.valueOf(input.toUpperCase());
-        }
-        catch(Exception ex)
-        {
+
+        Card.cardColor	wildColor = null;
+        String		input     = scan.nextLine();
+
+        try {
+            wildColor = Card.cardColor.valueOf(input.toUpperCase());
+        } catch (Exception ex) {
             log.severe("The color value is null!");
         }
-       
-        color = wildColor; 
-        return wildColor; 
-    } 
-    
+
+        color = wildColor;
+
+        return wildColor;
+    }
+
     /**
      *
      * @param newPlayer
      * @param copyDeck
-     * @param scan 
+     * @param scan
      * @return
      */
-    public Card.cardColor DrawFour(Player newPlayer, Deck copyDeck, Scanner scan)
-    {
-        Card.cardColor newColor; 
+    public Card.cardColor DrawFour(Player newPlayer, Deck copyDeck, Scanner scan) {
+        Card.cardColor	newColor;
+
         newColor = Wild(scan);
-        
+
         for (int i = 0; i < 4; i++) {
             newPlayer.GetCard(copyDeck.DrawNext());
-            
         }
-        return newColor; 
+
+        return newColor;
     }
-    
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
     public String toString()
     {
-        if(color == null)
-            System.out.println("Wild card color is null!");
-        
-        String faceValue = String.format("%s %s", wild.toString(), color.toString()); 
-        return faceValue; 
+        String	faceValue = wild.toString();
+
+        if (color != null)
+        {
+            faceValue = String.format("%s %s", faceValue, color.toString());
+        }
+
+        return faceValue;
     }
-    enum cardWild {WILD, WILDDRFOUR};
 }
+
+
