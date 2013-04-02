@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744641</millis>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232107</millis>
   <sequence>0</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>CONFIG</level>
@@ -13,8 +13,8 @@
   <message>Creating players, deck</message>
 </record>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744685</millis>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232132</millis>
   <sequence>1</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>CONFIG</level>
@@ -24,8 +24,8 @@
   <message>Initalizing players, deck</message>
 </record>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744687</millis>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232133</millis>
   <sequence>2</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
@@ -35,8 +35,8 @@
   <message>ENTRY</message>
 </record>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744690</millis>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232134</millis>
   <sequence>3</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
@@ -46,8 +46,8 @@
   <message>RETURN</message>
 </record>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744703</millis>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232145</millis>
   <sequence>6</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINE</level>
@@ -57,8 +57,8 @@
   <message>Game loop</message>
 </record>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744704</millis>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232145</millis>
   <sequence>7</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>INFO</level>
@@ -68,20 +68,20 @@
   <message>Number of Players 2</message>
 </record>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744705</millis>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232146</millis>
   <sequence>8</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>INFO</level>
   <class>practiceUno.UnoClone</class>
   <method>main</method>
   <thread>10</thread>
-  <message>Com0's turn Deck Shows:  DRTWO RED</message>
+  <message>Com0's turn Deck Shows:  9 RED</message>
 </record>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744718</millis>
-  <sequence>27</sequence>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232154</millis>
+  <sequence>26</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
   <class>Wrap</class>
@@ -89,9 +89,9 @@
   <message>ENTRY</message>
 </record>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744718</millis>
-  <sequence>28</sequence>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232154</millis>
+  <sequence>27</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
   <class>Wrap</class>
@@ -99,9 +99,9 @@
   <message>RETURN</message>
 </record>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744718</millis>
-  <sequence>29</sequence>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232154</millis>
+  <sequence>28</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>INFO</level>
   <class>practiceUno.UnoClone</class>
@@ -110,20 +110,20 @@
   <message>End player turn</message>
 </record>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744719</millis>
-  <sequence>30</sequence>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232155</millis>
+  <sequence>29</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>INFO</level>
   <class>practiceUno.UnoClone</class>
   <method>main</method>
   <thread>10</thread>
-  <message>Com1's turn Deck Shows:  4 RED</message>
+  <message>Com1's turn Deck Shows:  5 RED</message>
 </record>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744730</millis>
-  <sequence>48</sequence>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232160</millis>
+  <sequence>47</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
   <class>Wrap</class>
@@ -131,9 +131,9 @@
   <message>ENTRY</message>
 </record>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744730</millis>
-  <sequence>49</sequence>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232160</millis>
+  <sequence>48</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
   <class>Wrap</class>
@@ -141,9 +141,9 @@
   <message>RETURN</message>
 </record>
 <record>
-  <date>2013-04-02T11:49:04</date>
-  <millis>1364917744730</millis>
-  <sequence>50</sequence>
+  <date>2013-04-02T12:13:52</date>
+  <millis>1364919232160</millis>
+  <sequence>49</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>INFO</level>
   <class>practiceUno.UnoClone</class>

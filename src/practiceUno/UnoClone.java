@@ -27,16 +27,7 @@ public class UnoClone {
      */
     public static void main(String[] args)
     { 
-        //LogManager.getLogManager().reset();
-        log.setLevel(Level.ALL);
-        try {
-            textLog = new FileHandler("unoClone.xml");
-        } catch (IOException ex) {
-            Logger.getLogger(UnoClone.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SecurityException ex) {
-            Logger.getLogger(UnoClone.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        log.addHandler(textLog);
+        SetUpLogger("unoClone.xml"); 
         
         boolean endTurn = false; 
         int pos = 0; 
@@ -75,6 +66,41 @@ public class UnoClone {
               
     }
     
+    public boolean CheckForEndGame(ArrayList<Player> p)
+    {
+        boolean done = false; 
+        for(Player k : p)
+        {
+            if(k.TotalCards() == 0)
+                done = true;
+        }
+        return done;
+    }
+    
+    public boolean CheckForUno(ArrayList<Player> p)
+    {
+        boolean uno = false; 
+        for(Player k : p)
+        {
+            if(k.Uno())
+                uno = true; 
+        }
+        return uno;
+        
+    }
+    public static void SetUpLogger(String fileName)
+    {
+        //LogManager.getLogManager().reset();
+        log.setLevel(Level.ALL);
+        try {
+            textLog = new FileHandler(fileName);
+        } catch (IOException ex) {
+            Logger.getLogger(UnoClone.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
+            Logger.getLogger(UnoClone.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        log.addHandler(textLog);
+    }
     
     /**
      *
