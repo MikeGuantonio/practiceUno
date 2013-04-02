@@ -41,7 +41,7 @@ public class RobotTest {
  
     
     
-    //@Test
+    @Test
     public void testDiscard()
     {
         Robot r = new Robot("Steve", 2);
@@ -51,7 +51,7 @@ public class RobotTest {
         assertNull("This card should be null", v);
     }
     
-    //@Test
+    @Test
     public void testPlayAHand()
     {
         Robot r = new Robot("Steve", 0); 
@@ -67,7 +67,7 @@ public class RobotTest {
         
     }
     
-    //@Test
+    @Test
     public void testPlayNoShuffle()
     {
         Robot r = new Robot("Steve", 0);
@@ -83,7 +83,6 @@ public class RobotTest {
         r.PlayAHand(d);
     }
     
-    //USE THIS METHOD TO TEST THE DECIDE FUNCTION. DOES NOT WORK RIGHT.
     @Test
     public void testPlayKnownHand() throws IOException
     {
@@ -109,13 +108,18 @@ public class RobotTest {
             System.out.println(String.format("Top card is %s", d.TopCard().toString()));
             if(r.TotalCards() == 0)
             {
+                System.out.println("I'm all out of cards!");
                 done = true; 
+            }
+            else if(r.TotalCards() == 1 )
+            {
+                System.out.println("UNO!");
             }
         }
         
     }
     
-    //@Test
+    @Test
     public void testWildonDiscard()
     {
         Deck d = new Deck(); 
@@ -133,7 +137,7 @@ public class RobotTest {
         
     }
     
-   // @Test
+    @Test
     public void testNumberonDiscard()
     {
         Deck d = new Deck(); 
@@ -146,7 +150,7 @@ public class RobotTest {
         r.PlayAHand(d);
     }
     
-    //@Test
+    @Test
     public void testSpecialonDiscard()
     {
         Deck d = new Deck(); 
