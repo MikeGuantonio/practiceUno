@@ -66,6 +66,7 @@ public class UnoClone {
               
     }
     
+    //Ties are not possible.
     public boolean CheckForEndGame(ArrayList<Player> p)
     {
         boolean done = false; 
@@ -77,6 +78,7 @@ public class UnoClone {
         return done;
     }
     
+    //Should return an arraylist of players that have uno.
     public boolean CheckForUno(ArrayList<Player> p)
     {
         boolean uno = false; 
