@@ -86,8 +86,8 @@ public class Deck {
             Shuffle();
             discardDeck.clear();
             discardDeck.add(deck.pop());
-            log.info(discardDeck.peek().toString());
-            log.info(deck.size() + "");
+            log.info("New top Card is : " + discardDeck.peek().toString());
+            log.info("New deck size is " + deck.size() + "");
         }
 
         return c;

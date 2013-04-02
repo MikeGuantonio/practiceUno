@@ -7,8 +7,10 @@ package practiceUno;
 
 //~--- JDK imports ------------------------------------------------------------
 import java.io.ByteArrayInputStream;
+import java.text.MessageFormat;
 
 import java.util.Scanner;
+import java.util.Stack;
 import java.util.logging.Logger;
 
 //~--- classes ----------------------------------------------------------------
@@ -30,6 +32,7 @@ public class Robot extends Player {
      * Field description
      */
     private Card playingCard = null;
+    private Stack<Card> wildSet = new Stack<Card>(); 
 
     /**
      *
@@ -144,7 +147,7 @@ public class Robot extends Player {
                 case 5:
                     log.info("End turn");
                     done = true;
-
+                    playingCard = null; 
                     break;
 
                 default:
@@ -180,13 +183,13 @@ public class Robot extends Player {
 
                 if(discard.getClass().equals(NumberCard.class))
                 {
-                    log.info("The top card was a number");
+                    log.info(String.format("The top card was a number %s", discard.toString()));
                     NumberCard n = (NumberCard)discard; 
                      
                     for(Card inPlay : hand)
                     {
                         
-                        if(inPlay.GetColor().equals(discard.GetColor()))
+                        if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(discard.GetColor()))
                         {
                             playingCard = inPlay; 
                             break;
@@ -204,12 +207,13 @@ public class Robot extends Player {
                 }
                 else if(discard.getClass().equals(SpecialCard.class))
                 {
-                    log.info("The top card was a special card.");
+                    log.info(MessageFormat.format("The top card was a special card. {0}", discard.toString()));
                     SpecialCard sp = (SpecialCard)discard; 
                     
                     for(Card inPlay : hand)
                     {
-                        if(inPlay.GetColor().equals(discard.GetColor()))
+                        log.info(String.format("In special for loop. Card %s", inPlay.toString()));
+                        if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(discard.GetColor()))
                         {
                             playingCard = inPlay; 
                             break;
@@ -217,7 +221,7 @@ public class Robot extends Player {
                         else if(inPlay.getClass().equals(SpecialCard.class))
                         {
                             SpecialCard play = (SpecialCard)inPlay;
-                            if(((SpecialCard)inPlay).GetSpecial().equals(sp.GetSpecial()))
+                            if(play.GetSpecial().equals(sp.GetSpecial()))
                             {
                                 playingCard = inPlay; 
                                 break;
@@ -227,7 +231,7 @@ public class Robot extends Player {
                 }
                 else if(discard.getClass().equals(WildCard.class))
                 {
-                    log.info("The top card was a wild card");
+                    log.info("The top card was a wild card " + discard.toString());
                     for(Card inPlay : hand)
                     {
                         if(inPlay.GetColor().equals(discard.GetColor()))
@@ -242,6 +246,8 @@ public class Robot extends Player {
                     log.severe("This card should never exsist!");
                 }
 
+        if(playingCard == null )
+            PlayAWild(); 
                 
         if (playingCard != null) {
             choice = 1;
@@ -253,6 +259,27 @@ public class Robot extends Player {
         log.exiting("Decide", name);
 
         return choice;
+    }
+    
+    private void MakeWildDeck()
+    {
+        for(Card c : hand)
+        {
+            if(c.getClass().equals(WildCard.class))
+            {
+                wildSet.push(c);
+            }
+        }
+    }
+    
+    private void PlayAWild()
+    { 
+        MakeWildDeck(); 
+        if(playingCard == null && !wildSet.empty() )
+        {
+            playingCard = wildSet.pop(); 
+        }
+        //wildSet.clear();
     }
 }
 
