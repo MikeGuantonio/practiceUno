@@ -5,6 +5,7 @@
 package practiceUno;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -38,13 +39,9 @@ public class RobotTest {
     public void tearDown() {
     }
  
-    @Test
-    public void testDecide()
-    {
-        
-    }
     
-    @Test
+    
+    //@Test
     public void testDiscard()
     {
         Robot r = new Robot("Steve", 2);
@@ -54,7 +51,7 @@ public class RobotTest {
         assertNull("This card should be null", v);
     }
     
-    @Test
+    //@Test
     public void testPlayAHand()
     {
         Robot r = new Robot("Steve", 0); 
@@ -70,7 +67,7 @@ public class RobotTest {
         
     }
     
-    @Test
+    //@Test
     public void testPlayNoShuffle()
     {
         Robot r = new Robot("Steve", 0);
@@ -86,12 +83,14 @@ public class RobotTest {
         r.PlayAHand(d);
     }
     
+    //USE THIS METHOD TO TEST THE DECIDE FUNCTION. DOES NOT WORK RIGHT.
     @Test
-    public void testPlayKnownHand()
+    public void testPlayKnownHand() throws IOException
     {
+        
         Robot r = new Robot("steve", 0);
         Deck d = new Deck(); 
-        d.SetUpDiscard(null);
+        
         
         r.GetCard(new NumberCard(5, Card.cardColor.BLUE));
         r.GetCard(new NumberCard(5, Card.cardColor.GREEN));
@@ -101,17 +100,22 @@ public class RobotTest {
         r.GetCard(new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.RED));
         r.GetCard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.GREEN));
 
-        d.testSetupDiscard(new NumberCard(5, Card.cardColor.BLUE));
+        d.testSetupDiscard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.BLUE));
        
         boolean done = false; 
         while(!done)
         {
-            done = r.PlayAHand(d);
+            r.PlayAHand(d);
+            System.out.println(String.format("Top card is %s", d.TopCard().toString()));
+            if(r.TotalCards() == 0)
+            {
+                done = true; 
+            }
         }
         
     }
     
-    @Test
+    //@Test
     public void testWildonDiscard()
     {
         Deck d = new Deck(); 
@@ -129,15 +133,29 @@ public class RobotTest {
         
     }
     
-    @Test
+   // @Test
     public void testNumberonDiscard()
     {
+        Deck d = new Deck(); 
+        Robot r = new Robot("Steve", 0);
         
+        d.testSetupDiscard(new NumberCard(5, Card.cardColor.BLUE));
+        r.GetCard(new NumberCard(5, Card.cardColor.BLUE));
+        r.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED));
+        
+        r.PlayAHand(d);
     }
     
-    @Test
+    //@Test
     public void testSpecialonDiscard()
     {
+        Deck d = new Deck(); 
+        Robot r = new Robot("Steve", 0);
         
+        d.testSetupDiscard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.GREEN));
+        r.GetCard(new NumberCard(5, Card.cardColor.BLUE));
+        r.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED));
+        
+        r.PlayAHand(d);
     }
 }
