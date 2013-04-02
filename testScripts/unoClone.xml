@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2013-04-02T01:13:03</date>
+  <millis>1364879583951</millis>
+  <sequence>0</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>CONFIG</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>Creating players, deck</message>
+</record>
+<record>
+  <date>2013-04-02T01:13:03</date>
+  <millis>1364879583987</millis>
+  <sequence>1</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>CONFIG</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>Initalizing players, deck</message>
+</record>
+<record>
+  <date>2013-04-02T01:13:03</date>
+  <millis>1364879583987</millis>
+  <sequence>2</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>FINER</level>
+  <class>SetupPlayers</class>
+  <method>Main</method>
+  <thread>10</thread>
+  <message>ENTRY</message>
+</record>
+<record>
+  <date>2013-04-02T01:13:03</date>
+  <millis>1364879583989</millis>
+  <sequence>3</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>FINER</level>
+  <class>SetupPlayers</class>
+  <method>Main</method>
+  <thread>10</thread>
+  <message>RETURN</message>
+</record>
+<record>
+  <date>2013-04-02T01:13:04</date>
+  <millis>1364879584002</millis>
+  <sequence>6</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>FINE</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>Game loop</message>
+</record>
+<record>
+  <date>2013-04-02T01:13:04</date>
+  <millis>1364879584002</millis>
+  <sequence>7</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>INFO</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>Players 2</message>
+</record>
+<record>
+  <date>2013-04-02T01:13:04</date>
+  <millis>1364879584003</millis>
+  <sequence>8</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>INFO</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>Start of player turn 8 GREEN</message>
+</record>
+<record>
+  <date>2013-04-02T01:13:04</date>
+  <millis>1364879584006</millis>
+  <sequence>14</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>FINER</level>
+  <class>Wrap</class>
+  <thread>10</thread>
+  <message>ENTRY</message>
+</record>
+<record>
+  <date>2013-04-02T01:13:04</date>
+  <millis>1364879584006</millis>
+  <sequence>15</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>FINER</level>
+  <class>Wrap</class>
+  <thread>10</thread>
+  <message>RETURN</message>
+</record>
+<record>
+  <date>2013-04-02T01:13:04</date>
+  <millis>1364879584006</millis>
+  <sequence>16</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>INFO</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>End player turn</message>
+</record>
+<record>
+  <date>2013-04-02T01:13:04</date>
+  <millis>1364879584006</millis>
+  <sequence>17</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>INFO</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>Start of player turn 8 RED</message>
+</record>
+<record>
+  <date>2013-04-02T01:13:04</date>
+  <millis>1364879584009</millis>
+  <sequence>23</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>FINER</level>
+  <class>Wrap</class>
+  <thread>10</thread>
+  <message>ENTRY</message>
+</record>
+<record>
+  <date>2013-04-02T01:13:04</date>
+  <millis>1364879584010</millis>
+  <sequence>24</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>FINER</level>
+  <class>Wrap</class>
+  <thread>10</thread>
+  <message>RETURN</message>
+</record>
+<record>
+  <date>2013-04-02T01:13:04</date>
+  <millis>1364879584010</millis>
+  <sequence>25</sequence>
+  <logger>practiceUno.UnoClone</logger>
+  <level>INFO</level>
+  <class>practiceUno.UnoClone</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>End player turn</message>
+</record>
+</log>
