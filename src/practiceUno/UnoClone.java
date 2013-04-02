@@ -27,14 +27,16 @@ public class UnoClone {
      */
     public static void main(String[] args)
     { 
+         
         SetUpLogger("unoClone.xml"); 
-        
+       
         boolean endTurn = false; 
         int pos = 0; 
         
         
         log.config("Creating players, deck"); 
-        UnoClone uno = new UnoClone(); 
+        UnoClone uno = new UnoClone();
+        uno.Try();
         ArrayList<Player> players = new ArrayList<Player>(); 
         Deck deck = new Deck(); 
         
@@ -64,6 +66,19 @@ public class UnoClone {
             endTurn = false;
         }
               
+    }
+    
+    public void Try()
+    {
+        String foo = "foo";
+        switch(foo)
+        {
+            case "bar" : System.out.println("Bar");
+                       break; 
+            case "foo": System.out.println("Foo");
+                       break ;
+            default: System.out.println("No work");
+        }
     }
     
     //Ties are not possible.
