@@ -52,7 +52,10 @@ public class Robot extends Player {
      *
      * @return
      */
-    public int FindCard(Card c) {
+    public int FindCard(Card c) 
+    {
+        log.info(String.format("looking at you card : %s", c.toString()));
+        log.info(String.format("Is at %s", hand.indexOf(c)));
         return hand.indexOf(c);
     }
 
@@ -135,11 +138,13 @@ public class Robot extends Player {
 
                 case 4:
                     log.info("Time for a wild card. Choosing yellow");
-
                     ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
                     System.setIn(in);
+                    log.info("Choose yellow");
                     d.AddDiscard(playingCard, this, new Scanner(System.in));
+                    log.info("Add to deck");
                     hand.remove(FindCard(playingCard));
+                    log.info("removed");
                     state = 5;
 
                     break;
@@ -227,14 +232,19 @@ public class Robot extends Player {
                                 break;
                             }
                         }
+                        else
+                        {
+                            log.info("No special match");
+                        }
                     }
                 }
                 else if(discard.getClass().equals(WildCard.class))
                 {
-                    log.info("The top card was a wild card " + discard.toString());
+                    log.info(String.format("The top card was a wild card %s", discard.toString()));
                     for(Card inPlay : hand)
                     {
-                        if(inPlay.GetColor().equals(discard.GetColor()))
+                        log.info("Inside the wild loop " + inPlay.toString());
+                        if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(discard.GetColor()))
                         {
                             playingCard = inPlay; 
                             break;
@@ -274,12 +284,13 @@ public class Robot extends Player {
     
     private void PlayAWild()
     { 
+        log.info("Seeing if I have any wild cards in my hand");
         MakeWildDeck(); 
         if(playingCard == null && !wildSet.empty() )
         {
             playingCard = wildSet.pop(); 
         }
-        //wildSet.clear();
+        wildSet.clear();
     }
 }
 
