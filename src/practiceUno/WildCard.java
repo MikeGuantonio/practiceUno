@@ -46,12 +46,14 @@ public class WildCard extends Card implements WildActions
     /**
      *
      */
+    @Override
     public void Print() {}
 
     /**
      *
      * @return
      */
+    @Override
     public Card.cardColor GetColor() {
         return color;
     }
@@ -69,6 +71,7 @@ public class WildCard extends Card implements WildActions
      * @param scan
      * @return
      */
+    @Override
     public Card.cardColor Wild(Scanner scan) {
         log.info("Call for wild called");
 
@@ -93,6 +96,7 @@ public class WildCard extends Card implements WildActions
      * @param scan
      * @return
      */
+    @Override
     public Card.cardColor DrawFour(Player newPlayer, Deck copyDeck, Scanner scan) {
         Card.cardColor	newColor;
 
@@ -111,6 +115,7 @@ public class WildCard extends Card implements WildActions
      *
      * @return
      */
+    @Override
     public String toString()
     {
         String	faceValue = wild.toString();

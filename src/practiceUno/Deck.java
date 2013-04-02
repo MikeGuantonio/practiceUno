@@ -15,15 +15,16 @@ import java.util.logging.Logger;
  */
 public class Deck {
     private static final Logger log         = Logger.getLogger(Deck.class.getName());
-    private Stack<Card>         deck        = new Stack<Card>();
-    private Stack<Card>         discardDeck = new Stack<Card>();
+    private Stack<Card>         deck        = new Stack<>();
+    private Stack<Card>         discardDeck = new Stack<>();
 
     enum deckType { DEAL, DISCARD }
 
     /**
      *
      */
-    public Deck() {
+    public Deck()
+    {
         CreateNumbers();
         CreateSpecial();
         CreateWild();
@@ -86,8 +87,8 @@ public class Deck {
             Shuffle();
             discardDeck.clear();
             discardDeck.add(deck.pop());
-            log.info("New top Card is : " + discardDeck.peek().toString());
-            log.info("New deck size is " + deck.size() + "");
+            log.info(String.format("New top Card is : %s", discardDeck.peek().toString()));
+            log.info(String.format("New deck size is %s", deck.size()));
         }
 
         return c;
@@ -204,11 +205,13 @@ public class Deck {
      */
     public int getSize(String deckName) {
         int size = 0;
-
-        if (deckName.equals("discard")) {
-            size = discardDeck.size();
-        } else if (deckName.equals("regular")) {
-            size = deck.size();
+        switch (deckName) {
+            case "discard":
+                size = discardDeck.size();
+                break;
+            case "regular":
+                size = deck.size();
+                break;
         }
 
         return size;
@@ -247,7 +250,7 @@ public class Deck {
             w.Wild(new Scanner(System.in));
         }
 
-        log.info("Deck shows: " + TopCard());
+        log.info(String.format("Deck shows: %s", TopCard()));
     }
 
     /**
@@ -255,7 +258,7 @@ public class Deck {
      * @param c
      */
     public void testSetupDiscard(Card c) {
-        System.out.println("Adding: " + c.toString());
+        System.out.println(String.format("Adding: %s", c.toString()));
         discardDeck.add(c);
     }
 
@@ -264,12 +267,14 @@ public class Deck {
      * @param deckName
      */
     public void PrintDeck(String deckName) {
-        Stack<Card> tmpDeck = new Stack<Card>();
-
-        if (deckName.equals("discard")) {
-            tmpDeck = discardDeck;
-        } else if (deckName.equals("regular")) {
-            tmpDeck = deck;
+        Stack<Card> tmpDeck = new Stack<>();
+        switch (deckName) {
+            case "discard":
+                tmpDeck = discardDeck;
+                break;
+            case "regular":
+                tmpDeck = deck;
+                break;
         }
 
         for (Card c : tmpDeck) {

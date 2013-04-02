@@ -26,8 +26,7 @@ public class UnoClone {
      * @param args
      */
     public static void main(String[] args)
-    { 
-         
+    {  
         SetUpLogger("unoClone.xml"); 
        
         boolean endTurn = false; 
@@ -36,8 +35,7 @@ public class UnoClone {
         
         log.config("Creating players, deck"); 
         UnoClone uno = new UnoClone();
-        uno.Try();
-        ArrayList<Player> players = new ArrayList<Player>(); 
+        ArrayList<Player> players = new ArrayList<>(); 
         Deck deck = new Deck(); 
         
         log.config("Initalizing players, deck");
@@ -140,9 +138,9 @@ public class UnoClone {
 
         for (int i = 0; i < 7; i++)
         {
-            for (int j = 0; j < numPlayers; j++)
+            for (Player current : players)
             {
-                players.get(j).GetCard(deck.DrawNext());
+                current.GetCard(deck.DrawNext());
             }
         }
         log.exiting("SetupPlayers", "Main");

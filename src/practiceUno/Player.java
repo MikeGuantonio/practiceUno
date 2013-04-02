@@ -8,7 +8,7 @@ import java.util.*;
  */
 abstract class Player
 {
-    protected ArrayList<Card> hand = new ArrayList<Card>(); 
+    protected ArrayList<Card> hand = new ArrayList<>(); 
     protected String name; 
     protected int playerPos; 
     /**

@@ -43,6 +43,7 @@ public class NumberCard extends Card {
      *
      * @return
      */
+    @Override
     public Card.cardColor GetColor()
     {
         return color; 
@@ -55,10 +56,11 @@ public class NumberCard extends Card {
     @Override
     public void Print()
     {
-        String faceValue = face +" " +color.toString(); 
+        String faceValue = String.format("%s %s", face, color.toString()); 
         System.out.println(faceValue); 
     }
     
+    @Override
     public String toString()
     {
         String faceValue = String.format("%s %s", face, color.toString()); 

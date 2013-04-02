@@ -32,7 +32,7 @@ public class Robot extends Player {
      * Field description
      */
     private Card playingCard = null;
-    private Stack<Card> wildSet = new Stack<Card>(); 
+    private Stack<Card> wildSet = new Stack<>(); 
 
     /**
      *
