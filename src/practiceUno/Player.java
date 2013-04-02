@@ -23,6 +23,13 @@ abstract class Player
 	}
     }
 
+    public boolean Uno()
+    {
+        if(hand.size() == 1)
+            return true; 
+        else
+            return false; 
+    }
     /**
      *
      * @param c

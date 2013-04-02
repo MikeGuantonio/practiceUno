@@ -58,6 +58,8 @@ public class Robot extends Player {
         log.info(String.format("Is at %s", hand.indexOf(c)));
         return hand.indexOf(c);
     }
+    
+    
 
     /**
      * Method description
