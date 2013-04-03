@@ -7,6 +7,7 @@ package practiceUno;
 import java.io.ByteArrayInputStream;
 
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -18,8 +19,6 @@ public class Deck {
     private Stack<Card>         deck        = new Stack<>();
     private Stack<Card>         discardDeck = new Stack<>();
 
-    enum deckType { DEAL, DISCARD }
-
     /**
      *
      */
@@ -28,6 +27,7 @@ public class Deck {
         CreateNumbers();
         CreateSpecial();
         CreateWild();
+        log.setLevel(Level.SEVERE);
     }
 
     /**

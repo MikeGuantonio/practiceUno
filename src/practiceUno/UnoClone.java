@@ -4,6 +4,7 @@
  */
 package practiceUno;
 
+import java.io.Console;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -28,10 +29,10 @@ public class UnoClone {
     public static void main(String[] args)
     {  
         SetUpLogger("testScripts/unoClone.xml"); 
-       
-        boolean endTurn = false; 
-        int pos = 0; 
         
+        int pos = 0; 
+        boolean endTurn = false; 
+        boolean endGame = false; 
         
         log.config("Creating players, deck"); 
         UnoClone uno = new UnoClone();
@@ -44,51 +45,67 @@ public class UnoClone {
         deck.SetUpDiscard(uno.input);
         
         log.fine("Game loop");
-        log.info(String.format("Number of Players %s", players.size()));
+        log.fine(String.format("Number of Players %s", players.size()));
         
-        for(Player current : players)
-        {       
-            log.info(String.format("%s's turn Deck Shows:  %s", current.GetName(), deck.TopDiscard().toString()));
-            if(current.getClass().equals(Robot.class))
-            {
-                  Robot r = (Robot)current;
-                  endTurn = r.PlayAHand(deck);
-            }
-            else
-            {
-                endTurn = uno.PlayerTurn(players, deck, pos);
-            }
-            pos = uno.Wrap((pos+1), players.size());
-            log.info(String.format("End %s turn ", current.GetName()));
-        
-            endTurn = false;
-        }
-              
-    }
-    
-    public void Try()
-    {
-        String foo = "foo";
-        switch(foo)
+        do
         {
-            case "bar" : System.out.println("Bar");
-                       break; 
-            case "foo": System.out.println("Foo");
-                       break ;
-            default: System.out.println("No work");
-        }
+        
+            for (int i = 0; i < players.size(); i++)
+            {       
+                System.out.println((String.format("%s's turn. %s sees %s", players.get(i).GetName(), players.get(i).GetName(), deck.TopDiscard().toString())));
+                
+                uno.Sleep(1_000); 
+                
+                log.fine(String.format("%s's turn Deck Shows:  %s", players.get(i).GetName(), deck.TopDiscard().toString()));
+                if(players.get(i).getClass().equals(Robot.class))
+                {
+                      Robot r = (Robot)players.get(i);
+                      endTurn = r.PlayAHand(deck);
+                }
+                else
+                {
+                    endTurn = uno.PlayerTurn(players, deck, pos);
+                }
+                 
+                endGame = uno.CheckForEndGame(players.get(i));
+                if(endGame)
+                {
+                    System.out.println(players.get(i).GetName() + " won!");
+                    uno.Report(players);
+                    break;
+                }
+                else
+                {
+                    log.fine(String.format("End %s turn ", players.get(i).GetName()));
+                    pos = uno.Wrap((pos+1), players.size());
+                    uno.Report(players);
+                }
+                
+            }
+        } while(!endGame);     
+    }
+
+    //Ties are not possible.
+    
+    public void Sleep(long sleepTime)
+    {
+        try
+        {
+                    Thread.sleep(sleepTime);
+                } 
+                catch (InterruptedException ex) 
+                {
+                    Logger.getLogger(UnoClone.class.getName()).log(Level.SEVERE, null, ex);
+                }
     }
     
-    //Ties are not possible.
-    public boolean CheckForEndGame(ArrayList<Player> p)
+    public boolean CheckForEndGame(Player p)
     {
         boolean done = false; 
-        for(Player k : p)
-        {
-            if(k.TotalCards() == 0)
-                done = true;
-        }
-        return done;
+        if(p.TotalCards() == 0)
+            done = true; 
+        return done; 
+        
     }
     
     //Should return an arraylist of players that have uno.
@@ -103,10 +120,24 @@ public class UnoClone {
         return uno;
         
     }
+    
+    public void Report(ArrayList<Player> p)
+    {
+        System.out.println("");
+        System.out.println("End of Turn");
+        System.out.println("Cards for each player");
+        
+        for(Player c : p)
+        {
+            System.out.println(String.format("%s : %s", c.GetName(), c.TotalCards())); 
+        }
+        System.out.println("");
+    }
+    
     public static void SetUpLogger(String fileName)
     {
         //LogManager.getLogManager().reset();
-        log.setLevel(Level.ALL);
+        log.setLevel(Level.SEVERE);
         try {
             textLog = new FileHandler(fileName);
         } catch (IOException ex) {

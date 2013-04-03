@@ -11,6 +11,7 @@ import java.text.MessageFormat;
 
 import java.util.Scanner;
 import java.util.Stack;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 //~--- classes ----------------------------------------------------------------
@@ -42,6 +43,7 @@ public class Robot extends Player {
     public Robot(String name, int pos) {
         super.name = name;
         super.playerPos = pos;
+        log.setLevel(Level.WARNING);
     }
 
     /**

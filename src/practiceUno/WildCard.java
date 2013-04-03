@@ -8,6 +8,7 @@ package practiceUno;
 //~--- JDK imports ------------------------------------------------------------
 
 import java.util.Scanner;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 //~--- classes ----------------------------------------------------------------
@@ -38,9 +39,12 @@ public class WildCard extends Card implements WildActions
      *
      * @param w
      */
-    public WildCard(cardWild w) {
+    public WildCard(cardWild w)
+    {
         wild  = w;
         color = null;
+        log.setLevel(Level.SEVERE);
+        
     }
 
     /**
