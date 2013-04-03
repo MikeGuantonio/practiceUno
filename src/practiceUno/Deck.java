@@ -33,40 +33,54 @@ public class Deck {
     /**
      *
      */
-    public void Shuffle() {
-        try {
+    public void Shuffle()
+    {
+        try
+        {
             Collections.shuffle(deck);
-        } catch (Exception ex) {
+        } 
+        catch (Exception ex)
+        {
             log.severe("There is no valid deck to shuffle!");
         }
     }
 
-    private void AddToDeck(Card c, int numberOfCards) {
-        for (int i = 0; i < numberOfCards; i++) {
+    private void AddToDeck(Card c, int numberOfCards)
+    {
+        for (int i = 0; i < numberOfCards; i++)
+        {
             deck.push(c);
         }
     }
 
-    private void CreateNumbers() {
-        for (Card.cardColor color : Card.cardColor.values()) {
+    private void CreateNumbers()
+    {
+        for (Card.cardColor color : Card.cardColor.values())
+        {
             AddToDeck(new NumberCard(0, color), 1);
 
-            for (int i = 1; i < 10; i++) {
+            for (int i = 1; i < 10; i++)
+            {
                 AddToDeck(new NumberCard(i, color), 2);
             }
         }
     }
 
-    private void CreateSpecial() {
-        for (SpecialCard.cardValues sp : SpecialCard.cardValues.values()) {
-            for (Card.cardColor color : Card.cardColor.values()) {
+    private void CreateSpecial()
+    {
+        for (SpecialCard.cardValues sp : SpecialCard.cardValues.values()) 
+        {
+            for (Card.cardColor color : Card.cardColor.values()) 
+            {
                 AddToDeck(new SpecialCard(sp, color), 2);
             }
         }
     }
 
-    private void CreateWild() {
-        for (WildCard.cardWild wild : WildCard.cardWild.values()) {
+    private void CreateWild() 
+    {
+        for (WildCard.cardWild wild : WildCard.cardWild.values()) 
+        {
             AddToDeck(new WildCard(wild), 4);
         }
     }
@@ -75,13 +89,17 @@ public class Deck {
      *
      * @return
      */
-    public Card DrawNext() {
+    public Card DrawNext()
+    {
         Card c = null;
 
-        if (!deck.isEmpty()) {
+        if (!deck.isEmpty())
+        {
             c = (Card) deck.pop();
-        } else {
-            log.info("Need to shuffle deck");    // Clone dos not make a copy. Need deep.
+        } 
+        else 
+        {
+            log.info("Need to shuffle deck");    
             deck.clear();
             deck = (Stack) discardDeck.clone();
             Shuffle();
@@ -90,7 +108,6 @@ public class Deck {
             log.info(String.format("New top Card is : %s", discardDeck.peek().toString()));
             log.info(String.format("New deck size is %s", deck.size()));
         }
-
         return c;
     }
 
@@ -101,100 +118,138 @@ public class Deck {
      * @param in
      * @return
      */
-    public boolean AddDiscard(Card c, Player play, Scanner in) {
+    public boolean AddDiscard(Card c, Player play, Scanner in)
+    {
         boolean canPlace = false;
         Card    discard  = discardDeck.peek();
 
-        if (c.getClass().equals(NumberCard.class)) {
+        if (c.getClass().equals(NumberCard.class)) 
+        {
             canPlace = CheckNumber(discard, c);
-        } else if (c.getClass().equals(SpecialCard.class)) {
+        }
+        else if (c.getClass().equals(SpecialCard.class)) 
+        {
             canPlace = CheckSpecial(discard, c);
-        } else if (c.getClass().equals(WildCard.class)) {
+        }
+        else if (c.getClass().equals(WildCard.class)) 
+        {
             canPlace = CheckWild(c, play, in);
         }
 
-        if (canPlace) {
+        if (canPlace)
+        {
             discardDeck.push(c);
         }
-
         return canPlace;
     }
 
-    private boolean CheckNumber(Card discard, Card c) {
+    private boolean CheckNumber(Card discard, Card c)
+    {
         boolean    canPlace   = false;
         NumberCard cardToPlay = (NumberCard) c;
 
-        if (discard.getClass().equals(NumberCard.class)) {
+        if (discard.getClass().equals(NumberCard.class))
+        {
             NumberCard topCard = (NumberCard) discard;
 
-            if (cardToPlay.GetColor().equals(topCard.GetColor())) {
+            if (cardToPlay.GetColor().equals(topCard.GetColor())) 
+            {
                 canPlace = true;
-            } else if (cardToPlay.GetNumber() == topCard.GetNumber()) {
+            }
+            else if (cardToPlay.GetNumber() == topCard.GetNumber()) 
+            {
                 canPlace = true;
-            } else {
+            } 
+            else 
+            {
                 log.info("Tried to place a number on a number");
                 log.info(discard.toString());
             }
-        } else if (discard.getClass().equals(SpecialCard.class)) {
-            if (cardToPlay.GetColor().equals(discard.GetColor())) {
+        }
+        else if (discard.getClass().equals(SpecialCard.class)) 
+        {
+            if (cardToPlay.GetColor().equals(discard.GetColor())) 
+            {
                 canPlace = true;
-            } else {
+            }
+            else
+            {
                 log.info("Tried to place a number card on special");
                 log.info(discard.toString());
             }
-        } else if (discard.getClass().equals(WildCard.class)) {
-            if (cardToPlay.GetColor().equals(discard.GetColor())) {
+        } 
+        else if (discard.getClass().equals(WildCard.class)) 
+        {
+            if (cardToPlay.GetColor().equals(discard.GetColor())) 
+            {
                 canPlace = true;
-            } else {
+            }
+            else
+            {
                 log.info("Tried to place a number card on wild.");
                 log.info(discard.toString());
             }
         }
-
         return canPlace;
     }
 
-    private boolean CheckSpecial(Card discard, Card c) {
+    private boolean CheckSpecial(Card discard, Card c)
+    {
         boolean canPlace = false;
 
-        if (discard.getClass().equals(SpecialCard.class)) {
-            if (c.GetColor().equals(discard.GetColor())) {
+        if (discard.getClass().equals(SpecialCard.class)) 
+        {
+            if (c.GetColor().equals(discard.GetColor()))
+            {
                 canPlace = true;
-            } else if (c.getClass().equals(SpecialCard.class)) {
+            }
+            else if (c.getClass().equals(SpecialCard.class)) 
+            {
                 SpecialCard cardToPlay = (SpecialCard) c;
                 SpecialCard cardShown  = (SpecialCard) discard;
 
-                if (cardToPlay.GetSpecial().equals(cardShown.GetSpecial())) {
+                if (cardToPlay.GetSpecial().equals(cardShown.GetSpecial())) 
+                {
                     canPlace = true;
                 }
             }
-        } else if (discard.getClass().equals(NumberCard.class)) {
-            if (c.GetColor().equals(discard.GetColor())) {
+        } 
+        else if (discard.getClass().equals(NumberCard.class)) 
+        {
+            if (c.GetColor().equals(discard.GetColor())) 
+            {
                 canPlace = true;
             }
-        } else if (discard.getClass().equals(WildCard.class)) {
-            if (c.GetColor().equals(discard.GetColor())) {
+        } 
+        else if (discard.getClass().equals(WildCard.class)) 
+        {
+            if (c.GetColor().equals(discard.GetColor())) 
+            {
                 canPlace = true;
             }
-        } else {
+        } 
+        else
+        {
             log.info("Cannot play a single card");
             log.info(c.toString());
             log.info(discard.toString());
         }
-
         return canPlace;
     }
 
-    private boolean CheckWild(Card c, Player thisPlayer, Scanner in) {
+    private boolean CheckWild(Card c, Player thisPlayer, Scanner in) 
+    {
         boolean  canPlace = true;
         WildCard wild     = (WildCard) c;
 
-        if (wild.GetWild().equals(WildCard.cardWild.WILD)) {
+        if (wild.GetWild().equals(WildCard.cardWild.WILD)) 
+        {
             wild.Wild(new Scanner(System.in));
-        } else if (wild.GetWild().equals(WildCard.cardWild.WILDDRFOUR)) {
+        }
+        else if (wild.GetWild().equals(WildCard.cardWild.WILDDRFOUR)) 
+        {
             wild.DrawFour(thisPlayer, this, in);
         }
-
         return canPlace;
     }
 
@@ -203,24 +258,24 @@ public class Deck {
      * @param deckName
      * @return
      */
-    public int getSize(String deckName) {
+    public int getSize(String deckName) 
+    {
         int size = 0;
-        switch (deckName) {
-            case "discard":
-                size = discardDeck.size();
-                break;
-            case "regular":
-                size = deck.size();
-                break;
+        switch (deckName)
+        {
+            case "discard": size = discardDeck.size();
+                            break;
+            case "regular": size = deck.size();
+                            break;
         }
-
         return size;
     }
 
     /**
      *
      */
-    public void ShowDiscard() {
+    public void ShowDiscard()
+    {
         discardDeck.peek().Print();
     }
 
@@ -228,7 +283,8 @@ public class Deck {
      *
      * @return
      */
-    public Card TopCard() {
+    public Card TopDiscard()
+    {
         return discardDeck.peek();
     }
 
@@ -236,28 +292,28 @@ public class Deck {
      *
      * @param in
      */
-    public void SetUpDiscard(Scanner in) {
+    public void SetUpDiscard(Scanner in) 
+    {
         log.info("Setting up discard.");
         discardDeck.add(DrawNext());
 
-        if (discardDeck.peek().getClass().equals(WildCard.class)) {
+        if (discardDeck.peek().getClass().equals(WildCard.class))
+        {
             ByteArrayInputStream choose = new ByteArrayInputStream("RED".getBytes());
-
             System.setIn(choose);
-
             WildCard w = (WildCard) discardDeck.peek();
-
             w.Wild(new Scanner(System.in));
         }
 
-        log.info(String.format("Deck shows: %s", TopCard()));
+        log.info(String.format("Deck shows: %s", TopDiscard()));
     }
 
     /**
      *
      * @param c
      */
-    public void testSetupDiscard(Card c) {
+    public void puppetSetupDiscard(Card c) 
+    {
         System.out.println(String.format("Adding: %s", c.toString()));
         discardDeck.add(c);
     }
@@ -266,29 +322,23 @@ public class Deck {
      *
      * @param deckName
      */
-    public void PrintDeck(String deckName) {
+    public void PrintDeck(String deckName)
+    {
         Stack<Card> tmpDeck = new Stack<>();
-        switch (deckName) {
-            case "discard":
-                tmpDeck = discardDeck;
-                break;
-            case "regular":
-                tmpDeck = deck;
-                break;
+        switch (deckName)
+        {
+            case "discard": tmpDeck = discardDeck;
+                            break;
+            case "regular": tmpDeck = deck;
+                            break;
         }
 
-        for (Card c : tmpDeck) {
+        for (Card c : tmpDeck)
+        {
             c.Print();
         }
     }
 
-    /**
-     *
-     * @return
-     */
-    public Stack<Card> GetDeck() {
-        return deck;
-    }
 
     /**
      *
@@ -296,30 +346,25 @@ public class Deck {
      * @param players
      * @param pos
      */
-    public void SideEffect(Card c, ArrayList<Player> players, int pos) {
-        if (c.getClass().equals(SpecialCard.class)) {
+    public void SideEffect(Card c, ArrayList<Player> players, int pos)
+    {
+        if (c.getClass().equals(SpecialCard.class))
+        {
             SpecialCard special = (SpecialCard) c;
 
-            switch (special.GetSpecial()) {
-            case SKIP :
-                special.Skip(pos, players.size());
+            switch (special.GetSpecial())
+            {
+                case SKIP : special.Skip(pos, players.size());
+                            break;
 
-                break;
+                case REVERSE: special.Reverse(pos, players.size());
+                              break;
 
-            case REVERSE :
-                special.Reverse(pos, players.size());
+                case DRTWO : special.DrawTwo(this, players.get(pos + 1));
+                             break;
 
-                break;
-
-            case DRTWO :
-                special.DrawTwo(this, players.get(pos + 1));
-
-                break;
-
-            default :
-                log.severe("This is not a card with a side effect");
-
-                break;
+                default : log.severe("This is not a card with a side effect");
+                          break;
             }
         }
     }

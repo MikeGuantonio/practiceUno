@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+        
 
 /**
  *
@@ -45,13 +45,13 @@ public class UnoClone {
         
         log.fine("Game loop");
         log.info(String.format("Number of Players %s", players.size()));
-        for (int i = 0; i < players.size(); i++)
-        {
-               
-            log.info(String.format("%s's turn Deck Shows:  %s", players.get(i).GetName(), deck.TopCard().toString()));
-            if(players.get(pos).getClass().equals(Robot.class))
+        
+        for(Player current : players)
+        {       
+            log.info(String.format("%s's turn Deck Shows:  %s", current.GetName(), deck.TopDiscard().toString()));
+            if(current.getClass().equals(Robot.class))
             {
-                  Robot r = (Robot)players.get(pos);
+                  Robot r = (Robot)current;
                   endTurn = r.PlayAHand(deck);
             }
             else
@@ -59,7 +59,7 @@ public class UnoClone {
                 endTurn = uno.PlayerTurn(players, deck, pos);
             }
             pos = uno.Wrap((pos+1), players.size());
-            log.info("End player turn");
+            log.info(String.format("End %s turn ", current.GetName()));
         
             endTurn = false;
         }

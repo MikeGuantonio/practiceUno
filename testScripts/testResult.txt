@@ -1,1 +1,88 @@
-Unable to access jarfile ../dist/UnoClone.jar
+Apr 03, 2013 1:13:04 AM practiceUno.Deck SetUpDiscard
+INFO: Setting up discard.
+Apr 03, 2013 1:13:04 AM practiceUno.Deck SetUpDiscard
+INFO: Deck shows: 3 RED
+Apr 03, 2013 1:13:04 AM practiceUno.UnoClone main
+INFO: Number of Players 2
+Apr 03, 2013 1:13:04 AM practiceUno.UnoClone main
+INFO: Com0's turn Deck Shows:  3 RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot PlayAHand
+INFO: Trying to decide
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Entering robot decide function
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: I have 7 cards. 
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 0: 6 YELLOW
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 1: SKIP RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 2: 8 RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 3: 0 BLUE
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 4: 1 YELLOW
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 5: 7 RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 6: SKIP YELLOW
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: The top card was a number 3 RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Done deciding
+Apr 03, 2013 1:13:04 AM practiceUno.Robot PlayAHand
+INFO: Decided 1 SKIP RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot PlayAHand
+INFO: Trying to play a card SKIP RED 3 RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot FindCard
+INFO: looking at you card : SKIP RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot FindCard
+INFO: Is at 1
+Apr 03, 2013 1:13:04 AM practiceUno.Robot PlayAHand
+INFO: End turn
+Apr 03, 2013 1:13:04 AM practiceUno.UnoClone main
+INFO: End player turn
+Apr 03, 2013 1:13:04 AM practiceUno.UnoClone main
+INFO: Com1's turn Deck Shows:  SKIP RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot PlayAHand
+INFO: Trying to decide
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Entering robot decide function
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: I have 7 cards. 
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 0: 9 YELLOW
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 1: 2 RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 2: 9 GREEN
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 3: 4 RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 4: 6 GREEN
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 5: 8 GREEN
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Card 6: 7 YELLOW
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: The top card was a special card. SKIP RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: In special for loop. Card 9 YELLOW
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: No special match
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: In special for loop. Card 2 RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot Decide
+INFO: Done deciding
+Apr 03, 2013 1:13:04 AM practiceUno.Robot PlayAHand
+INFO: Decided 1 2 RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot PlayAHand
+INFO: Trying to play a card 2 RED SKIP RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot FindCard
+INFO: looking at you card : 2 RED
+Apr 03, 2013 1:13:04 AM practiceUno.Robot FindCard
+INFO: Is at 1
+Apr 03, 2013 1:13:04 AM practiceUno.Robot PlayAHand
+INFO: End turn
+Apr 03, 2013 1:13:04 AM practiceUno.UnoClone main
+INFO: End player turn

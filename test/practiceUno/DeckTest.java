@@ -88,7 +88,7 @@ public class DeckTest {
         Deck d = new Deck();
          
         NumberCard nc = new NumberCard(5, Card.cardColor.BLUE);
-        d.testSetupDiscard((Card)nc);
+        d.puppetSetupDiscard((Card)nc);
         
         for(Card.cardColor c : Card.cardColor.values())
         {
@@ -110,7 +110,7 @@ public class DeckTest {
         Deck d = new Deck(); 
         
         SpecialCard c = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.YELLOW);
-        d.testSetupDiscard(c);
+        d.puppetSetupDiscard(c);
         
         for(Card.cardColor oc : Card.cardColor.values())
         {
@@ -126,7 +126,7 @@ public class DeckTest {
         System.out.println("Discard Number on Wild");
         Deck d = new Deck(); 
         WildCard w = new WildCard(WildCard.cardWild.WILD);
-        d.testSetupDiscard(w);
+        d.puppetSetupDiscard(w);
         ByteArrayInputStream in = new ByteArrayInputStream("RED".getBytes());
         System.setIn(in);
         w.Wild(new Scanner(System.in));
@@ -145,7 +145,7 @@ public class DeckTest {
         System.out.println("Add Discard Special on Number");
        Deck d = new Deck(); 
        NumberCard n = new NumberCard(7, Card.cardColor.GREEN);
-       d.testSetupDiscard(n);
+       d.puppetSetupDiscard(n);
        
        for(Card.cardColor c: Card.cardColor.values())
        {
@@ -162,7 +162,7 @@ public class DeckTest {
         System.out.println("Add Discard on Special on Wild");
         Deck d = new Deck(); 
         WildCard w = new WildCard(WildCard.cardWild.WILD);
-        d.testSetupDiscard(w);
+        d.puppetSetupDiscard(w);
         ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
         System.setIn(in);
         w.Wild(new Scanner(System.in));
@@ -180,7 +180,7 @@ public class DeckTest {
     {
         System.out.println("Add Discard Special On Special");
         Deck d = new Deck(); 
-        d.testSetupDiscard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.RED ));
+        d.puppetSetupDiscard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.RED ));
         
         for(Card.cardColor c : Card.cardColor.values())
         {
@@ -200,7 +200,7 @@ public class DeckTest {
         System.out.println("Add Discard Wild on Special");
         Deck d = new Deck(); 
         SpecialCard sp = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.YELLOW);
-        d.testSetupDiscard(sp);
+        d.puppetSetupDiscard(sp);
         ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
         System.setIn(in);
         
@@ -217,7 +217,7 @@ public class DeckTest {
         System.out.println("Add Discard Wild on Number");
         Deck d = new Deck(); 
         NumberCard n = new NumberCard(9, Card.cardColor.BLUE);
-        d.testSetupDiscard(n);
+        d.puppetSetupDiscard(n);
         ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
         System.setIn(in);
         
@@ -233,7 +233,7 @@ public class DeckTest {
         System.out.println("Add Discard Wild on Wild");
         Deck d = new Deck(); 
         WildCard w = new WildCard(WildCard.cardWild.WILD);
-        d.testSetupDiscard(w);
+        d.puppetSetupDiscard(w);
         
         Player p = new Human("steve", 1); 
         
@@ -301,18 +301,7 @@ public class DeckTest {
         instance.PrintDeck(deckName);
     }
 
-    /**
-     * Test of GetDeck method, of class Deck.
-     */
-    @Test
-    public void testGetDeck()
-    {
-        System.out.println("GetDeck");
-        Deck instance = new Deck();
-        Stack result = instance.GetDeck();
-        Stack expResult = result; 
-        assertEquals(expResult, result);
-    }
+    
 
     /**
      * Test of SideEffect method, of class Deck.

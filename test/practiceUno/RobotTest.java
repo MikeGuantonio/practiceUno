@@ -57,7 +57,7 @@ public class RobotTest {
         Robot r = new Robot("Steve", 0); 
         Deck d = new Deck();
         d.Shuffle();
-        d.testSetupDiscard(d.DrawNext());
+        d.puppetSetupDiscard(d.DrawNext());
         
         for (int i = 0; i < 7; i++) {
             r.GetCard(d.DrawNext());
@@ -99,13 +99,13 @@ public class RobotTest {
         r.GetCard(new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.RED));
         r.GetCard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.GREEN));
 
-        d.testSetupDiscard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.BLUE));
+        d.puppetSetupDiscard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.BLUE));
        
         boolean done = false; 
         while(!done)
         {
             r.PlayAHand(d);
-            System.out.println(String.format("Top card is %s", d.TopCard().toString()));
+            System.out.println(String.format("Top card is %s", d.TopDiscard().toString()));
             if(r.TotalCards() == 0)
             {
                 System.out.println("I'm all out of cards!");
@@ -125,8 +125,8 @@ public class RobotTest {
         Deck d = new Deck(); 
         Robot r = new Robot("Steve", 0);
         
-        d.testSetupDiscard(new WildCard(WildCard.cardWild.WILD));
-        WildCard w = (WildCard)d.TopCard();
+        d.puppetSetupDiscard(new WildCard(WildCard.cardWild.WILD));
+        WildCard w = (WildCard)d.TopDiscard();
         ByteArrayInputStream in = new ByteArrayInputStream("Red".getBytes());
         System.setIn(in);
         w.Wild(new Scanner(System.in));
@@ -143,7 +143,7 @@ public class RobotTest {
         Deck d = new Deck(); 
         Robot r = new Robot("Steve", 0);
         
-        d.testSetupDiscard(new NumberCard(5, Card.cardColor.BLUE));
+        d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.BLUE));
         r.GetCard(new NumberCard(5, Card.cardColor.BLUE));
         r.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED));
         
@@ -156,7 +156,7 @@ public class RobotTest {
         Deck d = new Deck(); 
         Robot r = new Robot("Steve", 0);
         
-        d.testSetupDiscard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.GREEN));
+        d.puppetSetupDiscard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.GREEN));
         r.GetCard(new NumberCard(5, Card.cardColor.BLUE));
         r.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED));
         

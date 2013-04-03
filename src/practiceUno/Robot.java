@@ -95,7 +95,7 @@ public class Robot extends Player {
 
         log.info("Trying to decide");
 
-        int state = Decide(d.TopCard());
+        int state = Decide(d.TopDiscard());
 
         if (state == 1) {
             log.info(String.format("Decided %s %s", state, playingCard.toString()));
@@ -106,7 +106,7 @@ public class Robot extends Player {
         while (!done) {
             switch (state) {
                 case 1:
-                    log.info(String.format("Trying to play a card %s %s", playingCard.toString(), d.TopCard().toString()));
+                    log.info(String.format("Trying to play a card %s %s", playingCard.toString(), d.TopDiscard().toString()));
 
                     if (playingCard.getClass().equals(WildCard.class))
                     {
@@ -123,7 +123,7 @@ public class Robot extends Player {
                 case 2:
                     log.info("Need to draw a card");
                     super.GetCard(d.DrawNext());
-                    state = Decide(d.TopCard());
+                    state = Decide(d.TopDiscard());
                     tried = true;
 
                     if (state == 2) {

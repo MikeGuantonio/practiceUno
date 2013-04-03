@@ -2,153 +2,153 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2013-04-02T01:13:03</date>
-  <millis>1364879583951</millis>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984210</millis>
   <sequence>0</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>CONFIG</level>
   <class>practiceUno.UnoClone</class>
   <method>main</method>
-  <thread>10</thread>
+  <thread>1</thread>
   <message>Creating players, deck</message>
 </record>
 <record>
-  <date>2013-04-02T01:13:03</date>
-  <millis>1364879583987</millis>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984241</millis>
   <sequence>1</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>CONFIG</level>
   <class>practiceUno.UnoClone</class>
   <method>main</method>
-  <thread>10</thread>
+  <thread>1</thread>
   <message>Initalizing players, deck</message>
 </record>
 <record>
-  <date>2013-04-02T01:13:03</date>
-  <millis>1364879583987</millis>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984241</millis>
   <sequence>2</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
   <class>SetupPlayers</class>
   <method>Main</method>
-  <thread>10</thread>
+  <thread>1</thread>
   <message>ENTRY</message>
 </record>
 <record>
-  <date>2013-04-02T01:13:03</date>
-  <millis>1364879583989</millis>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984242</millis>
   <sequence>3</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
   <class>SetupPlayers</class>
   <method>Main</method>
-  <thread>10</thread>
+  <thread>1</thread>
   <message>RETURN</message>
 </record>
 <record>
-  <date>2013-04-02T01:13:04</date>
-  <millis>1364879584002</millis>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984252</millis>
   <sequence>6</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINE</level>
   <class>practiceUno.UnoClone</class>
   <method>main</method>
-  <thread>10</thread>
+  <thread>1</thread>
   <message>Game loop</message>
 </record>
 <record>
-  <date>2013-04-02T01:13:04</date>
-  <millis>1364879584002</millis>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984252</millis>
   <sequence>7</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>INFO</level>
   <class>practiceUno.UnoClone</class>
   <method>main</method>
-  <thread>10</thread>
-  <message>Players 2</message>
+  <thread>1</thread>
+  <message>Number of Players 2</message>
 </record>
 <record>
-  <date>2013-04-02T01:13:04</date>
-  <millis>1364879584003</millis>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984253</millis>
   <sequence>8</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>INFO</level>
   <class>practiceUno.UnoClone</class>
   <method>main</method>
-  <thread>10</thread>
-  <message>Start of player turn 8 GREEN</message>
+  <thread>1</thread>
+  <message>Com0's turn Deck Shows:  3 RED</message>
 </record>
 <record>
-  <date>2013-04-02T01:13:04</date>
-  <millis>1364879584006</millis>
-  <sequence>14</sequence>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984272</millis>
+  <sequence>26</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
   <class>Wrap</class>
-  <thread>10</thread>
+  <thread>1</thread>
   <message>ENTRY</message>
 </record>
 <record>
-  <date>2013-04-02T01:13:04</date>
-  <millis>1364879584006</millis>
-  <sequence>15</sequence>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984273</millis>
+  <sequence>27</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
   <class>Wrap</class>
-  <thread>10</thread>
+  <thread>1</thread>
   <message>RETURN</message>
 </record>
 <record>
-  <date>2013-04-02T01:13:04</date>
-  <millis>1364879584006</millis>
-  <sequence>16</sequence>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984273</millis>
+  <sequence>28</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>INFO</level>
   <class>practiceUno.UnoClone</class>
   <method>main</method>
-  <thread>10</thread>
+  <thread>1</thread>
   <message>End player turn</message>
 </record>
 <record>
-  <date>2013-04-02T01:13:04</date>
-  <millis>1364879584006</millis>
-  <sequence>17</sequence>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984274</millis>
+  <sequence>29</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>INFO</level>
   <class>practiceUno.UnoClone</class>
   <method>main</method>
-  <thread>10</thread>
-  <message>Start of player turn 8 RED</message>
+  <thread>1</thread>
+  <message>Com1's turn Deck Shows:  SKIP RED</message>
 </record>
 <record>
-  <date>2013-04-02T01:13:04</date>
-  <millis>1364879584009</millis>
-  <sequence>23</sequence>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984297</millis>
+  <sequence>50</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
   <class>Wrap</class>
-  <thread>10</thread>
+  <thread>1</thread>
   <message>ENTRY</message>
 </record>
 <record>
-  <date>2013-04-02T01:13:04</date>
-  <millis>1364879584010</millis>
-  <sequence>24</sequence>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984297</millis>
+  <sequence>51</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>FINER</level>
   <class>Wrap</class>
-  <thread>10</thread>
+  <thread>1</thread>
   <message>RETURN</message>
 </record>
 <record>
-  <date>2013-04-02T01:13:04</date>
-  <millis>1364879584010</millis>
-  <sequence>25</sequence>
+  <date>2013-04-03T01:13:04</date>
+  <millis>1364965984297</millis>
+  <sequence>52</sequence>
   <logger>practiceUno.UnoClone</logger>
   <level>INFO</level>
   <class>practiceUno.UnoClone</class>
   <method>main</method>
-  <thread>10</thread>
+  <thread>1</thread>
   <message>End player turn</message>
 </record>
 </log>
