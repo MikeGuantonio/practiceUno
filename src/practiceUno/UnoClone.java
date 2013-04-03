@@ -27,7 +27,7 @@ public class UnoClone {
      */
     public static void main(String[] args)
     {  
-        SetUpLogger("unoClone.xml"); 
+        SetUpLogger("testScripts/unoClone.xml"); 
        
         boolean endTurn = false; 
         int pos = 0; 
