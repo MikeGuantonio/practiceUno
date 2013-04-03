@@ -7,12 +7,13 @@ package practiceUno;
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -20,7 +21,7 @@ import static org.junit.Assert.*;
  */
 public class WildCardTest {
     
-    ArrayList<Player> players = new ArrayList<Player>(); 
+    ArrayList<Player> players = new ArrayList<>(); 
     
     public WildCardTest() {
     }
@@ -49,12 +50,10 @@ public class WildCardTest {
     @Test
     public void testPrint()
     {
-        System.out.println("Print");
         for(WildCard.cardWild c : WildCard.cardWild.values())
         {
             WildCard instance = new WildCard(c);
             instance.Print();
-            System.out.println("");
         }
        
     }
@@ -65,7 +64,6 @@ public class WildCardTest {
     @Test
     public void testGetColor() 
     {
-        System.out.println("GetColor");
         
         for(WildCard.cardWild c : WildCard.cardWild.values())
         {
@@ -93,7 +91,6 @@ public class WildCardTest {
     @Test
     public void testGetWild()
     {
-        System.out.println("GetWild");
         for(WildCard.cardWild c : WildCard.cardWild.values())
         {
             WildCard instance = new WildCard(c);
@@ -109,7 +106,6 @@ public class WildCardTest {
     @Test
     public void testWild()
     {
-        System.out.println("Wild");
         for(Card.cardColor c : Card.cardColor.values())
         {
             ByteArrayInputStream in = new ByteArrayInputStream(c.toString().getBytes());
@@ -134,7 +130,6 @@ public class WildCardTest {
     @Test
     public void testDrawFour() 
     {
-        System.out.println("DrawFour");
         Player newPlayer = new Human("Steve", 1);
         Deck copyDeck = new Deck();
         copyDeck.Shuffle();
@@ -150,4 +145,5 @@ public class WildCardTest {
         }
         assertEquals(16, newPlayer.TotalCards());
     }
+    private static final Logger LOG = Logger.getLogger(WildCardTest.class.getName());
 }

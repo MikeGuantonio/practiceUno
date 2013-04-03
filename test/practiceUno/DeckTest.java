@@ -7,19 +7,20 @@ package practiceUno;
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Stack;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
  * @author mike
  */
 public class DeckTest {
+    private static final Logger log = Logger.getLogger(DeckTest.class.getName());
     
     public DeckTest() {
     }
@@ -46,7 +47,6 @@ public class DeckTest {
     @Test
     public void testShuffle()
     {
-        System.out.println("Shuffle");
         Deck instance = new Deck();
         instance.Shuffle();       
     }
@@ -57,7 +57,6 @@ public class DeckTest {
     @Test
     public void testDrawNext() 
     {
-        System.out.println("DrawNext");
         Deck instance = new Deck();
         Card result = instance.DrawNext();
         Card expResult = result; 
@@ -71,7 +70,6 @@ public class DeckTest {
     @Test
     public void testAddDiscard() 
     {
-        System.out.println("AddDiscard");
         Card c = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE);
         Player play = new Human("Steve", 1);
         Deck instance = new Deck();
@@ -81,10 +79,12 @@ public class DeckTest {
         instance.AddDiscard(c, play, new Scanner(System.in));
     }
     
+    /**
+     *
+     */
     @Test
     public void testAddDiscardNumberOnNumber()
     {
-        System.out.println("AddDiscard Number and Number");
         Deck d = new Deck();
          
         NumberCard nc = new NumberCard(5, Card.cardColor.BLUE);
@@ -103,10 +103,12 @@ public class DeckTest {
         //Number on Wild      
     }
     
+    /**
+     *
+     */
     @Test
     public void testDiscardNumberOnSpecial()
     {
-        System.out.println("Discard Number on Special");
         Deck d = new Deck(); 
         
         SpecialCard c = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.YELLOW);
@@ -120,10 +122,12 @@ public class DeckTest {
         }
     }
     
+    /**
+     *
+     */
     @Test
     public void testDiscardNumberOnWild()
     {
-        System.out.println("Discard Number on Wild");
         Deck d = new Deck(); 
         WildCard w = new WildCard(WildCard.cardWild.WILD);
         d.puppetSetupDiscard(w);
@@ -139,10 +143,12 @@ public class DeckTest {
         }
     }
     
+    /**
+     *
+     */
     @Test
     public void testAddDiscardSpecialOnNumber()
     {
-        System.out.println("Add Discard Special on Number");
        Deck d = new Deck(); 
        NumberCard n = new NumberCard(7, Card.cardColor.GREEN);
        d.puppetSetupDiscard(n);
@@ -156,10 +162,12 @@ public class DeckTest {
        
     }
     
+    /**
+     *
+     */
     @Test
     public void testAddDiscardSpecialOnWild()
     {
-        System.out.println("Add Discard on Special on Wild");
         Deck d = new Deck(); 
         WildCard w = new WildCard(WildCard.cardWild.WILD);
         d.puppetSetupDiscard(w);
@@ -175,10 +183,12 @@ public class DeckTest {
         }
     }
     
+    /**
+     *
+     */
     @Test
     public void testAddDiscardSpecialOnSpecial()
     {
-        System.out.println("Add Discard Special On Special");
         Deck d = new Deck(); 
         d.puppetSetupDiscard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.RED ));
         
@@ -194,10 +204,12 @@ public class DeckTest {
         
     }
     
+    /**
+     *
+     */
     @Test
     public void testAddDiscardWildOnSpecial()
     {
-        System.out.println("Add Discard Wild on Special");
         Deck d = new Deck(); 
         SpecialCard sp = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.YELLOW);
         d.puppetSetupDiscard(sp);
@@ -211,10 +223,12 @@ public class DeckTest {
         
     }
     
+    /**
+     *
+     */
     @Test
     public void testAddDiscardWildOnNumber()
     {
-        System.out.println("Add Discard Wild on Number");
         Deck d = new Deck(); 
         NumberCard n = new NumberCard(9, Card.cardColor.BLUE);
         d.puppetSetupDiscard(n);
@@ -227,10 +241,12 @@ public class DeckTest {
         d.ShowDiscard();
     }
     
+    /**
+     *
+     */
     @Test
     public void testAddDiscardWildOnWild()
     {
-        System.out.println("Add Discard Wild on Wild");
         Deck d = new Deck(); 
         WildCard w = new WildCard(WildCard.cardWild.WILD);
         d.puppetSetupDiscard(w);
@@ -253,7 +269,6 @@ public class DeckTest {
     @Test
     public void testGetSize()
     {
-        System.out.println("getSize");
         String deckName = "regular";
         Deck instance = new Deck();
         int expResult = 108;
@@ -268,7 +283,6 @@ public class DeckTest {
     @Test
     public void testShowDiscard()
     {
-        System.out.println("ShowDiscard");
         Deck instance = new Deck();
         ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
         System.setIn(in);
@@ -282,7 +296,6 @@ public class DeckTest {
     @Test
     public void testSetUpDiscard()
     {
-        System.out.println("SetUpDiscard");
         Deck instance = new Deck();
         ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
         System.setIn(in);
@@ -295,7 +308,6 @@ public class DeckTest {
     @Test
     public void testPrintDeck() 
     {
-        System.out.println("PrintDeck");
         String deckName = "regular";
         Deck instance = new Deck();
         instance.PrintDeck(deckName);
@@ -309,13 +321,42 @@ public class DeckTest {
     @Test
     public void testSideEffect()
     {
-        System.out.println("SideEffect");
         SpecialCard special = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE);
-        ArrayList<Player> players = new ArrayList<Player>() ;
+        ArrayList<Player> players = new ArrayList<>() ;
         players.add(new Human("Steve", 1));
         players.add(new Human("John", 1));
         int pos = 0;
         Deck instance = new Deck();
         instance.SideEffect(special, players, pos);       
     }
+    
+    @Test
+    public void testSideEffectDrTwo()
+    {
+        int expResult = 2; 
+        Robot first = new Robot("Steve", 0); 
+        Robot second = new Robot("Bob", 1);
+        Deck d = new Deck(); 
+        
+        d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.BLUE));
+        first.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE));
+        d.AddDiscard(first.Discard(0), first, null);
+        System.out.println("First: " + first.TotalCards());
+        System.out.println("Second: " + second.TotalCards());
+        assertEquals(expResult, second.TotalCards());
+    }
+    
+    @Test
+    public void testSideEffectReverse()
+    {
+        //Player k will pass it back to player m and not player l.
+    }
+    
+    @Test
+    public void testSideEffectSkip()
+    {
+        //Pass same player is now current n is 2
+        // n is more than two move to current plus one.
+    }
+    
 }

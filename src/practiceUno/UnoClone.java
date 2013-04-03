@@ -60,7 +60,7 @@ public class UnoClone {
                 if(players.get(i).getClass().equals(Robot.class))
                 {
                       Robot r = (Robot)players.get(i);
-                      endTurn = r.PlayAHand(deck);
+                      endTurn = r.PlayAHand(deck, players);
                 }
                 else
                 {

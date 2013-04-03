@@ -7,7 +7,7 @@ package practiceUno;
 
 //~--- JDK imports ------------------------------------------------------------
 import java.io.ByteArrayInputStream;
-import java.text.MessageFormat;
+import java.util.ArrayList;
 
 import java.util.Scanner;
 import java.util.Stack;
@@ -85,7 +85,7 @@ public class Robot extends Player {
      * @param d
      * @return
      */
-    public boolean PlayAHand(Deck d)
+    public boolean PlayAHand(Deck d, ArrayList<Player> p)
     {
         log.entering("Play a hand", name);
 
@@ -116,7 +116,7 @@ public class Robot extends Player {
                         }
                         else
                         {
-                            d.AddDiscard(playingCard, this, null);
+                            d.AddDiscard(playingCard, p, null);
                             hand.remove(FindCard(playingCard));
                             state = 5;
                         }
@@ -141,7 +141,7 @@ public class Robot extends Player {
                         int colorChoice = (int)(Math.random() * 3);
                         ByteArrayInputStream in = new ByteArrayInputStream(colorValues[colorChoice].toString().getBytes());
                         System.setIn(in);
-                        d.AddDiscard(playingCard, this, new Scanner(System.in));
+                        d.AddDiscard(playingCard, p, new Scanner(System.in));
                         hand.remove(FindCard(playingCard));
                         state = 5;
                         break;

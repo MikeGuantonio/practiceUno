@@ -118,7 +118,7 @@ public class Deck {
      * @param in
      * @return
      */
-    public boolean AddDiscard(Card c, Player play, Scanner in)
+    public boolean AddDiscard(Card c, ArrayList<Player> p, Scanner in)
     {
         boolean canPlace = false;
         Card    discard  = discardDeck.peek();
@@ -133,7 +133,7 @@ public class Deck {
         }
         else if (c.getClass().equals(WildCard.class)) 
         {
-            canPlace = CheckWild(c, play, in);
+            canPlace = CheckWild(c, p.get(0), in); //TODO
         }
 
         if (canPlace)
@@ -348,6 +348,7 @@ public class Deck {
      */
     public void SideEffect(Card c, ArrayList<Player> players, int pos)
     {
+        System.out.println("Entering Side effect");
         if (c.getClass().equals(SpecialCard.class))
         {
             SpecialCard special = (SpecialCard) c;

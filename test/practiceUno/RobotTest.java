@@ -6,13 +6,15 @@ package practiceUno;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -54,7 +56,9 @@ public class RobotTest {
     @Test
     public void testPlayAHand()
     {
-        Robot r = new Robot("Steve", 0); 
+        Robot r = new Robot("Steve", 0);
+        ArrayList<Player> p = new ArrayList<>(); 
+        p.add(r);
         Deck d = new Deck();
         d.Shuffle();
         d.puppetSetupDiscard(d.DrawNext());
@@ -63,31 +67,39 @@ public class RobotTest {
             r.GetCard(d.DrawNext());
         }
         
-        r.PlayAHand(d);
+        r.PlayAHand(d, p );
         
     }
     
+    /**
+     *
+     */
     @Test
     public void testPlayNoShuffle()
     {
+        ArrayList<Player> p = new ArrayList<>(); 
         Robot r = new Robot("Steve", 0);
+        p.add(r);
         Deck d = new Deck(); 
         d.SetUpDiscard(null);
-        
-        System.out.println("Showing hand...");
         r.ShowHand();
         for(int i = 0; i < 7; i++)
         {
             r.GetCard(d.DrawNext());
         }
-        r.PlayAHand(d);
+        r.PlayAHand(d, p);
     }
     
+    /**
+     *
+     * @throws IOException
+     */
     @Test
     public void testPlayKnownHand() throws IOException
     {
-        
+        ArrayList<Player> p = new ArrayList<>();
         Robot r = new Robot("steve", 0);
+        p.add(r);
         Deck d = new Deck(); 
         
         
@@ -104,26 +116,28 @@ public class RobotTest {
         boolean done = false; 
         while(!done)
         {
-            r.PlayAHand(d);
-            System.out.println(String.format("Top card is %s", d.TopDiscard().toString()));
+            r.PlayAHand(d, p);
             if(r.TotalCards() == 0)
             {
-                System.out.println("I'm all out of cards!");
                 done = true; 
             }
             else if(r.TotalCards() == 1 )
             {
-                System.out.println("UNO!");
             }
         }
         
     }
     
+    /**
+     *
+     */
     @Test
     public void testWildonDiscard()
     {
+        ArrayList<Player> p = new ArrayList<>(); 
         Deck d = new Deck(); 
         Robot r = new Robot("Steve", 0);
+        p.add(r);
         
         d.puppetSetupDiscard(new WildCard(WildCard.cardWild.WILD));
         WildCard w = (WildCard)d.TopDiscard();
@@ -133,33 +147,43 @@ public class RobotTest {
         r.GetCard(new NumberCard(5, Card.cardColor.BLUE));
         r.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED));
         
-        r.PlayAHand(d);
+        r.PlayAHand(d, p);
         
     }
     
+    /**
+     *
+     */
     @Test
     public void testNumberonDiscard()
     {
         Deck d = new Deck(); 
         Robot r = new Robot("Steve", 0);
-        
+        ArrayList<Player> p = new ArrayList<>(); 
+        p.add(r);
         d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.BLUE));
         r.GetCard(new NumberCard(5, Card.cardColor.BLUE));
         r.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED));
         
-        r.PlayAHand(d);
+        r.PlayAHand(d, p);
     }
     
+    /**
+     *
+     */
     @Test
     public void testSpecialonDiscard()
     {
         Deck d = new Deck(); 
         Robot r = new Robot("Steve", 0);
+        ArrayList<Player> p = new ArrayList<>(); 
+        p.add(r);
         
         d.puppetSetupDiscard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.GREEN));
         r.GetCard(new NumberCard(5, Card.cardColor.BLUE));
         r.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED));
         
-        r.PlayAHand(d);
+        r.PlayAHand(d, p);
     }
+    private static final Logger LOG = Logger.getLogger(RobotTest.class.getName());
 }
