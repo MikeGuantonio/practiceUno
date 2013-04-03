@@ -152,6 +152,12 @@ public class DeckTest {
     @Test
     public void testAddDiscardSpecialOnNumber()
     {
+       Player o = new Robot("Steve", 0);
+       Player k = new Robot("Steve", 1);
+       ArrayList<Player> p = new ArrayList<>(); 
+       p.add(o);
+       p.add(k);
+       
        Deck d = new Deck(); 
        NumberCard n = new NumberCard(7, Card.cardColor.GREEN);
        d.puppetSetupDiscard(n);
@@ -159,7 +165,7 @@ public class DeckTest {
        for(Card.cardColor c: Card.cardColor.values())
        {
            SpecialCard discard = new SpecialCard(SpecialCard.cardValues.SKIP, c);
-           d.AddDiscard(discard, null, new Scanner(System.in), 0);
+           d.AddDiscard(discard, p, new Scanner(System.in), 0);
            d.ShowDiscard();
        }
        
@@ -171,6 +177,12 @@ public class DeckTest {
     @Test
     public void testAddDiscardSpecialOnWild()
     {
+        Player k = new Robot("Steve", 0);
+        Player l = new Robot("Larry", 1);
+        ArrayList<Player> p = new ArrayList<>(); 
+        p.add(k);
+        p.add(l);
+        
         Deck d = new Deck(); 
         WildCard w = new WildCard(WildCard.cardWild.WILD);
         d.puppetSetupDiscard(w);
@@ -181,7 +193,7 @@ public class DeckTest {
         for(Card.cardColor c : Card.cardColor.values())
         {
             SpecialCard sp = new SpecialCard(SpecialCard.cardValues.DRTWO, c);
-            d.AddDiscard(sp, null, new Scanner(System.in), 0);
+            d.AddDiscard(sp, p, new Scanner(System.in), 0);
             d.ShowDiscard();
         }
     }
@@ -192,6 +204,12 @@ public class DeckTest {
     @Test
     public void testAddDiscardSpecialOnSpecial()
     {
+        Player m = new Robot("Steve", 0);
+        Player n = new Robot("Larry", 1);
+        ArrayList<Player> p = new ArrayList<>(); 
+        p.add(m);
+        p.add(n);
+        
         Deck d = new Deck(); 
         d.puppetSetupDiscard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.RED ));
         
@@ -200,7 +218,7 @@ public class DeckTest {
             for(SpecialCard.cardValues v : SpecialCard.cardValues.values())
             {
                 SpecialCard s = new SpecialCard(v, c);
-                d.AddDiscard(s, null, new Scanner(System.in), 0);
+                d.AddDiscard(s, p, new Scanner(System.in), 0);
                 d.ShowDiscard();
             }
         }
@@ -213,6 +231,10 @@ public class DeckTest {
     @Test
     public void testAddDiscardWildOnSpecial()
     {
+        Player k = new Robot("Steve", 0);
+        ArrayList<Player> p = new ArrayList<>(); 
+        p.add(k);
+        
         Deck d = new Deck(); 
         SpecialCard sp = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.YELLOW);
         d.puppetSetupDiscard(sp);
@@ -221,7 +243,7 @@ public class DeckTest {
         
         d.ShowDiscard();
         WildCard w = new WildCard(WildCard.cardWild.WILD);
-        d.AddDiscard(w, null, new Scanner(System.in), 0);
+        d.AddDiscard(w, p, new Scanner(System.in), 0);
         d.ShowDiscard();
         
     }
@@ -232,20 +254,21 @@ public class DeckTest {
     @Test
     public void testAddDiscardWildOnNumber()
     {
+        boolean canPlace = false; 
+        Player r = new Robot("Steve", 0);
+        ArrayList<Player> p = new ArrayList<>();
+        p.add(r);
         Deck d = new Deck(); 
         NumberCard n = new NumberCard(9, Card.cardColor.BLUE);
         d.puppetSetupDiscard(n);
         ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
         System.setIn(in);
-        System.out.println("After setting input to yellow");
         
         d.ShowDiscard();
-        System.out.println("Showing card");
         WildCard w = new WildCard(WildCard.cardWild.WILD);
-        System.out.println("Creating a wild");
-        d.AddDiscard(w, null, new Scanner(System.in), 0);
-        
-        System.out.println("Showing discard");
+        canPlace = d.AddDiscard(w, p, new Scanner(System.in), 0);
+        System.out.println(canPlace);
+        assertEquals(canPlace, true);
         d.ShowDiscard();
     }
     

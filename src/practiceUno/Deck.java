@@ -130,7 +130,9 @@ public class Deck {
         }
         else if (c.getClass().equals(SpecialCard.class)) 
         {
+            System.out.println("At special card case");
             canPlace = CheckSpecial(discard, c, p, pos);
+            
         }
         else if (c.getClass().equals(WildCard.class)) 
         {

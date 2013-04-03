@@ -51,7 +51,10 @@ public class WildCard extends Card implements WildActions
      *
      */
     @Override
-    public void Print() {}
+    public void Print()
+    {
+        System.out.println(this.toString());
+    }
 
     /**
      *
