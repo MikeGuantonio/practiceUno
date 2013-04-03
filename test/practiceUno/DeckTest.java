@@ -72,11 +72,14 @@ public class DeckTest {
     {
         Card c = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE);
         Player play = new Human("Steve", 1);
+        ArrayList<Player> p = new ArrayList<>();
+        p.add(play);
+        
         Deck instance = new Deck();
         ByteArrayInputStream in = new ByteArrayInputStream("RED".getBytes());
         System.setIn(in);
         instance.SetUpDiscard(new Scanner(System.in));
-        instance.AddDiscard(c, play, new Scanner(System.in));
+        instance.AddDiscard(c, p, new Scanner(System.in), p.get(0).GetPlayerPos());
     }
     
     /**
@@ -95,7 +98,7 @@ public class DeckTest {
             for (int i = 0; i < 10; i++) 
             {
                 NumberCard n = new NumberCard(i, c); 
-                d.AddDiscard(n, null, new Scanner(System.in));
+                d.AddDiscard(n, null, new Scanner(System.in), 0);
                 d.ShowDiscard();
             }
         }
@@ -117,7 +120,7 @@ public class DeckTest {
         for(Card.cardColor oc : Card.cardColor.values())
         {
             NumberCard n = new NumberCard(5, oc);
-            d.AddDiscard(n, null, new Scanner(System.in));
+            d.AddDiscard(n, null, new Scanner(System.in), 0);
             d.ShowDiscard();
         }
     }
@@ -138,7 +141,7 @@ public class DeckTest {
         for(Card.cardColor c : Card.cardColor.values())
         {
             NumberCard n = new NumberCard(9, c); 
-            d.AddDiscard(n, null, new Scanner(System.in));
+            d.AddDiscard(n, null, new Scanner(System.in), 0);
             d.ShowDiscard();
         }
     }
@@ -156,7 +159,7 @@ public class DeckTest {
        for(Card.cardColor c: Card.cardColor.values())
        {
            SpecialCard discard = new SpecialCard(SpecialCard.cardValues.SKIP, c);
-           d.AddDiscard(discard, null, new Scanner(System.in));
+           d.AddDiscard(discard, null, new Scanner(System.in), 0);
            d.ShowDiscard();
        }
        
@@ -178,7 +181,7 @@ public class DeckTest {
         for(Card.cardColor c : Card.cardColor.values())
         {
             SpecialCard sp = new SpecialCard(SpecialCard.cardValues.DRTWO, c);
-            d.AddDiscard(sp, null, new Scanner(System.in));
+            d.AddDiscard(sp, null, new Scanner(System.in), 0);
             d.ShowDiscard();
         }
     }
@@ -197,7 +200,7 @@ public class DeckTest {
             for(SpecialCard.cardValues v : SpecialCard.cardValues.values())
             {
                 SpecialCard s = new SpecialCard(v, c);
-                d.AddDiscard(s, null, new Scanner(System.in));
+                d.AddDiscard(s, null, new Scanner(System.in), 0);
                 d.ShowDiscard();
             }
         }
@@ -218,7 +221,7 @@ public class DeckTest {
         
         d.ShowDiscard();
         WildCard w = new WildCard(WildCard.cardWild.WILD);
-        d.AddDiscard(w, null, new Scanner(System.in));
+        d.AddDiscard(w, null, new Scanner(System.in), 0);
         d.ShowDiscard();
         
     }
@@ -234,10 +237,15 @@ public class DeckTest {
         d.puppetSetupDiscard(n);
         ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
         System.setIn(in);
+        System.out.println("After setting input to yellow");
         
         d.ShowDiscard();
+        System.out.println("Showing card");
         WildCard w = new WildCard(WildCard.cardWild.WILD);
-        d.AddDiscard(w, null, new Scanner(System.in));
+        System.out.println("Creating a wild");
+        d.AddDiscard(w, null, new Scanner(System.in), 0);
+        
+        System.out.println("Showing discard");
         d.ShowDiscard();
     }
     
@@ -251,14 +259,16 @@ public class DeckTest {
         WildCard w = new WildCard(WildCard.cardWild.WILD);
         d.puppetSetupDiscard(w);
         
-        Player p = new Human("steve", 1); 
+        Player h = new Human("steve", 1); 
+        ArrayList<Player> p = new ArrayList<>(); 
+        p.add(h);
         
         for(WildCard.cardWild wc : WildCard.cardWild.values())
         {
             ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
             System.setIn(in);
             WildCard discard = new WildCard(wc);
-            d.AddDiscard(discard, p, new Scanner(System.in));
+            d.AddDiscard(discard, p, new Scanner(System.in), 0);
             d.ShowDiscard();
         }
     }
@@ -336,11 +346,14 @@ public class DeckTest {
         int expResult = 2; 
         Robot first = new Robot("Steve", 0); 
         Robot second = new Robot("Bob", 1);
+        ArrayList<Player> p = new ArrayList<>(); 
+        p.add(first);
+        p.add(second);
         Deck d = new Deck(); 
         
         d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.BLUE));
         first.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE));
-        d.AddDiscard(first.Discard(0), first, null);
+        d.AddDiscard(first.Discard(0), p, null, p.get(0).GetPlayerPos());
         System.out.println("First: " + first.TotalCards());
         System.out.println("Second: " + second.TotalCards());
         assertEquals(expResult, second.TotalCards());

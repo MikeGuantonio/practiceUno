@@ -118,8 +118,9 @@ public class Deck {
      * @param in
      * @return
      */
-    public boolean AddDiscard(Card c, ArrayList<Player> p, Scanner in)
+    public boolean AddDiscard(Card c, ArrayList<Player> p, Scanner in, int pos)
     {
+        System.out.println("At function add discard");
         boolean canPlace = false;
         Card    discard  = discardDeck.peek();
 
@@ -129,17 +130,18 @@ public class Deck {
         }
         else if (c.getClass().equals(SpecialCard.class)) 
         {
-            canPlace = CheckSpecial(discard, c);
+            canPlace = CheckSpecial(discard, c, p, pos);
         }
         else if (c.getClass().equals(WildCard.class)) 
         {
-            canPlace = CheckWild(c, p.get(0), in); //TODO
+            canPlace = CheckWild(c, p.get(pos), in); 
         }
 
         if (canPlace)
         {
             discardDeck.push(c);
         }
+        System.out.println("Exiting function Add discard");
         return canPlace;
     }
 
@@ -193,7 +195,7 @@ public class Deck {
         return canPlace;
     }
 
-    private boolean CheckSpecial(Card discard, Card c)
+    private boolean CheckSpecial(Card discard, Card c, ArrayList<Player> players, int pos)
     {
         boolean canPlace = false;
 
@@ -202,6 +204,7 @@ public class Deck {
             if (c.GetColor().equals(discard.GetColor()))
             {
                 canPlace = true;
+                this.SideEffect(c, players, pos);
             }
             else if (c.getClass().equals(SpecialCard.class)) 
             {
@@ -211,6 +214,7 @@ public class Deck {
                 if (cardToPlay.GetSpecial().equals(cardShown.GetSpecial())) 
                 {
                     canPlace = true;
+                    this.SideEffect(c, players, pos);
                 }
             }
         } 
@@ -219,6 +223,7 @@ public class Deck {
             if (c.GetColor().equals(discard.GetColor())) 
             {
                 canPlace = true;
+                this.SideEffect(c, players, pos);
             }
         } 
         else if (discard.getClass().equals(WildCard.class)) 
@@ -226,6 +231,7 @@ public class Deck {
             if (c.GetColor().equals(discard.GetColor())) 
             {
                 canPlace = true;
+                this.SideEffect(c, players, pos);
             }
         } 
         else
@@ -348,7 +354,7 @@ public class Deck {
      */
     public void SideEffect(Card c, ArrayList<Player> players, int pos)
     {
-        System.out.println("Entering Side effect");
+        System.out.println("Entering Side effect " + c.toString());
         if (c.getClass().equals(SpecialCard.class))
         {
             SpecialCard special = (SpecialCard) c;
