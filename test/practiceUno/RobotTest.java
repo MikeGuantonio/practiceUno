@@ -99,7 +99,9 @@ public class RobotTest {
     {
         ArrayList<Player> p = new ArrayList<>();
         Robot r = new Robot("steve", 0);
+        Robot o = new Robot("Larry", 1);
         p.add(r);
+        p.add(o); 
         Deck d = new Deck(); 
         
         
@@ -137,7 +139,9 @@ public class RobotTest {
         ArrayList<Player> p = new ArrayList<>(); 
         Deck d = new Deck(); 
         Robot r = new Robot("Steve", 0);
+        Robot k = new Robot("Larry", 1);
         p.add(r);
+        p.add(k);
         
         d.puppetSetupDiscard(new WildCard(WildCard.cardWild.WILD));
         WildCard w = (WildCard)d.TopDiscard();
