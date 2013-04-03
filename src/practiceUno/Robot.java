@@ -21,17 +21,9 @@ import java.util.logging.Logger;
  */
 public class Robot extends Player {
 
-    /**
-     * Field description
-     */
+    
     private static final Logger log = Logger.getLogger(Robot.class.getName());
-    /**
-     * Field description
-     */
     private Card.cardColor[] colorValues = Card.cardColor.values();
-    /**
-     * Field description
-     */
     private Card playingCard = null;
     private Stack<Card> wildSet = new Stack<>(); 
 
@@ -40,7 +32,8 @@ public class Robot extends Player {
      * @param name
      * @param pos
      */
-    public Robot(String name, int pos) {
+    public Robot(String name, int pos)
+    {
         super.name = name;
         super.playerPos = pos;
         log.setLevel(Level.WARNING);
@@ -56,13 +49,11 @@ public class Robot extends Player {
      */
     public int FindCard(Card c) 
     {
-        log.info(String.format("looking at you card : %s", c.toString()));
-        log.info(String.format("Is at %s", hand.indexOf(c)));
+        log.entering("Find Card", name);
         return hand.indexOf(c);
     }
     
     
-
     /**
      * Method description
      *
@@ -72,15 +63,20 @@ public class Robot extends Player {
      * @return
      */
     @Override
-    public Card Discard(int dex) {
+    public Card Discard(int dex)
+    {
+        log.entering("Discard", name);
         Card retC;
 
-        if (dex == -1) {
+        if (dex == -1)
+        {
             retC = null;
-        } else {
+        }
+        else
+        {
             retC = hand.get(dex);
         }
-
+        log.exiting("Discard", name);
         return retC;
     }
 
@@ -89,83 +85,82 @@ public class Robot extends Player {
      * @param d
      * @return
      */
-    public boolean PlayAHand(Deck d) {
+    public boolean PlayAHand(Deck d)
+    {
         log.entering("Play a hand", name);
 
         boolean done = false;
         boolean tried = false;
 
-        log.info("Trying to decide");
+        log.fine("Trying to decide");
 
         int state = Decide(d.TopDiscard());
 
-        if (state == 1) {
-            log.info(String.format("Decided %s %s", state, playingCard.toString()));
-        } else {
-            log.info(String.format("decided %s", state));
+        if (state == 1)
+        {
+            log.fine(String.format("Decided %s %s", state, playingCard.toString()));
+        }
+        else
+        {
+            log.fine(String.format("decided %s", state));
         }
 
-        while (!done) {
-            switch (state) {
-                case 1:
-                    log.info(String.format("Trying to play a card %s %s", playingCard.toString(), d.TopDiscard().toString()));
+        while (!done)
+        {
+           switch (state)
+           {
+                case 1: log.fine(String.format("Trying to play a card %s %s", playingCard.toString(), d.TopDiscard().toString()));
+                        if (playingCard.getClass().equals(WildCard.class))
+                        {
+                            state = 4;
+                        }
+                        else
+                        {
+                            d.AddDiscard(playingCard, this, null);
+                            hand.remove(FindCard(playingCard));
+                            state = 5;
+                        }
+                        break;
 
-                    if (playingCard.getClass().equals(WildCard.class))
-                    {
-                        state = 4;
-                    }
-                    else
-                    {
-                        d.AddDiscard(playingCard, this, null);
+                case 2: log.fine("Need to draw a card");
+                        super.GetCard(d.DrawNext());
+                        state = Decide(d.TopDiscard());
+                        tried = true;
+                        if (state == 2)
+                        {
+                            state = 3;
+                        }
+                        break;
+
+                case 3: log.fine("Pass");
+                        System.out.println(String.format("%s passes.", GetName()));
+                        state = 5;
+                        break;
+
+                case 4: log.fine("Time for a wild card.");
+                        int colorChoice = (int)(Math.random() * 3);
+                        ByteArrayInputStream in = new ByteArrayInputStream(colorValues[colorChoice].toString().getBytes());
+                        System.setIn(in);
+                        d.AddDiscard(playingCard, this, new Scanner(System.in));
                         hand.remove(FindCard(playingCard));
                         state = 5;
-                    }
-                    break;
+                        break;
 
-                case 2:
-                    log.info("Need to draw a card");
-                    super.GetCard(d.DrawNext());
-                    state = Decide(d.TopDiscard());
-                    tried = true;
+                case 5: log.fine("End turn");
+                        done = true;
+                        if(playingCard != null)
+                        {
+                            System.out.println(String.format("%s played %s", GetName(), playingCard.toString()));
+                            playingCard = null; 
+                        }
+                        break;
 
-                    if (state == 2) {
-                        state = 3;
-                    }
-
-                    break;
-
-                case 3:
-                    log.info("Pass");
-                    state = 5;
-
-                    break;
-
-                case 4:
-                    log.info("Time for a wild card. Choosing yellow");
-                    ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
-                    System.setIn(in);
-                    log.info("Choose yellow");
-                    d.AddDiscard(playingCard, this, new Scanner(System.in));
-                    log.info("Add to deck");
-                    hand.remove(FindCard(playingCard));
-                    log.info("removed");
-                    state = 5;
-
-                    break;
-
-                case 5:
-                    log.info("End turn");
-                    done = true;
-                    playingCard = null; 
-                    break;
-
-                default:
-                    log.severe("I don't know what to do");
+                default: log.severe("I don't know what to do");
+                         break;
             }
         }
 
         log.exiting("Play a Hand", name);
-
         return done;
     }
 
@@ -179,99 +174,88 @@ public class Robot extends Player {
      */
     private int Decide(Card c) {
         log.entering("Decide", name);
-        log.info("Entering robot decide function");
 
         int choice;
         Card discard = c;  
 
-        log.info(String.format("I have %s cards. ", super.TotalCards()));
-        for (int i = 0; i < hand.size(); i++)
+        if(discard.getClass().equals(NumberCard.class))
         {
-            log.info(String.format("Card %s: %s", i, hand.get(i).toString())); 
-        }
-
-                if(discard.getClass().equals(NumberCard.class))
-                {
-                    log.info(String.format("The top card was a number %s", discard.toString()));
-                    NumberCard n = (NumberCard)discard; 
+            NumberCard n = (NumberCard)discard; 
                      
-                    for(Card inPlay : hand)
+            for(Card inPlay : hand)
+            {
+                 if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(discard.GetColor()))
+                 {
+                    playingCard = inPlay; 
+                    break;
+                 }
+                 else if(inPlay.getClass().equals(NumberCard.class))
+                 {
+                    NumberCard play = (NumberCard)inPlay;
+                    if(play.GetNumber() == n.GetNumber())
                     {
-                        
-                        if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(discard.GetColor()))
-                        {
-                            playingCard = inPlay; 
-                            break;
-                        }
-                        else if(inPlay.getClass().equals(NumberCard.class))
-                        {
-                            NumberCard play = (NumberCard)inPlay;
-                            if(play.GetNumber() == n.GetNumber())
-                            {
-                                playingCard = inPlay; 
-                                break;
-                            }
-                        }                        
+                        playingCard = inPlay; 
+                        break;
                     }
-                }
-                else if(discard.getClass().equals(SpecialCard.class))
-                {
-                    log.info(MessageFormat.format("The top card was a special card. {0}", discard.toString()));
-                    SpecialCard sp = (SpecialCard)discard; 
+                  }                        
+            }
+        }
+        else if(discard.getClass().equals(SpecialCard.class))
+        {
+            SpecialCard sp = (SpecialCard)discard; 
                     
-                    for(Card inPlay : hand)
-                    {
-                        log.info(String.format("In special for loop. Card %s", inPlay.toString()));
-                        if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(discard.GetColor()))
-                        {
-                            playingCard = inPlay; 
-                            break;
-                        }
-                        else if(inPlay.getClass().equals(SpecialCard.class))
-                        {
-                            SpecialCard play = (SpecialCard)inPlay;
-                            if(play.GetSpecial().equals(sp.GetSpecial()))
-                            {
-                                playingCard = inPlay; 
-                                break;
-                            }
-                        }
-                        else
-                        {
-                            log.info("No special match");
-                        }
-                    }
-                }
-                else if(discard.getClass().equals(WildCard.class))
+            for(Card inPlay : hand)
+            {
+                if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(discard.GetColor()))
                 {
-                    log.info(String.format("The top card was a wild card %s", discard.toString()));
-                    for(Card inPlay : hand)
+                    playingCard = inPlay; 
+                    break;
+                }
+                else if(inPlay.getClass().equals(SpecialCard.class))
+                {
+                    SpecialCard play = (SpecialCard)inPlay;
+                    if(play.GetSpecial().equals(sp.GetSpecial()))
                     {
-                        log.info("Inside the wild loop " + inPlay.toString());
-                        if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(discard.GetColor()))
-                        {
-                            playingCard = inPlay; 
-                            break;
-                        }
+                        playingCard = inPlay; 
+                        break;
                     }
                 }
                 else
                 {
-                    log.severe("This card should never exsist!");
+                            log.fine("No special match");
                 }
+            }
+        }
+        else if(discard.getClass().equals(WildCard.class))
+        {
+            
+            for(Card inPlay : hand)
+            {
+                    if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(discard.GetColor()))
+                    {
+                        playingCard = inPlay; 
+                        break;
+                    }
+            }
+        }
+        else
+        {
+            log.severe("This card should never exsist!");
+        }
 
         if(playingCard == null )
             PlayAWild(); 
                 
-        if (playingCard != null) {
+        if (playingCard != null)
+        {
             choice = 1;
-        } else {
+        }
+        else 
+        {
             choice = 2;
         }
 
-        log.info("Done deciding");
         log.exiting("Decide", name);
-
         return choice;
     }
     
@@ -286,9 +270,10 @@ public class Robot extends Player {
         }
     }
     
+    //May just remove the idea of having a wild deck. No real reason as I can 
+    //just loop through my hand in order to set things up.
     private void PlayAWild()
     { 
-        log.info("Seeing if I have any wild cards in my hand");
         MakeWildDeck(); 
         if(playingCard == null && !wildSet.empty() )
         {
@@ -297,7 +282,3 @@ public class Robot extends Player {
         wildSet.clear();
     }
 }
-
-
-
-
