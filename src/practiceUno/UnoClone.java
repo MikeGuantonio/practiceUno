@@ -50,34 +50,27 @@ public class UnoClone {
         do
         {
         
-            for (int i = 0; i < players.size(); i++)
+            for (Player current : players)
             {       
-                System.out.println((String.format("%s's turn. %s sees %s", players.get(i).GetName(), players.get(i).GetName(), deck.TopDiscard().toString())));
+                System.out.println((String.format("%s's turn. %s sees %s", current.GetName(), current.GetName(), deck.TopDiscard().toString())));
                 
                 uno.Sleep(1_000); 
                 
-                log.fine(String.format("%s's turn Deck Shows:  %s", players.get(i).GetName(), deck.TopDiscard().toString()));
-                if(players.get(i).getClass().equals(Robot.class))
-                {
-                      Robot r = (Robot)players.get(i);
-                      endTurn = r.PlayAHand(deck, players);
-                }
-                else
-                {
-                    endTurn = uno.PlayerTurn(players, deck, pos);
-                }
-                 
-                endGame = uno.CheckForEndGame(players.get(i));
+                log.fine(String.format("%s's turn Deck Shows:  %s", current.GetName(), deck.TopDiscard().toString()));
+                
+                endTurn = current.PlayAHand(deck, players);
+                endGame = uno.CheckForEndGame(current);
+                
                 if(endGame)
                 {
-                    System.out.println(players.get(i).GetName() + " won!");
+                    System.out.println(current.GetName() + " won!");
                     uno.Report(players);
                     break;
                 }
                 else
                 {
-                    log.fine(String.format("End %s turn ", players.get(i).GetName()));
-                    pos = uno.Wrap((pos+1), players.size());
+                    log.fine(String.format("End %s turn ", current.GetName()));
+                    pos = uno.Wrap((pos+1), players.size()); //How is this getting a position?
                     uno.Report(players);
                 }
                 

@@ -47,13 +47,7 @@ public class Human extends Player
         }
 	return c;
     }
-    
-    @Override
-    public int FindCard(Card c)
-    {
-        return 5; 
-    }
-    
+      
     @Override
     public boolean PlayAHand(Deck d, ArrayList<Player> p)
     {

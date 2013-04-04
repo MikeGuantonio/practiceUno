@@ -39,19 +39,7 @@ public class Robot extends Player {
         log.setLevel(Level.WARNING);
     }
 
-    /**
-     * Method description
-     *
-     *
-     * @param c
-     *
-     * @return
-     */
-    public int FindCard(Card c) 
-    {
-        log.entering("Find Card", name);
-        return hand.indexOf(c);
-    }
+    
     
     
     /**

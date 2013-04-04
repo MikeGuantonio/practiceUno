@@ -6,15 +6,19 @@ import java.util.*;
  *
  * @author mike
  */
-abstract class Player //be a good idea to put the play a hand sm in here and inherit.
+abstract class Player 
 {
     protected ArrayList<Card> hand = new ArrayList<>(); 
     protected String name; 
     protected int playerPos; 
     
     abstract boolean PlayAHand(Deck d, ArrayList<Player> p); 
-    abstract int FindCard(Card c); 
     abstract Card Discard(int dex);
+    
+    public int FindCard(Card c)
+    {
+        return hand.indexOf(c);
+    }
     
     /**
      *
