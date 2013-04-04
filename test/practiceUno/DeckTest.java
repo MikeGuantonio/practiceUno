@@ -377,9 +377,12 @@ public class DeckTest {
         d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.BLUE));
         first.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE));
         d.AddDiscard(first.Discard(0), p, null, p.get(0).GetPlayerPos());
+        first.Remove(first.Discard(0));
         System.out.println(d.TopDiscard().toString());
         System.out.println("First: " + first.TotalCards());
         System.out.println("Second: " + second.TotalCards());
+        
+        assertEquals(0, first.TotalCards());
         assertEquals(expResult, second.TotalCards());
     }
     

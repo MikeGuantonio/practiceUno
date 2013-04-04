@@ -67,6 +67,11 @@ public class Robot extends Player {
         log.exiting("Discard", name);
         return retC;
     }
+    
+    public void Remove(Card c)
+    {
+        hand.remove(c);
+    }
 
     /**
      *
