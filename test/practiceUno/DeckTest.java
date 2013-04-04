@@ -254,7 +254,7 @@ public class DeckTest {
     @Test
     public void testAddDiscardWildOnNumber()
     {
-        boolean canPlace = false; 
+        int canPlace = 0; 
         Player r = new Robot("Steve", 0);
         ArrayList<Player> p = new ArrayList<>();
         p.add(r);

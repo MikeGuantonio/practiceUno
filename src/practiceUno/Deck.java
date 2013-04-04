@@ -127,7 +127,7 @@ public class Deck {
      * @param in
      * @return
      */
-    public boolean AddDiscard(Card c, ArrayList<Player> p, Scanner in, int pos)
+    public int AddDiscard(Card c, ArrayList<Player> p, Scanner in, int pos)
     {
         thisthing t = new thisthing(); 
         t.Print();
@@ -161,7 +161,7 @@ public class Deck {
             discardDeck.push(c);
         }
         System.out.println("Exiting function Add discard");
-        return canPlace;
+        return pos;
     }
 
     private boolean CheckNumber(Card discard, Card c)
