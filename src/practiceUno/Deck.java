@@ -163,48 +163,51 @@ public class Deck {
     {
         boolean    canPlace   = false;
         NumberCard cardToPlay = (NumberCard) c;
+        String cardName = discard.getClass().getSimpleName();
+        
+        switch(cardName)
+        {
+            case "NumberCard":  NumberCard topCard = (NumberCard) discard;
 
-        if (discard.getClass().equals(NumberCard.class))
-        {
-            NumberCard topCard = (NumberCard) discard;
-
-            if (cardToPlay.GetColor().equals(topCard.GetColor())) 
-            {
-                canPlace = true;
-            }
-            else if (cardToPlay.GetNumber() == topCard.GetNumber()) 
-            {
-                canPlace = true;
-            } 
-            else 
-            {
-                log.info("Tried to place a number on a number");
-                log.info(discard.toString());
-            }
-        }
-        else if (discard.getClass().equals(SpecialCard.class)) 
-        {
-            if (cardToPlay.GetColor().equals(discard.GetColor())) 
-            {
-                canPlace = true;
-            }
-            else
-            {
-                log.info("Tried to place a number card on special");
-                log.info(discard.toString());
-            }
-        } 
-        else if (discard.getClass().equals(WildCard.class)) 
-        {
-            if (cardToPlay.GetColor().equals(discard.GetColor())) 
-            {
-                canPlace = true;
-            }
-            else
-            {
-                log.info("Tried to place a number card on wild.");
-                log.info(discard.toString());
-            }
+                                if (cardToPlay.GetColor().equals(topCard.GetColor())) 
+                                {
+                                    canPlace = true;
+                                }
+                                else if (cardToPlay.GetNumber() == topCard.GetNumber()) 
+                                {
+                                    canPlace = true;
+                                } 
+                                else 
+                                {
+                                    log.info("Tried to place a number on a number");
+                                    log.info(discard.toString());
+                                }
+                                break;
+            
+            case "SpecialCard": if (cardToPlay.GetColor().equals(discard.GetColor())) 
+                                {
+                                    canPlace = true;
+                                }
+                                else
+                                {
+                                    log.info("Tried to place a number card on special");
+                                    log.info(discard.toString());
+                                } 
+                                break;
+            
+            case "WildCard":    if (cardToPlay.GetColor().equals(discard.GetColor())) 
+                                {
+                                    canPlace = true;
+                                }
+                                else
+                                {
+                                    log.info("Tried to place a number card on wild.");
+                                    log.info(discard.toString());
+                                }
+                                break;
+            
+            default: log.fine("No number can be played. ");
+                     break;
         }
         return canPlace;
     }
@@ -212,47 +215,44 @@ public class Deck {
     private boolean CheckSpecial(Card discard, Card c, ArrayList<Player> players, int pos)
     {
         boolean canPlace = false;
+        String cardName = discard.getClass().getSimpleName();
+        
+        switch(cardName)
+        {
+            case "SpecialCard" : if (c.GetColor().equals(discard.GetColor()))
+                                {
+                                    canPlace = true;
+                                    this.SideEffect(c, players, pos);
+                                }
+                                else if (c.getClass().equals(SpecialCard.class)) 
+                                {
+                                    SpecialCard cardToPlay = (SpecialCard) c;
+                                    SpecialCard cardShown  = (SpecialCard) discard;
 
-        if (discard.getClass().equals(SpecialCard.class)) 
-        {
-            if (c.GetColor().equals(discard.GetColor()))
-            {
-                canPlace = true;
-                this.SideEffect(c, players, pos);
-            }
-            else if (c.getClass().equals(SpecialCard.class)) 
-            {
-                SpecialCard cardToPlay = (SpecialCard) c;
-                SpecialCard cardShown  = (SpecialCard) discard;
-
-                if (cardToPlay.GetSpecial().equals(cardShown.GetSpecial())) 
-                {
-                    canPlace = true;
-                    this.SideEffect(c, players, pos);
-                }
-            }
-        } 
-        else if (discard.getClass().equals(NumberCard.class)) 
-        {
-            if (c.GetColor().equals(discard.GetColor())) 
-            {
-                canPlace = true;
-                this.SideEffect(c, players, pos);
-            }
-        } 
-        else if (discard.getClass().equals(WildCard.class)) 
-        {
-            if (c.GetColor().equals(discard.GetColor())) 
-            {
-                canPlace = true;
-                this.SideEffect(c, players, pos);
-            }
-        } 
-        else
-        {
-            log.info("Cannot play a single card");
-            log.info(c.toString());
-            log.info(discard.toString());
+                                    if (cardToPlay.GetSpecial().equals(cardShown.GetSpecial())) 
+                                    {
+                                        canPlace = true;
+                                        this.SideEffect(c, players, pos);
+                                    }
+                                }
+                                break;
+                
+            case "NumberCard": if (c.GetColor().equals(discard.GetColor())) 
+                                {
+                                    canPlace = true;
+                                    this.SideEffect(c, players, pos);
+                                } 
+                                break;
+                
+            case "WildCard":    if (c.GetColor().equals(discard.GetColor())) 
+                                {
+                                    canPlace = true;
+                                    this.SideEffect(c, players, pos);
+                                }
+                                break;
+                
+            default: log.fine("No cards are available to be played.");
+                     break;
         }
         return canPlace;
     }
@@ -391,6 +391,3 @@ public class Deck {
     }
 
 }
-
-
-
