@@ -1,40 +1,13 @@
-TODO: 
-    
-    
 Refactoring List 
 A list of all of the things that I want to fix. 
 
-Overall: Make the names more meaningful within the code
-         Create JavaDoc
-         Currently an unsafe API as the person using it can do a draw two on a reverse and
-             other problems
-         Use regular expressions for matching
-         Passing in a player. Need to actually pass in the player array.
-         Need a formated print method that returns a string. 
+TODO: 
 
-Card.java
-
-Deck.java
-
-NumberCard.java
-
-Player.java
-    Create player as abstract
-        Inherit human and robot
-
-SpecialActions.java
-
-SpecialCard.java
-    Find a way to change the problems with not completing a turn
-    Check for players at 2, 5, and 10
-
-UnoClone.java
-    Behavior when dealing with another player
-    Handle errors more gracefully
-    Skip needs handled
-
-WildActions.java
-    Make certain that the correct player is moved. 
-
-WildCard.java
+0. Run tests for the Special Actions
+1. Fix large if then else into a case statement.
+2. Move case into an abstract factory
+3. Refactor with meaning.
+4. Add human behavoir. Generalizing behavoir in player.     
+5. Factor out the check for get color in the Robot class. 
+    
 

@@ -6,11 +6,13 @@ import java.util.*;
  *
  * @author mike
  */
-abstract class Player
+abstract class Player //be a good idea to put the play a hand sm in here and inherit.
 {
     protected ArrayList<Card> hand = new ArrayList<>(); 
     protected String name; 
     protected int playerPos; 
+    
+    //abstract PlayAHand(Deck d, ArrayList<Player> p, int pos); 
     /**
      *
      */

@@ -172,77 +172,30 @@ public class Robot extends Player {
      *
      * @return
      */
-    private int Decide(Card c) {
+    private int Decide(Card c)
+    {
         log.entering("Decide", name);
 
         int choice;
         Card discard = c;  
-
-        if(discard.getClass().equals(NumberCard.class))
+        String cardName = discard.getClass().getSimpleName();
+        
+        switch(cardName)
         {
-            NumberCard n = (NumberCard)discard; 
-                     
-            for(Card inPlay : hand)
-            {
-                 if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(discard.GetColor()))
-                 {
-                    playingCard = inPlay; 
-                    break;
-                 }
-                 else if(inPlay.getClass().equals(NumberCard.class))
-                 {
-                    NumberCard play = (NumberCard)inPlay;
-                    if(play.GetNumber() == n.GetNumber())
-                    {
-                        playingCard = inPlay; 
-                        break;
-                    }
-                  }                        
-            }
+            case "NumberCard": NumberOperation(c);
+                               break;
+                
+            case "SpecialCard": SpecialOperation(c); 
+                                break;
+                
+            case "WildCard": WildOperation(c);
+                             break;
+                
+            default: log.severe("This is not a card!");
+                     break;
         }
-        else if(discard.getClass().equals(SpecialCard.class))
-        {
-            SpecialCard sp = (SpecialCard)discard; 
-                    
-            for(Card inPlay : hand)
-            {
-                if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(discard.GetColor()))
-                {
-                    playingCard = inPlay; 
-                    break;
-                }
-                else if(inPlay.getClass().equals(SpecialCard.class))
-                {
-                    SpecialCard play = (SpecialCard)inPlay;
-                    if(play.GetSpecial().equals(sp.GetSpecial()))
-                    {
-                        playingCard = inPlay; 
-                        break;
-                    }
-                }
-                else
-                {
-                            log.fine("No special match");
-                }
-            }
-        }
-        else if(discard.getClass().equals(WildCard.class))
-        {
-            
-            for(Card inPlay : hand)
-            {
-                    if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(discard.GetColor()))
-                    {
-                        playingCard = inPlay; 
-                        break;
-                    }
-            }
-        }
-        else
-        {
-            log.severe("This card should never exsist!");
-        }
-
+        
+        
         if(playingCard == null )
             PlayAWild(); 
                 
@@ -280,5 +233,67 @@ public class Robot extends Player {
             playingCard = wildSet.pop(); 
         }
         wildSet.clear();
+    }
+    
+    public void NumberOperation(Card c)
+    {
+        NumberCard n = (NumberCard)c; 
+                     
+            for(Card inPlay : hand)
+            {
+                 if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(c.GetColor()))
+                 {
+                    playingCard = inPlay; 
+                    break;
+                 }
+                 else if(inPlay.getClass().equals(NumberCard.class))
+                 {
+                    NumberCard play = (NumberCard)inPlay;
+                    if(play.GetNumber() == n.GetNumber())
+                    {
+                        playingCard = inPlay; 
+                        break;
+                    }
+                  }                        
+            }
+    }
+    
+    public void SpecialOperation(Card c)
+    {
+        SpecialCard sp = (SpecialCard)c; 
+                    
+            for(Card inPlay : hand)
+            {
+                if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(c.GetColor()))
+                {
+                    playingCard = inPlay; 
+                    break;
+                }
+                else if(inPlay.getClass().equals(SpecialCard.class))
+                {
+                    SpecialCard play = (SpecialCard)inPlay;
+                    if(play.GetSpecial().equals(sp.GetSpecial()))
+                    {
+                        playingCard = inPlay; 
+                        break;
+                    }
+                }
+                else
+                {
+                            log.fine("No special match");
+                }
+            }
+    }
+    
+    public void WildOperation(Card c)
+    {
+        for(Card inPlay : hand)
+            {
+                    if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(c.GetColor()))
+                    {
+                        playingCard = inPlay; 
+                        break;
+                    }
+            }
     }
 }

@@ -188,6 +188,7 @@ public class RobotTest {
         r.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED));
         
         r.PlayAHand(d, p);
+        System.out.println("Name of class " + r.getClass().getSimpleName());
     }
     private static final Logger LOG = Logger.getLogger(RobotTest.class.getName());
 }
