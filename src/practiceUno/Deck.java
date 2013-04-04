@@ -136,7 +136,7 @@ public class Deck {
         Card    discard  = discardDeck.peek();
         String cardName = c.getClass().getSimpleName();
         
-        System.out.println("Card name is " + cardName);
+        System.out.println("Card name is " + cardName); //Do we need to return a boolean anymore? instead we can send player position.
         switch(cardName)
         {
             case "NumberCard" : System.out.println("Enter a number card");

@@ -58,7 +58,7 @@ public class UnoClone {
                 
                 log.fine(String.format("%s's turn Deck Shows:  %s", current.GetName(), deck.TopDiscard().toString()));
                 
-                endTurn = current.PlayAHand(deck, players);
+                endTurn = current.PlayAHand(deck, players); //since we are dealing with a sm now return int position of next player.
                 endGame = uno.CheckForEndGame(current);
                 
                 if(endGame)
@@ -78,7 +78,6 @@ public class UnoClone {
         } while(!endGame);     
     }
 
-    //Ties are not possible.
     
     public void Sleep(long sleepTime)
     {

@@ -366,6 +366,7 @@ public class DeckTest {
     @Test
     public void testSideEffectDrTwo()
     {
+        //Should also check for wrap cases. 
         int expResult = 2; 
         Robot first = new Robot("Steve", 0); 
         Robot second = new Robot("Bob", 1);
@@ -378,9 +379,10 @@ public class DeckTest {
         first.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE));
         d.AddDiscard(first.Discard(0), p, null, p.get(0).GetPlayerPos());
         first.Remove(first.Discard(0));
+        
         System.out.println(d.TopDiscard().toString());
-        System.out.println("First: " + first.TotalCards());
-        System.out.println("Second: " + second.TotalCards());
+        System.out.println(String.format("First: %s", first.TotalCards()));
+        System.out.println(String.format("Second: %s", second.TotalCards()));
         
         assertEquals(0, first.TotalCards());
         assertEquals(expResult, second.TotalCards());
@@ -389,7 +391,23 @@ public class DeckTest {
     @Test
     public void testSideEffectReverse()
     {
-        //Player k will pass it back to player m and not player l.
+        System.out.println("SideEffect Reverse");
+        Robot first = new Robot("Steve", 0); 
+        Robot second = new Robot("Bob", 1);
+        Robot third = new Robot("Bill", 2);
+        ArrayList<Player> p = new ArrayList<>(); 
+        p.add(first);
+        p.add(second);
+        p.add(third);
+        Deck d = new Deck(); 
+        d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.RED));
+        
+        //loop through all three players and see who is the next one to play? 
+        first.GetCard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.RED));
+        d.AddDiscard(first.Discard(0), p, null, p.get(0).GetPlayerPos());
+        first.Remove(first.Discard(0));
+        
+        
     }
     
     @Test
