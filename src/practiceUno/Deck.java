@@ -123,20 +123,21 @@ public class Deck {
         System.out.println("At function add discard");
         boolean canPlace = false;
         Card    discard  = discardDeck.peek();
-
-        if (c.getClass().equals(NumberCard.class)) 
+        String cardName = c.getClass().getSimpleName();
+        
+        switch(cardName)
         {
-            canPlace = CheckNumber(discard, c);
-        }
-        else if (c.getClass().equals(SpecialCard.class)) 
-        {
-            System.out.println("At special card case");
-            canPlace = CheckSpecial(discard, c, p, pos);
+            case "NumberCard" : canPlace = CheckNumber(discard, c); 
+                                break;
+                
+            case "SpecialCard ": canPlace = CheckSpecial(discard, c, p, pos); 
+                                 break;
+                
+            case "WildCard": canPlace = CheckWild(c, p.get(pos), in);
+                             break;
             
-        }
-        else if (c.getClass().equals(WildCard.class)) 
-        {
-            canPlace = CheckWild(c, p.get(pos), in); 
+            default: log.fine("The card cannot be placed. ");
+                     break;
         }
 
         if (canPlace)
@@ -249,14 +250,15 @@ public class Deck {
     {
         boolean  canPlace = true;
         WildCard wild     = (WildCard) c;
-
-        if (wild.GetWild().equals(WildCard.cardWild.WILD)) 
+        WildCard.cardWild cardType = wild.GetWild();
+        
+        switch(cardType)
         {
-            wild.Wild(new Scanner(System.in));
-        }
-        else if (wild.GetWild().equals(WildCard.cardWild.WILDDRFOUR)) 
-        {
-            wild.DrawFour(thisPlayer, this, in);
+            case WILD : wild.Wild(new Scanner(System.in));
+                        break;
+            
+            case WILDDRFOUR: wild.DrawFour(thisPlayer, this, in); 
+                          break;
         }
         return canPlace;
     }
