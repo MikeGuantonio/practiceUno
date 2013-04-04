@@ -261,9 +261,8 @@ public class Deck {
     {
         boolean  canPlace = true;
         WildCard wild     = (WildCard) c;
-        WildCard.cardWild cardType = wild.GetWild();
         
-        switch(cardType)
+        switch(wild.GetWild())
         {
             case WILD : wild.Wild(new Scanner(System.in));
                         break;

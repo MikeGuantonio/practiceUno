@@ -9,5 +9,6 @@ TODO:
 3. Refactor with meaning.
 4. Add human behavoir. Generalizing behavoir in player.     
 5. Factor out the check for get color in the Robot class. 
-    
+6. Possibly create a map for the Card class that implements an enum that knows what to do with a match. IE Color can do ___ and Wild can be placed __ and special can ___
+7. Each card should know its match and therefore can be moved into a single place. Possibly a check(c) function that allows the card to see what it is and what to do with it. The Deck could still implement the check but the card would be doing the validation.     
 
