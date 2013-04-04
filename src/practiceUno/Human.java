@@ -4,6 +4,7 @@
  */
 package practiceUno;
 
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 /**
@@ -12,7 +13,7 @@ import java.util.logging.Logger;
  */
 public class Human extends Player
 {
-    private static final Logger LOG = Logger.getLogger(Human.class.getName());
+    private static final Logger log = Logger.getLogger(Human.class.getName());
     /**
      *
      * @param name
@@ -45,5 +46,17 @@ public class Human extends Player
             c = hand.remove(dex);
         }
 	return c;
+    }
+    
+    @Override
+    public int FindCard(Card c)
+    {
+        return 5; 
+    }
+    
+    @Override
+    public boolean PlayAHand(Deck d, ArrayList<Player> p)
+    {
+        return true; 
     }
 }

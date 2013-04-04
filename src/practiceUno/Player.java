@@ -12,7 +12,10 @@ abstract class Player //be a good idea to put the play a hand sm in here and inh
     protected String name; 
     protected int playerPos; 
     
-    //abstract PlayAHand(Deck d, ArrayList<Player> p, int pos); 
+    abstract boolean PlayAHand(Deck d, ArrayList<Player> p); 
+    abstract int FindCard(Card c); 
+    abstract Card Discard(int dex);
+    
     /**
      *
      */
@@ -41,14 +44,7 @@ abstract class Player //be a good idea to put the play a hand sm in here and inh
 	hand.add(c);
     }
 
-    /**
-     *
-     * @param card
-     * @return
-     */
-    abstract Card Discard(int dex);
     
-
     /**
      *
      * @return
