@@ -111,6 +111,15 @@ public class Deck {
         return c;
     }
 
+    public class thisthing
+    {
+        int foo; 
+        
+        public void Print()
+        {
+            System.out.println("foo");
+        }
+    }
     /**
      *
      * @param c
@@ -120,6 +129,8 @@ public class Deck {
      */
     public boolean AddDiscard(Card c, ArrayList<Player> p, Scanner in, int pos)
     {
+        thisthing t = new thisthing(); 
+        t.Print();
         System.out.println("At function add discard");
         boolean canPlace = false;
         Card    discard  = discardDeck.peek();
