@@ -84,12 +84,12 @@ public class UnoClone {
     {
         try
         {
-                    Thread.sleep(sleepTime);
-                } 
-                catch (InterruptedException ex) 
-                {
-                    Logger.getLogger(UnoClone.class.getName()).log(Level.SEVERE, null, ex);
-                }
+            Thread.sleep(sleepTime);
+        } 
+        catch (InterruptedException ex) 
+        {
+            Logger.getLogger(UnoClone.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public boolean CheckForEndGame(Player p)
@@ -101,14 +101,19 @@ public class UnoClone {
         
     }
     
-    //Should return an arraylist of players that have uno.
+    
     public boolean CheckForUno(ArrayList<Player> p)
     {
-        boolean uno = false; 
+        boolean uno = false;
+        ArrayList<Player> unoList = new ArrayList<>(); 
+        
         for(Player k : p)
         {
             if(k.Uno())
-                uno = true; 
+            {
+                uno = true;
+                unoList.add(k);
+            }
         }
         return uno;
         

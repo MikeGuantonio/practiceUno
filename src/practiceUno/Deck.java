@@ -136,18 +136,23 @@ public class Deck {
         Card    discard  = discardDeck.peek();
         String cardName = c.getClass().getSimpleName();
         
+        System.out.println("Card name is " + cardName);
         switch(cardName)
         {
-            case "NumberCard" : canPlace = CheckNumber(discard, c); 
+            case "NumberCard" : System.out.println("Enter a number card");
+                                canPlace = CheckNumber(discard, c); 
                                 break;
                 
-            case "SpecialCard ": canPlace = CheckSpecial(discard, c, p, pos); 
+            case "SpecialCard": System.out.println("Entering a special card");
+                                 canPlace = CheckSpecial(discard, c, p, pos); 
                                  break;
                 
-            case "WildCard": canPlace = CheckWild(c, p.get(pos), in);
+            case "WildCard": System.out.println("Entering a wild card");
+                             canPlace = CheckWild(c, p.get(pos), in);
                              break;
             
-            default: log.fine("The card cannot be placed. ");
+            default: System.out.println("Cannot place.");
+                     log.fine("The card cannot be placed. ");
                      break;
         }
 
@@ -165,6 +170,7 @@ public class Deck {
         NumberCard cardToPlay = (NumberCard) c;
         String cardName = discard.getClass().getSimpleName();
         
+        System.out.println("Entering a number check");
         switch(cardName)
         {
             case "NumberCard":  NumberCard topCard = (NumberCard) discard;
@@ -214,6 +220,7 @@ public class Deck {
 
     private boolean CheckSpecial(Card discard, Card c, ArrayList<Player> players, int pos)
     {
+        System.out.println("Checking special");
         boolean canPlace = false;
         String cardName = discard.getClass().getSimpleName();
         
@@ -254,6 +261,7 @@ public class Deck {
             default: log.fine("No cards are available to be played.");
                      break;
         }
+        System.out.println("End check special");
         return canPlace;
     }
 
