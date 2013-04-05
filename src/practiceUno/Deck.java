@@ -117,7 +117,7 @@ public class Deck {
         
         public void Print()
         {
-            System.out.println("foo");
+            System.out.println("");
         }
     }
     /**
@@ -130,30 +130,29 @@ public class Deck {
     public int AddDiscard(Card c, ArrayList<Player> p, Scanner in, int pos)
     {
         thisthing t = new thisthing(); 
-        t.Print();
-        System.out.println("At function add discard");
+        //t.Print();
+       
         boolean canPlace = false;
         int newpos = pos; 
         Card    discard  = discardDeck.peek();
         String cardName = c.getClass().getSimpleName();
-        
-        System.out.println("Card name is " + cardName); 
+         
         switch(cardName)
         {
-            case "NumberCard" : System.out.println("Enter a number card");
+            case "NumberCard" : 
                                 newpos = CheckNumber(discard, c, pos); 
                                 break;
                 
-            case "SpecialCard": System.out.println("Entering a special card");
+            case "SpecialCard": 
                                  newpos = CheckSpecial(discard, c, p, pos);
                                  System.out.println("New pos " + newpos);
                                  break;
                 
-            case "WildCard": System.out.println("Entering a wild card");
+            case "WildCard": 
                              canPlace = CheckWild(c, p.get(pos), in);
                              break;
             
-            default: System.out.println("Cannot place.");
+            default: 
                      log.fine("The card cannot be placed. ");
                      break;
         }
@@ -162,7 +161,7 @@ public class Deck {
         {
             discardDeck.push(c);
         }
-        System.out.println("Exiting function Add discard");
+        
         return newpos;
     }
 
@@ -172,7 +171,6 @@ public class Deck {
         NumberCard cardToPlay = (NumberCard) c;
         String cardName = discard.getClass().getSimpleName();
         
-        System.out.println("Entering a number check");
         switch(cardName)
         {
             case "NumberCard":  NumberCard topCard = (NumberCard) discard;
@@ -226,7 +224,6 @@ public class Deck {
 
     private int CheckSpecial(Card discard, Card c, ArrayList<Player> players, int pos)
     {
-        System.out.println("Checking special");
         boolean canPlace = false;
         String cardName = discard.getClass().getSimpleName();
         int newpos = pos; 
@@ -255,7 +252,7 @@ public class Deck {
                                 {
                                     canPlace = true;
                                     newpos = this.SideEffect(c, players, pos);
-                                    System.out.println("Number card");
+                                    
                                 } 
                                 break;
                 
@@ -269,8 +266,7 @@ public class Deck {
             default: log.fine("No cards are available to be played.");
                      break;
         }
-        System.out.println("End check special");
-        System.out.println(newpos);
+        
         if(canPlace)
             discardDeck.push(c);
         
@@ -388,7 +384,7 @@ public class Deck {
      */
     public int SideEffect(Card c, ArrayList<Player> players, int pos)
     {
-        System.out.println("Entering Side effect " + c.toString());
+        
         int newPos = 0; 
         if (c.getClass().equals(SpecialCard.class))
         {

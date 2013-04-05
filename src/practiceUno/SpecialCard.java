@@ -66,22 +66,18 @@ public class SpecialCard extends Card implements SpecialActions
     @Override
     public int Skip(int currentPlayerIndex, int playerSize)
     {
-        System.out.println("Entering skip function");
         int index = 0;  
         int actualPlayers = playerSize -1; 
-        
-        System.out.println("ActualPlayer " + actualPlayers);
-        System.out.println("Current " + currentPlayerIndex);
         
         if(currentPlayerIndex == actualPlayers-2 && actualPlayers > 3) 
         { 
             index = 0;
-            System.out.println("two off from start");
+        
         }
         else if(currentPlayerIndex == actualPlayers-1)
         {
             index = 1;
-            System.out.println("One off from start");
+            
         }
         else if(currentPlayerIndex == actualPlayers)
         {
@@ -89,10 +85,10 @@ public class SpecialCard extends Card implements SpecialActions
         }
         else 
         {
-            System.out.println("GeneralCase");
+            
             index = currentPlayerIndex + 2;
         }
-        System.out.println("Exiting Skip function");
+        
         return index; 
     }
     
@@ -105,29 +101,26 @@ public class SpecialCard extends Card implements SpecialActions
     @Override
     public int Reverse(int currentPlayerIndex, int playerSize)
     {
-        System.out.println("Entering Reverse");
+        
         int index = 0;  
         int actualPlayers = playerSize-1;
-        System.out.println(index);
-        System.out.println(actualPlayers);
+        
         
         if(currentPlayerIndex <= 0)
         {
             index = actualPlayers;
-            System.out.println("Index less than zero");
+            
         }
         else if(currentPlayerIndex > actualPlayers)
         {
             index = 0;
-            System.out.println("index is greater");
+            
         }
         else
         {
             index = currentPlayerIndex-1;
-            System.out.println("no change");
+            
         }
-        System.out.println("INDEX : " + index);
-        System.out.println("Exit reverse");
         return index;  
     }
     

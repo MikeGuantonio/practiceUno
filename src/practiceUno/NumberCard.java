@@ -4,6 +4,7 @@
  */
 package practiceUno;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -22,11 +23,9 @@ public class NumberCard extends Card {
      */
     public NumberCard(int newNum, Card.cardColor color)
     {
-        //Don't want that for the constructor. Creates one on every instance.
-        //Need to find a way to log it in one place. 
-        
         face = newNum; 
         super.color = color; 
+        log.setLevel(Level.SEVERE);
     }
      
              
