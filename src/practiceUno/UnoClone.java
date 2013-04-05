@@ -46,7 +46,7 @@ public class UnoClone {
         
         log.fine("Game loop");
         log.fine(String.format("Number of Players %s", players.size()));
-        
+        System.out.println(String.format("Starting a game of uno with %s", players.size()));
         do
         {
         
