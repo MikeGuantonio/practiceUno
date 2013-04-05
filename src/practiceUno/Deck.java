@@ -133,18 +133,20 @@ public class Deck {
         t.Print();
         System.out.println("At function add discard");
         boolean canPlace = false;
+        int newpos = pos; 
         Card    discard  = discardDeck.peek();
         String cardName = c.getClass().getSimpleName();
         
-        System.out.println("Card name is " + cardName); //Do we need to return a boolean anymore? instead we can send player position.
+        System.out.println("Card name is " + cardName); 
         switch(cardName)
         {
             case "NumberCard" : System.out.println("Enter a number card");
-                                canPlace = CheckNumber(discard, c); 
+                                newpos = CheckNumber(discard, c, pos); 
                                 break;
                 
             case "SpecialCard": System.out.println("Entering a special card");
-                                 canPlace = CheckSpecial(discard, c, p, pos); 
+                                 newpos = CheckSpecial(discard, c, p, pos);
+                                 System.out.println("New pos " + newpos);
                                  break;
                 
             case "WildCard": System.out.println("Entering a wild card");
@@ -161,10 +163,10 @@ public class Deck {
             discardDeck.push(c);
         }
         System.out.println("Exiting function Add discard");
-        return pos;
+        return newpos;
     }
 
-    private boolean CheckNumber(Card discard, Card c)
+    private int CheckNumber(Card discard, Card c, int pos)
     {
         boolean    canPlace   = false;
         NumberCard cardToPlay = (NumberCard) c;
@@ -215,21 +217,26 @@ public class Deck {
             default: log.fine("No number can be played. ");
                      break;
         }
-        return canPlace;
+        
+        if(canPlace)
+            discardDeck.push(c);
+        
+        return pos;
     }
 
-    private boolean CheckSpecial(Card discard, Card c, ArrayList<Player> players, int pos)
+    private int CheckSpecial(Card discard, Card c, ArrayList<Player> players, int pos)
     {
         System.out.println("Checking special");
         boolean canPlace = false;
         String cardName = discard.getClass().getSimpleName();
+        int newpos = pos; 
         
         switch(cardName)
         {
             case "SpecialCard" : if (c.GetColor().equals(discard.GetColor()))
                                 {
                                     canPlace = true;
-                                    this.SideEffect(c, players, pos);
+                                    newpos = this.SideEffect(c, players, pos);
                                 }
                                 else if (c.getClass().equals(SpecialCard.class)) 
                                 {
@@ -239,7 +246,7 @@ public class Deck {
                                     if (cardToPlay.GetSpecial().equals(cardShown.GetSpecial())) 
                                     {
                                         canPlace = true;
-                                        this.SideEffect(c, players, pos);
+                                        newpos = this.SideEffect(c, players, pos);
                                     }
                                 }
                                 break;
@@ -247,14 +254,15 @@ public class Deck {
             case "NumberCard": if (c.GetColor().equals(discard.GetColor())) 
                                 {
                                     canPlace = true;
-                                    this.SideEffect(c, players, pos);
+                                    newpos = this.SideEffect(c, players, pos);
+                                    System.out.println("Number card");
                                 } 
                                 break;
                 
             case "WildCard":    if (c.GetColor().equals(discard.GetColor())) 
                                 {
                                     canPlace = true;
-                                    this.SideEffect(c, players, pos);
+                                    newpos = this.SideEffect(c, players, pos);
                                 }
                                 break;
                 
@@ -262,7 +270,11 @@ public class Deck {
                      break;
         }
         System.out.println("End check special");
-        return canPlace;
+        System.out.println(newpos);
+        if(canPlace)
+            discardDeck.push(c);
+        
+        return newpos;
     }
 
     private boolean CheckWild(Card c, Player thisPlayer, Scanner in) 
@@ -374,28 +386,30 @@ public class Deck {
      * @param players
      * @param pos
      */
-    public void SideEffect(Card c, ArrayList<Player> players, int pos)
+    public int SideEffect(Card c, ArrayList<Player> players, int pos)
     {
         System.out.println("Entering Side effect " + c.toString());
+        int newPos = 0; 
         if (c.getClass().equals(SpecialCard.class))
         {
             SpecialCard special = (SpecialCard) c;
 
             switch (special.GetSpecial())
             {
-                case SKIP : special.Skip(pos, players.size());
+                case SKIP : newPos = special.Skip(pos, players.size());
                             break;
 
-                case REVERSE: special.Reverse(pos, players.size());
+                case REVERSE: newPos = special.Reverse(pos, players.size());
                               break;
 
-                case DRTWO : special.DrawTwo(this, players.get(pos + 1));
+                case DRTWO : newPos = special.DrawTwo(this, players.get(pos + 1));
                              break;
 
                 default : log.severe("This is not a card with a side effect");
                           break;
             }
         }
+        return newPos; 
     }
 
 }

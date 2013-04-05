@@ -66,18 +66,33 @@ public class SpecialCard extends Card implements SpecialActions
     @Override
     public int Skip(int currentPlayerIndex, int playerSize)
     {
+        System.out.println("Entering skip function");
         int index = 0;  
         int actualPlayers = playerSize -1; 
         
-        if(currentPlayerIndex == actualPlayers-2) { 
+        System.out.println("ActualPlayer " + actualPlayers);
+        System.out.println("Current " + currentPlayerIndex);
+        
+        if(currentPlayerIndex == actualPlayers-2 && actualPlayers > 3) 
+        { 
             index = 0;
+            System.out.println("two off from start");
         }
-        else if(currentPlayerIndex == actualPlayers-1) {
+        else if(currentPlayerIndex == actualPlayers-1)
+        {
             index = 1;
+            System.out.println("One off from start");
         }
-        else {
+        else if(currentPlayerIndex == actualPlayers)
+        {
+            index = 1; 
+        }
+        else 
+        {
+            System.out.println("GeneralCase");
             index = currentPlayerIndex + 2;
         }
+        System.out.println("Exiting Skip function");
         return index; 
     }
     
@@ -90,19 +105,29 @@ public class SpecialCard extends Card implements SpecialActions
     @Override
     public int Reverse(int currentPlayerIndex, int playerSize)
     {
+        System.out.println("Entering Reverse");
         int index = 0;  
-        int actualPlayers = playerSize-1; 
+        int actualPlayers = playerSize-1;
+        System.out.println(index);
+        System.out.println(actualPlayers);
         
-        if(currentPlayerIndex < 0){
+        if(currentPlayerIndex <= 0)
+        {
             index = actualPlayers;
+            System.out.println("Index less than zero");
         }
         else if(currentPlayerIndex > actualPlayers)
         {
             index = 0;
+            System.out.println("index is greater");
         }
-        else {
+        else
+        {
             index = currentPlayerIndex-1;
+            System.out.println("no change");
         }
+        System.out.println("INDEX : " + index);
+        System.out.println("Exit reverse");
         return index;  
     }
     
@@ -113,12 +138,13 @@ public class SpecialCard extends Card implements SpecialActions
      * @param theDeck
      * @param p
      */
-    @Override
-    public void DrawTwo(Deck theDeck, Player p)
+    @Override //won't work for any player beyond n. Will be null...
+    public int DrawTwo(Deck theDeck, Player p)
     {          
          for (int i = 0; i < 2; i++) {
              p.GetCard(theDeck.DrawNext());
-         }   
+         }
+         return p.GetPlayerPos();
     }
     
     /**

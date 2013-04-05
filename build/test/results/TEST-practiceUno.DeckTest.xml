@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="1" hostname="Robin" name="practiceUno.DeckTest" tests="20" time="0.165" timestamp="2013-04-04T16:19:18">
+<testsuite errors="0" failures="0" hostname="Robin" name="practiceUno.DeckTest" tests="23" time="0.184" timestamp="2013-04-05T18:27:34">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -73,7 +73,7 @@
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
     <property name="ant.file.UnoClone-impl" value="/home/mike/langsToLearn/java/projects/UnoClone/nbproject/build-impl.xml" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner practiceUno.DeckTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/mike/langsToLearn/java/projects/UnoClone/build/test/results/TEST-practiceUno.DeckTest.xml crashfile=/home/mike/langsToLearn/java/projects/UnoClone/build/junitvmwatcher4057136432995023649.properties propsfile=/home/mike/langsToLearn/java/projects/UnoClone/build/junit2598823206507810601.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner practiceUno.DeckTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/mike/langsToLearn/java/projects/UnoClone/build/test/results/TEST-practiceUno.DeckTest.xml crashfile=/home/mike/langsToLearn/java/projects/UnoClone/build/junitvmwatcher4478779466984196980.properties propsfile=/home/mike/langsToLearn/java/projects/UnoClone/build/junit3142314043290305150.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="libs.Java-EE-GlassFish-v3.wsjwsdp" value="" />
@@ -495,157 +495,30 @@
     <property name="platform.active" value="JDK_1.7" />
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit" />
   </properties>
-  <testcase classname="practiceUno.DeckTest" name="testAddDiscard" time="0.013" />
-  <testcase classname="practiceUno.DeckTest" name="testDiscardNumberOnSpecial" time="0.002" />
-  <testcase classname="practiceUno.DeckTest" name="testDiscardNumberOnWild" time="0.002" />
-  <testcase classname="practiceUno.DeckTest" name="testAddDiscardSpecialOnNumber" time="0.002" />
-  <testcase classname="practiceUno.DeckTest" name="testAddDiscardSpecialOnWild" time="0.002" />
-  <testcase classname="practiceUno.DeckTest" name="testAddDiscardSpecialOnSpecial" time="0.003" />
-  <testcase classname="practiceUno.DeckTest" name="testAddDiscardWildOnSpecial" time="0.002" />
-  <testcase classname="practiceUno.DeckTest" name="testAddDiscardWildOnNumber" time="0.001" />
-  <testcase classname="practiceUno.DeckTest" name="testAddDiscardWildOnWild" time="0.002" />
-  <testcase classname="practiceUno.DeckTest" name="testGetSize" time="0.0" />
-  <testcase classname="practiceUno.DeckTest" name="testShowDiscard" time="0.001" />
+  <testcase classname="practiceUno.DeckTest" name="testGetSize" time="0.005" />
+  <testcase classname="practiceUno.DeckTest" name="testShowDiscard" time="0.004" />
   <testcase classname="practiceUno.DeckTest" name="testSetUpDiscard" time="0.001" />
-  <testcase classname="practiceUno.DeckTest" name="testPrintDeck" time="0.008" />
-  <testcase classname="practiceUno.DeckTest" name="testSideEffect" time="0.001" />
-  <testcase classname="practiceUno.DeckTest" name="testSideEffectDrTwo" time="0.007">
-    <failure message="expected:&lt;2&gt; but was:&lt;0&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;2&gt; but was:&lt;0&gt;
-	at practiceUno.DeckTest.testSideEffectDrTwo(DeckTest.java:382)
-</failure>
-  </testcase>
-  <testcase classname="practiceUno.DeckTest" name="testSideEffectReverse" time="0.002" />
+  <testcase classname="practiceUno.DeckTest" name="testPrintDeck" time="0.011" />
+  <testcase classname="practiceUno.DeckTest" name="testSideEffect" time="0.002" />
+  <testcase classname="practiceUno.DeckTest" name="testSideEffectDrTwo" time="0.002" />
+  <testcase classname="practiceUno.DeckTest" name="testSideEffectDrTwoPlayerOutofBounds" time="0.001" />
+  <testcase classname="practiceUno.DeckTest" name="testSideEffectReverseFirstToLast" time="0.001" />
+  <testcase classname="practiceUno.DeckTest" name="testSideEffectReverseLastToFirst" time="0.001" />
   <testcase classname="practiceUno.DeckTest" name="testSideEffectSkip" time="0.001" />
+  <testcase classname="practiceUno.DeckTest" name="testSideEffectSkipLastPlayer" time="0.002" />
+  <testcase classname="practiceUno.DeckTest" name="testAddDiscard" time="0.001" />
+  <testcase classname="practiceUno.DeckTest" name="testAddDiscardNumberOnNumber" time="0.023" />
   <testcase classname="practiceUno.DeckTest" name="testShuffle" time="0.0" />
   <testcase classname="practiceUno.DeckTest" name="testDrawNext" time="0.0" />
-  <testcase classname="practiceUno.DeckTest" name="testAddDiscardNumberOnNumber" time="0.02" />
-  <system-out><![CDATA[foo
-At function add discard
-Exiting function Add discard
-Adding: DRTWO YELLOW
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-5 YELLOW
-Adding: WILD
-foo
-At function add discard
-Exiting function Add discard
-WILD RED
-foo
-At function add discard
-Exiting function Add discard
-9 RED
-foo
-At function add discard
-Exiting function Add discard
-9 GREEN
-foo
-At function add discard
-Exiting function Add discard
-9 YELLOW
-Adding: 7 GREEN
-foo
-At function add discard
-Exiting function Add discard
-7 GREEN
-foo
-At function add discard
-Exiting function Add discard
-7 GREEN
-foo
-At function add discard
-Exiting function Add discard
-7 GREEN
-foo
-At function add discard
-Exiting function Add discard
-7 GREEN
-Adding: WILD
-foo
-At function add discard
-Exiting function Add discard
-WILD YELLOW
-foo
-At function add discard
-Exiting function Add discard
-WILD YELLOW
-foo
-At function add discard
-Exiting function Add discard
-WILD YELLOW
-foo
-At function add discard
-Exiting function Add discard
-WILD YELLOW
-Adding: REVERSE RED
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-foo
-At function add discard
-Exiting function Add discard
-Adding: DRTWO YELLOW
-foo
-At function add discard
-Exiting function Add discard
-WILD YELLOW
-Adding: 9 BLUE
-9 BLUE
-foo
-At function add discard
-Exiting function Add discard
-true
-WILD YELLOW
-Adding: WILD
-foo
-At function add discard
-Exiting function Add discard
-WILD YELLOW
-foo
-At function add discard
-Exiting function Add discard
-WILDDRFOUR YELLOW
-WILDDRFOUR RED
+  <testcase classname="practiceUno.DeckTest" name="testDiscardNumberOnSpecial" time="0.006" />
+  <testcase classname="practiceUno.DeckTest" name="testDiscardNumberOnWild" time="0.004" />
+  <testcase classname="practiceUno.DeckTest" name="testAddDiscardSpecialOnNumber" time="0.004" />
+  <testcase classname="practiceUno.DeckTest" name="testAddDiscardSpecialOnWild" time="0.004" />
+  <testcase classname="practiceUno.DeckTest" name="testAddDiscardSpecialOnSpecial" time="0.007" />
+  <testcase classname="practiceUno.DeckTest" name="testAddDiscardWildOnSpecial" time="0.002" />
+  <testcase classname="practiceUno.DeckTest" name="testAddDiscardWildOnNumber" time="0.002" />
+  <testcase classname="practiceUno.DeckTest" name="testAddDiscardWildOnWild" time="0.002" />
+  <system-out><![CDATA[WILDDRFOUR RED
 0 BLUE
 1 BLUE
 1 BLUE
@@ -734,170 +607,682 @@ Entering Side effect DRTWO BLUE
 Adding: 5 BLUE
 foo
 At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect DRTWO BLUE
+Number card
+End check special
+1
+New pos 1
 Exiting function Add discard
-First: 1
-Second: 0
+DRTWO BLUE
+First: 0
+Second: 2
+SideEffect Reverse
+Adding: 5 RED
+Assiming that the last player was the last palyer in list.
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect REVERSE RED
+Entering Reverse
+0
+2
+Index less than zero
+INDEX : 2
+Exit reverse
+Number card
+End check special
+2
+New pos 2
+Exiting function Add discard
+Adding: 5 RED
+Last player to the second
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect REVERSE RED
+Entering Reverse
+0
+2
+no change
+INDEX : 1
+Exit reverse
+Number card
+End check special
+1
+New pos 1
+Exiting function Add discard
+Adding: 5 YELLOW
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect SKIP YELLOW
+Entering skip function
+ActualPlayer 2
+Current 0
+GeneralCase
+Exiting Skip function
+Number card
+End check special
+2
+New pos 2
+Exiting function Add discard
+Adding: 5 YELLOW
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect SKIP YELLOW
+Entering skip function
+ActualPlayer 2
+Current 2
+Exiting Skip function
+Number card
+End check special
+1
+New pos 1
+Exiting function Add discard
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+End check special
+1
+New pos 1
+Exiting function Add discard
 Adding: 5 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 0 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 1 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 2 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 3 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 4 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 5 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 6 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 7 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 8 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 BLUE
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 RED
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 RED
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 RED
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 RED
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 RED
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 RED
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 RED
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 RED
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 RED
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 RED
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 GREEN
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 GREEN
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 GREEN
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 GREEN
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 GREEN
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 GREEN
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 GREEN
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 GREEN
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 GREEN
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 GREEN
 foo
 At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
 Exiting function Add discard
 9 YELLOW
+Adding: DRTWO YELLOW
+foo
+At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
+Exiting function Add discard
+foo
+At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
+Exiting function Add discard
+foo
+At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
+Exiting function Add discard
+foo
+At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
+Exiting function Add discard
+5 YELLOW
+Adding: WILD
+foo
+At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
+Exiting function Add discard
+WILD RED
+foo
+At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
+Exiting function Add discard
+9 RED
+foo
+At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
+Exiting function Add discard
+9 GREEN
+foo
+At function add discard
+Card name is NumberCard
+Enter a number card
+Entering a number check
+Exiting function Add discard
+9 YELLOW
+Adding: 7 GREEN
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+End check special
+0
+New pos 0
+Exiting function Add discard
+7 GREEN
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+End check special
+0
+New pos 0
+Exiting function Add discard
+7 GREEN
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect SKIP GREEN
+Entering skip function
+ActualPlayer 1
+Current 0
+One off from start
+Exiting Skip function
+Number card
+End check special
+1
+New pos 1
+Exiting function Add discard
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect SKIP YELLOW
+Entering skip function
+ActualPlayer 1
+Current 0
+One off from start
+Exiting Skip function
+End check special
+1
+New pos 1
+Exiting function Add discard
+Adding: WILD
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+End check special
+0
+New pos 0
+Exiting function Add discard
+WILD YELLOW
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+End check special
+0
+New pos 0
+Exiting function Add discard
+WILD YELLOW
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+End check special
+0
+New pos 0
+Exiting function Add discard
+WILD YELLOW
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect DRTWO YELLOW
+End check special
+1
+New pos 1
+Exiting function Add discard
+Adding: REVERSE RED
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect REVERSE BLUE
+Entering Reverse
+0
+1
+Index less than zero
+INDEX : 1
+Exit reverse
+End check special
+1
+New pos 1
+Exiting function Add discard
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect SKIP BLUE
+Entering skip function
+ActualPlayer 1
+Current 0
+One off from start
+Exiting Skip function
+End check special
+1
+New pos 1
+Exiting function Add discard
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect DRTWO BLUE
+End check special
+1
+New pos 1
+Exiting function Add discard
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+End check special
+0
+New pos 0
+Exiting function Add discard
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+End check special
+0
+New pos 0
+Exiting function Add discard
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect DRTWO RED
+End check special
+1
+New pos 1
+Exiting function Add discard
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+End check special
+0
+New pos 0
+Exiting function Add discard
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+End check special
+0
+New pos 0
+Exiting function Add discard
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect DRTWO GREEN
+End check special
+1
+New pos 1
+Exiting function Add discard
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+End check special
+0
+New pos 0
+Exiting function Add discard
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+End check special
+0
+New pos 0
+Exiting function Add discard
+foo
+At function add discard
+Card name is SpecialCard
+Entering a special card
+Checking special
+Entering Side effect DRTWO YELLOW
+End check special
+1
+New pos 1
+Exiting function Add discard
+Adding: DRTWO YELLOW
+foo
+At function add discard
+Card name is WildCard
+Entering a wild card
+Exiting function Add discard
+WILD YELLOW
+Adding: 9 BLUE
+9 BLUE
+foo
+At function add discard
+Card name is WildCard
+Entering a wild card
+Exiting function Add discard
+WILD YELLOW
+Adding: WILD
+foo
+At function add discard
+Card name is WildCard
+Entering a wild card
+Exiting function Add discard
+WILD YELLOW
+foo
+At function add discard
+Card name is WildCard
+Entering a wild card
+Exiting function Add discard
+WILDDRFOUR YELLOW
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

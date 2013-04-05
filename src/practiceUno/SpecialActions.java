@@ -29,6 +29,6 @@ public interface SpecialActions {
      * @param d
      * @param p
      */
-    void DrawTwo(Deck d, Player p); // Player plus 1 and draw two. 
+    int DrawTwo(Deck d, Player p); 
    
 }

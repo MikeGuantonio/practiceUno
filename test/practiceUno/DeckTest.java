@@ -251,7 +251,7 @@ public class DeckTest {
     /**
      *
      */
-    @Test
+    @Test //test to see if the correct person is getting the draw
     public void testAddDiscardWildOnNumber()
     {
         int canPlace = 0; 
@@ -267,15 +267,14 @@ public class DeckTest {
         d.ShowDiscard();
         WildCard w = new WildCard(WildCard.cardWild.WILD);
         canPlace = d.AddDiscard(w, p, new Scanner(System.in), 0);
-        System.out.println(canPlace);
-        assertEquals(canPlace, true);
+        assertEquals(canPlace, r.GetPlayerPos());
         d.ShowDiscard();
     }
     
     /**
      *
      */
-    @Test
+    @Test //check to see if the correct person is getting a card.
     public void testAddDiscardWildOnWild()
     {
         Deck d = new Deck(); 
@@ -389,9 +388,16 @@ public class DeckTest {
     }
     
     @Test
-    public void testSideEffectReverse()
+    public void testSideEffectDrTwoPlayerOutofBounds()
+    {
+        //assertNotNull(null);
+    }
+    
+    @Test
+    public void testSideEffectReverseFirstToLast()
     {
         System.out.println("SideEffect Reverse");
+        int newPos = 0;
         Robot first = new Robot("Steve", 0); 
         Robot second = new Robot("Bob", 1);
         Robot third = new Robot("Bill", 2);
@@ -402,19 +408,78 @@ public class DeckTest {
         Deck d = new Deck(); 
         d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.RED));
         
-        //loop through all three players and see who is the next one to play? 
+        System.out.println("Assiming that the last player was the last palyer in list.");
         first.GetCard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.RED));
-        d.AddDiscard(first.Discard(0), p, null, p.get(0).GetPlayerPos());
+        newPos = d.AddDiscard(first.Discard(0), p, null, p.get(0).GetPlayerPos());
         first.Remove(first.Discard(0));
         
-        
+        assertEquals(newPos, 2);
     }
+    
+    @Test
+    public void testSideEffectReverseLastToFirst()
+    {
+       int newPos = 0;
+        Robot first = new Robot("Steve", 0); 
+        Robot second = new Robot("Bob", 1);
+        Robot third = new Robot("Bill", 2);
+        ArrayList<Player> p = new ArrayList<>(); 
+        p.add(first);
+        p.add(second);
+        p.add(third);
+        Deck d = new Deck(); 
+        d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.RED));
+        
+        System.out.println("Last player to the second");
+        third.GetCard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.RED));
+        newPos = d.AddDiscard(third.Discard(0), p, null, p.get(2).GetPlayerPos());
+        third.Remove(third.Discard(0));
+        
+        assertEquals(newPos, 1);
+ 
+    }
+    
     
     @Test
     public void testSideEffectSkip()
     {
-        //Pass same player is now current n is 2
-        // n is more than two move to current plus one.
+        int newPos = 0;
+        Robot first = new Robot("Steve", 0); 
+        Robot second = new Robot("Bob", 1);
+        Robot third = new Robot("Bill", 2);
+        ArrayList<Player> p = new ArrayList<>(); 
+        p.add(first);
+        p.add(second);
+        p.add(third);
+        Deck d = new Deck(); 
+        d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.YELLOW));
+        
+        first.GetCard(new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.YELLOW));
+        newPos = d.AddDiscard(first.Discard(0), p, null, p.get(0).GetPlayerPos());
+        first.Remove(first.Discard(0));
+        
+        assertEquals(newPos, 2);
+    }
+    
+    @Test //nee to check for other edge cases. 
+    public void testSideEffectSkipLastPlayer()
+    {
+        int newPos = 0;
+        Robot first = new Robot("Steve", 0); 
+        Robot second = new Robot("Bob", 1);
+        Robot third = new Robot("Bill", 2);
+        ArrayList<Player> p = new ArrayList<>(); 
+        p.add(first);
+        p.add(second);
+        p.add(third);
+        Deck d = new Deck(); 
+        d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.YELLOW));
+        
+        third.GetCard(new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.YELLOW));
+        newPos = d.AddDiscard(third.Discard(0), p, null, p.get(2).GetPlayerPos());
+        third.Remove(third.Discard(0));
+        
+        assertEquals(newPos, 1);
     }
     
 }
