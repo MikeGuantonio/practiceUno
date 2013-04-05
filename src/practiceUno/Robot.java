@@ -259,6 +259,7 @@ public class Robot extends Player {
             {
                 if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(c.GetColor()))
                 {
+                    System.out.println("Crazyness");
                     playingCard = inPlay; 
                     break;
                 }

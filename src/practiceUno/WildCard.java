@@ -103,7 +103,7 @@ public class WildCard extends Card implements WildActions
      * @param scan
      * @return
      */
-    @Override
+    @Override //need to check for edge case 1 -> 0
     public Card.cardColor DrawFour(Player newPlayer, Deck copyDeck, Scanner scan) {
         Card.cardColor	newColor;
 

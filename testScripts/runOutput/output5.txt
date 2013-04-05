@@ -1,0 +1,154 @@
+Starting a game of uno with 2
+Com0's turn. Com0 sees 9 RED
+Com0 played 1 RED
+
+End of Turn
+Cards for each player
+Com0 : 6
+Com1 : 7
+
+Com1's turn. Com1 sees 1 RED
+Com1 played 3 RED
+
+End of Turn
+Cards for each player
+Com0 : 6
+Com1 : 6
+
+Com0's turn. Com0 sees 3 RED
+Com0 played 5 RED
+
+End of Turn
+Cards for each player
+Com0 : 5
+Com1 : 6
+
+Com1's turn. Com1 sees 5 RED
+Com1 played 5 GREEN
+
+End of Turn
+Cards for each player
+Com0 : 5
+Com1 : 5
+
+Com0's turn. Com0 sees 5 GREEN
+New pos 1
+Com0 played REVERSE GREEN
+
+End of Turn
+Cards for each player
+Com0 : 4
+Com1 : 5
+
+Com1's turn. Com1 sees REVERSE GREEN
+Crazyness
+Com1 played 2 GREEN
+
+End of Turn
+Cards for each player
+Com0 : 4
+Com1 : 4
+
+Com0's turn. Com0 sees 2 GREEN
+Com0 passes.
+
+End of Turn
+Cards for each player
+Com0 : 5
+Com1 : 4
+
+Com1's turn. Com1 sees 2 GREEN
+New pos 1
+Com1 played DRTWO GREEN
+
+End of Turn
+Cards for each player
+Com0 : 7
+Com1 : 4
+
+Com0's turn. Com0 sees DRTWO GREEN
+Crazyness
+Com0 played 9 GREEN
+
+End of Turn
+Cards for each player
+Com0 : 6
+Com1 : 4
+
+Com1's turn. Com1 sees 9 GREEN
+Com1 played 9 RED
+
+End of Turn
+Cards for each player
+Com0 : 6
+Com1 : 4
+
+Com0's turn. Com0 sees 9 RED
+Com0 played 6 RED
+
+End of Turn
+Cards for each player
+Com0 : 5
+Com1 : 4
+
+Com1's turn. Com1 sees 6 RED
+Com1 played 6 RED
+
+End of Turn
+Cards for each player
+Com0 : 5
+Com1 : 3
+
+Com0's turn. Com0 sees 6 RED
+Com0 played 6 YELLOW
+
+End of Turn
+Cards for each player
+Com0 : 4
+Com1 : 3
+
+Com1's turn. Com1 sees 6 YELLOW
+New pos 1
+Com1 played DRTWO YELLOW
+
+End of Turn
+Cards for each player
+Com0 : 6
+Com1 : 2
+
+Com0's turn. Com0 sees DRTWO YELLOW
+Crazyness
+Com0 played 3 YELLOW
+
+End of Turn
+Cards for each player
+Com0 : 5
+Com1 : 2
+
+Com1's turn. Com1 sees 3 YELLOW
+Com1 played 5 YELLOW
+
+End of Turn
+Cards for each player
+Com0 : 5
+Com1 : 1
+
+Com0's turn. Com0 sees 5 YELLOW
+New pos 1
+Com0 played SKIP YELLOW
+
+End of Turn
+Cards for each player
+Com0 : 4
+Com1 : 1
+
+Com1's turn. Com1 sees SKIP YELLOW
+New pos 1
+Com1 played SKIP BLUE
+Com1 won!
+
+End of Turn
+Cards for each player
+Com0 : 4
+Com1 : 0
+

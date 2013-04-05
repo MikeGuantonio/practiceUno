@@ -54,7 +54,7 @@ public class UnoClone {
             {       
                 System.out.println((String.format("%s's turn. %s sees %s", current.GetName(), current.GetName(), deck.TopDiscard().toString())));
                 
-                uno.Sleep(1_000); 
+                //uno.Sleep(1_000); 
                 
                 log.fine(String.format("%s's turn Deck Shows:  %s", current.GetName(), deck.TopDiscard().toString()));
                 
@@ -135,14 +135,12 @@ public class UnoClone {
     {
         //LogManager.getLogManager().reset();
         log.setLevel(Level.SEVERE);
-        try {
+        /*try {
             textLog = new FileHandler(fileName);
-        } catch (IOException ex) {
+        } catch (IOException | SecurityException ex) {
             Logger.getLogger(UnoClone.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SecurityException ex) {
-            Logger.getLogger(UnoClone.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        log.addHandler(textLog);
+        }*/
+        //log.addHandler(textLog);
     }
     
     /**
