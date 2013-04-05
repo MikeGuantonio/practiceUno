@@ -36,6 +36,14 @@ public class Human extends Player
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    @Override
+    public void ShowHand()
+    {
+        for (int i = 0; i < hand.size(); i++) 
+        {
+            System.out.println(String.format("[%s]: %s", i, hand.get(i).toString()));
+        }
+    }
     //Change discard to take a card and just find the card. 
     @Override
     public Card Discard(int dex)
@@ -68,15 +76,27 @@ public class Human extends Player
                         state = GetPlayerChoice();
                         break;  
                     
-                case 1: System.out.println("Play a card"); 
-                        state = 5; 
+                case 1: PlayMenu();
+                        int card = GetPlayerChoice();
+                        if(card == -1)
+                            state = 2; 
+                        else
+                        {
+                            d.AddDiscard(this.Discard(card), p, input, this.GetPlayerPos());
+                            state = 5;
+                        }
                         break;
                     
-                case 2: System.out.println("Draw a card");
-                        state = 5; 
+                case 2: Card c = d.DrawNext();
+                        this.GetCard(c);
+                        System.out.println("You got " + c.toString());
+                        DrawMenu();
+                        state = this.GetPlayerChoice();
                         break;
                     
-                case 3: break;
+                case 3: System.out.println(this.GetName() + " passes");
+                        state = 5; 
+                        break;
                     
                 case 4: break;
                     
@@ -95,15 +115,26 @@ public class Human extends Player
         return choice;
     }
     
+    private void DrawMenu()
+    {
+        System.out.println("What would you like to do?");
+        System.out.println("1. Play a Card");
+        System.out.println("3. Pass ");
+    }
+    
+    private void PlayMenu()
+    {
+        System.out.println("Please choose a card");
+        this.ShowHand();
+        System.out.println("Which card would you like to play?");
+        System.out.println("Please use a -1 to draw a card");
+    }
+    
     private void Menu(Card c)
     {
         System.out.println("");
-        this.ShowHand();
         System.out.println("What would you like to do? ");
         System.out.println("1. Play a card");
         System.out.println("2. Draw a card");
-        System.out.println("");
-        System.out.println("Top card is " + c.toString());
-        
     }
 }

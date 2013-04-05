@@ -13,3 +13,5 @@ TODO:
 7. Each card should know its match and therefore can be moved into a single place. Possibly a check(c) function that allows the card to see what it is and what to do with it. The Deck could still implement the check but the card would be doing the validation.     
 8. Should check to see if the card is being removed from the hand. If not implement a Remove(Card c) function at the player level. 
 9. Fix the way draw two works
+10. Fix the way skip works when players is equal to two.
+11. Deck needs a quick check function to see if a move is possible...
