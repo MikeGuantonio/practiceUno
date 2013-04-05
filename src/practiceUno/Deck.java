@@ -398,7 +398,7 @@ public class Deck {
                 case REVERSE: newPos = special.Reverse(pos, players.size());
                               break;
 
-                case DRTWO : newPos = special.DrawTwo(this, players.get(pos + 1));
+                case DRTWO : newPos = special.DrawTwo(this, players, pos);
                              break;
 
                 default : log.severe("This is not a card with a side effect");

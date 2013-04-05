@@ -4,6 +4,7 @@
  */
 package practiceUno;
 
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 /**
@@ -131,13 +132,24 @@ public class SpecialCard extends Card implements SpecialActions
      * @param theDeck
      * @param p
      */
-    @Override //won't work for any player beyond n. Will be null...
-    public int DrawTwo(Deck theDeck, Player p)
+    @Override 
+    public int DrawTwo(Deck theDeck, ArrayList<Player> p, int pos)
     {          
-         for (int i = 0; i < 2; i++) {
-             p.GetCard(theDeck.DrawNext());
+         int totalPlayers = p.size()-1;
+         int affected = pos; 
+         if(pos == totalPlayers)
+         {
+             affected = 0; 
          }
-         return p.GetPlayerPos();
+         else
+         {
+             affected++;
+         }
+         
+         for (int i = 0; i < 2; i++) {
+             p.get(affected).GetCard(theDeck.DrawNext());
+         }
+         return p.get(pos).GetPlayerPos();
     }
     
     /**

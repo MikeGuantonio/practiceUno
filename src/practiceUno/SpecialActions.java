@@ -4,6 +4,8 @@
  */
 package practiceUno;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author mike
@@ -29,6 +31,6 @@ public interface SpecialActions {
      * @param d
      * @param p
      */
-    int DrawTwo(Deck d, Player p); 
+    int DrawTwo(Deck d, ArrayList<Player> p , int pos); 
    
 }
