@@ -1,195 +1,305 @@
 Starting a game of uno with 2
-Com0's turn. Com0 sees 5 RED
-Com0 played 3 RED
+Com0's turn. Com0 sees 2 BLUE
+Com0 played 8 BLUE
 
 End of Turn
 Cards for each player
 Com0 : 6
 Com1 : 7
 
-Com1's turn. Com1 sees 3 RED
-Com1 played 3 GREEN
+Com1's turn. Com1 sees 8 BLUE
+Com1 played 7 BLUE
 
 End of Turn
 Cards for each player
 Com0 : 6
 Com1 : 6
 
-Com0's turn. Com0 sees 3 GREEN
-Com0 played 3 GREEN
+Com0's turn. Com0 sees 7 BLUE
+Com0 played 6 BLUE
 
 End of Turn
 Cards for each player
-Com0 : 6
+Com0 : 5
 Com1 : 6
 
-Com1's turn. Com1 sees 3 GREEN
+Com1's turn. Com1 sees 6 BLUE
 Com1 passes.
 
 End of Turn
 Cards for each player
-Com0 : 6
+Com0 : 5
 Com1 : 7
 
-Com0's turn. Com0 sees 3 GREEN
-Com0 played 9 GREEN
+Com0's turn. Com0 sees 6 BLUE
+Com0 played WILD RED
 
 End of Turn
 Cards for each player
-Com0 : 6
+Com0 : 4
 Com1 : 7
 
-Com1's turn. Com1 sees 9 GREEN
-Com1 played 9 YELLOW
+Com1's turn. Com1 sees WILD RED
+Com1 played 3 RED
 
 End of Turn
 Cards for each player
-Com0 : 6
+Com0 : 4
 Com1 : 6
 
-Com0's turn. Com0 sees 9 YELLOW
+Com0's turn. Com0 sees 3 RED
 New pos 0
-Com0 played DRTWO YELLOW
-
-End of Turn
-Cards for each player
-Com0 : 5
-Com1 : 8
-
-Com1's turn. Com1 sees DRTWO YELLOW
-Crazyness
-Com1 played 4 YELLOW
-
-End of Turn
-Cards for each player
-Com0 : 5
-Com1 : 7
-
-Com0's turn. Com0 sees 4 YELLOW
-Com0 played 7 YELLOW
-
-End of Turn
-Cards for each player
-Com0 : 4
-Com1 : 7
-
-Com1's turn. Com1 sees 7 YELLOW
-Com1 played 7 YELLOW
-
-End of Turn
-Cards for each player
-Com0 : 4
-Com1 : 6
-
-Com0's turn. Com0 sees 7 YELLOW
-Com0 played 7 RED
+Com0 played DRTWO RED
 
 End of Turn
 Cards for each player
 Com0 : 3
-Com1 : 6
+Com1 : 8
 
-Com1's turn. Com1 sees 7 RED
+Com1's turn. Com1 sees DRTWO RED
+Crazyness
+New pos 1
+Com1 played SKIP RED
+
+End of Turn
+Cards for each player
+Com0 : 3
+Com1 : 7
+
+Com0's turn. Com0 sees SKIP RED
+Crazyness
+Com0 played 6 RED
+
+End of Turn
+Cards for each player
+Com0 : 3
+Com1 : 7
+
+Com1's turn. Com1 sees 6 RED
 Com1 played 4 RED
 
 End of Turn
 Cards for each player
 Com0 : 3
-Com1 : 5
-
-Com0's turn. Com0 sees 4 RED
-Com0 played 8 RED
-
-End of Turn
-Cards for each player
-Com0 : 2
-Com1 : 5
-
-Com1's turn. Com1 sees 8 RED
-Com1 passes.
-
-End of Turn
-Cards for each player
-Com0 : 2
 Com1 : 6
 
-Com0's turn. Com0 sees 8 RED
+Com0's turn. Com0 sees 4 RED
 Com0 passes.
 
 End of Turn
 Cards for each player
-Com0 : 3
+Com0 : 4
 Com1 : 6
 
-Com1's turn. Com1 sees 8 RED
-Com1 played 8 GREEN
+Com1's turn. Com1 sees 4 RED
+Com1 played 4 YELLOW
+
+End of Turn
+Cards for each player
+Com0 : 4
+Com1 : 5
+
+Com0's turn. Com0 sees 4 YELLOW
+Com0 played 3 YELLOW
 
 End of Turn
 Cards for each player
 Com0 : 3
-Com1 : 6
+Com1 : 5
 
-Com0's turn. Com0 sees 8 GREEN
+Com1's turn. Com1 sees 3 YELLOW
+New pos 1
+Com1 played DRTWO YELLOW
+
+End of Turn
+Cards for each player
+Com0 : 5
+Com1 : 4
+
+Com0's turn. Com0 sees DRTWO YELLOW
 New pos 0
 Com0 played DRTWO GREEN
 
 End of Turn
 Cards for each player
-Com0 : 3
-Com1 : 8
+Com0 : 4
+Com1 : 6
 
 Com1's turn. Com1 sees DRTWO GREEN
 Crazyness
-New pos 0
-Com1 played REVERSE GREEN
+New pos 1
+Com1 played SKIP GREEN
+
+End of Turn
+Cards for each player
+Com0 : 4
+Com1 : 5
+
+Com0's turn. Com0 sees SKIP GREEN
+Crazyness
+Com0 played 8 GREEN
 
 End of Turn
 Cards for each player
 Com0 : 3
-Com1 : 7
+Com1 : 5
+
+Com1's turn. Com1 sees 8 GREEN
+New pos 1
+Com1 played DRTWO GREEN
+
+End of Turn
+Cards for each player
+Com0 : 5
+Com1 : 4
+
+Com0's turn. Com0 sees DRTWO GREEN
+Crazyness
+Com0 played 9 GREEN
+
+End of Turn
+Cards for each player
+Com0 : 4
+Com1 : 4
+
+Com1's turn. Com1 sees 9 GREEN
+Com1 played 8 GREEN
+
+End of Turn
+Cards for each player
+Com0 : 4
+Com1 : 3
+
+Com0's turn. Com0 sees 8 GREEN
+Com0 played 4 GREEN
+
+End of Turn
+Cards for each player
+Com0 : 3
+Com1 : 3
+
+Com1's turn. Com1 sees 4 GREEN
+Com1 played 4 RED
+
+End of Turn
+Cards for each player
+Com0 : 3
+Com1 : 3
+
+Com0's turn. Com0 sees 4 RED
+Com0 played 9 RED
+
+End of Turn
+Cards for each player
+Com0 : 2
+Com1 : 3
+
+Com1's turn. Com1 sees 9 RED
+Com1 played 2 RED
+
+End of Turn
+Cards for each player
+Com0 : 2
+Com1 : 2
+
+Com0's turn. Com0 sees 2 RED
+Com0 played WILDDRFOUR RED
+
+End of Turn
+Cards for each player
+Com0 : 5
+Com1 : 2
+
+Com1's turn. Com1 sees WILDDRFOUR RED
+Com1 played 6 RED
+
+End of Turn
+Cards for each player
+Com0 : 5
+Com1 : 1
+
+Com0's turn. Com0 sees 6 RED
+Com0 played WILD GREEN
+
+End of Turn
+Cards for each player
+Com0 : 4
+Com1 : 1
+
+Com1's turn. Com1 sees WILD GREEN
+Com1 played 4 GREEN
+
+End of Turn
+Cards for each player
+Com0 : 4
+Com1 : 1
+
+Com0's turn. Com0 sees 4 GREEN
+New pos 1
+Com0 played REVERSE GREEN
+
+End of Turn
+Cards for each player
+Com0 : 3
+Com1 : 1
+
+Com1's turn. Com1 sees REVERSE GREEN
+Com1 passes.
+
+End of Turn
+Cards for each player
+Com0 : 3
+Com1 : 2
 
 Com0's turn. Com0 sees REVERSE GREEN
 New pos 1
-Com0 played REVERSE BLUE
+Com0 played REVERSE YELLOW
 
 End of Turn
 Cards for each player
 Com0 : 2
-Com1 : 7
+Com1 : 2
 
-Com1's turn. Com1 sees REVERSE BLUE
+Com1's turn. Com1 sees REVERSE YELLOW
+New pos 0
+Com1 played REVERSE RED
+
+End of Turn
+Cards for each player
+Com0 : 2
+Com1 : 2
+
+Com0's turn. Com0 sees REVERSE RED
+Com0 passes.
+
+End of Turn
+Cards for each player
+Com0 : 3
+Com1 : 2
+
+Com1's turn. Com1 sees REVERSE RED
 Crazyness
-Com1 played 6 BLUE
+Com1 played 9 RED
 
 End of Turn
 Cards for each player
-Com0 : 2
-Com1 : 6
+Com0 : 3
+Com1 : 1
 
-Com0's turn. Com0 sees 6 BLUE
+Com0's turn. Com0 sees 9 RED
 Com0 played 9 BLUE
 
 End of Turn
 Cards for each player
-Com0 : 1
-Com1 : 6
+Com0 : 2
+Com1 : 1
 
 Com1's turn. Com1 sees 9 BLUE
-New pos 1
-Com1 played SKIP BLUE
+Com1 played 8 BLUE
+Com1 won!
 
 End of Turn
 Cards for each player
-Com0 : 1
-Com1 : 5
-
-Com0's turn. Com0 sees SKIP BLUE
-Crazyness
-Com0 played 3 BLUE
-Com0 won!
-
-End of Turn
-Cards for each player
-Com0 : 0
-Com1 : 5
+Com0 : 2
+Com1 : 0
 

@@ -46,7 +46,7 @@ public class UnoClone {
         
         log.fine("Game loop");
         log.fine(String.format("Number of Players %s", players.size()));
-        System.out.println(String.format("Starting a game of uno with %s", players.size()));
+        System.out.println(String.format("Starting a game of uno with %s players", players.size()));
         do
         {
         
@@ -159,7 +159,10 @@ public class UnoClone {
        
        for (int i = 0; i < numPlayers; i++) 
        {
-           players.add(new Robot("Com"+i, i));   
+           if(i == 0 )
+               players.add(new Human("Job", i));
+           else
+               players.add(new Robot("Com"+i, i));   
        }
 
         for (int i = 0; i < 7; i++)
@@ -210,7 +213,7 @@ public class UnoClone {
         
         if(tmp.getClass().equals(Human.class))
         {
-            int choice = Menu(p, d, playerPos);
+            //int choice = Menu(p, d, playerPos);
         }
             
             if(!turnStatus){
@@ -234,14 +237,12 @@ public class UnoClone {
         boolean done = false; 
         Player tmp = p.get(currentPlayer);
         
-        if(tmp.getClass().equals(Human.class))
-        {
             Human h = (Human)tmp; 
             d.ShowDiscard();
             h.ShowHand(); 
         
             //Card c = p.get(currentPlayer).Discard(input.nextInt());
-        }
+        
         log.exiting("Play", null);
         return done; 
     }
@@ -296,22 +297,7 @@ public class UnoClone {
     }
     
     
-    /**
-     *
-     * @param p 
-     * @param d
-     * @param currPos 
-     * @return
-     */
-    public int Menu(ArrayList<Player> p, Deck d, int currPos)
-    {
-        log.entering("menu", null);
-        int choice; 
-        d.ShowDiscard();
-        choice = input.nextInt();
-        log.exiting("menu", null);
-        return choice; 
-    }
+    
 }
 
 

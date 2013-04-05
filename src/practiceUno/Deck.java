@@ -145,7 +145,7 @@ public class Deck {
                 
             case "SpecialCard": 
                                  newpos = CheckSpecial(discard, c, p, pos);
-                                 System.out.println("New pos " + newpos);
+                                
                                  break;
                 
             case "WildCard": 

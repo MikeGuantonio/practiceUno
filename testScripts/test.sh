@@ -6,8 +6,7 @@
 
 uno_Run()
 {
-   java -jar ../dist/UnoClone.jar > runOutput/output$1.txt 2> exception/exceptionReport$1.txt;
-   notify-send "test $1"  
+   java -jar ../dist/UnoClone.jar > runOutput/output$1.txt 2> exception/exceptionReport$1.txt;  
 }
 
 for i in {1..10};

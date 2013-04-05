@@ -58,5 +58,16 @@ public class HumanTest {
     public void testSomeMethod() {
         Human h = new Human("bob", 5); 
     }
+    
+    @Test
+    public void testPlayAHand()
+    {
+        Human h = new Human("bob", 5);
+        Deck d = new Deck(); 
+        
+        d.SetUpDiscard(null);
+        h.PlayAHand(d, null);
+    }
+    
     private static final Logger LOG = Logger.getLogger(HumanTest.class.getName());
 }
