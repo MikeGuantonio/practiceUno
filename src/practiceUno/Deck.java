@@ -147,49 +147,8 @@ public class Deck {
     private int CheckNumber(Card discard, Card c, int pos)
     {
         boolean    canPlace   = false;
-        NumberCard cardToPlay = (NumberCard) c;
-        String cardName = discard.getClass().getSimpleName();
-     
         canPlace = c.match(discard);
-        /*switch(cardName)
-        {
-            case "NumberCard":  if(c.match(discard))
-                                {
-                                    canPlace = true; 
-                                } 
-                                else 
-                                {
-                                    log.info("Tried to place a number on a number");
-                                    log.info(discard.toString());
-                                }
-                                break;
-            
-            case "SpecialCard": if(c.match(discard))
-                                {
-                                    canPlace = true;
-                                }
-                                else
-                                {
-                                    log.info("Tried to place a number card on special");
-                                    log.info(discard.toString());
-                                } 
-                                break;
-            
-            case "WildCard":    if(c.match(discard)) 
-                                {
-                                    canPlace = true;
-                                }
-                                else
-                                {
-                                    log.info("Tried to place a number card on wild.");
-                                    log.info(discard.toString());
-                                }
-                                break;
-            
-            default: log.fine("No number can be played. ");
-                     break;
-        }
-        */
+    
         if(canPlace)
             discardDeck.push(c);
         else
@@ -204,35 +163,15 @@ public class Deck {
         String cardName = discard.getClass().getSimpleName();
         int newpos = pos; 
         
-        switch(cardName)
-        {
-            case "SpecialCard" :if(c.match(discard))
-                                {
-                                    canPlace = true;
-                                    newpos = this.SideEffect(c, players, pos);
-                                }
-                                break;
+        canPlace = c.match(discard);
                 
-            case "NumberCard":  if(c.match(discard))
-                                {
-                                    canPlace = true;
-                                    newpos = this.SideEffect(c, players, pos);
-                                } 
-                                break;
-                
-            case "WildCard":    if(c.match(discard)) 
-                                {
-                                    canPlace = true;
-                                    newpos = this.SideEffect(c, players, pos);
-                                }
-                                break;
-                
-            default: log.fine("No cards are available to be played.");
-                     break;
-        }
-        
         if(canPlace)
+        {
             discardDeck.push(c);
+            newpos = this.SideEffect(c, players, pos);
+        }
+        else
+            log.info("No Special cards can be played.");
         
         return newpos;
     }
