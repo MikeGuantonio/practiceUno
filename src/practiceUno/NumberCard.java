@@ -48,4 +48,16 @@ public class NumberCard extends Card {
         String faceValue = String.format("%s %s", face, color.toString()); 
         return faceValue;
     }
+    
+    @Override
+    public boolean match(Card c)
+    {
+        NumberCard toMatch = (NumberCard)c;
+        boolean possible = false; 
+        if(this.GetNumber() == toMatch.GetNumber())
+        {
+            possible = true;
+        }
+        return possible;
+    }
 }

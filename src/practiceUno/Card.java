@@ -23,7 +23,7 @@ abstract class Card {
     
     @Override
     public abstract String toString();
-    public abstract boolean match(); 
+    public abstract boolean match(Card c); 
     
     public boolean colorMatch(Card c)
     {
