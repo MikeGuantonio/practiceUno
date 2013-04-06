@@ -91,7 +91,7 @@ public class Robot extends Player {
                         }
                         else
                         {
-                            d.AddDiscard(playingCard, p, null, this.GetPlayerPos());
+                            pos = d.AddDiscard(playingCard, p, null, this.GetPlayerPos());
                             hand.remove(FindCard(playingCard));
                             state = 5;
                         }
@@ -116,7 +116,7 @@ public class Robot extends Player {
                         int colorChoice = (int)(Math.random() * 3);
                         ByteArrayInputStream in = new ByteArrayInputStream(colorValues[colorChoice].toString().getBytes());
                         System.setIn(in);
-                        d.AddDiscard(playingCard, p, new Scanner(System.in), this.GetPlayerPos());
+                        pos = d.AddDiscard(playingCard, p, new Scanner(System.in), this.GetPlayerPos());
                         hand.remove(FindCard(playingCard));
                         state = 5;
                         break;

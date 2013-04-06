@@ -48,33 +48,28 @@ public class UnoClone {
         System.out.println(String.format("Starting a game of uno with %s players", players.size()));
         do
         {
-        
-            for (int i = 0; i < players.size(); i++)
-            {    
-                Player current = players.get(pos);
-                System.out.println((String.format("%s's turn. %s sees %s", current.GetName(), current.GetName(), deck.TopDiscard().toString())));
-                
-                uno.Sleep(1_000); 
-                
-                log.fine(String.format("%s's turn Deck Shows:  %s", current.GetName(), deck.TopDiscard().toString()));
-                
-                pos = current.PlayAHand(deck, players); 
-                endGame = uno.CheckForEndGame(current);
-                
-                if(endGame)
-                {
-                    System.out.println(current.GetName() + " won!");
-                    uno.Report(players);
-                    break;
-                }
-                else
-                {
-                    log.fine(String.format("End %s turn ", current.GetName()));
-                    pos = uno.Wrap((pos+1), players.size()); //How is this getting a position?
-                    uno.Report(players);
-                }
-                
+            Player current = players.get(pos);
+            System.out.println((String.format("%s's turn. %s sees %s", current.GetName(), current.GetName(), deck.TopDiscard().toString())));
+
+            uno.Sleep(1_000); 
+
+            log.fine(String.format("%s's turn Deck Shows:  %s", current.GetName(), deck.TopDiscard().toString()));
+
+            pos = current.PlayAHand(deck, players); 
+            endGame = uno.CheckForEndGame(current);
+
+            if(endGame)
+            {
+                System.out.println(current.GetName() + " won!");
+                uno.Report(players);
+                break;
             }
+            else
+            {
+                log.fine(String.format("End %s turn ", current.GetName()));
+                pos = uno.Wrap((pos+1), players.size()); //Do we check a wrap as next player if there
+                uno.Report(players);                     //is a side effect.
+            }    
         } while(!endGame);     
     }
 
@@ -162,9 +157,9 @@ public class UnoClone {
        
        for (int i = 0; i < numPlayers; i++) 
        {
-           if(i == 0 )
+           /*if(i == 0 )
                players.add(new Human("Job", i));
-           else
+           else*/
                players.add(new Robot("Com"+i, i));   
        }
 
