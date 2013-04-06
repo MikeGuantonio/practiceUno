@@ -129,6 +129,7 @@ public class Deck {
                 case "WildCard":    WildCard wild     = (WildCard) cardToBePlayed;
                                     wild.PlayWild(in, p, this, pos);
                                     break;
+                   
             }
             discardDeck.push(cardToBePlayed);
         }

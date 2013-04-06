@@ -36,7 +36,7 @@ public class SpecialCard extends Card implements SpecialActions
     @Override
    public void Print()
    {
-       
+       System.out.println(this.toString());
    }
     
     /**
@@ -178,7 +178,8 @@ public class SpecialCard extends Card implements SpecialActions
     @Override
     public String toString()
     {
-        String faceValue = String.format("%s %s", sp.toString(), color.toString()); 
+        String termColor = super.ReturnColor(color);
+        String faceValue = String.format("%s%s\033[0m", termColor, sp.toString()); 
         return faceValue; 
     }
     

@@ -12,7 +12,11 @@ package practiceUno;
 abstract class Card {
 
     protected cardColor color;
-  
+    private static final String BLUECOLOR = "\033[1;34m";
+    private static final String REDCOLOR = "\033[31m";
+    private static final String YELLOWCOLOR = "\033[1;33m";
+    private static final String GREENCOLOR = "\033[1;32m";
+    
     enum cardColor {
 
         BLUE, RED, GREEN, YELLOW
@@ -34,5 +38,23 @@ abstract class Card {
             possible = true; 
         }
         return possible;
+    }
+    
+    public String ReturnColor(Card.cardColor color)
+    {
+        String colorVal = null; 
+        
+        switch(color)
+        {
+            case RED: colorVal = REDCOLOR; 
+                      break;
+            case BLUE: colorVal = BLUECOLOR; 
+                       break;
+            case GREEN: colorVal = GREENCOLOR;
+                       break;
+            case YELLOW: colorVal = YELLOWCOLOR; 
+                       break;
+        }
+        return colorVal; 
     }
 }

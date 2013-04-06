@@ -133,7 +133,8 @@ public class WildCard extends Card implements WildActions
 
         if (color != null)
         {
-            faceValue = String.format("%s %s", faceValue, color.toString());
+            String termColor = super.ReturnColor(color);
+            faceValue = String.format("%s%s\033[0m", termColor, faceValue );
         }
 
         return faceValue;
@@ -142,8 +143,8 @@ public class WildCard extends Card implements WildActions
     @Override
     public boolean match(Card c)
     {
-        System.out.println("Entering wild match function.");
-        return super.colorMatch(c);    
+        System.out.println("Entering wild match function."); 
+        return true;
     }
 }
 

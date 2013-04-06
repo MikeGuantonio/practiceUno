@@ -37,15 +37,15 @@ public class NumberCard extends Card {
     
     @Override
     public void Print()
-    {
-        String faceValue = String.format("%s %s", face, color.toString()); 
-        System.out.println(faceValue); 
+    { 
+        System.out.println(this.toString()); 
     }
     
     @Override
     public String toString()
     {
-        String faceValue = String.format("%s %s", face, color.toString()); 
+        String termColor = super.ReturnColor(color);
+        String faceValue = String.format("%s%s \033[0m", termColor, face); 
         return faceValue;
     }
     

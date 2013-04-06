@@ -198,6 +198,7 @@ public class Robot extends Player {
                 System.out.println("Matched");
                 System.out.println(c.toString());
                 System.out.println(inPlay.toString());
+                c.Print();
                 playingCard = inPlay; 
                 break;
             }
