@@ -482,4 +482,32 @@ public class DeckTest {
         assertEquals(newPos, 1);
     }
     
+    @Test
+    public void testMatches()
+    {
+        Deck d = new Deck(); 
+        ArrayList<Card> cards = new ArrayList<>(); 
+        
+        for (int i = 0; i < d.getSize("regular"); i++) {
+            cards.add(d.DrawNext());
+        }
+        
+        int max = 0; 
+        for(Card c : cards)
+        {
+            for(Card k : cards)
+            {
+                if(c.match(k))
+                {
+                    System.out.println("Match " + c.toString() +  " " + k.toString() );
+                    max++;
+                }
+                
+            }
+        }
+        System.out.println("max "+ max);
+        //assertNotNull(null);
+            
+        
+    }
 }

@@ -122,13 +122,6 @@ public class Deck {
     }
     
     
-    /**
-     *
-     * @param c
-     * @param play
-     * @param in
-     * @return
-     */
     public int AddDiscard(Card c, ArrayList<Player> p, Scanner in, int pos)
     {
         thisthing t = new thisthing(); 
@@ -175,14 +168,9 @@ public class Deck {
         
         switch(cardName)
         {
-            case "NumberCard":  NumberCard topCard = (NumberCard) discard;
-                                if(cardToPlay.colorMatch(topCard))
+            case "NumberCard":  if(c.match(discard))
                                 {
-                                    canPlace = true;
-                                }
-                                else if (cardToPlay.GetNumber() == topCard.GetNumber()) 
-                                {
-                                    canPlace = true;
+                                    canPlace = true; 
                                 } 
                                 else 
                                 {
@@ -191,7 +179,7 @@ public class Deck {
                                 }
                                 break;
             
-            case "SpecialCard": if (cardToPlay.colorMatch(discard) )
+            case "SpecialCard": if(c.match(discard))
                                 {
                                     canPlace = true;
                                 }
@@ -202,7 +190,7 @@ public class Deck {
                                 } 
                                 break;
             
-            case "WildCard":    if (cardToPlay.colorMatch(discard)) 
+            case "WildCard":    if(c.match(discard)) 
                                 {
                                     canPlace = true;
                                 }
@@ -231,33 +219,21 @@ public class Deck {
         
         switch(cardName)
         {
-            case "SpecialCard" :if (c.colorMatch(discard))
+            case "SpecialCard" :if(c.match(discard))
                                 {
                                     canPlace = true;
                                     newpos = this.SideEffect(c, players, pos);
-                                }
-                                else if (c.getClass().equals(SpecialCard.class)) 
-                                {
-                                    SpecialCard cardToPlay = (SpecialCard) c;
-                                    SpecialCard cardShown  = (SpecialCard) discard;
-
-                                    if (cardToPlay.GetSpecial().equals(cardShown.GetSpecial())) 
-                                    {
-                                        canPlace = true;
-                                        newpos = this.SideEffect(c, players, pos);
-                                    }
                                 }
                                 break;
                 
-            case "NumberCard": if (c.colorMatch(discard)) 
+            case "NumberCard":  if(c.match(discard))
                                 {
                                     canPlace = true;
                                     newpos = this.SideEffect(c, players, pos);
-                                    
                                 } 
                                 break;
                 
-            case "WildCard":    if (c.colorMatch(discard)) 
+            case "WildCard":    if(c.match(discard)) 
                                 {
                                     canPlace = true;
                                     newpos = this.SideEffect(c, players, pos);

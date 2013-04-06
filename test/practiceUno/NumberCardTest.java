@@ -98,4 +98,19 @@ public class NumberCardTest {
         instance.Print();
     }
     private static final Logger LOG = Logger.getLogger(NumberCardTest.class.getName());
+    
+    @Test 
+    public void testMatch()
+    {
+        boolean works = false; 
+        
+        NumberCard n = new NumberCard(8, Card.cardColor.BLUE);
+        Deck d = new Deck(); 
+        d.puppetSetupDiscard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE));
+        
+        Card c = d.TopDiscard();
+        works = n.match(c);
+        
+        assertEquals(true, works);
+    }
 }

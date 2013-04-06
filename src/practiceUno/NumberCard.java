@@ -52,11 +52,20 @@ public class NumberCard extends Card {
     @Override
     public boolean match(Card c)
     {
-        NumberCard toMatch = (NumberCard)c;
         boolean possible = false; 
-        if(this.GetNumber() == toMatch.GetNumber())
+        
+        if(this.colorMatch(c))
         {
             possible = true;
+        }
+        else if((c.getClass().equals(NumberCard.class)))
+        {
+           
+            NumberCard toMatch = (NumberCard)c;
+            if(this.GetNumber() == toMatch.GetNumber())
+            {
+            possible = true;
+            }
         }
         return possible;
     }

@@ -145,5 +145,28 @@ public class WildCardTest {
         }
         assertEquals(16, newPlayer.TotalCards());
     }
+    
+    @Test
+    public void testMatch()
+    {
+            boolean p = false; 
+            
+            ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
+            System.setIn(in);
+            WildCard instance = new WildCard(WildCard.cardWild.WILD);
+            Card.cardColor result = instance.Wild(new Scanner(System.in));
+            
+            in = new ByteArrayInputStream("RED".getBytes());
+            System.setIn(in);
+            WildCard instance2 = new WildCard(WildCard.cardWild.WILD);
+            Card.cardColor result2 = instance.Wild(new Scanner(System.in));
+            
+            p = instance2.match(instance);
+            //p = instance.match(instance2);
+            assertEquals(false, p);
+            
+        
+    }
+    
     private static final Logger LOG = Logger.getLogger(WildCardTest.class.getName());
 }

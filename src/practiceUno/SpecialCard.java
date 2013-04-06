@@ -162,6 +162,28 @@ public class SpecialCard extends Card implements SpecialActions
         String faceValue = String.format("%s %s", sp.toString(), color.toString()); 
         return faceValue; 
     }
+    
+    @Override
+    public boolean match(Card c)
+    {
+        boolean possible = false;
+        
+        
+        if(this.colorMatch(c))
+        {
+            possible = true; 
+        }
+        else if(c.getClass().equals(SpecialCard.class))
+        {
+           SpecialCard s = (SpecialCard)c;    
+            if (this.GetSpecial().equals(s.GetSpecial()))
+            {
+               possible = true; 
+            }
+        }
+        return possible; 
+    }
+    
    enum cardValues {REVERSE,SKIP,DRTWO}
     
     

@@ -27,11 +27,6 @@ public class Robot extends Player {
     private Card playingCard = null;
     private Stack<Card> wildSet = new Stack<>(); 
 
-    /**
-     *
-     * @param name
-     * @param pos
-     */
     public Robot(String name, int pos)
     {
         super.name = name;
@@ -39,14 +34,7 @@ public class Robot extends Player {
         log.setLevel(Level.WARNING);
     }
 
-    /**
-     * Method description
-     *
-     *
-     * @param dex
-     *
-     * @return
-     */
+    
     @Override
     public Card Discard(int dex)
     {
@@ -70,11 +58,7 @@ public class Robot extends Player {
         hand.remove(c);
     }
 
-    /**
-     *
-     * @param d
-     * @return
-     */
+    
     public boolean PlayAHand(Deck d, ArrayList<Player> p)
     {
         log.entering("Play a hand", name);
@@ -154,14 +138,7 @@ public class Robot extends Player {
         return done;
     }
 
-    /**
-     * Method description
-     *
-     *
-     * @param c
-     *
-     * @return
-     */
+    
     private int Decide(Card c)
     {
         log.entering("Decide", name);
@@ -170,7 +147,6 @@ public class Robot extends Player {
         Card discard = c;  
         String cardName = discard.getClass().getSimpleName();
         
-        ColorOperation(c);
         
         if(playingCard != null)
         {
@@ -229,20 +205,15 @@ public class Robot extends Player {
     }
     
     public void NumberOperation(Card c)
-    {
-        NumberCard n = (NumberCard)c; 
-                     
+    {             
             for(Card inPlay : hand)
             {
-                 if(inPlay.getClass().equals(NumberCard.class))
+                 if(c.match(inPlay))
                  {
-                    NumberCard play = (NumberCard)inPlay;
-                    if(play.GetNumber() == n.GetNumber())
-                    {
                         playingCard = inPlay; 
                         break;
-                    }
-                  }                        
+                 }
+                                         
             }
     }
     
@@ -252,14 +223,11 @@ public class Robot extends Player {
                     
             for(Card inPlay : hand)
             {
-                if(inPlay.getClass().equals(SpecialCard.class))
+                if(c.match(inPlay))
                 {
-                    SpecialCard play = (SpecialCard)inPlay;
-                    if(play.GetSpecial().equals(sp.GetSpecial()))
-                    {
-                        playingCard = inPlay; 
-                        break;
-                    }
+                    playingCard = inPlay; 
+                    break;
+
                 }
                 else
                 {
@@ -271,20 +239,10 @@ public class Robot extends Player {
     public void WildOperation(Card c)
     {
         for(Card inPlay : hand)
-            {
-                    
-            }
-    }
-    
-    public void ColorOperation(Card c)
-    {
-        for(Card inPlay : hand)
         {
-            if(inPlay.colorMatch(c))
-            {
-                playingCard = inPlay; 
-                break;
-            }
+              break;      
         }
     }
+    
+    
 }

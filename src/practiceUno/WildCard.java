@@ -134,6 +134,17 @@ public class WildCard extends Card implements WildActions
 
         return faceValue;
     }
+    
+    @Override
+    public boolean match(Card c)
+    {
+        boolean possible = false;
+        if(this.colorMatch(c))
+        {
+            possible = true; 
+        }
+        return possible; 
+    }
 }
 
 

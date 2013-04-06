@@ -72,6 +72,15 @@ public class CardTest {
         Card.cardColor result = instance.GetColor();
         assertEquals("Checks to see if the color of the card matches", expResult, result);
     }
+    
+    @Test 
+    public void testColorMatch()
+    {
+        Card instance = new CardImpl(); 
+        boolean works = false; 
+        
+        
+    }
 
     /**
      *
@@ -93,6 +102,14 @@ public class CardTest {
             String faceValue = String.format("%s %s", 5, color.toString()); 
             return faceValue; 
         }
+
+        @Override
+        public boolean match(Card c) 
+        {
+           return true;
+        }
+        
+        
     }
     private static final Logger LOG = Logger.getLogger(CardTest.class.getName());
 }

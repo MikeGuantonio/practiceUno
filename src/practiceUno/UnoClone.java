@@ -54,7 +54,7 @@ public class UnoClone {
             {       
                 System.out.println((String.format("%s's turn. %s sees %s", current.GetName(), current.GetName(), deck.TopDiscard().toString())));
                 
-                //uno.Sleep(1_000); 
+                uno.Sleep(1_000); 
                 
                 log.fine(String.format("%s's turn Deck Shows:  %s", current.GetName(), deck.TopDiscard().toString()));
                 
@@ -159,9 +159,9 @@ public class UnoClone {
        
        for (int i = 0; i < numPlayers; i++) 
        {
-           if(i == 0 )
+           /*if(i == 0 )
                players.add(new Human("Job", i));
-           else
+           else*/
                players.add(new Robot("Com"+i, i));   
        }
 

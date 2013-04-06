@@ -201,5 +201,15 @@ public class SpecialCardTest {
         
     }
     
+    @Test
+    public void testMatch()
+    {
+        boolean works = false; 
+        SpecialCard s = new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.BLUE);
+        SpecialCard f = new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.RED);
+        works = s.match(f);
+        assertEquals(true, works);
+    }
+    
     
 }
