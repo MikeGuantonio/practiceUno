@@ -9,6 +9,7 @@ import java.io.ByteArrayInputStream;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static practiceUno.WildCard.cardWild.WILD;
 
 /**
  *
@@ -115,83 +116,31 @@ public class Deck {
         int newpos = pos; 
         Card    discard  = discardDeck.peek();
         String cardName = c.getClass().getSimpleName();
-         
-        switch(cardName)
-        {
-            case "NumberCard" : 
-                                newpos = CheckNumber(discard, c, pos); 
-                                break;
-                
-            case "SpecialCard": 
-                                 newpos = CheckSpecial(discard, c, p, pos);
-                                
-                                 break;
-                
-            case "WildCard": 
-                             canPlace = CheckWild(c, p.get(pos), in);
-                             break;
+        
+        canPlace = c.match(discard);
+        if(canPlace)
+        {    
+            switch(cardName)
+            {
+                case "SpecialCard": SpecialCard sp = (SpecialCard)c;
+                                    newpos = sp.PlaySpecial(p, this, pos);
+                                    break;
+                    
+                case "WildCard":    WildCard wild     = (WildCard) c;
+                                    wild.PlayWild(in, p, this, pos);
+                                    break;
+            }
             
-            default: 
-                     log.fine("The card cannot be placed. ");
-                     break;
-        }
-
-        if (canPlace)
-        {
             discardDeck.push(c);
         }
-        
+        else
+        {
+            log.info("No card can be played.");
+        }
         return newpos;
     }
 
-    private int CheckNumber(Card discard, Card c, int pos)
-    {
-        boolean    canPlace   = false;
-        canPlace = c.match(discard);
-    
-        if(canPlace)
-            discardDeck.push(c);
-        else
-            log.info("No number card can be played");
-        
-        return pos;
-    }
-
-    private int CheckSpecial(Card discard, Card c, ArrayList<Player> players, int pos)
-    {
-        boolean canPlace = false;
-        String cardName = discard.getClass().getSimpleName();
-        int newpos = pos; 
-        
-        canPlace = c.match(discard);
-                
-        if(canPlace)
-        {
-            discardDeck.push(c);
-            newpos = this.SideEffect(c, players, pos);
-        }
-        else
-            log.info("No Special cards can be played.");
-        
-        return newpos;
-    }
-
-    private boolean CheckWild(Card c, Player thisPlayer, Scanner in) 
-    {
-        boolean  canPlace = true;
-        WildCard wild     = (WildCard) c;
-        
-        switch(wild.GetWild())
-        {
-            case WILD : wild.Wild(new Scanner(System.in));
-                        break;
-            
-            case WILDDRFOUR: wild.DrawFour(thisPlayer, this, in); 
-                          break;
-        }
-        return canPlace;
-    }
-
+     
     /**
      *
      * @param deckName
@@ -278,37 +227,5 @@ public class Deck {
         }
     }
 
-
-    /**
-     *
-     * @param c
-     * @param players
-     * @param pos
-     */
-    public int SideEffect(Card c, ArrayList<Player> players, int pos)
-    {
-        
-        int newPos = 0; 
-        if (c.getClass().equals(SpecialCard.class))
-        {
-            SpecialCard special = (SpecialCard) c;
-
-            switch (special.GetSpecial())
-            {
-                case SKIP : newPos = special.Skip(pos, players.size());
-                            break;
-
-                case REVERSE: newPos = special.Reverse(pos, players.size());
-                              break;
-
-                case DRTWO : newPos = special.DrawTwo(this, players, pos);
-                             break;
-
-                default : log.severe("This is not a card with a side effect");
-                          break;
-            }
-        }
-        return newPos; 
-    }
 
 }

@@ -347,21 +347,7 @@ public class DeckTest {
 
     
 
-    /**
-     * Test of SideEffect method, of class Deck.
-     */
-    @Test
-    public void testSideEffect()
-    {
-        SpecialCard special = new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE);
-        ArrayList<Player> players = new ArrayList<>() ;
-        players.add(new Human("Steve", 1));
-        players.add(new Human("John", 1));
-        int pos = 0;
-        Deck instance = new Deck();
-        instance.SideEffect(special, players, pos);       
-    }
-    
+        
     @Test
     public void testSideEffectDrTwo()
     {

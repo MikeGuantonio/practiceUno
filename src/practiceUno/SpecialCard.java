@@ -58,12 +58,24 @@ public class SpecialCard extends Card implements SpecialActions
         return sp; 
     }
     
-    /**
-     *
-     * @param currentPlayerIndex
-     * @param playerSize
-     * @return
-     */
+   public int PlaySpecial(ArrayList<Player> p , Deck d, int pos)
+   {
+       int newPos = pos;
+       
+      switch(this.sp)
+      {
+          case SKIP : newPos = this.Skip(pos, p.size());
+                      break;
+              
+          case REVERSE: newPos = this.Reverse(pos, p.size());
+                        break;
+              
+          case DRTWO : this.DrawTwo(d, p, pos);
+                       break;
+      }
+      return newPos; 
+   }
+   
     @Override
     public int Skip(int currentPlayerIndex, int playerSize)
     {

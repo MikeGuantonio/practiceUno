@@ -7,6 +7,7 @@ package practiceUno;
 
 //~--- JDK imports ------------------------------------------------------------
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -73,13 +74,10 @@ public class WildCard extends Card implements WildActions
         return wild;
     }
 
-    /**
-     *
-     * @param scan
-     * @return
-     */
+    
     @Override
-    public Card.cardColor Wild(Scanner scan) {
+    public Card.cardColor Wild(Scanner scan)
+    {
         log.info("Call for wild called");
 
         Card.cardColor	wildColor = null;
@@ -92,19 +90,25 @@ public class WildCard extends Card implements WildActions
         }
 
         color = wildColor;
-
         return wildColor;
     }
 
-    /**
-     *
-     * @param newPlayer
-     * @param copyDeck
-     * @param scan
-     * @return
-     */
+    public Card.cardColor PlayWild(Scanner scan, ArrayList<Player> p, Deck d, int pos)
+    {
+        switch(this.wild)
+        {
+            case WILD : this.Wild(scan);
+                        break;
+            
+            case WILDDRFOUR : this.DrawFour(p.get(pos), d, scan);
+                               break; 
+        }
+        return this.color;
+    }
+    
     @Override //need to check for edge case 1 -> 0
-    public Card.cardColor DrawFour(Player newPlayer, Deck copyDeck, Scanner scan) {
+    public Card.cardColor DrawFour(Player newPlayer, Deck copyDeck, Scanner scan)
+    {
         Card.cardColor	newColor;
 
         newColor = Wild(scan);
