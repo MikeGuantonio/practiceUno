@@ -59,9 +59,10 @@ public class Human extends Player
     }
       
     @Override  
-    public boolean PlayAHand(Deck d, ArrayList<Player> p)
+    public int PlayAHand(Deck d, ArrayList<Player> p)
     {
         int state = 0; 
+        int pos = 0; 
         boolean done = false;
         boolean drawn = false; 
         String color;
@@ -98,7 +99,7 @@ public class Human extends Player
                                 }
                                 else
                                 {
-                                    d.AddDiscard(c, p, input, this.GetPlayerPos());
+                                    pos = d.AddDiscard(c, p, input, this.GetPlayerPos());
                                     this.hand.remove(c);
                                     state = 5;
                                 }
@@ -127,7 +128,7 @@ public class Human extends Player
                         break;
                     
                 case 4: WildMenu();
-                        d.AddDiscard(c, p, input, this.GetPlayerPos());
+                        pos = d.AddDiscard(c, p, input, this.GetPlayerPos());
                         state = 5; 
                         break;
                     
@@ -137,7 +138,7 @@ public class Human extends Player
                 default: break;
             }
         }
-        return true; 
+        return pos; 
     }
     
     private boolean Match(Card c, Card discard)
