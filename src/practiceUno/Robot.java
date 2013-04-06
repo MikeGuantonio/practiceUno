@@ -145,7 +145,8 @@ public class Robot extends Player {
         log.entering("Decide", name);
 
         int choice;
-        Card discard = c;  
+        Card discard = c;
+        playingCard = null;
         String cardName = discard.getClass().getSimpleName();
         
         this.Match(c);
@@ -194,6 +195,9 @@ public class Robot extends Player {
         {
             if(c.match(inPlay))
             {
+                System.out.println("Matched");
+                System.out.println(c.toString());
+                System.out.println(inPlay.toString());
                 playingCard = inPlay; 
                 break;
             }

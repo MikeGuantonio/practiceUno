@@ -142,7 +142,8 @@ public class WildCard extends Card implements WildActions
     @Override
     public boolean match(Card c)
     {
-        return true; 
+        System.out.println("Entering wild match function.");
+        return super.colorMatch(c);    
     }
 }
 

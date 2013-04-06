@@ -110,27 +110,27 @@ public class Deck {
     }
 
     
-    public int AddDiscard(Card c, ArrayList<Player> p, Scanner in, int pos)
+    public int AddDiscard(Card cardToBePlayed, ArrayList<Player> p, Scanner in, int pos)
     {  
         boolean canPlace = false;
         int newpos = pos; 
         Card    discard  = discardDeck.peek();
-        String cardName = c.getClass().getSimpleName();
+        String cardName = cardToBePlayed.getClass().getSimpleName();
         
-        canPlace = c.match(discard);
+        canPlace = cardToBePlayed.match(discard);
         if(canPlace)
         {    
             switch(cardName)
             {
-                case "SpecialCard": SpecialCard sp = (SpecialCard)c;
+                case "SpecialCard": SpecialCard sp = (SpecialCard)cardToBePlayed;
                                     newpos = sp.PlaySpecial(p, this, pos);
                                     break;
                     
-                case "WildCard":    WildCard wild     = (WildCard) c;
+                case "WildCard":    WildCard wild     = (WildCard) cardToBePlayed;
                                     wild.PlayWild(in, p, this, pos);
                                     break;
             }
-            discardDeck.push(c);
+            discardDeck.push(cardToBePlayed);
         }
         else
         {
