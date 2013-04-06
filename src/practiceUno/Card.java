@@ -11,41 +11,27 @@ package practiceUno;
  */
 abstract class Card {
 
-    /**
-     * Field description
-     */
     protected cardColor color;
-
-    /**
-     * Enum description
-     *
-     */
+  
     enum cardColor {
 
         BLUE, RED, GREEN, YELLOW
     }
-
-    /**
-     * Method description
-     *
-     */
-    abstract void Print();
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
+   
+    abstract void Print();    
     abstract cardColor GetColor();
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
+    
     @Override
     public abstract String toString();
-;
+    public abstract boolean match(); 
+    
+    public boolean colorMatch(Card c)
+    {
+        boolean possible = false; 
+        if(c.GetColor() != null && this.color.equals(c.GetColor()))
+        {
+            possible = true; 
+        }
+        return possible;
+    }
 }

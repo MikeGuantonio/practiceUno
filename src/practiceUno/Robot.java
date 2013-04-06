@@ -39,9 +39,6 @@ public class Robot extends Player {
         log.setLevel(Level.WARNING);
     }
 
-    
-    
-    
     /**
      * Method description
      *
@@ -67,7 +64,7 @@ public class Robot extends Player {
         log.exiting("Discard", name);
         return retC;
     }
-    
+            
     public void Remove(Card c)
     {
         hand.remove(c);
@@ -173,21 +170,25 @@ public class Robot extends Player {
         Card discard = c;  
         String cardName = discard.getClass().getSimpleName();
         
-        switch(cardName)
-        {
-            case "NumberCard": NumberOperation(c);
-                               break;
-                
-            case "SpecialCard": SpecialOperation(c); 
-                                break;
-                
-            case "WildCard": WildOperation(c);
-                             break;
-                
-            default: log.severe("This is not a card!");
-                     break;
-        }
+        ColorOperation(c);
         
+        if(playingCard != null)
+        {
+                switch(cardName)
+                {
+                    case "NumberCard": NumberOperation(c);
+                                       break;
+
+                    case "SpecialCard": SpecialOperation(c); 
+                                        break;
+
+                    case "WildCard": WildOperation(c);
+                                     break;
+
+                    default: log.severe("This is not a card!");
+                             break;
+                }
+        } 
         
         if(playingCard == null )
             PlayAWild(); 
@@ -216,8 +217,7 @@ public class Robot extends Player {
         }
     }
     
-    //May just remove the idea of having a wild deck. No real reason as I can 
-    //just loop through my hand in order to set things up.
+   
     private void PlayAWild()
     { 
         MakeWildDeck(); 
@@ -234,12 +234,7 @@ public class Robot extends Player {
                      
             for(Card inPlay : hand)
             {
-                 if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(c.GetColor()))
-                 {
-                    playingCard = inPlay; 
-                    break;
-                 }
-                 else if(inPlay.getClass().equals(NumberCard.class))
+                 if(inPlay.getClass().equals(NumberCard.class))
                  {
                     NumberCard play = (NumberCard)inPlay;
                     if(play.GetNumber() == n.GetNumber())
@@ -257,13 +252,7 @@ public class Robot extends Player {
                     
             for(Card inPlay : hand)
             {
-                if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(c.GetColor()))
-                {
-                    System.out.println("Crazyness");
-                    playingCard = inPlay; 
-                    break;
-                }
-                else if(inPlay.getClass().equals(SpecialCard.class))
+                if(inPlay.getClass().equals(SpecialCard.class))
                 {
                     SpecialCard play = (SpecialCard)inPlay;
                     if(play.GetSpecial().equals(sp.GetSpecial()))
@@ -283,11 +272,19 @@ public class Robot extends Player {
     {
         for(Card inPlay : hand)
             {
-                    if(!inPlay.getClass().equals(WildCard.class) && inPlay.GetColor().equals(c.GetColor()))
-                    {
-                        playingCard = inPlay; 
-                        break;
-                    }
+                    
             }
+    }
+    
+    public void ColorOperation(Card c)
+    {
+        for(Card inPlay : hand)
+        {
+            if(inPlay.colorMatch(c))
+            {
+                playingCard = inPlay; 
+                break;
+            }
+        }
     }
 }

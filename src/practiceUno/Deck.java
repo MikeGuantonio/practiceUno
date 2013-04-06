@@ -120,6 +120,8 @@ public class Deck {
             System.out.println("");
         }
     }
+    
+    
     /**
      *
      * @param c
@@ -174,8 +176,7 @@ public class Deck {
         switch(cardName)
         {
             case "NumberCard":  NumberCard topCard = (NumberCard) discard;
-
-                                if (cardToPlay.GetColor().equals(topCard.GetColor())) 
+                                if(cardToPlay.colorMatch(topCard))
                                 {
                                     canPlace = true;
                                 }
@@ -190,7 +191,7 @@ public class Deck {
                                 }
                                 break;
             
-            case "SpecialCard": if (cardToPlay.GetColor().equals(discard.GetColor())) 
+            case "SpecialCard": if (cardToPlay.colorMatch(discard) )
                                 {
                                     canPlace = true;
                                 }
@@ -201,7 +202,7 @@ public class Deck {
                                 } 
                                 break;
             
-            case "WildCard":    if (cardToPlay.GetColor().equals(discard.GetColor())) 
+            case "WildCard":    if (cardToPlay.colorMatch(discard)) 
                                 {
                                     canPlace = true;
                                 }
@@ -230,7 +231,7 @@ public class Deck {
         
         switch(cardName)
         {
-            case "SpecialCard" : if (c.GetColor().equals(discard.GetColor()))
+            case "SpecialCard" :if (c.colorMatch(discard))
                                 {
                                     canPlace = true;
                                     newpos = this.SideEffect(c, players, pos);
@@ -248,7 +249,7 @@ public class Deck {
                                 }
                                 break;
                 
-            case "NumberCard": if (c.GetColor().equals(discard.GetColor())) 
+            case "NumberCard": if (c.colorMatch(discard)) 
                                 {
                                     canPlace = true;
                                     newpos = this.SideEffect(c, players, pos);
@@ -256,7 +257,7 @@ public class Deck {
                                 } 
                                 break;
                 
-            case "WildCard":    if (c.GetColor().equals(discard.GetColor())) 
+            case "WildCard":    if (c.colorMatch(discard)) 
                                 {
                                     canPlace = true;
                                     newpos = this.SideEffect(c, players, pos);

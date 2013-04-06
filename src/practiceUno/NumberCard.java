@@ -14,13 +14,7 @@ import java.util.logging.Logger;
 public class NumberCard extends Card {
     private static final Logger log = Logger.getLogger(NumberCard.class.getName());
     private int face;
-    //static private FileHandler logText;
     
-    /**
-     *
-     * @param newNum
-     * @param color
-     */
     public NumberCard(int newNum, Card.cardColor color)
     {
         face = newNum; 
@@ -28,20 +22,12 @@ public class NumberCard extends Card {
         log.setLevel(Level.SEVERE);
     }
      
-             
-    /**
-     *
-     * @return
-     */
     public int GetNumber()
     {
         return face; 
     }
     
-    /**
-     *
-     * @return
-     */
+    
     @Override
     public Card.cardColor GetColor()
     {
@@ -49,9 +35,6 @@ public class NumberCard extends Card {
     }
     
     
-    /**
-     *
-     */
     @Override
     public void Print()
     {

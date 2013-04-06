@@ -83,6 +83,7 @@ public class Human extends Player
                         else
                         {
                             d.AddDiscard(this.Discard(card), p, input, this.GetPlayerPos());
+                            this.hand.remove(this.Discard(card));
                             state = 5;
                         }
                         break;
