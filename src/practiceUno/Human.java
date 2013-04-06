@@ -5,6 +5,7 @@
 package practiceUno;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,6 +45,7 @@ public class Human extends Player
             System.out.println(String.format("[%s]: %s", i, hand.get(i).toString()));
         }
     }
+    
     //Change discard to take a card and just find the card. 
     @Override
     public Card Discard(int dex)
@@ -66,7 +68,8 @@ public class Human extends Player
     {
         int state = 0; 
         boolean done = false;
-         
+        String color;
+        Card c = null;
         
         while(!done)
         {
@@ -82,13 +85,28 @@ public class Human extends Player
                             state = 2; 
                         else
                         {
-                            d.AddDiscard(this.Discard(card), p, input, this.GetPlayerPos());
-                            this.hand.remove(this.Discard(card));
-                            state = 5;
+                            c = this.Discard(card);
+                            System.out.println("You choose " + c.toString());
+                            if(c == null)
+                            {
+                               ReplayMenu(); 
+                               state = 1;
+                            }
+                            else if(c.getClass().equals(WildCard.class))
+                            {
+                                state = 4;
+                            }
+                            else
+                            {
+                                d.AddDiscard(c, p, input, this.GetPlayerPos());
+                                this.hand.remove(c);
+                                state = 5;
+                            }
+                            
                         }
                         break;
                     
-                case 2: Card c = d.DrawNext();
+                case 2: c = d.DrawNext();
                         this.GetCard(c);
                         System.out.println("You got " + c.toString());
                         DrawMenu();
@@ -99,14 +117,32 @@ public class Human extends Player
                         state = 5; 
                         break;
                     
-                case 4: break;
+                case 4: WildMenu();
+                        d.AddDiscard(c, p, input, this.GetPlayerPos());
+                        state = 5; 
+                        break;
                     
                 case 5: done = true;
                         break;
+                    
                 default: break;
             }
         }
         return true; 
+    }
+    
+    private void ReplayMenu()
+    {
+        System.out.println("That is not a card"); 
+        System.out.println("Please choose a real card");
+        System.out.println("Or pass.");
+    }
+    
+    private String GetPlayerChoiceStr()
+    {
+        String resp; 
+        resp = input.nextLine().toUpperCase();
+        return resp; 
     }
     
     private int GetPlayerChoice()
@@ -115,6 +151,15 @@ public class Human extends Player
         choice = input.nextInt(); 
         return choice;
     }
+    
+    private void WildMenu()
+    {
+        System.out.println("Please choose a color");
+        System.out.println("Red");
+        System.out.println("Green");
+        System.out.println("Blue");
+        System.out.println("Yellow");
+    }        
     
     private void DrawMenu()
     {

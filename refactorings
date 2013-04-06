@@ -14,5 +14,6 @@ TODO:
 8. Should check to see if the card is being removed from the hand. If not implement a Remove(Card c) function at the player level. 
 9. Fix the way draw two works
 10. Fix the way skip works when players is equal to two.
-11. Deck needs a quick check function to see if a move is possible...
+11. Deck needs a quick check function to see if a move is possible... X
 12. WildFour needs to have the proper player draw four...
+13. Find a way to have addDiscard return a boolean if possible. and a new position.

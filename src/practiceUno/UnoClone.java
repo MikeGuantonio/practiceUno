@@ -126,7 +126,10 @@ public class UnoClone {
         
         for(Player c : p)
         {
-            System.out.println(String.format("%s : %s", c.GetName(), c.TotalCards())); 
+            System.out.print(String.format("%s : %s", c.GetName(), c.TotalCards())); 
+            if(c.Uno())
+                System.out.print(" UNO");
+            System.out.println("");
         }
         System.out.println("");
     }
@@ -159,9 +162,9 @@ public class UnoClone {
        
        for (int i = 0; i < numPlayers; i++) 
        {
-           /*if(i == 0 )
+           if(i == 0 )
                players.add(new Human("Job", i));
-           else*/
+           else
                players.add(new Robot("Com"+i, i));   
        }
 
@@ -196,107 +199,6 @@ public class UnoClone {
         return pos; 
         
     }
-    
-    /**
-     *
-     * @param p
-     * @param d
-     * @param playerPos
-     * @return
-     */
-    public boolean PlayerTurn(ArrayList<Player> p, Deck d, int playerPos)
-    {
-        log.entering("Player Turn", null);
-        
-        boolean turnStatus = false; 
-        Player tmp = p.get(playerPos);
-        
-        if(tmp.getClass().equals(Human.class))
-        {
-            //int choice = Menu(p, d, playerPos);
-        }
-            
-            if(!turnStatus){
-               DrawAndPlay(p, d, playerPos);
-               turnStatus = true; 
-            }
-            log.exiting("Player Turn", null);
-            return turnStatus; 
-    }
-    
-    /**
-     *
-     * @param p
-     * @param d
-     * @param currentPlayer
-     * @return  
-     */
-    public boolean Play(ArrayList<Player> p, Deck d, int currentPlayer)
-    {
-        log.entering("Play", null);
-        boolean done = false; 
-        Player tmp = p.get(currentPlayer);
-        
-            Human h = (Human)tmp; 
-            d.ShowDiscard();
-            h.ShowHand(); 
-        
-            //Card c = p.get(currentPlayer).Discard(input.nextInt());
-        
-        log.exiting("Play", null);
-        return done; 
-    }
-    
-    
-    /**
-     *
-     * @param p
-     * @param d
-     * @param playerPos  
-     */
-    public void DrawAndPlay(ArrayList<Player> p, Deck d, int playerPos)
-    {
-        log.entering("Draw and Play", null);
- 
-        Player tmp = p.get(playerPos);
-        
-        if(tmp.getClass().equals(Human.class))
-        {
-            p.get(playerPos).GetCard(d.DrawNext());
-            p.get(playerPos).ShowHand();
-            d.ShowDiscard();
-            //int choice = input.nextInt();
-        }
-        log.exiting("Draw and Play", null);
-        
-    }
-    
-    /**
-     *
-     * @param p
-     * @param d
-     * @return  
-     */
-    public boolean Skip(Player p, Deck d)
-    { 
-        log.entering("Skip -- Needs removed", null);
-        return true;
-    }
-    
-    /**
-     *
-     * @param prompt
-     * @return
-     */
-    public String GetInput(String prompt)
-    {
-        log.entering("GetInput", prompt);
-        String output = input.nextLine();
-        log.exiting("Get Input", output);
-        return output; 
-    }
-    
-    
     
 }
 

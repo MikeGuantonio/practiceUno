@@ -147,25 +147,8 @@ public class Robot extends Player {
         Card discard = c;  
         String cardName = discard.getClass().getSimpleName();
         
-        
-        if(playingCard != null)
-        {
-                switch(cardName)
-                {
-                    case "NumberCard": NumberOperation(c);
-                                       break;
-
-                    case "SpecialCard": SpecialOperation(c); 
-                                        break;
-
-                    case "WildCard": WildOperation(c);
-                                     break;
-
-                    default: log.severe("This is not a card!");
-                             break;
-                }
-        } 
-        
+        this.Match(c);
+                
         if(playingCard == null )
             PlayAWild(); 
                 
@@ -204,45 +187,19 @@ public class Robot extends Player {
         wildSet.clear();
     }
     
-    public void NumberOperation(Card c)
-    {             
-            for(Card inPlay : hand)
-            {
-                 if(c.match(inPlay))
-                 {
-                        playingCard = inPlay; 
-                        break;
-                 }
-                                         
-            }
-    }
-    
-    public void SpecialOperation(Card c)
-    {
-        SpecialCard sp = (SpecialCard)c; 
-                    
-            for(Card inPlay : hand)
-            {
-                if(c.match(inPlay))
-                {
-                    playingCard = inPlay; 
-                    break;
-
-                }
-                else
-                {
-                            log.fine("No special match");
-                }
-            }
-    }
-    
-    public void WildOperation(Card c)
+    public void Match(Card c)
     {
         for(Card inPlay : hand)
         {
-              break;      
+            if(c.match(inPlay))
+            {
+                playingCard = inPlay; 
+                break;
+            }
         }
     }
+    
+    
     
     
 }

@@ -130,7 +130,6 @@ public class Deck {
                                     wild.PlayWild(in, p, this, pos);
                                     break;
             }
-            
             discardDeck.push(c);
         }
         else

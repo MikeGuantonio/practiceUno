@@ -142,12 +142,7 @@ public class WildCard extends Card implements WildActions
     @Override
     public boolean match(Card c)
     {
-        boolean possible = false;
-        if(this.colorMatch(c))
-        {
-            possible = true; 
-        }
-        return possible; 
+        return true; 
     }
 }
 
