@@ -59,12 +59,13 @@ public class Robot extends Player {
     }
 
     
-    public boolean PlayAHand(Deck d, ArrayList<Player> p)
+    public int PlayAHand(Deck d, ArrayList<Player> p)
     {
         log.entering("Play a hand", name);
 
         boolean done = false;
         boolean tried = false;
+        int pos = 0; 
 
         log.fine("Trying to decide");
 
@@ -135,7 +136,7 @@ public class Robot extends Player {
         }
 
         log.exiting("Play a Hand", name);
-        return done;
+        return pos;
     }
 
     

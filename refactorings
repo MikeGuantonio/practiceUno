@@ -20,3 +20,4 @@ TODO:
 14. Deck.java uses unsafe operations. Find these and fix them. 
 15. Fix the call for wild in player. This is skipped for some reason. 
 16. Only allow one draw per turn in player. X
+17. Convert to iterator pattern if possible. Especially for card.hand.size --> card.HasNext.

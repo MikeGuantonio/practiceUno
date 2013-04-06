@@ -31,7 +31,6 @@ public class UnoClone {
         SetUpLogger("testScripts/unoClone.xml"); 
         
         int pos = 0; 
-        boolean endTurn = false; 
         boolean endGame = false; 
         
         log.config("Creating players, deck"); 
@@ -50,15 +49,16 @@ public class UnoClone {
         do
         {
         
-            for (Player current : players)
-            {       
+            for (int i = 0; i < players.size(); i++)
+            {    
+                Player current = players.get(pos);
                 System.out.println((String.format("%s's turn. %s sees %s", current.GetName(), current.GetName(), deck.TopDiscard().toString())));
                 
                 uno.Sleep(1_000); 
                 
                 log.fine(String.format("%s's turn Deck Shows:  %s", current.GetName(), deck.TopDiscard().toString()));
                 
-                endTurn = current.PlayAHand(deck, players); //since we are dealing with a sm now return int position of next player.
+                pos = current.PlayAHand(deck, players); 
                 endGame = uno.CheckForEndGame(current);
                 
                 if(endGame)

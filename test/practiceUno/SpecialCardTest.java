@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import java.util.ArrayList; 
+import java.util.Iterator;
 import static org.junit.Assert.*;
 
 /**
@@ -209,6 +210,37 @@ public class SpecialCardTest {
         SpecialCard f = new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.RED);
         works = s.match(f);
         assertEquals(true, works);
+    }
+    
+    @Test 
+    public void testSkipWithTwo()
+    {
+        System.out.println("Test skip with two.");
+        ArrayList<Player> p = new ArrayList<>(); 
+        Deck d = new Deck(); 
+        d.puppetSetupDiscard(new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.RED));
+        
+        for (int i = 0; i < 2; i++) {
+            p.add(new Robot(("Steve"+i), i));
+        }
+        
+        for (int k = 0; k < 2; k++) {
+            p.get(k).GetCard(new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.BLUE));
+        }
+        
+        int pos = 0; 
+        Card c = null;
+        
+        for(int i = 0; i < 3; i++)
+        {
+           System.out.println("Card " + p.get(pos).TotalCards());
+           System.out.println("Start pos " + pos);
+           c = p.get(pos).Discard(0); 
+           pos =  d.AddDiscard(c, p, null, pos);
+           System.out.println("End Pos "+ pos);
+           System.out.println("Card Played " + p.get(pos).GetName() + " " + c.toString());
+        }
+        
     }
     
     

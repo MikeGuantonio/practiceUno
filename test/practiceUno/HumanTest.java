@@ -17,6 +17,8 @@ import org.junit.Test;
  */
 public class HumanTest {
     
+    
+   
     /**
      *
      */
@@ -69,5 +71,6 @@ public class HumanTest {
         h.PlayAHand(d, null);
     }
     
+     
     private static final Logger LOG = Logger.getLogger(HumanTest.class.getName());
 }

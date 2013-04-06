@@ -12,7 +12,7 @@ abstract class Player
     protected String name; 
     protected int playerPos; 
     
-    abstract boolean PlayAHand(Deck d, ArrayList<Player> p); 
+    abstract int PlayAHand(Deck d, ArrayList<Player> p); 
     abstract Card Discard(int dex);
     
     public int FindCard(Card c)
