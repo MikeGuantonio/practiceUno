@@ -499,13 +499,13 @@ public class DeckTest {
             {
                 if(c.match(k))
                 {
-                    System.out.println("Match " + c.toString() +  " " + k.toString() );
+                    System.out.println(String.format("Match %s %s", c.toString(), k.toString()));
                     max++;
                 }
                 
             }
         }
-        System.out.println("max "+ max);
+        System.out.println(String.format("max %s", max));
         //assertNotNull(null);
             
         

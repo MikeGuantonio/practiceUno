@@ -85,10 +85,7 @@ public class Deck {
         }
     }
 
-    /**
-     *
-     * @return
-     */
+    
     public Card DrawNext()
     {
         Card c = null;
@@ -111,22 +108,9 @@ public class Deck {
         return c;
     }
 
-    public class thisthing
-    {
-        int foo; 
-        
-        public void Print()
-        {
-            System.out.println("");
-        }
-    }
-    
     
     public int AddDiscard(Card c, ArrayList<Player> p, Scanner in, int pos)
-    {
-        thisthing t = new thisthing(); 
-        //t.Print();
-       
+    {  
         boolean canPlace = false;
         int newpos = pos; 
         Card    discard  = discardDeck.peek();
@@ -165,8 +149,9 @@ public class Deck {
         boolean    canPlace   = false;
         NumberCard cardToPlay = (NumberCard) c;
         String cardName = discard.getClass().getSimpleName();
-        
-        switch(cardName)
+     
+        canPlace = c.match(discard);
+        /*switch(cardName)
         {
             case "NumberCard":  if(c.match(discard))
                                 {
@@ -204,9 +189,11 @@ public class Deck {
             default: log.fine("No number can be played. ");
                      break;
         }
-        
+        */
         if(canPlace)
             discardDeck.push(c);
+        else
+            log.info("No number card can be played");
         
         return pos;
     }
