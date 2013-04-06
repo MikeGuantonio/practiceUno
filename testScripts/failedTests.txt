@@ -1,0 +1,8 @@
+    [junit] Test practiceUno.HumanTest FAILED
+    [junit] Test practiceUno.SpecialCardTest FAILED
+    [junit] Test practiceUno.WildCardTest FAILED
+
+BUILD FAILED
+/home/mike/langsToLearn/java/projects/UnoClone/nbproject/build-impl.xml:1320: Some tests failed; see details above.
+
+Total time: 14 seconds

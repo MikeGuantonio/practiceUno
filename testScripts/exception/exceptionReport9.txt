@@ -1,0 +1,6 @@
+Exception in thread "main" java.lang.NullPointerException
+	at practiceUno.Robot.MakeWildDeck(Robot.java:189)
+	at practiceUno.Robot.PlayAWild(Robot.java:199)
+	at practiceUno.Robot.Decide(Robot.java:170)
+	at practiceUno.Robot.PlayAHand(Robot.java:101)
+	at practiceUno.UnoClone.main(UnoClone.java:61)

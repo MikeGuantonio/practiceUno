@@ -1,0 +1,3821 @@
+Buildfile: /home/mike/langsToLearn/java/projects/UnoClone/build.xml
+
+-pre-init:
+
+-init-private:
+
+-init-user:
+
+-init-project:
+
+-init-macrodef-property:
+
+-do-init:
+
+-post-init:
+
+-init-check:
+
+-init-ap-cmdline-properties:
+
+-init-macrodef-javac-with-processors:
+
+-init-macrodef-javac-without-processors:
+
+-init-macrodef-javac:
+
+-init-macrodef-test-impl:
+
+-init-macrodef-junit-init:
+
+-init-macrodef-junit-single:
+
+-init-test-properties:
+
+-init-macrodef-junit-batch:
+
+-init-macrodef-junit:
+
+-init-macrodef-junit-impl:
+Trying to override old definition of task http://www.netbeans.org/ns/j2se-project/3:test-impl
+
+-init-macrodef-testng:
+
+-init-macrodef-testng-impl:
+
+-init-macrodef-test:
+
+-init-macrodef-junit-debug:
+
+-init-macrodef-junit-debug-batch:
+
+-init-macrodef-junit-debug-impl:
+
+-init-macrodef-test-debug-junit:
+
+-init-macrodef-testng-debug:
+
+-init-macrodef-testng-debug-impl:
+
+-init-macrodef-test-debug-testng:
+
+-init-macrodef-test-debug:
+
+-init-debug-args:
+
+-init-macrodef-nbjpda:
+
+-init-macrodef-debug:
+
+-init-macrodef-java:
+
+-init-presetdef-jar:
+
+-init-ap-cmdline-supported:
+
+-init-ap-cmdline:
+
+init:
+
+-deps-jar-init:
+   [delete] Deleting: /home/mike/langsToLearn/java/projects/UnoClone/build/built-jar.properties
+
+deps-jar:
+
+-warn-already-built-jar:
+[propertyfile] Updating property file: /home/mike/langsToLearn/java/projects/UnoClone/build/built-jar.properties
+
+-check-automatic-build:
+
+-clean-after-automatic-build:
+
+-pre-init:
+
+-init-private:
+
+-init-user:
+
+-init-project:
+
+-init-macrodef-property:
+
+-do-init:
+
+-post-init:
+
+-init-check:
+
+-init-ap-cmdline-properties:
+
+-init-macrodef-javac-with-processors:
+
+-init-macrodef-javac-without-processors:
+
+-init-macrodef-javac:
+
+-init-macrodef-test-impl:
+Trying to override old definition of task http://www.netbeans.org/ns/j2se-project/3:test-impl
+
+-init-macrodef-junit-init:
+
+-init-macrodef-junit-single:
+
+-init-test-properties:
+
+-init-macrodef-junit-batch:
+
+-init-macrodef-junit:
+
+-init-macrodef-junit-impl:
+Trying to override old definition of task http://www.netbeans.org/ns/j2se-project/3:test-impl
+
+-init-macrodef-testng:
+
+-init-macrodef-testng-impl:
+
+-init-macrodef-test:
+
+-init-macrodef-junit-debug:
+
+-init-macrodef-junit-debug-batch:
+
+-init-macrodef-junit-debug-impl:
+
+-init-macrodef-test-debug-junit:
+
+-init-macrodef-testng-debug:
+
+-init-macrodef-testng-debug-impl:
+
+-init-macrodef-test-debug-testng:
+
+-init-macrodef-test-debug:
+
+-init-debug-args:
+
+-init-macrodef-nbjpda:
+
+-init-macrodef-debug:
+
+-init-macrodef-java:
+
+-init-presetdef-jar:
+
+-init-ap-cmdline-supported:
+
+-init-ap-cmdline:
+
+init:
+
+-deps-clean-init:
+
+deps-clean:
+
+-warn-already-built-clean:
+[propertyfile] Updating property file: /home/mike/langsToLearn/java/projects/UnoClone/build/built-clean.properties
+
+-do-clean:
+   [delete] Deleting directory /home/mike/langsToLearn/java/projects/UnoClone/build
+
+-post-clean:
+
+clean:
+
+-verify-automatic-build:
+
+-pre-pre-compile:
+    [mkdir] Created dir: /home/mike/langsToLearn/java/projects/UnoClone/build/classes
+
+-pre-compile:
+
+-copy-persistence-xml:
+
+-compile-depend:
+
+-do-compile:
+    [mkdir] Created dir: /home/mike/langsToLearn/java/projects/UnoClone/build/empty
+    [mkdir] Created dir: /home/mike/langsToLearn/java/projects/UnoClone/build/generated-sources/ap-source-output
+    [javac] Compiling 11 source files to /home/mike/langsToLearn/java/projects/UnoClone/build/classes
+    [javac] Note: /home/mike/langsToLearn/java/projects/UnoClone/src/practiceUno/Deck.java uses unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+     [copy] Copying 1 file to /home/mike/langsToLearn/java/projects/UnoClone/build/classes
+
+-post-compile:
+
+compile:
+
+-pre-pre-compile-test:
+    [mkdir] Created dir: /home/mike/langsToLearn/java/projects/UnoClone/build/test/classes
+
+-pre-compile-test:
+
+-compile-test-depend:
+
+-do-compile-test:
+    [javac] Compiling 8 source files to /home/mike/langsToLearn/java/projects/UnoClone/build/test/classes
+
+-post-compile-test:
+
+compile-test:
+
+-pre-test-run:
+    [mkdir] Created dir: /home/mike/langsToLearn/java/projects/UnoClone/build/test/results
+
+-do-test-run:
+    [junit] Testsuite: practiceUno.CardTest
+    [junit] Tests run: 3, Failures: 0, Errors: 0, Time elapsed: 0.105 sec
+    [junit] 
+    [junit] Testsuite: practiceUno.DeckTest
+    [junit] Adding: 5 BLUE
+    [junit] 0 BLUE
+    [junit] 1 BLUE
+    [junit] 2 BLUE
+    [junit] 3 BLUE
+    [junit] 4 BLUE
+    [junit] 5 BLUE
+    [junit] 6 BLUE
+    [junit] 7 BLUE
+    [junit] 8 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 YELLOW
+    [junit] Adding: DRTWO YELLOW
+    [junit] 5 YELLOW
+    [junit] Adding: WILD
+    [junit] WILD RED
+    [junit] 9 RED
+    [junit] 9 GREEN
+    [junit] 9 YELLOW
+    [junit] Adding: 7 GREEN
+    [junit] 7 GREEN
+    [junit] 7 GREEN
+    [junit] Adding: WILD
+    [junit] WILD YELLOW
+    [junit] WILD YELLOW
+    [junit] WILD YELLOW
+    [junit] Adding: REVERSE RED
+    [junit] Adding: DRTWO YELLOW
+    [junit] WILD YELLOW
+    [junit] Adding: 9 BLUE
+    [junit] 9 BLUE
+    [junit] WILD YELLOW
+    [junit] Adding: WILD
+    [junit] WILD YELLOW
+    [junit] WILDDRFOUR YELLOW
+    [junit] WILDDRFOUR RED
+    [junit] 0 BLUE
+    [junit] 1 BLUE
+    [junit] 1 BLUE
+    [junit] 2 BLUE
+    [junit] 2 BLUE
+    [junit] 3 BLUE
+    [junit] 3 BLUE
+    [junit] 4 BLUE
+    [junit] 4 BLUE
+    [junit] 5 BLUE
+    [junit] 5 BLUE
+    [junit] 6 BLUE
+    [junit] 6 BLUE
+    [junit] 7 BLUE
+    [junit] 7 BLUE
+    [junit] 8 BLUE
+    [junit] 8 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 0 RED
+    [junit] 1 RED
+    [junit] 1 RED
+    [junit] 2 RED
+    [junit] 2 RED
+    [junit] 3 RED
+    [junit] 3 RED
+    [junit] 4 RED
+    [junit] 4 RED
+    [junit] 5 RED
+    [junit] 5 RED
+    [junit] 6 RED
+    [junit] 6 RED
+    [junit] 7 RED
+    [junit] 7 RED
+    [junit] 8 RED
+    [junit] 8 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 0 GREEN
+    [junit] 1 GREEN
+    [junit] 1 GREEN
+    [junit] 2 GREEN
+    [junit] 2 GREEN
+    [junit] 3 GREEN
+    [junit] 3 GREEN
+    [junit] 4 GREEN
+    [junit] 4 GREEN
+    [junit] 5 GREEN
+    [junit] 5 GREEN
+    [junit] 6 GREEN
+    [junit] 6 GREEN
+    [junit] 7 GREEN
+    [junit] 7 GREEN
+    [junit] 8 GREEN
+    [junit] 8 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 0 YELLOW
+    [junit] 1 YELLOW
+    [junit] 1 YELLOW
+    [junit] 2 YELLOW
+    [junit] 2 YELLOW
+    [junit] 3 YELLOW
+    [junit] 3 YELLOW
+    [junit] 4 YELLOW
+    [junit] 4 YELLOW
+    [junit] 5 YELLOW
+    [junit] 5 YELLOW
+    [junit] 6 YELLOW
+    [junit] 6 YELLOW
+    [junit] 7 YELLOW
+    [junit] 7 YELLOW
+    [junit] 8 YELLOW
+    [junit] 8 YELLOW
+    [junit] 9 YELLOW
+    [junit] 9 YELLOW
+    [junit] WILD
+    [junit] WILD
+    [junit] WILD
+    [junit] WILD
+    [junit] WILDDRFOUR
+    [junit] WILDDRFOUR
+    [junit] WILDDRFOUR
+    [junit] WILDDRFOUR
+    [junit] Adding: 5 BLUE
+    [junit] DRTWO BLUE
+    [junit] First: 0
+    [junit] Second: 2
+    [junit] SideEffect Reverse
+    [junit] Adding: 5 RED
+    [junit] Assiming that the last player was the last palyer in list.
+    [junit] Adding: 5 RED
+    [junit] Last player to the second
+    [junit] Adding: 5 YELLOW
+    [junit] Adding: 5 YELLOW
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 0 YELLOW
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 8 GREEN
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 0 YELLOW
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 8 GREEN
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 0 YELLOW
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 8 GREEN
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 0 YELLOW
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 8 GREEN
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 0 YELLOW
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 8 GREEN
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 0 YELLOW
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 8 GREEN
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 0 YELLOW
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 8 GREEN
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 0 YELLOW
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 8 GREEN
+    [junit] Match DRTWO YELLOW DRTWO YELLOW
+    [junit] Match DRTWO YELLOW DRTWO YELLOW
+    [junit] Match DRTWO YELLOW DRTWO GREEN
+    [junit] Match DRTWO YELLOW DRTWO GREEN
+    [junit] Match DRTWO YELLOW DRTWO RED
+    [junit] Match DRTWO YELLOW DRTWO RED
+    [junit] Match DRTWO YELLOW DRTWO BLUE
+    [junit] Match DRTWO YELLOW DRTWO BLUE
+    [junit] Match DRTWO YELLOW SKIP YELLOW
+    [junit] Match DRTWO YELLOW SKIP YELLOW
+    [junit] Match DRTWO YELLOW REVERSE YELLOW
+    [junit] Match DRTWO YELLOW REVERSE YELLOW
+    [junit] Match DRTWO YELLOW 9 YELLOW
+    [junit] Match DRTWO YELLOW 9 YELLOW
+    [junit] Match DRTWO YELLOW 8 YELLOW
+    [junit] Match DRTWO YELLOW 8 YELLOW
+    [junit] Match DRTWO YELLOW 7 YELLOW
+    [junit] Match DRTWO YELLOW 7 YELLOW
+    [junit] Match DRTWO YELLOW 6 YELLOW
+    [junit] Match DRTWO YELLOW 6 YELLOW
+    [junit] Match DRTWO YELLOW 5 YELLOW
+    [junit] Match DRTWO YELLOW 5 YELLOW
+    [junit] Match DRTWO YELLOW 4 YELLOW
+    [junit] Match DRTWO YELLOW 4 YELLOW
+    [junit] Match DRTWO YELLOW 3 YELLOW
+    [junit] Match DRTWO YELLOW 3 YELLOW
+    [junit] Match DRTWO YELLOW 2 YELLOW
+    [junit] Match DRTWO YELLOW 2 YELLOW
+    [junit] Match DRTWO YELLOW 1 YELLOW
+    [junit] Match DRTWO YELLOW 1 YELLOW
+    [junit] Match DRTWO YELLOW 0 YELLOW
+    [junit] Match DRTWO YELLOW DRTWO YELLOW
+    [junit] Match DRTWO YELLOW DRTWO YELLOW
+    [junit] Match DRTWO YELLOW DRTWO GREEN
+    [junit] Match DRTWO YELLOW DRTWO GREEN
+    [junit] Match DRTWO YELLOW DRTWO RED
+    [junit] Match DRTWO YELLOW DRTWO RED
+    [junit] Match DRTWO YELLOW DRTWO BLUE
+    [junit] Match DRTWO YELLOW DRTWO BLUE
+    [junit] Match DRTWO YELLOW SKIP YELLOW
+    [junit] Match DRTWO YELLOW SKIP YELLOW
+    [junit] Match DRTWO YELLOW REVERSE YELLOW
+    [junit] Match DRTWO YELLOW REVERSE YELLOW
+    [junit] Match DRTWO YELLOW 9 YELLOW
+    [junit] Match DRTWO YELLOW 9 YELLOW
+    [junit] Match DRTWO YELLOW 8 YELLOW
+    [junit] Match DRTWO YELLOW 8 YELLOW
+    [junit] Match DRTWO YELLOW 7 YELLOW
+    [junit] Match DRTWO YELLOW 7 YELLOW
+    [junit] Match DRTWO YELLOW 6 YELLOW
+    [junit] Match DRTWO YELLOW 6 YELLOW
+    [junit] Match DRTWO YELLOW 5 YELLOW
+    [junit] Match DRTWO YELLOW 5 YELLOW
+    [junit] Match DRTWO YELLOW 4 YELLOW
+    [junit] Match DRTWO YELLOW 4 YELLOW
+    [junit] Match DRTWO YELLOW 3 YELLOW
+    [junit] Match DRTWO YELLOW 3 YELLOW
+    [junit] Match DRTWO YELLOW 2 YELLOW
+    [junit] Match DRTWO YELLOW 2 YELLOW
+    [junit] Match DRTWO YELLOW 1 YELLOW
+    [junit] Match DRTWO YELLOW 1 YELLOW
+    [junit] Match DRTWO YELLOW 0 YELLOW
+    [junit] Match DRTWO GREEN DRTWO YELLOW
+    [junit] Match DRTWO GREEN DRTWO YELLOW
+    [junit] Match DRTWO GREEN DRTWO GREEN
+    [junit] Match DRTWO GREEN DRTWO GREEN
+    [junit] Match DRTWO GREEN DRTWO RED
+    [junit] Match DRTWO GREEN DRTWO RED
+    [junit] Match DRTWO GREEN DRTWO BLUE
+    [junit] Match DRTWO GREEN DRTWO BLUE
+    [junit] Match DRTWO GREEN SKIP GREEN
+    [junit] Match DRTWO GREEN SKIP GREEN
+    [junit] Match DRTWO GREEN REVERSE GREEN
+    [junit] Match DRTWO GREEN REVERSE GREEN
+    [junit] Match DRTWO GREEN 9 GREEN
+    [junit] Match DRTWO GREEN 9 GREEN
+    [junit] Match DRTWO GREEN 8 GREEN
+    [junit] Match DRTWO GREEN DRTWO YELLOW
+    [junit] Match DRTWO GREEN DRTWO YELLOW
+    [junit] Match DRTWO GREEN DRTWO GREEN
+    [junit] Match DRTWO GREEN DRTWO GREEN
+    [junit] Match DRTWO GREEN DRTWO RED
+    [junit] Match DRTWO GREEN DRTWO RED
+    [junit] Match DRTWO GREEN DRTWO BLUE
+    [junit] Match DRTWO GREEN DRTWO BLUE
+    [junit] Match DRTWO GREEN SKIP GREEN
+    [junit] Match DRTWO GREEN SKIP GREEN
+    [junit] Match DRTWO GREEN REVERSE GREEN
+    [junit] Match DRTWO GREEN REVERSE GREEN
+    [junit] Match DRTWO GREEN 9 GREEN
+    [junit] Match DRTWO GREEN 9 GREEN
+    [junit] Match DRTWO GREEN 8 GREEN
+    [junit] Match DRTWO RED DRTWO YELLOW
+    [junit] Match DRTWO RED DRTWO YELLOW
+    [junit] Match DRTWO RED DRTWO GREEN
+    [junit] Match DRTWO RED DRTWO GREEN
+    [junit] Match DRTWO RED DRTWO RED
+    [junit] Match DRTWO RED DRTWO RED
+    [junit] Match DRTWO RED DRTWO BLUE
+    [junit] Match DRTWO RED DRTWO BLUE
+    [junit] Match DRTWO RED SKIP RED
+    [junit] Match DRTWO RED SKIP RED
+    [junit] Match DRTWO RED REVERSE RED
+    [junit] Match DRTWO RED REVERSE RED
+    [junit] Match DRTWO RED DRTWO YELLOW
+    [junit] Match DRTWO RED DRTWO YELLOW
+    [junit] Match DRTWO RED DRTWO GREEN
+    [junit] Match DRTWO RED DRTWO GREEN
+    [junit] Match DRTWO RED DRTWO RED
+    [junit] Match DRTWO RED DRTWO RED
+    [junit] Match DRTWO RED DRTWO BLUE
+    [junit] Match DRTWO RED DRTWO BLUE
+    [junit] Match DRTWO RED SKIP RED
+    [junit] Match DRTWO RED SKIP RED
+    [junit] Match DRTWO RED REVERSE RED
+    [junit] Match DRTWO RED REVERSE RED
+    [junit] Match DRTWO BLUE DRTWO YELLOW
+    [junit] Match DRTWO BLUE DRTWO YELLOW
+    [junit] Match DRTWO BLUE DRTWO GREEN
+    [junit] Match DRTWO BLUE DRTWO GREEN
+    [junit] Match DRTWO BLUE DRTWO RED
+    [junit] Match DRTWO BLUE DRTWO RED
+    [junit] Match DRTWO BLUE DRTWO BLUE
+    [junit] Match DRTWO BLUE DRTWO BLUE
+    [junit] Match DRTWO BLUE SKIP BLUE
+    [junit] Match DRTWO BLUE SKIP BLUE
+    [junit] Match DRTWO BLUE REVERSE BLUE
+    [junit] Match DRTWO BLUE REVERSE BLUE
+    [junit] Match DRTWO BLUE DRTWO YELLOW
+    [junit] Match DRTWO BLUE DRTWO YELLOW
+    [junit] Match DRTWO BLUE DRTWO GREEN
+    [junit] Match DRTWO BLUE DRTWO GREEN
+    [junit] Match DRTWO BLUE DRTWO RED
+    [junit] Match DRTWO BLUE DRTWO RED
+    [junit] Match DRTWO BLUE DRTWO BLUE
+    [junit] Match DRTWO BLUE DRTWO BLUE
+    [junit] Match DRTWO BLUE SKIP BLUE
+    [junit] Match DRTWO BLUE SKIP BLUE
+    [junit] Match DRTWO BLUE REVERSE BLUE
+    [junit] Match DRTWO BLUE REVERSE BLUE
+    [junit] Match SKIP YELLOW DRTWO YELLOW
+    [junit] Match SKIP YELLOW DRTWO YELLOW
+    [junit] Match SKIP YELLOW SKIP YELLOW
+    [junit] Match SKIP YELLOW SKIP YELLOW
+    [junit] Match SKIP YELLOW SKIP GREEN
+    [junit] Match SKIP YELLOW SKIP GREEN
+    [junit] Match SKIP YELLOW SKIP RED
+    [junit] Match SKIP YELLOW SKIP RED
+    [junit] Match SKIP YELLOW SKIP BLUE
+    [junit] Match SKIP YELLOW SKIP BLUE
+    [junit] Match SKIP YELLOW REVERSE YELLOW
+    [junit] Match SKIP YELLOW REVERSE YELLOW
+    [junit] Match SKIP YELLOW 9 YELLOW
+    [junit] Match SKIP YELLOW 9 YELLOW
+    [junit] Match SKIP YELLOW 8 YELLOW
+    [junit] Match SKIP YELLOW 8 YELLOW
+    [junit] Match SKIP YELLOW 7 YELLOW
+    [junit] Match SKIP YELLOW 7 YELLOW
+    [junit] Match SKIP YELLOW 6 YELLOW
+    [junit] Match SKIP YELLOW 6 YELLOW
+    [junit] Match SKIP YELLOW 5 YELLOW
+    [junit] Match SKIP YELLOW 5 YELLOW
+    [junit] Match SKIP YELLOW 4 YELLOW
+    [junit] Match SKIP YELLOW 4 YELLOW
+    [junit] Match SKIP YELLOW 3 YELLOW
+    [junit] Match SKIP YELLOW 3 YELLOW
+    [junit] Match SKIP YELLOW 2 YELLOW
+    [junit] Match SKIP YELLOW 2 YELLOW
+    [junit] Match SKIP YELLOW 1 YELLOW
+    [junit] Match SKIP YELLOW 1 YELLOW
+    [junit] Match SKIP YELLOW 0 YELLOW
+    [junit] Match SKIP YELLOW DRTWO YELLOW
+    [junit] Match SKIP YELLOW DRTWO YELLOW
+    [junit] Match SKIP YELLOW SKIP YELLOW
+    [junit] Match SKIP YELLOW SKIP YELLOW
+    [junit] Match SKIP YELLOW SKIP GREEN
+    [junit] Match SKIP YELLOW SKIP GREEN
+    [junit] Match SKIP YELLOW SKIP RED
+    [junit] Match SKIP YELLOW SKIP RED
+    [junit] Match SKIP YELLOW SKIP BLUE
+    [junit] Match SKIP YELLOW SKIP BLUE
+    [junit] Match SKIP YELLOW REVERSE YELLOW
+    [junit] Match SKIP YELLOW REVERSE YELLOW
+    [junit] Match SKIP YELLOW 9 YELLOW
+    [junit] Match SKIP YELLOW 9 YELLOW
+    [junit] Match SKIP YELLOW 8 YELLOW
+    [junit] Match SKIP YELLOW 8 YELLOW
+    [junit] Match SKIP YELLOW 7 YELLOW
+    [junit] Match SKIP YELLOW 7 YELLOW
+    [junit] Match SKIP YELLOW 6 YELLOW
+    [junit] Match SKIP YELLOW 6 YELLOW
+    [junit] Match SKIP YELLOW 5 YELLOW
+    [junit] Match SKIP YELLOW 5 YELLOW
+    [junit] Match SKIP YELLOW 4 YELLOW
+    [junit] Match SKIP YELLOW 4 YELLOW
+    [junit] Match SKIP YELLOW 3 YELLOW
+    [junit] Match SKIP YELLOW 3 YELLOW
+    [junit] Match SKIP YELLOW 2 YELLOW
+    [junit] Match SKIP YELLOW 2 YELLOW
+    [junit] Match SKIP YELLOW 1 YELLOW
+    [junit] Match SKIP YELLOW 1 YELLOW
+    [junit] Match SKIP YELLOW 0 YELLOW
+    [junit] Match SKIP GREEN DRTWO GREEN
+    [junit] Match SKIP GREEN DRTWO GREEN
+    [junit] Match SKIP GREEN SKIP YELLOW
+    [junit] Match SKIP GREEN SKIP YELLOW
+    [junit] Match SKIP GREEN SKIP GREEN
+    [junit] Match SKIP GREEN SKIP GREEN
+    [junit] Match SKIP GREEN SKIP RED
+    [junit] Match SKIP GREEN SKIP RED
+    [junit] Match SKIP GREEN SKIP BLUE
+    [junit] Match SKIP GREEN SKIP BLUE
+    [junit] Match SKIP GREEN REVERSE GREEN
+    [junit] Match SKIP GREEN REVERSE GREEN
+    [junit] Match SKIP GREEN 9 GREEN
+    [junit] Match SKIP GREEN 9 GREEN
+    [junit] Match SKIP GREEN 8 GREEN
+    [junit] Match SKIP GREEN DRTWO GREEN
+    [junit] Match SKIP GREEN DRTWO GREEN
+    [junit] Match SKIP GREEN SKIP YELLOW
+    [junit] Match SKIP GREEN SKIP YELLOW
+    [junit] Match SKIP GREEN SKIP GREEN
+    [junit] Match SKIP GREEN SKIP GREEN
+    [junit] Match SKIP GREEN SKIP RED
+    [junit] Match SKIP GREEN SKIP RED
+    [junit] Match SKIP GREEN SKIP BLUE
+    [junit] Match SKIP GREEN SKIP BLUE
+    [junit] Match SKIP GREEN REVERSE GREEN
+    [junit] Match SKIP GREEN REVERSE GREEN
+    [junit] Match SKIP GREEN 9 GREEN
+    [junit] Match SKIP GREEN 9 GREEN
+    [junit] Match SKIP GREEN 8 GREEN
+    [junit] Match SKIP RED DRTWO RED
+    [junit] Match SKIP RED DRTWO RED
+    [junit] Match SKIP RED SKIP YELLOW
+    [junit] Match SKIP RED SKIP YELLOW
+    [junit] Match SKIP RED SKIP GREEN
+    [junit] Match SKIP RED SKIP GREEN
+    [junit] Match SKIP RED SKIP RED
+    [junit] Match SKIP RED SKIP RED
+    [junit] Match SKIP RED SKIP BLUE
+    [junit] Match SKIP RED SKIP BLUE
+    [junit] Match SKIP RED REVERSE RED
+    [junit] Match SKIP RED REVERSE RED
+    [junit] Match SKIP RED DRTWO RED
+    [junit] Match SKIP RED DRTWO RED
+    [junit] Match SKIP RED SKIP YELLOW
+    [junit] Match SKIP RED SKIP YELLOW
+    [junit] Match SKIP RED SKIP GREEN
+    [junit] Match SKIP RED SKIP GREEN
+    [junit] Match SKIP RED SKIP RED
+    [junit] Match SKIP RED SKIP RED
+    [junit] Match SKIP RED SKIP BLUE
+    [junit] Match SKIP RED SKIP BLUE
+    [junit] Match SKIP RED REVERSE RED
+    [junit] Match SKIP RED REVERSE RED
+    [junit] Match SKIP BLUE DRTWO BLUE
+    [junit] Match SKIP BLUE DRTWO BLUE
+    [junit] Match SKIP BLUE SKIP YELLOW
+    [junit] Match SKIP BLUE SKIP YELLOW
+    [junit] Match SKIP BLUE SKIP GREEN
+    [junit] Match SKIP BLUE SKIP GREEN
+    [junit] Match SKIP BLUE SKIP RED
+    [junit] Match SKIP BLUE SKIP RED
+    [junit] Match SKIP BLUE SKIP BLUE
+    [junit] Match SKIP BLUE SKIP BLUE
+    [junit] Match SKIP BLUE REVERSE BLUE
+    [junit] Match SKIP BLUE REVERSE BLUE
+    [junit] Match SKIP BLUE DRTWO BLUE
+    [junit] Match SKIP BLUE DRTWO BLUE
+    [junit] Match SKIP BLUE SKIP YELLOW
+    [junit] Match SKIP BLUE SKIP YELLOW
+    [junit] Match SKIP BLUE SKIP GREEN
+    [junit] Match SKIP BLUE SKIP GREEN
+    [junit] Match SKIP BLUE SKIP RED
+    [junit] Match SKIP BLUE SKIP RED
+    [junit] Match SKIP BLUE SKIP BLUE
+    [junit] Match SKIP BLUE SKIP BLUE
+    [junit] Match SKIP BLUE REVERSE BLUE
+    [junit] Match SKIP BLUE REVERSE BLUE
+    [junit] Match REVERSE YELLOW DRTWO YELLOW
+    [junit] Match REVERSE YELLOW DRTWO YELLOW
+    [junit] Match REVERSE YELLOW SKIP YELLOW
+    [junit] Match REVERSE YELLOW SKIP YELLOW
+    [junit] Match REVERSE YELLOW REVERSE YELLOW
+    [junit] Match REVERSE YELLOW REVERSE YELLOW
+    [junit] Match REVERSE YELLOW REVERSE GREEN
+    [junit] Match REVERSE YELLOW REVERSE GREEN
+    [junit] Match REVERSE YELLOW REVERSE RED
+    [junit] Match REVERSE YELLOW REVERSE RED
+    [junit] Match REVERSE YELLOW REVERSE BLUE
+    [junit] Match REVERSE YELLOW REVERSE BLUE
+    [junit] Match REVERSE YELLOW 9 YELLOW
+    [junit] Match REVERSE YELLOW 9 YELLOW
+    [junit] Match REVERSE YELLOW 8 YELLOW
+    [junit] Match REVERSE YELLOW 8 YELLOW
+    [junit] Match REVERSE YELLOW 7 YELLOW
+    [junit] Match REVERSE YELLOW 7 YELLOW
+    [junit] Match REVERSE YELLOW 6 YELLOW
+    [junit] Match REVERSE YELLOW 6 YELLOW
+    [junit] Match REVERSE YELLOW 5 YELLOW
+    [junit] Match REVERSE YELLOW 5 YELLOW
+    [junit] Match REVERSE YELLOW 4 YELLOW
+    [junit] Match REVERSE YELLOW 4 YELLOW
+    [junit] Match REVERSE YELLOW 3 YELLOW
+    [junit] Match REVERSE YELLOW 3 YELLOW
+    [junit] Match REVERSE YELLOW 2 YELLOW
+    [junit] Match REVERSE YELLOW 2 YELLOW
+    [junit] Match REVERSE YELLOW 1 YELLOW
+    [junit] Match REVERSE YELLOW 1 YELLOW
+    [junit] Match REVERSE YELLOW 0 YELLOW
+    [junit] Match REVERSE YELLOW DRTWO YELLOW
+    [junit] Match REVERSE YELLOW DRTWO YELLOW
+    [junit] Match REVERSE YELLOW SKIP YELLOW
+    [junit] Match REVERSE YELLOW SKIP YELLOW
+    [junit] Match REVERSE YELLOW REVERSE YELLOW
+    [junit] Match REVERSE YELLOW REVERSE YELLOW
+    [junit] Match REVERSE YELLOW REVERSE GREEN
+    [junit] Match REVERSE YELLOW REVERSE GREEN
+    [junit] Match REVERSE YELLOW REVERSE RED
+    [junit] Match REVERSE YELLOW REVERSE RED
+    [junit] Match REVERSE YELLOW REVERSE BLUE
+    [junit] Match REVERSE YELLOW REVERSE BLUE
+    [junit] Match REVERSE YELLOW 9 YELLOW
+    [junit] Match REVERSE YELLOW 9 YELLOW
+    [junit] Match REVERSE YELLOW 8 YELLOW
+    [junit] Match REVERSE YELLOW 8 YELLOW
+    [junit] Match REVERSE YELLOW 7 YELLOW
+    [junit] Match REVERSE YELLOW 7 YELLOW
+    [junit] Match REVERSE YELLOW 6 YELLOW
+    [junit] Match REVERSE YELLOW 6 YELLOW
+    [junit] Match REVERSE YELLOW 5 YELLOW
+    [junit] Match REVERSE YELLOW 5 YELLOW
+    [junit] Match REVERSE YELLOW 4 YELLOW
+    [junit] Match REVERSE YELLOW 4 YELLOW
+    [junit] Match REVERSE YELLOW 3 YELLOW
+    [junit] Match REVERSE YELLOW 3 YELLOW
+    [junit] Match REVERSE YELLOW 2 YELLOW
+    [junit] Match REVERSE YELLOW 2 YELLOW
+    [junit] Match REVERSE YELLOW 1 YELLOW
+    [junit] Match REVERSE YELLOW 1 YELLOW
+    [junit] Match REVERSE YELLOW 0 YELLOW
+    [junit] Match REVERSE GREEN DRTWO GREEN
+    [junit] Match REVERSE GREEN DRTWO GREEN
+    [junit] Match REVERSE GREEN SKIP GREEN
+    [junit] Match REVERSE GREEN SKIP GREEN
+    [junit] Match REVERSE GREEN REVERSE YELLOW
+    [junit] Match REVERSE GREEN REVERSE YELLOW
+    [junit] Match REVERSE GREEN REVERSE GREEN
+    [junit] Match REVERSE GREEN REVERSE GREEN
+    [junit] Match REVERSE GREEN REVERSE RED
+    [junit] Match REVERSE GREEN REVERSE RED
+    [junit] Match REVERSE GREEN REVERSE BLUE
+    [junit] Match REVERSE GREEN REVERSE BLUE
+    [junit] Match REVERSE GREEN 9 GREEN
+    [junit] Match REVERSE GREEN 9 GREEN
+    [junit] Match REVERSE GREEN 8 GREEN
+    [junit] Match REVERSE GREEN DRTWO GREEN
+    [junit] Match REVERSE GREEN DRTWO GREEN
+    [junit] Match REVERSE GREEN SKIP GREEN
+    [junit] Match REVERSE GREEN SKIP GREEN
+    [junit] Match REVERSE GREEN REVERSE YELLOW
+    [junit] Match REVERSE GREEN REVERSE YELLOW
+    [junit] Match REVERSE GREEN REVERSE GREEN
+    [junit] Match REVERSE GREEN REVERSE GREEN
+    [junit] Match REVERSE GREEN REVERSE RED
+    [junit] Match REVERSE GREEN REVERSE RED
+    [junit] Match REVERSE GREEN REVERSE BLUE
+    [junit] Match REVERSE GREEN REVERSE BLUE
+    [junit] Match REVERSE GREEN 9 GREEN
+    [junit] Match REVERSE GREEN 9 GREEN
+    [junit] Match REVERSE GREEN 8 GREEN
+    [junit] Match REVERSE RED DRTWO RED
+    [junit] Match REVERSE RED DRTWO RED
+    [junit] Match REVERSE RED SKIP RED
+    [junit] Match REVERSE RED SKIP RED
+    [junit] Match REVERSE RED REVERSE YELLOW
+    [junit] Match REVERSE RED REVERSE YELLOW
+    [junit] Match REVERSE RED REVERSE GREEN
+    [junit] Match REVERSE RED REVERSE GREEN
+    [junit] Match REVERSE RED REVERSE RED
+    [junit] Match REVERSE RED REVERSE RED
+    [junit] Match REVERSE RED REVERSE BLUE
+    [junit] Match REVERSE RED REVERSE BLUE
+    [junit] Match REVERSE RED DRTWO RED
+    [junit] Match REVERSE RED DRTWO RED
+    [junit] Match REVERSE RED SKIP RED
+    [junit] Match REVERSE RED SKIP RED
+    [junit] Match REVERSE RED REVERSE YELLOW
+    [junit] Match REVERSE RED REVERSE YELLOW
+    [junit] Match REVERSE RED REVERSE GREEN
+    [junit] Match REVERSE RED REVERSE GREEN
+    [junit] Match REVERSE RED REVERSE RED
+    [junit] Match REVERSE RED REVERSE RED
+    [junit] Match REVERSE RED REVERSE BLUE
+    [junit] Match REVERSE RED REVERSE BLUE
+    [junit] Match REVERSE BLUE DRTWO BLUE
+    [junit] Match REVERSE BLUE DRTWO BLUE
+    [junit] Match REVERSE BLUE SKIP BLUE
+    [junit] Match REVERSE BLUE SKIP BLUE
+    [junit] Match REVERSE BLUE REVERSE YELLOW
+    [junit] Match REVERSE BLUE REVERSE YELLOW
+    [junit] Match REVERSE BLUE REVERSE GREEN
+    [junit] Match REVERSE BLUE REVERSE GREEN
+    [junit] Match REVERSE BLUE REVERSE RED
+    [junit] Match REVERSE BLUE REVERSE RED
+    [junit] Match REVERSE BLUE REVERSE BLUE
+    [junit] Match REVERSE BLUE REVERSE BLUE
+    [junit] Match REVERSE BLUE DRTWO BLUE
+    [junit] Match REVERSE BLUE DRTWO BLUE
+    [junit] Match REVERSE BLUE SKIP BLUE
+    [junit] Match REVERSE BLUE SKIP BLUE
+    [junit] Match REVERSE BLUE REVERSE YELLOW
+    [junit] Match REVERSE BLUE REVERSE YELLOW
+    [junit] Match REVERSE BLUE REVERSE GREEN
+    [junit] Match REVERSE BLUE REVERSE GREEN
+    [junit] Match REVERSE BLUE REVERSE RED
+    [junit] Match REVERSE BLUE REVERSE RED
+    [junit] Match REVERSE BLUE REVERSE BLUE
+    [junit] Match REVERSE BLUE REVERSE BLUE
+    [junit] Match 9 YELLOW DRTWO YELLOW
+    [junit] Match 9 YELLOW DRTWO YELLOW
+    [junit] Match 9 YELLOW SKIP YELLOW
+    [junit] Match 9 YELLOW SKIP YELLOW
+    [junit] Match 9 YELLOW REVERSE YELLOW
+    [junit] Match 9 YELLOW REVERSE YELLOW
+    [junit] Match 9 YELLOW 9 YELLOW
+    [junit] Match 9 YELLOW 9 YELLOW
+    [junit] Match 9 YELLOW 8 YELLOW
+    [junit] Match 9 YELLOW 8 YELLOW
+    [junit] Match 9 YELLOW 7 YELLOW
+    [junit] Match 9 YELLOW 7 YELLOW
+    [junit] Match 9 YELLOW 6 YELLOW
+    [junit] Match 9 YELLOW 6 YELLOW
+    [junit] Match 9 YELLOW 5 YELLOW
+    [junit] Match 9 YELLOW 5 YELLOW
+    [junit] Match 9 YELLOW 4 YELLOW
+    [junit] Match 9 YELLOW 4 YELLOW
+    [junit] Match 9 YELLOW 3 YELLOW
+    [junit] Match 9 YELLOW 3 YELLOW
+    [junit] Match 9 YELLOW 2 YELLOW
+    [junit] Match 9 YELLOW 2 YELLOW
+    [junit] Match 9 YELLOW 1 YELLOW
+    [junit] Match 9 YELLOW 1 YELLOW
+    [junit] Match 9 YELLOW 0 YELLOW
+    [junit] Match 9 YELLOW 9 GREEN
+    [junit] Match 9 YELLOW 9 GREEN
+    [junit] Match 9 YELLOW DRTWO YELLOW
+    [junit] Match 9 YELLOW DRTWO YELLOW
+    [junit] Match 9 YELLOW SKIP YELLOW
+    [junit] Match 9 YELLOW SKIP YELLOW
+    [junit] Match 9 YELLOW REVERSE YELLOW
+    [junit] Match 9 YELLOW REVERSE YELLOW
+    [junit] Match 9 YELLOW 9 YELLOW
+    [junit] Match 9 YELLOW 9 YELLOW
+    [junit] Match 9 YELLOW 8 YELLOW
+    [junit] Match 9 YELLOW 8 YELLOW
+    [junit] Match 9 YELLOW 7 YELLOW
+    [junit] Match 9 YELLOW 7 YELLOW
+    [junit] Match 9 YELLOW 6 YELLOW
+    [junit] Match 9 YELLOW 6 YELLOW
+    [junit] Match 9 YELLOW 5 YELLOW
+    [junit] Match 9 YELLOW 5 YELLOW
+    [junit] Match 9 YELLOW 4 YELLOW
+    [junit] Match 9 YELLOW 4 YELLOW
+    [junit] Match 9 YELLOW 3 YELLOW
+    [junit] Match 9 YELLOW 3 YELLOW
+    [junit] Match 9 YELLOW 2 YELLOW
+    [junit] Match 9 YELLOW 2 YELLOW
+    [junit] Match 9 YELLOW 1 YELLOW
+    [junit] Match 9 YELLOW 1 YELLOW
+    [junit] Match 9 YELLOW 0 YELLOW
+    [junit] Match 9 YELLOW 9 GREEN
+    [junit] Match 9 YELLOW 9 GREEN
+    [junit] Match 8 YELLOW DRTWO YELLOW
+    [junit] Match 8 YELLOW DRTWO YELLOW
+    [junit] Match 8 YELLOW SKIP YELLOW
+    [junit] Match 8 YELLOW SKIP YELLOW
+    [junit] Match 8 YELLOW REVERSE YELLOW
+    [junit] Match 8 YELLOW REVERSE YELLOW
+    [junit] Match 8 YELLOW 9 YELLOW
+    [junit] Match 8 YELLOW 9 YELLOW
+    [junit] Match 8 YELLOW 8 YELLOW
+    [junit] Match 8 YELLOW 8 YELLOW
+    [junit] Match 8 YELLOW 7 YELLOW
+    [junit] Match 8 YELLOW 7 YELLOW
+    [junit] Match 8 YELLOW 6 YELLOW
+    [junit] Match 8 YELLOW 6 YELLOW
+    [junit] Match 8 YELLOW 5 YELLOW
+    [junit] Match 8 YELLOW 5 YELLOW
+    [junit] Match 8 YELLOW 4 YELLOW
+    [junit] Match 8 YELLOW 4 YELLOW
+    [junit] Match 8 YELLOW 3 YELLOW
+    [junit] Match 8 YELLOW 3 YELLOW
+    [junit] Match 8 YELLOW 2 YELLOW
+    [junit] Match 8 YELLOW 2 YELLOW
+    [junit] Match 8 YELLOW 1 YELLOW
+    [junit] Match 8 YELLOW 1 YELLOW
+    [junit] Match 8 YELLOW 0 YELLOW
+    [junit] Match 8 YELLOW 8 GREEN
+    [junit] Match 8 YELLOW DRTWO YELLOW
+    [junit] Match 8 YELLOW DRTWO YELLOW
+    [junit] Match 8 YELLOW SKIP YELLOW
+    [junit] Match 8 YELLOW SKIP YELLOW
+    [junit] Match 8 YELLOW REVERSE YELLOW
+    [junit] Match 8 YELLOW REVERSE YELLOW
+    [junit] Match 8 YELLOW 9 YELLOW
+    [junit] Match 8 YELLOW 9 YELLOW
+    [junit] Match 8 YELLOW 8 YELLOW
+    [junit] Match 8 YELLOW 8 YELLOW
+    [junit] Match 8 YELLOW 7 YELLOW
+    [junit] Match 8 YELLOW 7 YELLOW
+    [junit] Match 8 YELLOW 6 YELLOW
+    [junit] Match 8 YELLOW 6 YELLOW
+    [junit] Match 8 YELLOW 5 YELLOW
+    [junit] Match 8 YELLOW 5 YELLOW
+    [junit] Match 8 YELLOW 4 YELLOW
+    [junit] Match 8 YELLOW 4 YELLOW
+    [junit] Match 8 YELLOW 3 YELLOW
+    [junit] Match 8 YELLOW 3 YELLOW
+    [junit] Match 8 YELLOW 2 YELLOW
+    [junit] Match 8 YELLOW 2 YELLOW
+    [junit] Match 8 YELLOW 1 YELLOW
+    [junit] Match 8 YELLOW 1 YELLOW
+    [junit] Match 8 YELLOW 0 YELLOW
+    [junit] Match 8 YELLOW 8 GREEN
+    [junit] Match 7 YELLOW DRTWO YELLOW
+    [junit] Match 7 YELLOW DRTWO YELLOW
+    [junit] Match 7 YELLOW SKIP YELLOW
+    [junit] Match 7 YELLOW SKIP YELLOW
+    [junit] Match 7 YELLOW REVERSE YELLOW
+    [junit] Match 7 YELLOW REVERSE YELLOW
+    [junit] Match 7 YELLOW 9 YELLOW
+    [junit] Match 7 YELLOW 9 YELLOW
+    [junit] Match 7 YELLOW 8 YELLOW
+    [junit] Match 7 YELLOW 8 YELLOW
+    [junit] Match 7 YELLOW 7 YELLOW
+    [junit] Match 7 YELLOW 7 YELLOW
+    [junit] Match 7 YELLOW 6 YELLOW
+    [junit] Match 7 YELLOW 6 YELLOW
+    [junit] Match 7 YELLOW 5 YELLOW
+    [junit] Match 7 YELLOW 5 YELLOW
+    [junit] Match 7 YELLOW 4 YELLOW
+    [junit] Match 7 YELLOW 4 YELLOW
+    [junit] Match 7 YELLOW 3 YELLOW
+    [junit] Match 7 YELLOW 3 YELLOW
+    [junit] Match 7 YELLOW 2 YELLOW
+    [junit] Match 7 YELLOW 2 YELLOW
+    [junit] Match 7 YELLOW 1 YELLOW
+    [junit] Match 7 YELLOW 1 YELLOW
+    [junit] Match 7 YELLOW 0 YELLOW
+    [junit] Match 7 YELLOW DRTWO YELLOW
+    [junit] Match 7 YELLOW DRTWO YELLOW
+    [junit] Match 7 YELLOW SKIP YELLOW
+    [junit] Match 7 YELLOW SKIP YELLOW
+    [junit] Match 7 YELLOW REVERSE YELLOW
+    [junit] Match 7 YELLOW REVERSE YELLOW
+    [junit] Match 7 YELLOW 9 YELLOW
+    [junit] Match 7 YELLOW 9 YELLOW
+    [junit] Match 7 YELLOW 8 YELLOW
+    [junit] Match 7 YELLOW 8 YELLOW
+    [junit] Match 7 YELLOW 7 YELLOW
+    [junit] Match 7 YELLOW 7 YELLOW
+    [junit] Match 7 YELLOW 6 YELLOW
+    [junit] Match 7 YELLOW 6 YELLOW
+    [junit] Match 7 YELLOW 5 YELLOW
+    [junit] Match 7 YELLOW 5 YELLOW
+    [junit] Match 7 YELLOW 4 YELLOW
+    [junit] Match 7 YELLOW 4 YELLOW
+    [junit] Match 7 YELLOW 3 YELLOW
+    [junit] Match 7 YELLOW 3 YELLOW
+    [junit] Match 7 YELLOW 2 YELLOW
+    [junit] Match 7 YELLOW 2 YELLOW
+    [junit] Match 7 YELLOW 1 YELLOW
+    [junit] Match 7 YELLOW 1 YELLOW
+    [junit] Match 7 YELLOW 0 YELLOW
+    [junit] Match 6 YELLOW DRTWO YELLOW
+    [junit] Match 6 YELLOW DRTWO YELLOW
+    [junit] Match 6 YELLOW SKIP YELLOW
+    [junit] Match 6 YELLOW SKIP YELLOW
+    [junit] Match 6 YELLOW REVERSE YELLOW
+    [junit] Match 6 YELLOW REVERSE YELLOW
+    [junit] Match 6 YELLOW 9 YELLOW
+    [junit] Match 6 YELLOW 9 YELLOW
+    [junit] Match 6 YELLOW 8 YELLOW
+    [junit] Match 6 YELLOW 8 YELLOW
+    [junit] Match 6 YELLOW 7 YELLOW
+    [junit] Match 6 YELLOW 7 YELLOW
+    [junit] Match 6 YELLOW 6 YELLOW
+    [junit] Match 6 YELLOW 6 YELLOW
+    [junit] Match 6 YELLOW 5 YELLOW
+    [junit] Match 6 YELLOW 5 YELLOW
+    [junit] Match 6 YELLOW 4 YELLOW
+    [junit] Match 6 YELLOW 4 YELLOW
+    [junit] Match 6 YELLOW 3 YELLOW
+    [junit] Match 6 YELLOW 3 YELLOW
+    [junit] Match 6 YELLOW 2 YELLOW
+    [junit] Match 6 YELLOW 2 YELLOW
+    [junit] Match 6 YELLOW 1 YELLOW
+    [junit] Match 6 YELLOW 1 YELLOW
+    [junit] Match 6 YELLOW 0 YELLOW
+    [junit] Match 6 YELLOW DRTWO YELLOW
+    [junit] Match 6 YELLOW DRTWO YELLOW
+    [junit] Match 6 YELLOW SKIP YELLOW
+    [junit] Match 6 YELLOW SKIP YELLOW
+    [junit] Match 6 YELLOW REVERSE YELLOW
+    [junit] Match 6 YELLOW REVERSE YELLOW
+    [junit] Match 6 YELLOW 9 YELLOW
+    [junit] Match 6 YELLOW 9 YELLOW
+    [junit] Match 6 YELLOW 8 YELLOW
+    [junit] Match 6 YELLOW 8 YELLOW
+    [junit] Match 6 YELLOW 7 YELLOW
+    [junit] Match 6 YELLOW 7 YELLOW
+    [junit] Match 6 YELLOW 6 YELLOW
+    [junit] Match 6 YELLOW 6 YELLOW
+    [junit] Match 6 YELLOW 5 YELLOW
+    [junit] Match 6 YELLOW 5 YELLOW
+    [junit] Match 6 YELLOW 4 YELLOW
+    [junit] Match 6 YELLOW 4 YELLOW
+    [junit] Match 6 YELLOW 3 YELLOW
+    [junit] Match 6 YELLOW 3 YELLOW
+    [junit] Match 6 YELLOW 2 YELLOW
+    [junit] Match 6 YELLOW 2 YELLOW
+    [junit] Match 6 YELLOW 1 YELLOW
+    [junit] Match 6 YELLOW 1 YELLOW
+    [junit] Match 6 YELLOW 0 YELLOW
+    [junit] Match 5 YELLOW DRTWO YELLOW
+    [junit] Match 5 YELLOW DRTWO YELLOW
+    [junit] Match 5 YELLOW SKIP YELLOW
+    [junit] Match 5 YELLOW SKIP YELLOW
+    [junit] Match 5 YELLOW REVERSE YELLOW
+    [junit] Match 5 YELLOW REVERSE YELLOW
+    [junit] Match 5 YELLOW 9 YELLOW
+    [junit] Match 5 YELLOW 9 YELLOW
+    [junit] Match 5 YELLOW 8 YELLOW
+    [junit] Match 5 YELLOW 8 YELLOW
+    [junit] Match 5 YELLOW 7 YELLOW
+    [junit] Match 5 YELLOW 7 YELLOW
+    [junit] Match 5 YELLOW 6 YELLOW
+    [junit] Match 5 YELLOW 6 YELLOW
+    [junit] Match 5 YELLOW 5 YELLOW
+    [junit] Match 5 YELLOW 5 YELLOW
+    [junit] Match 5 YELLOW 4 YELLOW
+    [junit] Match 5 YELLOW 4 YELLOW
+    [junit] Match 5 YELLOW 3 YELLOW
+    [junit] Match 5 YELLOW 3 YELLOW
+    [junit] Match 5 YELLOW 2 YELLOW
+    [junit] Match 5 YELLOW 2 YELLOW
+    [junit] Match 5 YELLOW 1 YELLOW
+    [junit] Match 5 YELLOW 1 YELLOW
+    [junit] Match 5 YELLOW 0 YELLOW
+    [junit] Match 5 YELLOW DRTWO YELLOW
+    [junit] Match 5 YELLOW DRTWO YELLOW
+    [junit] Match 5 YELLOW SKIP YELLOW
+    [junit] Match 5 YELLOW SKIP YELLOW
+    [junit] Match 5 YELLOW REVERSE YELLOW
+    [junit] Match 5 YELLOW REVERSE YELLOW
+    [junit] Match 5 YELLOW 9 YELLOW
+    [junit] Match 5 YELLOW 9 YELLOW
+    [junit] Match 5 YELLOW 8 YELLOW
+    [junit] Match 5 YELLOW 8 YELLOW
+    [junit] Match 5 YELLOW 7 YELLOW
+    [junit] Match 5 YELLOW 7 YELLOW
+    [junit] Match 5 YELLOW 6 YELLOW
+    [junit] Match 5 YELLOW 6 YELLOW
+    [junit] Match 5 YELLOW 5 YELLOW
+    [junit] Match 5 YELLOW 5 YELLOW
+    [junit] Match 5 YELLOW 4 YELLOW
+    [junit] Match 5 YELLOW 4 YELLOW
+    [junit] Match 5 YELLOW 3 YELLOW
+    [junit] Match 5 YELLOW 3 YELLOW
+    [junit] Match 5 YELLOW 2 YELLOW
+    [junit] Match 5 YELLOW 2 YELLOW
+    [junit] Match 5 YELLOW 1 YELLOW
+    [junit] Match 5 YELLOW 1 YELLOW
+    [junit] Match 5 YELLOW 0 YELLOW
+    [junit] Match 4 YELLOW DRTWO YELLOW
+    [junit] Match 4 YELLOW DRTWO YELLOW
+    [junit] Match 4 YELLOW SKIP YELLOW
+    [junit] Match 4 YELLOW SKIP YELLOW
+    [junit] Match 4 YELLOW REVERSE YELLOW
+    [junit] Match 4 YELLOW REVERSE YELLOW
+    [junit] Match 4 YELLOW 9 YELLOW
+    [junit] Match 4 YELLOW 9 YELLOW
+    [junit] Match 4 YELLOW 8 YELLOW
+    [junit] Match 4 YELLOW 8 YELLOW
+    [junit] Match 4 YELLOW 7 YELLOW
+    [junit] Match 4 YELLOW 7 YELLOW
+    [junit] Match 4 YELLOW 6 YELLOW
+    [junit] Match 4 YELLOW 6 YELLOW
+    [junit] Match 4 YELLOW 5 YELLOW
+    [junit] Match 4 YELLOW 5 YELLOW
+    [junit] Match 4 YELLOW 4 YELLOW
+    [junit] Match 4 YELLOW 4 YELLOW
+    [junit] Match 4 YELLOW 3 YELLOW
+    [junit] Match 4 YELLOW 3 YELLOW
+    [junit] Match 4 YELLOW 2 YELLOW
+    [junit] Match 4 YELLOW 2 YELLOW
+    [junit] Match 4 YELLOW 1 YELLOW
+    [junit] Match 4 YELLOW 1 YELLOW
+    [junit] Match 4 YELLOW 0 YELLOW
+    [junit] Match 4 YELLOW DRTWO YELLOW
+    [junit] Match 4 YELLOW DRTWO YELLOW
+    [junit] Match 4 YELLOW SKIP YELLOW
+    [junit] Match 4 YELLOW SKIP YELLOW
+    [junit] Match 4 YELLOW REVERSE YELLOW
+    [junit] Match 4 YELLOW REVERSE YELLOW
+    [junit] Match 4 YELLOW 9 YELLOW
+    [junit] Match 4 YELLOW 9 YELLOW
+    [junit] Match 4 YELLOW 8 YELLOW
+    [junit] Match 4 YELLOW 8 YELLOW
+    [junit] Match 4 YELLOW 7 YELLOW
+    [junit] Match 4 YELLOW 7 YELLOW
+    [junit] Match 4 YELLOW 6 YELLOW
+    [junit] Match 4 YELLOW 6 YELLOW
+    [junit] Match 4 YELLOW 5 YELLOW
+    [junit] Match 4 YELLOW 5 YELLOW
+    [junit] Match 4 YELLOW 4 YELLOW
+    [junit] Match 4 YELLOW 4 YELLOW
+    [junit] Match 4 YELLOW 3 YELLOW
+    [junit] Match 4 YELLOW 3 YELLOW
+    [junit] Match 4 YELLOW 2 YELLOW
+    [junit] Match 4 YELLOW 2 YELLOW
+    [junit] Match 4 YELLOW 1 YELLOW
+    [junit] Match 4 YELLOW 1 YELLOW
+    [junit] Match 4 YELLOW 0 YELLOW
+    [junit] Match 3 YELLOW DRTWO YELLOW
+    [junit] Match 3 YELLOW DRTWO YELLOW
+    [junit] Match 3 YELLOW SKIP YELLOW
+    [junit] Match 3 YELLOW SKIP YELLOW
+    [junit] Match 3 YELLOW REVERSE YELLOW
+    [junit] Match 3 YELLOW REVERSE YELLOW
+    [junit] Match 3 YELLOW 9 YELLOW
+    [junit] Match 3 YELLOW 9 YELLOW
+    [junit] Match 3 YELLOW 8 YELLOW
+    [junit] Match 3 YELLOW 8 YELLOW
+    [junit] Match 3 YELLOW 7 YELLOW
+    [junit] Match 3 YELLOW 7 YELLOW
+    [junit] Match 3 YELLOW 6 YELLOW
+    [junit] Match 3 YELLOW 6 YELLOW
+    [junit] Match 3 YELLOW 5 YELLOW
+    [junit] Match 3 YELLOW 5 YELLOW
+    [junit] Match 3 YELLOW 4 YELLOW
+    [junit] Match 3 YELLOW 4 YELLOW
+    [junit] Match 3 YELLOW 3 YELLOW
+    [junit] Match 3 YELLOW 3 YELLOW
+    [junit] Match 3 YELLOW 2 YELLOW
+    [junit] Match 3 YELLOW 2 YELLOW
+    [junit] Match 3 YELLOW 1 YELLOW
+    [junit] Match 3 YELLOW 1 YELLOW
+    [junit] Match 3 YELLOW 0 YELLOW
+    [junit] Match 3 YELLOW DRTWO YELLOW
+    [junit] Match 3 YELLOW DRTWO YELLOW
+    [junit] Match 3 YELLOW SKIP YELLOW
+    [junit] Match 3 YELLOW SKIP YELLOW
+    [junit] Match 3 YELLOW REVERSE YELLOW
+    [junit] Match 3 YELLOW REVERSE YELLOW
+    [junit] Match 3 YELLOW 9 YELLOW
+    [junit] Match 3 YELLOW 9 YELLOW
+    [junit] Match 3 YELLOW 8 YELLOW
+    [junit] Match 3 YELLOW 8 YELLOW
+    [junit] Match 3 YELLOW 7 YELLOW
+    [junit] Match 3 YELLOW 7 YELLOW
+    [junit] Match 3 YELLOW 6 YELLOW
+    [junit] Match 3 YELLOW 6 YELLOW
+    [junit] Match 3 YELLOW 5 YELLOW
+    [junit] Match 3 YELLOW 5 YELLOW
+    [junit] Match 3 YELLOW 4 YELLOW
+    [junit] Match 3 YELLOW 4 YELLOW
+    [junit] Match 3 YELLOW 3 YELLOW
+    [junit] Match 3 YELLOW 3 YELLOW
+    [junit] Match 3 YELLOW 2 YELLOW
+    [junit] Match 3 YELLOW 2 YELLOW
+    [junit] Match 3 YELLOW 1 YELLOW
+    [junit] Match 3 YELLOW 1 YELLOW
+    [junit] Match 3 YELLOW 0 YELLOW
+    [junit] Match 2 YELLOW DRTWO YELLOW
+    [junit] Match 2 YELLOW DRTWO YELLOW
+    [junit] Match 2 YELLOW SKIP YELLOW
+    [junit] Match 2 YELLOW SKIP YELLOW
+    [junit] Match 2 YELLOW REVERSE YELLOW
+    [junit] Match 2 YELLOW REVERSE YELLOW
+    [junit] Match 2 YELLOW 9 YELLOW
+    [junit] Match 2 YELLOW 9 YELLOW
+    [junit] Match 2 YELLOW 8 YELLOW
+    [junit] Match 2 YELLOW 8 YELLOW
+    [junit] Match 2 YELLOW 7 YELLOW
+    [junit] Match 2 YELLOW 7 YELLOW
+    [junit] Match 2 YELLOW 6 YELLOW
+    [junit] Match 2 YELLOW 6 YELLOW
+    [junit] Match 2 YELLOW 5 YELLOW
+    [junit] Match 2 YELLOW 5 YELLOW
+    [junit] Match 2 YELLOW 4 YELLOW
+    [junit] Match 2 YELLOW 4 YELLOW
+    [junit] Match 2 YELLOW 3 YELLOW
+    [junit] Match 2 YELLOW 3 YELLOW
+    [junit] Match 2 YELLOW 2 YELLOW
+    [junit] Match 2 YELLOW 2 YELLOW
+    [junit] Match 2 YELLOW 1 YELLOW
+    [junit] Match 2 YELLOW 1 YELLOW
+    [junit] Match 2 YELLOW 0 YELLOW
+    [junit] Match 2 YELLOW DRTWO YELLOW
+    [junit] Match 2 YELLOW DRTWO YELLOW
+    [junit] Match 2 YELLOW SKIP YELLOW
+    [junit] Match 2 YELLOW SKIP YELLOW
+    [junit] Match 2 YELLOW REVERSE YELLOW
+    [junit] Match 2 YELLOW REVERSE YELLOW
+    [junit] Match 2 YELLOW 9 YELLOW
+    [junit] Match 2 YELLOW 9 YELLOW
+    [junit] Match 2 YELLOW 8 YELLOW
+    [junit] Match 2 YELLOW 8 YELLOW
+    [junit] Match 2 YELLOW 7 YELLOW
+    [junit] Match 2 YELLOW 7 YELLOW
+    [junit] Match 2 YELLOW 6 YELLOW
+    [junit] Match 2 YELLOW 6 YELLOW
+    [junit] Match 2 YELLOW 5 YELLOW
+    [junit] Match 2 YELLOW 5 YELLOW
+    [junit] Match 2 YELLOW 4 YELLOW
+    [junit] Match 2 YELLOW 4 YELLOW
+    [junit] Match 2 YELLOW 3 YELLOW
+    [junit] Match 2 YELLOW 3 YELLOW
+    [junit] Match 2 YELLOW 2 YELLOW
+    [junit] Match 2 YELLOW 2 YELLOW
+    [junit] Match 2 YELLOW 1 YELLOW
+    [junit] Match 2 YELLOW 1 YELLOW
+    [junit] Match 2 YELLOW 0 YELLOW
+    [junit] Match 1 YELLOW DRTWO YELLOW
+    [junit] Match 1 YELLOW DRTWO YELLOW
+    [junit] Match 1 YELLOW SKIP YELLOW
+    [junit] Match 1 YELLOW SKIP YELLOW
+    [junit] Match 1 YELLOW REVERSE YELLOW
+    [junit] Match 1 YELLOW REVERSE YELLOW
+    [junit] Match 1 YELLOW 9 YELLOW
+    [junit] Match 1 YELLOW 9 YELLOW
+    [junit] Match 1 YELLOW 8 YELLOW
+    [junit] Match 1 YELLOW 8 YELLOW
+    [junit] Match 1 YELLOW 7 YELLOW
+    [junit] Match 1 YELLOW 7 YELLOW
+    [junit] Match 1 YELLOW 6 YELLOW
+    [junit] Match 1 YELLOW 6 YELLOW
+    [junit] Match 1 YELLOW 5 YELLOW
+    [junit] Match 1 YELLOW 5 YELLOW
+    [junit] Match 1 YELLOW 4 YELLOW
+    [junit] Match 1 YELLOW 4 YELLOW
+    [junit] Match 1 YELLOW 3 YELLOW
+    [junit] Match 1 YELLOW 3 YELLOW
+    [junit] Match 1 YELLOW 2 YELLOW
+    [junit] Match 1 YELLOW 2 YELLOW
+    [junit] Match 1 YELLOW 1 YELLOW
+    [junit] Match 1 YELLOW 1 YELLOW
+    [junit] Match 1 YELLOW 0 YELLOW
+    [junit] Match 1 YELLOW DRTWO YELLOW
+    [junit] Match 1 YELLOW DRTWO YELLOW
+    [junit] Match 1 YELLOW SKIP YELLOW
+    [junit] Match 1 YELLOW SKIP YELLOW
+    [junit] Match 1 YELLOW REVERSE YELLOW
+    [junit] Match 1 YELLOW REVERSE YELLOW
+    [junit] Match 1 YELLOW 9 YELLOW
+    [junit] Match 1 YELLOW 9 YELLOW
+    [junit] Match 1 YELLOW 8 YELLOW
+    [junit] Match 1 YELLOW 8 YELLOW
+    [junit] Match 1 YELLOW 7 YELLOW
+    [junit] Match 1 YELLOW 7 YELLOW
+    [junit] Match 1 YELLOW 6 YELLOW
+    [junit] Match 1 YELLOW 6 YELLOW
+    [junit] Match 1 YELLOW 5 YELLOW
+    [junit] Match 1 YELLOW 5 YELLOW
+    [junit] Match 1 YELLOW 4 YELLOW
+    [junit] Match 1 YELLOW 4 YELLOW
+    [junit] Match 1 YELLOW 3 YELLOW
+    [junit] Match 1 YELLOW 3 YELLOW
+    [junit] Match 1 YELLOW 2 YELLOW
+    [junit] Match 1 YELLOW 2 YELLOW
+    [junit] Match 1 YELLOW 1 YELLOW
+    [junit] Match 1 YELLOW 1 YELLOW
+    [junit] Match 1 YELLOW 0 YELLOW
+    [junit] Match 0 YELLOW DRTWO YELLOW
+    [junit] Match 0 YELLOW DRTWO YELLOW
+    [junit] Match 0 YELLOW SKIP YELLOW
+    [junit] Match 0 YELLOW SKIP YELLOW
+    [junit] Match 0 YELLOW REVERSE YELLOW
+    [junit] Match 0 YELLOW REVERSE YELLOW
+    [junit] Match 0 YELLOW 9 YELLOW
+    [junit] Match 0 YELLOW 9 YELLOW
+    [junit] Match 0 YELLOW 8 YELLOW
+    [junit] Match 0 YELLOW 8 YELLOW
+    [junit] Match 0 YELLOW 7 YELLOW
+    [junit] Match 0 YELLOW 7 YELLOW
+    [junit] Match 0 YELLOW 6 YELLOW
+    [junit] Match 0 YELLOW 6 YELLOW
+    [junit] Match 0 YELLOW 5 YELLOW
+    [junit] Match 0 YELLOW 5 YELLOW
+    [junit] Match 0 YELLOW 4 YELLOW
+    [junit] Match 0 YELLOW 4 YELLOW
+    [junit] Match 0 YELLOW 3 YELLOW
+    [junit] Match 0 YELLOW 3 YELLOW
+    [junit] Match 0 YELLOW 2 YELLOW
+    [junit] Match 0 YELLOW 2 YELLOW
+    [junit] Match 0 YELLOW 1 YELLOW
+    [junit] Match 0 YELLOW 1 YELLOW
+    [junit] Match 0 YELLOW 0 YELLOW
+    [junit] Match 9 GREEN DRTWO GREEN
+    [junit] Match 9 GREEN DRTWO GREEN
+    [junit] Match 9 GREEN SKIP GREEN
+    [junit] Match 9 GREEN SKIP GREEN
+    [junit] Match 9 GREEN REVERSE GREEN
+    [junit] Match 9 GREEN REVERSE GREEN
+    [junit] Match 9 GREEN 9 YELLOW
+    [junit] Match 9 GREEN 9 YELLOW
+    [junit] Match 9 GREEN 9 GREEN
+    [junit] Match 9 GREEN 9 GREEN
+    [junit] Match 9 GREEN 8 GREEN
+    [junit] Match 9 GREEN DRTWO GREEN
+    [junit] Match 9 GREEN DRTWO GREEN
+    [junit] Match 9 GREEN SKIP GREEN
+    [junit] Match 9 GREEN SKIP GREEN
+    [junit] Match 9 GREEN REVERSE GREEN
+    [junit] Match 9 GREEN REVERSE GREEN
+    [junit] Match 9 GREEN 9 YELLOW
+    [junit] Match 9 GREEN 9 YELLOW
+    [junit] Match 9 GREEN 9 GREEN
+    [junit] Match 9 GREEN 9 GREEN
+    [junit] Match 9 GREEN 8 GREEN
+    [junit] Match 8 GREEN DRTWO GREEN
+    [junit] Match 8 GREEN DRTWO GREEN
+    [junit] Match 8 GREEN SKIP GREEN
+    [junit] Match 8 GREEN SKIP GREEN
+    [junit] Match 8 GREEN REVERSE GREEN
+    [junit] Match 8 GREEN REVERSE GREEN
+    [junit] Match 8 GREEN 8 YELLOW
+    [junit] Match 8 GREEN 8 YELLOW
+    [junit] Match 8 GREEN 9 GREEN
+    [junit] Match 8 GREEN 9 GREEN
+    [junit] Match 8 GREEN 8 GREEN
+    [junit] max 1366
+    [junit] Tests run: 23, Failures: 0, Errors: 0, Time elapsed: 0.494 sec
+    [junit] 
+    [junit] ------------- Standard Output ---------------
+    [junit] Adding: 5 BLUE
+    [junit] 0 BLUE
+    [junit] 1 BLUE
+    [junit] 2 BLUE
+    [junit] 3 BLUE
+    [junit] 4 BLUE
+    [junit] 5 BLUE
+    [junit] 6 BLUE
+    [junit] 7 BLUE
+    [junit] 8 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 9 YELLOW
+    [junit] Adding: DRTWO YELLOW
+    [junit] 5 YELLOW
+    [junit] Adding: WILD
+    [junit] WILD RED
+    [junit] 9 RED
+    [junit] 9 GREEN
+    [junit] 9 YELLOW
+    [junit] Adding: 7 GREEN
+    [junit] 7 GREEN
+    [junit] 7 GREEN
+    [junit] Adding: WILD
+    [junit] WILD YELLOW
+    [junit] WILD YELLOW
+    [junit] WILD YELLOW
+    [junit] Adding: REVERSE RED
+    [junit] Adding: DRTWO YELLOW
+    [junit] WILD YELLOW
+    [junit] Adding: 9 BLUE
+    [junit] 9 BLUE
+    [junit] WILD YELLOW
+    [junit] Adding: WILD
+    [junit] WILD YELLOW
+    [junit] WILDDRFOUR YELLOW
+    [junit] WILDDRFOUR RED
+    [junit] 0 BLUE
+    [junit] 1 BLUE
+    [junit] 1 BLUE
+    [junit] 2 BLUE
+    [junit] 2 BLUE
+    [junit] 3 BLUE
+    [junit] 3 BLUE
+    [junit] 4 BLUE
+    [junit] 4 BLUE
+    [junit] 5 BLUE
+    [junit] 5 BLUE
+    [junit] 6 BLUE
+    [junit] 6 BLUE
+    [junit] 7 BLUE
+    [junit] 7 BLUE
+    [junit] 8 BLUE
+    [junit] 8 BLUE
+    [junit] 9 BLUE
+    [junit] 9 BLUE
+    [junit] 0 RED
+    [junit] 1 RED
+    [junit] 1 RED
+    [junit] 2 RED
+    [junit] 2 RED
+    [junit] 3 RED
+    [junit] 3 RED
+    [junit] 4 RED
+    [junit] 4 RED
+    [junit] 5 RED
+    [junit] 5 RED
+    [junit] 6 RED
+    [junit] 6 RED
+    [junit] 7 RED
+    [junit] 7 RED
+    [junit] 8 RED
+    [junit] 8 RED
+    [junit] 9 RED
+    [junit] 9 RED
+    [junit] 0 GREEN
+    [junit] 1 GREEN
+    [junit] 1 GREEN
+    [junit] 2 GREEN
+    [junit] 2 GREEN
+    [junit] 3 GREEN
+    [junit] 3 GREEN
+    [junit] 4 GREEN
+    [junit] 4 GREEN
+    [junit] 5 GREEN
+    [junit] 5 GREEN
+    [junit] 6 GREEN
+    [junit] 6 GREEN
+    [junit] 7 GREEN
+    [junit] 7 GREEN
+    [junit] 8 GREEN
+    [junit] 8 GREEN
+    [junit] 9 GREEN
+    [junit] 9 GREEN
+    [junit] 0 YELLOW
+    [junit] 1 YELLOW
+    [junit] 1 YELLOW
+    [junit] 2 YELLOW
+    [junit] 2 YELLOW
+    [junit] 3 YELLOW
+    [junit] 3 YELLOW
+    [junit] 4 YELLOW
+    [junit] 4 YELLOW
+    [junit] 5 YELLOW
+    [junit] 5 YELLOW
+    [junit] 6 YELLOW
+    [junit] 6 YELLOW
+    [junit] 7 YELLOW
+    [junit] 7 YELLOW
+    [junit] 8 YELLOW
+    [junit] 8 YELLOW
+    [junit] 9 YELLOW
+    [junit] 9 YELLOW
+    [junit] WILD
+    [junit] WILD
+    [junit] WILD
+    [junit] WILD
+    [junit] WILDDRFOUR
+    [junit] WILDDRFOUR
+    [junit] WILDDRFOUR
+    [junit] WILDDRFOUR
+    [junit] Adding: 5 BLUE
+    [junit] DRTWO BLUE
+    [junit] First: 0
+    [junit] Second: 2
+    [junit] SideEffect Reverse
+    [junit] Adding: 5 RED
+    [junit] Assiming that the last player was the last palyer in list.
+    [junit] Adding: 5 RED
+    [junit] Last player to the second
+    [junit] Adding: 5 YELLOW
+    [junit] Adding: 5 YELLOW
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 0 YELLOW
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 8 GREEN
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 0 YELLOW
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 8 GREEN
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 0 YELLOW
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 8 GREEN
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILDDRFOUR
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR WILD
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO YELLOW
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO GREEN
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO RED
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR DRTWO BLUE
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP YELLOW
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP GREEN
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP RED
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR SKIP BLUE
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE YELLOW
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE GREEN
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE RED
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR REVERSE BLUE
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 9 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 8 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 7 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 6 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 5 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 4 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 3 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 2 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 1 YELLOW
+    [junit] Match WILDDRFOUR 0 YELLOW
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 9 GREEN
+    [junit] Match WILDDRFOUR 8 GREEN
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 0 YELLOW
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 8 GREEN
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 0 YELLOW
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 8 GREEN
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 0 YELLOW
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 8 GREEN
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILDDRFOUR
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD WILD
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO YELLOW
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO GREEN
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO RED
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD DRTWO BLUE
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP YELLOW
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP GREEN
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP RED
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD SKIP BLUE
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE YELLOW
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE GREEN
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE RED
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD REVERSE BLUE
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 9 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 8 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 7 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 6 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 5 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 4 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 3 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 2 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 1 YELLOW
+    [junit] Match WILD 0 YELLOW
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 9 GREEN
+    [junit] Match WILD 8 GREEN
+    [junit] Match DRTWO YELLOW DRTWO YELLOW
+    [junit] Match DRTWO YELLOW DRTWO YELLOW
+    [junit] Match DRTWO YELLOW DRTWO GREEN
+    [junit] Match DRTWO YELLOW DRTWO GREEN
+    [junit] Match DRTWO YELLOW DRTWO RED
+    [junit] Match DRTWO YELLOW DRTWO RED
+    [junit] Match DRTWO YELLOW DRTWO BLUE
+    [junit] Match DRTWO YELLOW DRTWO BLUE
+    [junit] Match DRTWO YELLOW SKIP YELLOW
+    [junit] Match DRTWO YELLOW SKIP YELLOW
+    [junit] Match DRTWO YELLOW REVERSE YELLOW
+    [junit] Match DRTWO YELLOW REVERSE YELLOW
+    [junit] Match DRTWO YELLOW 9 YELLOW
+    [junit] Match DRTWO YELLOW 9 YELLOW
+    [junit] Match DRTWO YELLOW 8 YELLOW
+    [junit] Match DRTWO YELLOW 8 YELLOW
+    [junit] Match DRTWO YELLOW 7 YELLOW
+    [junit] Match DRTWO YELLOW 7 YELLOW
+    [junit] Match DRTWO YELLOW 6 YELLOW
+    [junit] Match DRTWO YELLOW 6 YELLOW
+    [junit] Match DRTWO YELLOW 5 YELLOW
+    [junit] Match DRTWO YELLOW 5 YELLOW
+    [junit] Match DRTWO YELLOW 4 YELLOW
+    [junit] Match DRTWO YELLOW 4 YELLOW
+    [junit] Match DRTWO YELLOW 3 YELLOW
+    [junit] Match DRTWO YELLOW 3 YELLOW
+    [junit] Match DRTWO YELLOW 2 YELLOW
+    [junit] Match DRTWO YELLOW 2 YELLOW
+    [junit] Match DRTWO YELLOW 1 YELLOW
+    [junit] Match DRTWO YELLOW 1 YELLOW
+    [junit] Match DRTWO YELLOW 0 YELLOW
+    [junit] Match DRTWO YELLOW DRTWO YELLOW
+    [junit] Match DRTWO YELLOW DRTWO YELLOW
+    [junit] Match DRTWO YELLOW DRTWO GREEN
+    [junit] Match DRTWO YELLOW DRTWO GREEN
+    [junit] Match DRTWO YELLOW DRTWO RED
+    [junit] Match DRTWO YELLOW DRTWO RED
+    [junit] Match DRTWO YELLOW DRTWO BLUE
+    [junit] Match DRTWO YELLOW DRTWO BLUE
+    [junit] Match DRTWO YELLOW SKIP YELLOW
+    [junit] Match DRTWO YELLOW SKIP YELLOW
+    [junit] Match DRTWO YELLOW REVERSE YELLOW
+    [junit] Match DRTWO YELLOW REVERSE YELLOW
+    [junit] Match DRTWO YELLOW 9 YELLOW
+    [junit] Match DRTWO YELLOW 9 YELLOW
+    [junit] Match DRTWO YELLOW 8 YELLOW
+    [junit] Match DRTWO YELLOW 8 YELLOW
+    [junit] Match DRTWO YELLOW 7 YELLOW
+    [junit] Match DRTWO YELLOW 7 YELLOW
+    [junit] Match DRTWO YELLOW 6 YELLOW
+    [junit] Match DRTWO YELLOW 6 YELLOW
+    [junit] Match DRTWO YELLOW 5 YELLOW
+    [junit] Match DRTWO YELLOW 5 YELLOW
+    [junit] Match DRTWO YELLOW 4 YELLOW
+    [junit] Match DRTWO YELLOW 4 YELLOW
+    [junit] Match DRTWO YELLOW 3 YELLOW
+    [junit] Match DRTWO YELLOW 3 YELLOW
+    [junit] Match DRTWO YELLOW 2 YELLOW
+    [junit] Match DRTWO YELLOW 2 YELLOW
+    [junit] Match DRTWO YELLOW 1 YELLOW
+    [junit] Match DRTWO YELLOW 1 YELLOW
+    [junit] Match DRTWO YELLOW 0 YELLOW
+    [junit] Match DRTWO GREEN DRTWO YELLOW
+    [junit] Match DRTWO GREEN DRTWO YELLOW
+    [junit] Match DRTWO GREEN DRTWO GREEN
+    [junit] Match DRTWO GREEN DRTWO GREEN
+    [junit] Match DRTWO GREEN DRTWO RED
+    [junit] Match DRTWO GREEN DRTWO RED
+    [junit] Match DRTWO GREEN DRTWO BLUE
+    [junit] Match DRTWO GREEN DRTWO BLUE
+    [junit] Match DRTWO GREEN SKIP GREEN
+    [junit] Match DRTWO GREEN SKIP GREEN
+    [junit] Match DRTWO GREEN REVERSE GREEN
+    [junit] Match DRTWO GREEN REVERSE GREEN
+    [junit] Match DRTWO GREEN 9 GREEN
+    [junit] Match DRTWO GREEN 9 GREEN
+    [junit] Match DRTWO GREEN 8 GREEN
+    [junit] Match DRTWO GREEN DRTWO YELLOW
+    [junit] Match DRTWO GREEN DRTWO YELLOW
+    [junit] Match DRTWO GREEN DRTWO GREEN
+    [junit] Match DRTWO GREEN DRTWO GREEN
+    [junit] Match DRTWO GREEN DRTWO RED
+    [junit] Match DRTWO GREEN DRTWO RED
+    [junit] Match DRTWO GREEN DRTWO BLUE
+    [junit] Match DRTWO GREEN DRTWO BLUE
+    [junit] Match DRTWO GREEN SKIP GREEN
+    [junit] Match DRTWO GREEN SKIP GREEN
+    [junit] Match DRTWO GREEN REVERSE GREEN
+    [junit] Match DRTWO GREEN REVERSE GREEN
+    [junit] Match DRTWO GREEN 9 GREEN
+    [junit] Match DRTWO GREEN 9 GREEN
+    [junit] Match DRTWO GREEN 8 GREEN
+    [junit] Match DRTWO RED DRTWO YELLOW
+    [junit] Match DRTWO RED DRTWO YELLOW
+    [junit] Match DRTWO RED DRTWO GREEN
+    [junit] Match DRTWO RED DRTWO GREEN
+    [junit] Match DRTWO RED DRTWO RED
+    [junit] Match DRTWO RED DRTWO RED
+    [junit] Match DRTWO RED DRTWO BLUE
+    [junit] Match DRTWO RED DRTWO BLUE
+    [junit] Match DRTWO RED SKIP RED
+    [junit] Match DRTWO RED SKIP RED
+    [junit] Match DRTWO RED REVERSE RED
+    [junit] Match DRTWO RED REVERSE RED
+    [junit] Match DRTWO RED DRTWO YELLOW
+    [junit] Match DRTWO RED DRTWO YELLOW
+    [junit] Match DRTWO RED DRTWO GREEN
+    [junit] Match DRTWO RED DRTWO GREEN
+    [junit] Match DRTWO RED DRTWO RED
+    [junit] Match DRTWO RED DRTWO RED
+    [junit] Match DRTWO RED DRTWO BLUE
+    [junit] Match DRTWO RED DRTWO BLUE
+    [junit] Match DRTWO RED SKIP RED
+    [junit] Match DRTWO RED SKIP RED
+    [junit] Match DRTWO RED REVERSE RED
+    [junit] Match DRTWO RED REVERSE RED
+    [junit] Match DRTWO BLUE DRTWO YELLOW
+    [junit] Match DRTWO BLUE DRTWO YELLOW
+    [junit] Match DRTWO BLUE DRTWO GREEN
+    [junit] Match DRTWO BLUE DRTWO GREEN
+    [junit] Match DRTWO BLUE DRTWO RED
+    [junit] Match DRTWO BLUE DRTWO RED
+    [junit] Match DRTWO BLUE DRTWO BLUE
+    [junit] Match DRTWO BLUE DRTWO BLUE
+    [junit] Match DRTWO BLUE SKIP BLUE
+    [junit] Match DRTWO BLUE SKIP BLUE
+    [junit] Match DRTWO BLUE REVERSE BLUE
+    [junit] Match DRTWO BLUE REVERSE BLUE
+    [junit] Match DRTWO BLUE DRTWO YELLOW
+    [junit] Match DRTWO BLUE DRTWO YELLOW
+    [junit] Match DRTWO BLUE DRTWO GREEN
+    [junit] Match DRTWO BLUE DRTWO GREEN
+    [junit] Match DRTWO BLUE DRTWO RED
+    [junit] Match DRTWO BLUE DRTWO RED
+    [junit] Match DRTWO BLUE DRTWO BLUE
+    [junit] Match DRTWO BLUE DRTWO BLUE
+    [junit] Match DRTWO BLUE SKIP BLUE
+    [junit] Match DRTWO BLUE SKIP BLUE
+    [junit] Match DRTWO BLUE REVERSE BLUE
+    [junit] Match DRTWO BLUE REVERSE BLUE
+    [junit] Match SKIP YELLOW DRTWO YELLOW
+    [junit] Match SKIP YELLOW DRTWO YELLOW
+    [junit] Match SKIP YELLOW SKIP YELLOW
+    [junit] Match SKIP YELLOW SKIP YELLOW
+    [junit] Match SKIP YELLOW SKIP GREEN
+    [junit] Match SKIP YELLOW SKIP GREEN
+    [junit] Match SKIP YELLOW SKIP RED
+    [junit] Match SKIP YELLOW SKIP RED
+    [junit] Match SKIP YELLOW SKIP BLUE
+    [junit] Match SKIP YELLOW SKIP BLUE
+    [junit] Match SKIP YELLOW REVERSE YELLOW
+    [junit] Match SKIP YELLOW REVERSE YELLOW
+    [junit] Match SKIP YELLOW 9 YELLOW
+    [junit] Match SKIP YELLOW 9 YELLOW
+    [junit] Match SKIP YELLOW 8 YELLOW
+    [junit] Match SKIP YELLOW 8 YELLOW
+    [junit] Match SKIP YELLOW 7 YELLOW
+    [junit] Match SKIP YELLOW 7 YELLOW
+    [junit] Match SKIP YELLOW 6 YELLOW
+    [junit] Match SKIP YELLOW 6 YELLOW
+    [junit] Match SKIP YELLOW 5 YELLOW
+    [junit] Match SKIP YELLOW 5 YELLOW
+    [junit] Match SKIP YELLOW 4 YELLOW
+    [junit] Match SKIP YELLOW 4 YELLOW
+    [junit] Match SKIP YELLOW 3 YELLOW
+    [junit] Match SKIP YELLOW 3 YELLOW
+    [junit] Match SKIP YELLOW 2 YELLOW
+    [junit] Match SKIP YELLOW 2 YELLOW
+    [junit] Match SKIP YELLOW 1 YELLOW
+    [junit] Match SKIP YELLOW 1 YELLOW
+    [junit] Match SKIP YELLOW 0 YELLOW
+    [junit] Match SKIP YELLOW DRTWO YELLOW
+    [junit] Match SKIP YELLOW DRTWO YELLOW
+    [junit] Match SKIP YELLOW SKIP YELLOW
+    [junit] Match SKIP YELLOW SKIP YELLOW
+    [junit] Match SKIP YELLOW SKIP GREEN
+    [junit] Match SKIP YELLOW SKIP GREEN
+    [junit] Match SKIP YELLOW SKIP RED
+    [junit] Match SKIP YELLOW SKIP RED
+    [junit] Match SKIP YELLOW SKIP BLUE
+    [junit] Match SKIP YELLOW SKIP BLUE
+    [junit] Match SKIP YELLOW REVERSE YELLOW
+    [junit] Match SKIP YELLOW REVERSE YELLOW
+    [junit] Match SKIP YELLOW 9 YELLOW
+    [junit] Match SKIP YELLOW 9 YELLOW
+    [junit] Match SKIP YELLOW 8 YELLOW
+    [junit] Match SKIP YELLOW 8 YELLOW
+    [junit] Match SKIP YELLOW 7 YELLOW
+    [junit] Match SKIP YELLOW 7 YELLOW
+    [junit] Match SKIP YELLOW 6 YELLOW
+    [junit] Match SKIP YELLOW 6 YELLOW
+    [junit] Match SKIP YELLOW 5 YELLOW
+    [junit] Match SKIP YELLOW 5 YELLOW
+    [junit] Match SKIP YELLOW 4 YELLOW
+    [junit] Match SKIP YELLOW 4 YELLOW
+    [junit] Match SKIP YELLOW 3 YELLOW
+    [junit] Match SKIP YELLOW 3 YELLOW
+    [junit] Match SKIP YELLOW 2 YELLOW
+    [junit] Match SKIP YELLOW 2 YELLOW
+    [junit] Match SKIP YELLOW 1 YELLOW
+    [junit] Match SKIP YELLOW 1 YELLOW
+    [junit] Match SKIP YELLOW 0 YELLOW
+    [junit] Match SKIP GREEN DRTWO GREEN
+    [junit] Match SKIP GREEN DRTWO GREEN
+    [junit] Match SKIP GREEN SKIP YELLOW
+    [junit] Match SKIP GREEN SKIP YELLOW
+    [junit] Match SKIP GREEN SKIP GREEN
+    [junit] Match SKIP GREEN SKIP GREEN
+    [junit] Match SKIP GREEN SKIP RED
+    [junit] Match SKIP GREEN SKIP RED
+    [junit] Match SKIP GREEN SKIP BLUE
+    [junit] Match SKIP GREEN SKIP BLUE
+    [junit] Match SKIP GREEN REVERSE GREEN
+    [junit] Match SKIP GREEN REVERSE GREEN
+    [junit] Match SKIP GREEN 9 GREEN
+    [junit] Match SKIP GREEN 9 GREEN
+    [junit] Match SKIP GREEN 8 GREEN
+    [junit] Match SKIP GREEN DRTWO GREEN
+    [junit] Match SKIP GREEN DRTWO GREEN
+    [junit] Match SKIP GREEN SKIP YELLOW
+    [junit] Match SKIP GREEN SKIP YELLOW
+    [junit] Match SKIP GREEN SKIP GREEN
+    [junit] Match SKIP GREEN SKIP GREEN
+    [junit] Match SKIP GREEN SKIP RED
+    [junit] Match SKIP GREEN SKIP RED
+    [junit] Match SKIP GREEN SKIP BLUE
+    [junit] Match SKIP GREEN SKIP BLUE
+    [junit] Match SKIP GREEN REVERSE GREEN
+    [junit] Match SKIP GREEN REVERSE GREEN
+    [junit] Match SKIP GREEN 9 GREEN
+    [junit] Match SKIP GREEN 9 GREEN
+    [junit] Match SKIP GREEN 8 GREEN
+    [junit] Match SKIP RED DRTWO RED
+    [junit] Match SKIP RED DRTWO RED
+    [junit] Match SKIP RED SKIP YELLOW
+    [junit] Match SKIP RED SKIP YELLOW
+    [junit] Match SKIP RED SKIP GREEN
+    [junit] Match SKIP RED SKIP GREEN
+    [junit] Match SKIP RED SKIP RED
+    [junit] Match SKIP RED SKIP RED
+    [junit] Match SKIP RED SKIP BLUE
+    [junit] Match SKIP RED SKIP BLUE
+    [junit] Match SKIP RED REVERSE RED
+    [junit] Match SKIP RED REVERSE RED
+    [junit] Match SKIP RED DRTWO RED
+    [junit] Match SKIP RED DRTWO RED
+    [junit] Match SKIP RED SKIP YELLOW
+    [junit] Match SKIP RED SKIP YELLOW
+    [junit] Match SKIP RED SKIP GREEN
+    [junit] Match SKIP RED SKIP GREEN
+    [junit] Match SKIP RED SKIP RED
+    [junit] Match SKIP RED SKIP RED
+    [junit] Match SKIP RED SKIP BLUE
+    [junit] Match SKIP RED SKIP BLUE
+    [junit] Match SKIP RED REVERSE RED
+    [junit] Match SKIP RED REVERSE RED
+    [junit] Match SKIP BLUE DRTWO BLUE
+    [junit] Match SKIP BLUE DRTWO BLUE
+    [junit] Match SKIP BLUE SKIP YELLOW
+    [junit] Match SKIP BLUE SKIP YELLOW
+    [junit] Match SKIP BLUE SKIP GREEN
+    [junit] Match SKIP BLUE SKIP GREEN
+    [junit] Match SKIP BLUE SKIP RED
+    [junit] Match SKIP BLUE SKIP RED
+    [junit] Match SKIP BLUE SKIP BLUE
+    [junit] Match SKIP BLUE SKIP BLUE
+    [junit] Match SKIP BLUE REVERSE BLUE
+    [junit] Match SKIP BLUE REVERSE BLUE
+    [junit] Match SKIP BLUE DRTWO BLUE
+    [junit] Match SKIP BLUE DRTWO BLUE
+    [junit] Match SKIP BLUE SKIP YELLOW
+    [junit] Match SKIP BLUE SKIP YELLOW
+    [junit] Match SKIP BLUE SKIP GREEN
+    [junit] Match SKIP BLUE SKIP GREEN
+    [junit] Match SKIP BLUE SKIP RED
+    [junit] Match SKIP BLUE SKIP RED
+    [junit] Match SKIP BLUE SKIP BLUE
+    [junit] Match SKIP BLUE SKIP BLUE
+    [junit] Match SKIP BLUE REVERSE BLUE
+    [junit] Match SKIP BLUE REVERSE BLUE
+    [junit] Match REVERSE YELLOW DRTWO YELLOW
+    [junit] Match REVERSE YELLOW DRTWO YELLOW
+    [junit] Match REVERSE YELLOW SKIP YELLOW
+    [junit] Match REVERSE YELLOW SKIP YELLOW
+    [junit] Match REVERSE YELLOW REVERSE YELLOW
+    [junit] Match REVERSE YELLOW REVERSE YELLOW
+    [junit] Match REVERSE YELLOW REVERSE GREEN
+    [junit] Match REVERSE YELLOW REVERSE GREEN
+    [junit] Match REVERSE YELLOW REVERSE RED
+    [junit] Match REVERSE YELLOW REVERSE RED
+    [junit] Match REVERSE YELLOW REVERSE BLUE
+    [junit] Match REVERSE YELLOW REVERSE BLUE
+    [junit] Match REVERSE YELLOW 9 YELLOW
+    [junit] Match REVERSE YELLOW 9 YELLOW
+    [junit] Match REVERSE YELLOW 8 YELLOW
+    [junit] Match REVERSE YELLOW 8 YELLOW
+    [junit] Match REVERSE YELLOW 7 YELLOW
+    [junit] Match REVERSE YELLOW 7 YELLOW
+    [junit] Match REVERSE YELLOW 6 YELLOW
+    [junit] Match REVERSE YELLOW 6 YELLOW
+    [junit] Match REVERSE YELLOW 5 YELLOW
+    [junit] Match REVERSE YELLOW 5 YELLOW
+    [junit] Match REVERSE YELLOW 4 YELLOW
+    [junit] Match REVERSE YELLOW 4 YELLOW
+    [junit] Match REVERSE YELLOW 3 YELLOW
+    [junit] Match REVERSE YELLOW 3 YELLOW
+    [junit] Match REVERSE YELLOW 2 YELLOW
+    [junit] Match REVERSE YELLOW 2 YELLOW
+    [junit] Match REVERSE YELLOW 1 YELLOW
+    [junit] Match REVERSE YELLOW 1 YELLOW
+    [junit] Match REVERSE YELLOW 0 YELLOW
+    [junit] Match REVERSE YELLOW DRTWO YELLOW
+    [junit] Match REVERSE YELLOW DRTWO YELLOW
+    [junit] Match REVERSE YELLOW SKIP YELLOW
+    [junit] Match REVERSE YELLOW SKIP YELLOW
+    [junit] Match REVERSE YELLOW REVERSE YELLOW
+    [junit] Match REVERSE YELLOW REVERSE YELLOW
+    [junit] Match REVERSE YELLOW REVERSE GREEN
+    [junit] Match REVERSE YELLOW REVERSE GREEN
+    [junit] Match REVERSE YELLOW REVERSE RED
+    [junit] Match REVERSE YELLOW REVERSE RED
+    [junit] Match REVERSE YELLOW REVERSE BLUE
+    [junit] Match REVERSE YELLOW REVERSE BLUE
+    [junit] Match REVERSE YELLOW 9 YELLOW
+    [junit] Match REVERSE YELLOW 9 YELLOW
+    [junit] Match REVERSE YELLOW 8 YELLOW
+    [junit] Match REVERSE YELLOW 8 YELLOW
+    [junit] Match REVERSE YELLOW 7 YELLOW
+    [junit] Match REVERSE YELLOW 7 YELLOW
+    [junit] Match REVERSE YELLOW 6 YELLOW
+    [junit] Match REVERSE YELLOW 6 YELLOW
+    [junit] Match REVERSE YELLOW 5 YELLOW
+    [junit] Match REVERSE YELLOW 5 YELLOW
+    [junit] Match REVERSE YELLOW 4 YELLOW
+    [junit] Match REVERSE YELLOW 4 YELLOW
+    [junit] Match REVERSE YELLOW 3 YELLOW
+    [junit] Match REVERSE YELLOW 3 YELLOW
+    [junit] Match REVERSE YELLOW 2 YELLOW
+    [junit] Match REVERSE YELLOW 2 YELLOW
+    [junit] Match REVERSE YELLOW 1 YELLOW
+    [junit] Match REVERSE YELLOW 1 YELLOW
+    [junit] Match REVERSE YELLOW 0 YELLOW
+    [junit] Match REVERSE GREEN DRTWO GREEN
+    [junit] Match REVERSE GREEN DRTWO GREEN
+    [junit] Match REVERSE GREEN SKIP GREEN
+    [junit] Match REVERSE GREEN SKIP GREEN
+    [junit] Match REVERSE GREEN REVERSE YELLOW
+    [junit] Match REVERSE GREEN REVERSE YELLOW
+    [junit] Match REVERSE GREEN REVERSE GREEN
+    [junit] Match REVERSE GREEN REVERSE GREEN
+    [junit] Match REVERSE GREEN REVERSE RED
+    [junit] Match REVERSE GREEN REVERSE RED
+    [junit] Match REVERSE GREEN REVERSE BLUE
+    [junit] Match REVERSE GREEN REVERSE BLUE
+    [junit] Match REVERSE GREEN 9 GREEN
+    [junit] Match REVERSE GREEN 9 GREEN
+    [junit] Match REVERSE GREEN 8 GREEN
+    [junit] Match REVERSE GREEN DRTWO GREEN
+    [junit] Match REVERSE GREEN DRTWO GREEN
+    [junit] Match REVERSE GREEN SKIP GREEN
+    [junit] Match REVERSE GREEN SKIP GREEN
+    [junit] Match REVERSE GREEN REVERSE YELLOW
+    [junit] Match REVERSE GREEN REVERSE YELLOW
+    [junit] Match REVERSE GREEN REVERSE GREEN
+    [junit] Match REVERSE GREEN REVERSE GREEN
+    [junit] Match REVERSE GREEN REVERSE RED
+    [junit] Match REVERSE GREEN REVERSE RED
+    [junit] Match REVERSE GREEN REVERSE BLUE
+    [junit] Match REVERSE GREEN REVERSE BLUE
+    [junit] Match REVERSE GREEN 9 GREEN
+    [junit] Match REVERSE GREEN 9 GREEN
+    [junit] Match REVERSE GREEN 8 GREEN
+    [junit] Match REVERSE RED DRTWO RED
+    [junit] Match REVERSE RED DRTWO RED
+    [junit] Match REVERSE RED SKIP RED
+    [junit] Match REVERSE RED SKIP RED
+    [junit] Match REVERSE RED REVERSE YELLOW
+    [junit] Match REVERSE RED REVERSE YELLOW
+    [junit] Match REVERSE RED REVERSE GREEN
+    [junit] Match REVERSE RED REVERSE GREEN
+    [junit] Match REVERSE RED REVERSE RED
+    [junit] Match REVERSE RED REVERSE RED
+    [junit] Match REVERSE RED REVERSE BLUE
+    [junit] Match REVERSE RED REVERSE BLUE
+    [junit] Match REVERSE RED DRTWO RED
+    [junit] Match REVERSE RED DRTWO RED
+    [junit] Match REVERSE RED SKIP RED
+    [junit] Match REVERSE RED SKIP RED
+    [junit] Match REVERSE RED REVERSE YELLOW
+    [junit] Match REVERSE RED REVERSE YELLOW
+    [junit] Match REVERSE RED REVERSE GREEN
+    [junit] Match REVERSE RED REVERSE GREEN
+    [junit] Match REVERSE RED REVERSE RED
+    [junit] Match REVERSE RED REVERSE RED
+    [junit] Match REVERSE RED REVERSE BLUE
+    [junit] Match REVERSE RED REVERSE BLUE
+    [junit] Match REVERSE BLUE DRTWO BLUE
+    [junit] Match REVERSE BLUE DRTWO BLUE
+    [junit] Match REVERSE BLUE SKIP BLUE
+    [junit] Match REVERSE BLUE SKIP BLUE
+    [junit] Match REVERSE BLUE REVERSE YELLOW
+    [junit] Match REVERSE BLUE REVERSE YELLOW
+    [junit] Match REVERSE BLUE REVERSE GREEN
+    [junit] Match REVERSE BLUE REVERSE GREEN
+    [junit] Match REVERSE BLUE REVERSE RED
+    [junit] Match REVERSE BLUE REVERSE RED
+    [junit] Match REVERSE BLUE REVERSE BLUE
+    [junit] Match REVERSE BLUE REVERSE BLUE
+    [junit] Match REVERSE BLUE DRTWO BLUE
+    [junit] Match REVERSE BLUE DRTWO BLUE
+    [junit] Match REVERSE BLUE SKIP BLUE
+    [junit] Match REVERSE BLUE SKIP BLUE
+    [junit] Match REVERSE BLUE REVERSE YELLOW
+    [junit] Match REVERSE BLUE REVERSE YELLOW
+    [junit] Match REVERSE BLUE REVERSE GREEN
+    [junit] Match REVERSE BLUE REVERSE GREEN
+    [junit] Match REVERSE BLUE REVERSE RED
+    [junit] Match REVERSE BLUE REVERSE RED
+    [junit] Match REVERSE BLUE REVERSE BLUE
+    [junit] Match REVERSE BLUE REVERSE BLUE
+    [junit] Match 9 YELLOW DRTWO YELLOW
+    [junit] Match 9 YELLOW DRTWO YELLOW
+    [junit] Match 9 YELLOW SKIP YELLOW
+    [junit] Match 9 YELLOW SKIP YELLOW
+    [junit] Match 9 YELLOW REVERSE YELLOW
+    [junit] Match 9 YELLOW REVERSE YELLOW
+    [junit] Match 9 YELLOW 9 YELLOW
+    [junit] Match 9 YELLOW 9 YELLOW
+    [junit] Match 9 YELLOW 8 YELLOW
+    [junit] Match 9 YELLOW 8 YELLOW
+    [junit] Match 9 YELLOW 7 YELLOW
+    [junit] Match 9 YELLOW 7 YELLOW
+    [junit] Match 9 YELLOW 6 YELLOW
+    [junit] Match 9 YELLOW 6 YELLOW
+    [junit] Match 9 YELLOW 5 YELLOW
+    [junit] Match 9 YELLOW 5 YELLOW
+    [junit] Match 9 YELLOW 4 YELLOW
+    [junit] Match 9 YELLOW 4 YELLOW
+    [junit] Match 9 YELLOW 3 YELLOW
+    [junit] Match 9 YELLOW 3 YELLOW
+    [junit] Match 9 YELLOW 2 YELLOW
+    [junit] Match 9 YELLOW 2 YELLOW
+    [junit] Match 9 YELLOW 1 YELLOW
+    [junit] Match 9 YELLOW 1 YELLOW
+    [junit] Match 9 YELLOW 0 YELLOW
+    [junit] Match 9 YELLOW 9 GREEN
+    [junit] Match 9 YELLOW 9 GREEN
+    [junit] Match 9 YELLOW DRTWO YELLOW
+    [junit] Match 9 YELLOW DRTWO YELLOW
+    [junit] Match 9 YELLOW SKIP YELLOW
+    [junit] Match 9 YELLOW SKIP YELLOW
+    [junit] Match 9 YELLOW REVERSE YELLOW
+    [junit] Match 9 YELLOW REVERSE YELLOW
+    [junit] Match 9 YELLOW 9 YELLOW
+    [junit] Match 9 YELLOW 9 YELLOW
+    [junit] Match 9 YELLOW 8 YELLOW
+    [junit] Match 9 YELLOW 8 YELLOW
+    [junit] Match 9 YELLOW 7 YELLOW
+    [junit] Match 9 YELLOW 7 YELLOW
+    [junit] Match 9 YELLOW 6 YELLOW
+    [junit] Match 9 YELLOW 6 YELLOW
+    [junit] Match 9 YELLOW 5 YELLOW
+    [junit] Match 9 YELLOW 5 YELLOW
+    [junit] Match 9 YELLOW 4 YELLOW
+    [junit] Match 9 YELLOW 4 YELLOW
+    [junit] Match 9 YELLOW 3 YELLOW
+    [junit] Match 9 YELLOW 3 YELLOW
+    [junit] Match 9 YELLOW 2 YELLOW
+    [junit] Match 9 YELLOW 2 YELLOW
+    [junit] Match 9 YELLOW 1 YELLOW
+    [junit] Match 9 YELLOW 1 YELLOW
+    [junit] Match 9 YELLOW 0 YELLOW
+    [junit] Match 9 YELLOW 9 GREEN
+    [junit] Match 9 YELLOW 9 GREEN
+    [junit] Match 8 YELLOW DRTWO YELLOW
+    [junit] Match 8 YELLOW DRTWO YELLOW
+    [junit] Match 8 YELLOW SKIP YELLOW
+    [junit] Match 8 YELLOW SKIP YELLOW
+    [junit] Match 8 YELLOW REVERSE YELLOW
+    [junit] Match 8 YELLOW REVERSE YELLOW
+    [junit] Match 8 YELLOW 9 YELLOW
+    [junit] Match 8 YELLOW 9 YELLOW
+    [junit] Match 8 YELLOW 8 YELLOW
+    [junit] Match 8 YELLOW 8 YELLOW
+    [junit] Match 8 YELLOW 7 YELLOW
+    [junit] Match 8 YELLOW 7 YELLOW
+    [junit] Match 8 YELLOW 6 YELLOW
+    [junit] Match 8 YELLOW 6 YELLOW
+    [junit] Match 8 YELLOW 5 YELLOW
+    [junit] Match 8 YELLOW 5 YELLOW
+    [junit] Match 8 YELLOW 4 YELLOW
+    [junit] Match 8 YELLOW 4 YELLOW
+    [junit] Match 8 YELLOW 3 YELLOW
+    [junit] Match 8 YELLOW 3 YELLOW
+    [junit] Match 8 YELLOW 2 YELLOW
+    [junit] Match 8 YELLOW 2 YELLOW
+    [junit] Match 8 YELLOW 1 YELLOW
+    [junit] Match 8 YELLOW 1 YELLOW
+    [junit] Match 8 YELLOW 0 YELLOW
+    [junit] Match 8 YELLOW 8 GREEN
+    [junit] Match 8 YELLOW DRTWO YELLOW
+    [junit] Match 8 YELLOW DRTWO YELLOW
+    [junit] Match 8 YELLOW SKIP YELLOW
+    [junit] Match 8 YELLOW SKIP YELLOW
+    [junit] Match 8 YELLOW REVERSE YELLOW
+    [junit] Match 8 YELLOW REVERSE YELLOW
+    [junit] Match 8 YELLOW 9 YELLOW
+    [junit] Match 8 YELLOW 9 YELLOW
+    [junit] Match 8 YELLOW 8 YELLOW
+    [junit] Match 8 YELLOW 8 YELLOW
+    [junit] Match 8 YELLOW 7 YELLOW
+    [junit] Match 8 YELLOW 7 YELLOW
+    [junit] Match 8 YELLOW 6 YELLOW
+    [junit] Match 8 YELLOW 6 YELLOW
+    [junit] Match 8 YELLOW 5 YELLOW
+    [junit] Match 8 YELLOW 5 YELLOW
+    [junit] Match 8 YELLOW 4 YELLOW
+    [junit] Match 8 YELLOW 4 YELLOW
+    [junit] Match 8 YELLOW 3 YELLOW
+    [junit] Match 8 YELLOW 3 YELLOW
+    [junit] Match 8 YELLOW 2 YELLOW
+    [junit] Match 8 YELLOW 2 YELLOW
+    [junit] Match 8 YELLOW 1 YELLOW
+    [junit] Match 8 YELLOW 1 YELLOW
+    [junit] Match 8 YELLOW 0 YELLOW
+    [junit] Match 8 YELLOW 8 GREEN
+    [junit] Match 7 YELLOW DRTWO YELLOW
+    [junit] Match 7 YELLOW DRTWO YELLOW
+    [junit] Match 7 YELLOW SKIP YELLOW
+    [junit] Match 7 YELLOW SKIP YELLOW
+    [junit] Match 7 YELLOW REVERSE YELLOW
+    [junit] Match 7 YELLOW REVERSE YELLOW
+    [junit] Match 7 YELLOW 9 YELLOW
+    [junit] Match 7 YELLOW 9 YELLOW
+    [junit] Match 7 YELLOW 8 YELLOW
+    [junit] Match 7 YELLOW 8 YELLOW
+    [junit] Match 7 YELLOW 7 YELLOW
+    [junit] Match 7 YELLOW 7 YELLOW
+    [junit] Match 7 YELLOW 6 YELLOW
+    [junit] Match 7 YELLOW 6 YELLOW
+    [junit] Match 7 YELLOW 5 YELLOW
+    [junit] Match 7 YELLOW 5 YELLOW
+    [junit] Match 7 YELLOW 4 YELLOW
+    [junit] Match 7 YELLOW 4 YELLOW
+    [junit] Match 7 YELLOW 3 YELLOW
+    [junit] Match 7 YELLOW 3 YELLOW
+    [junit] Match 7 YELLOW 2 YELLOW
+    [junit] Match 7 YELLOW 2 YELLOW
+    [junit] Match 7 YELLOW 1 YELLOW
+    [junit] Match 7 YELLOW 1 YELLOW
+    [junit] Match 7 YELLOW 0 YELLOW
+    [junit] Match 7 YELLOW DRTWO YELLOW
+    [junit] Match 7 YELLOW DRTWO YELLOW
+    [junit] Match 7 YELLOW SKIP YELLOW
+    [junit] Match 7 YELLOW SKIP YELLOW
+    [junit] Match 7 YELLOW REVERSE YELLOW
+    [junit] Match 7 YELLOW REVERSE YELLOW
+    [junit] Match 7 YELLOW 9 YELLOW
+    [junit] Match 7 YELLOW 9 YELLOW
+    [junit] Match 7 YELLOW 8 YELLOW
+    [junit] Match 7 YELLOW 8 YELLOW
+    [junit] Match 7 YELLOW 7 YELLOW
+    [junit] Match 7 YELLOW 7 YELLOW
+    [junit] Match 7 YELLOW 6 YELLOW
+    [junit] Match 7 YELLOW 6 YELLOW
+    [junit] Match 7 YELLOW 5 YELLOW
+    [junit] Match 7 YELLOW 5 YELLOW
+    [junit] Match 7 YELLOW 4 YELLOW
+    [junit] Match 7 YELLOW 4 YELLOW
+    [junit] Match 7 YELLOW 3 YELLOW
+    [junit] Match 7 YELLOW 3 YELLOW
+    [junit] Match 7 YELLOW 2 YELLOW
+    [junit] Match 7 YELLOW 2 YELLOW
+    [junit] Match 7 YELLOW 1 YELLOW
+    [junit] Match 7 YELLOW 1 YELLOW
+    [junit] Match 7 YELLOW 0 YELLOW
+    [junit] Match 6 YELLOW DRTWO YELLOW
+    [junit] Match 6 YELLOW DRTWO YELLOW
+    [junit] Match 6 YELLOW SKIP YELLOW
+    [junit] Match 6 YELLOW SKIP YELLOW
+    [junit] Match 6 YELLOW REVERSE YELLOW
+    [junit] Match 6 YELLOW REVERSE YELLOW
+    [junit] Match 6 YELLOW 9 YELLOW
+    [junit] Match 6 YELLOW 9 YELLOW
+    [junit] Match 6 YELLOW 8 YELLOW
+    [junit] Match 6 YELLOW 8 YELLOW
+    [junit] Match 6 YELLOW 7 YELLOW
+    [junit] Match 6 YELLOW 7 YELLOW
+    [junit] Match 6 YELLOW 6 YELLOW
+    [junit] Match 6 YELLOW 6 YELLOW
+    [junit] Match 6 YELLOW 5 YELLOW
+    [junit] Match 6 YELLOW 5 YELLOW
+    [junit] Match 6 YELLOW 4 YELLOW
+    [junit] Match 6 YELLOW 4 YELLOW
+    [junit] Match 6 YELLOW 3 YELLOW
+    [junit] Match 6 YELLOW 3 YELLOW
+    [junit] Match 6 YELLOW 2 YELLOW
+    [junit] Match 6 YELLOW 2 YELLOW
+    [junit] Match 6 YELLOW 1 YELLOW
+    [junit] Match 6 YELLOW 1 YELLOW
+    [junit] Match 6 YELLOW 0 YELLOW
+    [junit] Match 6 YELLOW DRTWO YELLOW
+    [junit] Match 6 YELLOW DRTWO YELLOW
+    [junit] Match 6 YELLOW SKIP YELLOW
+    [junit] Match 6 YELLOW SKIP YELLOW
+    [junit] Match 6 YELLOW REVERSE YELLOW
+    [junit] Match 6 YELLOW REVERSE YELLOW
+    [junit] Match 6 YELLOW 9 YELLOW
+    [junit] Match 6 YELLOW 9 YELLOW
+    [junit] Match 6 YELLOW 8 YELLOW
+    [junit] Match 6 YELLOW 8 YELLOW
+    [junit] Match 6 YELLOW 7 YELLOW
+    [junit] Match 6 YELLOW 7 YELLOW
+    [junit] Match 6 YELLOW 6 YELLOW
+    [junit] Match 6 YELLOW 6 YELLOW
+    [junit] Match 6 YELLOW 5 YELLOW
+    [junit] Match 6 YELLOW 5 YELLOW
+    [junit] Match 6 YELLOW 4 YELLOW
+    [junit] Match 6 YELLOW 4 YELLOW
+    [junit] Match 6 YELLOW 3 YELLOW
+    [junit] Match 6 YELLOW 3 YELLOW
+    [junit] Match 6 YELLOW 2 YELLOW
+    [junit] Match 6 YELLOW 2 YELLOW
+    [junit] Match 6 YELLOW 1 YELLOW
+    [junit] Match 6 YELLOW 1 YELLOW
+    [junit] Match 6 YELLOW 0 YELLOW
+    [junit] Match 5 YELLOW DRTWO YELLOW
+    [junit] Match 5 YELLOW DRTWO YELLOW
+    [junit] Match 5 YELLOW SKIP YELLOW
+    [junit] Match 5 YELLOW SKIP YELLOW
+    [junit] Match 5 YELLOW REVERSE YELLOW
+    [junit] Match 5 YELLOW REVERSE YELLOW
+    [junit] Match 5 YELLOW 9 YELLOW
+    [junit] Match 5 YELLOW 9 YELLOW
+    [junit] Match 5 YELLOW 8 YELLOW
+    [junit] Match 5 YELLOW 8 YELLOW
+    [junit] Match 5 YELLOW 7 YELLOW
+    [junit] Match 5 YELLOW 7 YELLOW
+    [junit] Match 5 YELLOW 6 YELLOW
+    [junit] Match 5 YELLOW 6 YELLOW
+    [junit] Match 5 YELLOW 5 YELLOW
+    [junit] Match 5 YELLOW 5 YELLOW
+    [junit] Match 5 YELLOW 4 YELLOW
+    [junit] Match 5 YELLOW 4 YELLOW
+    [junit] Match 5 YELLOW 3 YELLOW
+    [junit] Match 5 YELLOW 3 YELLOW
+    [junit] Match 5 YELLOW 2 YELLOW
+    [junit] Match 5 YELLOW 2 YELLOW
+    [junit] Match 5 YELLOW 1 YELLOW
+    [junit] Match 5 YELLOW 1 YELLOW
+    [junit] Match 5 YELLOW 0 YELLOW
+    [junit] Match 5 YELLOW DRTWO YELLOW
+    [junit] Match 5 YELLOW DRTWO YELLOW
+    [junit] Match 5 YELLOW SKIP YELLOW
+    [junit] Match 5 YELLOW SKIP YELLOW
+    [junit] Match 5 YELLOW REVERSE YELLOW
+    [junit] Match 5 YELLOW REVERSE YELLOW
+    [junit] Match 5 YELLOW 9 YELLOW
+    [junit] Match 5 YELLOW 9 YELLOW
+    [junit] Match 5 YELLOW 8 YELLOW
+    [junit] Match 5 YELLOW 8 YELLOW
+    [junit] Match 5 YELLOW 7 YELLOW
+    [junit] Match 5 YELLOW 7 YELLOW
+    [junit] Match 5 YELLOW 6 YELLOW
+    [junit] Match 5 YELLOW 6 YELLOW
+    [junit] Match 5 YELLOW 5 YELLOW
+    [junit] Match 5 YELLOW 5 YELLOW
+    [junit] Match 5 YELLOW 4 YELLOW
+    [junit] Match 5 YELLOW 4 YELLOW
+    [junit] Match 5 YELLOW 3 YELLOW
+    [junit] Match 5 YELLOW 3 YELLOW
+    [junit] Match 5 YELLOW 2 YELLOW
+    [junit] Match 5 YELLOW 2 YELLOW
+    [junit] Match 5 YELLOW 1 YELLOW
+    [junit] Match 5 YELLOW 1 YELLOW
+    [junit] Match 5 YELLOW 0 YELLOW
+    [junit] Match 4 YELLOW DRTWO YELLOW
+    [junit] Match 4 YELLOW DRTWO YELLOW
+    [junit] Match 4 YELLOW SKIP YELLOW
+    [junit] Match 4 YELLOW SKIP YELLOW
+    [junit] Match 4 YELLOW REVERSE YELLOW
+    [junit] Match 4 YELLOW REVERSE YELLOW
+    [junit] Match 4 YELLOW 9 YELLOW
+    [junit] Match 4 YELLOW 9 YELLOW
+    [junit] Match 4 YELLOW 8 YELLOW
+    [junit] Match 4 YELLOW 8 YELLOW
+    [junit] Match 4 YELLOW 7 YELLOW
+    [junit] Match 4 YELLOW 7 YELLOW
+    [junit] Match 4 YELLOW 6 YELLOW
+    [junit] Match 4 YELLOW 6 YELLOW
+    [junit] Match 4 YELLOW 5 YELLOW
+    [junit] Match 4 YELLOW 5 YELLOW
+    [junit] Match 4 YELLOW 4 YELLOW
+    [junit] Match 4 YELLOW 4 YELLOW
+    [junit] Match 4 YELLOW 3 YELLOW
+    [junit] Match 4 YELLOW 3 YELLOW
+    [junit] Match 4 YELLOW 2 YELLOW
+    [junit] Match 4 YELLOW 2 YELLOW
+    [junit] Match 4 YELLOW 1 YELLOW
+    [junit] Match 4 YELLOW 1 YELLOW
+    [junit] Match 4 YELLOW 0 YELLOW
+    [junit] Match 4 YELLOW DRTWO YELLOW
+    [junit] Match 4 YELLOW DRTWO YELLOW
+    [junit] Match 4 YELLOW SKIP YELLOW
+    [junit] Match 4 YELLOW SKIP YELLOW
+    [junit] Match 4 YELLOW REVERSE YELLOW
+    [junit] Match 4 YELLOW REVERSE YELLOW
+    [junit] Match 4 YELLOW 9 YELLOW
+    [junit] Match 4 YELLOW 9 YELLOW
+    [junit] Match 4 YELLOW 8 YELLOW
+    [junit] Match 4 YELLOW 8 YELLOW
+    [junit] Match 4 YELLOW 7 YELLOW
+    [junit] Match 4 YELLOW 7 YELLOW
+    [junit] Match 4 YELLOW 6 YELLOW
+    [junit] Match 4 YELLOW 6 YELLOW
+    [junit] Match 4 YELLOW 5 YELLOW
+    [junit] Match 4 YELLOW 5 YELLOW
+    [junit] Match 4 YELLOW 4 YELLOW
+    [junit] Match 4 YELLOW 4 YELLOW
+    [junit] Match 4 YELLOW 3 YELLOW
+    [junit] Match 4 YELLOW 3 YELLOW
+    [junit] Match 4 YELLOW 2 YELLOW
+    [junit] Match 4 YELLOW 2 YELLOW
+    [junit] Match 4 YELLOW 1 YELLOW
+    [junit] Match 4 YELLOW 1 YELLOW
+    [junit] Match 4 YELLOW 0 YELLOW
+    [junit] Match 3 YELLOW DRTWO YELLOW
+    [junit] Match 3 YELLOW DRTWO YELLOW
+    [junit] Match 3 YELLOW SKIP YELLOW
+    [junit] Match 3 YELLOW SKIP YELLOW
+    [junit] Match 3 YELLOW REVERSE YELLOW
+    [junit] Match 3 YELLOW REVERSE YELLOW
+    [junit] Match 3 YELLOW 9 YELLOW
+    [junit] Match 3 YELLOW 9 YELLOW
+    [junit] Match 3 YELLOW 8 YELLOW
+    [junit] Match 3 YELLOW 8 YELLOW
+    [junit] Match 3 YELLOW 7 YELLOW
+    [junit] Match 3 YELLOW 7 YELLOW
+    [junit] Match 3 YELLOW 6 YELLOW
+    [junit] Match 3 YELLOW 6 YELLOW
+    [junit] Match 3 YELLOW 5 YELLOW
+    [junit] Match 3 YELLOW 5 YELLOW
+    [junit] Match 3 YELLOW 4 YELLOW
+    [junit] Match 3 YELLOW 4 YELLOW
+    [junit] Match 3 YELLOW 3 YELLOW
+    [junit] Match 3 YELLOW 3 YELLOW
+    [junit] Match 3 YELLOW 2 YELLOW
+    [junit] Match 3 YELLOW 2 YELLOW
+    [junit] Match 3 YELLOW 1 YELLOW
+    [junit] Match 3 YELLOW 1 YELLOW
+    [junit] Match 3 YELLOW 0 YELLOW
+    [junit] Match 3 YELLOW DRTWO YELLOW
+    [junit] Match 3 YELLOW DRTWO YELLOW
+    [junit] Match 3 YELLOW SKIP YELLOW
+    [junit] Match 3 YELLOW SKIP YELLOW
+    [junit] Match 3 YELLOW REVERSE YELLOW
+    [junit] Match 3 YELLOW REVERSE YELLOW
+    [junit] Match 3 YELLOW 9 YELLOW
+    [junit] Match 3 YELLOW 9 YELLOW
+    [junit] Match 3 YELLOW 8 YELLOW
+    [junit] Match 3 YELLOW 8 YELLOW
+    [junit] Match 3 YELLOW 7 YELLOW
+    [junit] Match 3 YELLOW 7 YELLOW
+    [junit] Match 3 YELLOW 6 YELLOW
+    [junit] Match 3 YELLOW 6 YELLOW
+    [junit] Match 3 YELLOW 5 YELLOW
+    [junit] Match 3 YELLOW 5 YELLOW
+    [junit] Match 3 YELLOW 4 YELLOW
+    [junit] Match 3 YELLOW 4 YELLOW
+    [junit] Match 3 YELLOW 3 YELLOW
+    [junit] Match 3 YELLOW 3 YELLOW
+    [junit] Match 3 YELLOW 2 YELLOW
+    [junit] Match 3 YELLOW 2 YELLOW
+    [junit] Match 3 YELLOW 1 YELLOW
+    [junit] Match 3 YELLOW 1 YELLOW
+    [junit] Match 3 YELLOW 0 YELLOW
+    [junit] Match 2 YELLOW DRTWO YELLOW
+    [junit] Match 2 YELLOW DRTWO YELLOW
+    [junit] Match 2 YELLOW SKIP YELLOW
+    [junit] Match 2 YELLOW SKIP YELLOW
+    [junit] Match 2 YELLOW REVERSE YELLOW
+    [junit] Match 2 YELLOW REVERSE YELLOW
+    [junit] Match 2 YELLOW 9 YELLOW
+    [junit] Match 2 YELLOW 9 YELLOW
+    [junit] Match 2 YELLOW 8 YELLOW
+    [junit] Match 2 YELLOW 8 YELLOW
+    [junit] Match 2 YELLOW 7 YELLOW
+    [junit] Match 2 YELLOW 7 YELLOW
+    [junit] Match 2 YELLOW 6 YELLOW
+    [junit] Match 2 YELLOW 6 YELLOW
+    [junit] Match 2 YELLOW 5 YELLOW
+    [junit] Match 2 YELLOW 5 YELLOW
+    [junit] Match 2 YELLOW 4 YELLOW
+    [junit] Match 2 YELLOW 4 YELLOW
+    [junit] Match 2 YELLOW 3 YELLOW
+    [junit] Match 2 YELLOW 3 YELLOW
+    [junit] Match 2 YELLOW 2 YELLOW
+    [junit] Match 2 YELLOW 2 YELLOW
+    [junit] Match 2 YELLOW 1 YELLOW
+    [junit] Match 2 YELLOW 1 YELLOW
+    [junit] Match 2 YELLOW 0 YELLOW
+    [junit] Match 2 YELLOW DRTWO YELLOW
+    [junit] Match 2 YELLOW DRTWO YELLOW
+    [junit] Match 2 YELLOW SKIP YELLOW
+    [junit] Match 2 YELLOW SKIP YELLOW
+    [junit] Match 2 YELLOW REVERSE YELLOW
+    [junit] Match 2 YELLOW REVERSE YELLOW
+    [junit] Match 2 YELLOW 9 YELLOW
+    [junit] Match 2 YELLOW 9 YELLOW
+    [junit] Match 2 YELLOW 8 YELLOW
+    [junit] Match 2 YELLOW 8 YELLOW
+    [junit] Match 2 YELLOW 7 YELLOW
+    [junit] Match 2 YELLOW 7 YELLOW
+    [junit] Match 2 YELLOW 6 YELLOW
+    [junit] Match 2 YELLOW 6 YELLOW
+    [junit] Match 2 YELLOW 5 YELLOW
+    [junit] Match 2 YELLOW 5 YELLOW
+    [junit] Match 2 YELLOW 4 YELLOW
+    [junit] Match 2 YELLOW 4 YELLOW
+    [junit] Match 2 YELLOW 3 YELLOW
+    [junit] Match 2 YELLOW 3 YELLOW
+    [junit] Match 2 YELLOW 2 YELLOW
+    [junit] Match 2 YELLOW 2 YELLOW
+    [junit] Match 2 YELLOW 1 YELLOW
+    [junit] Match 2 YELLOW 1 YELLOW
+    [junit] Match 2 YELLOW 0 YELLOW
+    [junit] Match 1 YELLOW DRTWO YELLOW
+    [junit] Match 1 YELLOW DRTWO YELLOW
+    [junit] Match 1 YELLOW SKIP YELLOW
+    [junit] Match 1 YELLOW SKIP YELLOW
+    [junit] Match 1 YELLOW REVERSE YELLOW
+    [junit] Match 1 YELLOW REVERSE YELLOW
+    [junit] Match 1 YELLOW 9 YELLOW
+    [junit] Match 1 YELLOW 9 YELLOW
+    [junit] Match 1 YELLOW 8 YELLOW
+    [junit] Match 1 YELLOW 8 YELLOW
+    [junit] Match 1 YELLOW 7 YELLOW
+    [junit] Match 1 YELLOW 7 YELLOW
+    [junit] Match 1 YELLOW 6 YELLOW
+    [junit] Match 1 YELLOW 6 YELLOW
+    [junit] Match 1 YELLOW 5 YELLOW
+    [junit] Match 1 YELLOW 5 YELLOW
+    [junit] Match 1 YELLOW 4 YELLOW
+    [junit] Match 1 YELLOW 4 YELLOW
+    [junit] Match 1 YELLOW 3 YELLOW
+    [junit] Match 1 YELLOW 3 YELLOW
+    [junit] Match 1 YELLOW 2 YELLOW
+    [junit] Match 1 YELLOW 2 YELLOW
+    [junit] Match 1 YELLOW 1 YELLOW
+    [junit] Match 1 YELLOW 1 YELLOW
+    [junit] Match 1 YELLOW 0 YELLOW
+    [junit] Match 1 YELLOW DRTWO YELLOW
+    [junit] Match 1 YELLOW DRTWO YELLOW
+    [junit] Match 1 YELLOW SKIP YELLOW
+    [junit] Match 1 YELLOW SKIP YELLOW
+    [junit] Match 1 YELLOW REVERSE YELLOW
+    [junit] Match 1 YELLOW REVERSE YELLOW
+    [junit] Match 1 YELLOW 9 YELLOW
+    [junit] Match 1 YELLOW 9 YELLOW
+    [junit] Match 1 YELLOW 8 YELLOW
+    [junit] Match 1 YELLOW 8 YELLOW
+    [junit] Match 1 YELLOW 7 YELLOW
+    [junit] Match 1 YELLOW 7 YELLOW
+    [junit] Match 1 YELLOW 6 YELLOW
+    [junit] Match 1 YELLOW 6 YELLOW
+    [junit] Match 1 YELLOW 5 YELLOW
+    [junit] Match 1 YELLOW 5 YELLOW
+    [junit] Match 1 YELLOW 4 YELLOW
+    [junit] Match 1 YELLOW 4 YELLOW
+    [junit] Match 1 YELLOW 3 YELLOW
+    [junit] Match 1 YELLOW 3 YELLOW
+    [junit] Match 1 YELLOW 2 YELLOW
+    [junit] Match 1 YELLOW 2 YELLOW
+    [junit] Match 1 YELLOW 1 YELLOW
+    [junit] Match 1 YELLOW 1 YELLOW
+    [junit] Match 1 YELLOW 0 YELLOW
+    [junit] Match 0 YELLOW DRTWO YELLOW
+    [junit] Match 0 YELLOW DRTWO YELLOW
+    [junit] Match 0 YELLOW SKIP YELLOW
+    [junit] Match 0 YELLOW SKIP YELLOW
+    [junit] Match 0 YELLOW REVERSE YELLOW
+    [junit] Match 0 YELLOW REVERSE YELLOW
+    [junit] Match 0 YELLOW 9 YELLOW
+    [junit] Match 0 YELLOW 9 YELLOW
+    [junit] Match 0 YELLOW 8 YELLOW
+    [junit] Match 0 YELLOW 8 YELLOW
+    [junit] Match 0 YELLOW 7 YELLOW
+    [junit] Match 0 YELLOW 7 YELLOW
+    [junit] Match 0 YELLOW 6 YELLOW
+    [junit] Match 0 YELLOW 6 YELLOW
+    [junit] Match 0 YELLOW 5 YELLOW
+    [junit] Match 0 YELLOW 5 YELLOW
+    [junit] Match 0 YELLOW 4 YELLOW
+    [junit] Match 0 YELLOW 4 YELLOW
+    [junit] Match 0 YELLOW 3 YELLOW
+    [junit] Match 0 YELLOW 3 YELLOW
+    [junit] Match 0 YELLOW 2 YELLOW
+    [junit] Match 0 YELLOW 2 YELLOW
+    [junit] Match 0 YELLOW 1 YELLOW
+    [junit] Match 0 YELLOW 1 YELLOW
+    [junit] Match 0 YELLOW 0 YELLOW
+    [junit] Match 9 GREEN DRTWO GREEN
+    [junit] Match 9 GREEN DRTWO GREEN
+    [junit] Match 9 GREEN SKIP GREEN
+    [junit] Match 9 GREEN SKIP GREEN
+    [junit] Match 9 GREEN REVERSE GREEN
+    [junit] Match 9 GREEN REVERSE GREEN
+    [junit] Match 9 GREEN 9 YELLOW
+    [junit] Match 9 GREEN 9 YELLOW
+    [junit] Match 9 GREEN 9 GREEN
+    [junit] Match 9 GREEN 9 GREEN
+    [junit] Match 9 GREEN 8 GREEN
+    [junit] Match 9 GREEN DRTWO GREEN
+    [junit] Match 9 GREEN DRTWO GREEN
+    [junit] Match 9 GREEN SKIP GREEN
+    [junit] Match 9 GREEN SKIP GREEN
+    [junit] Match 9 GREEN REVERSE GREEN
+    [junit] Match 9 GREEN REVERSE GREEN
+    [junit] Match 9 GREEN 9 YELLOW
+    [junit] Match 9 GREEN 9 YELLOW
+    [junit] Match 9 GREEN 9 GREEN
+    [junit] Match 9 GREEN 9 GREEN
+    [junit] Match 9 GREEN 8 GREEN
+    [junit] Match 8 GREEN DRTWO GREEN
+    [junit] Match 8 GREEN DRTWO GREEN
+    [junit] Match 8 GREEN SKIP GREEN
+    [junit] Match 8 GREEN SKIP GREEN
+    [junit] Match 8 GREEN REVERSE GREEN
+    [junit] Match 8 GREEN REVERSE GREEN
+    [junit] Match 8 GREEN 8 YELLOW
+    [junit] Match 8 GREEN 8 YELLOW
+    [junit] Match 8 GREEN 9 GREEN
+    [junit] Match 8 GREEN 9 GREEN
+    [junit] Match 8 GREEN 8 GREEN
+    [junit] max 1366
+    [junit] ------------- ---------------- ---------------
+    [junit] Testsuite: practiceUno.HumanTest
+    [junit] 
+    [junit] What would you like to do? 
+    [junit] 1. Play a card
+    [junit] 2. Draw a card
+    [junit] Tests run: 2, Failures: 0, Errors: 1, Time elapsed: 0.101 sec
+    [junit] 
+    [junit] ------------- Standard Output ---------------
+    [junit] 
+    [junit] What would you like to do? 
+    [junit] 1. Play a card
+    [junit] 2. Draw a card
+    [junit] ------------- ---------------- ---------------
+    [junit] Testcase: testPlayAHand(practiceUno.HumanTest):	Caused an ERROR
+    [junit] null
+    [junit] java.util.NoSuchElementException
+    [junit] 	at java.util.Scanner.throwFor(Scanner.java:907)
+    [junit] 	at java.util.Scanner.next(Scanner.java:1530)
+    [junit] 	at java.util.Scanner.nextInt(Scanner.java:2160)
+    [junit] 	at java.util.Scanner.nextInt(Scanner.java:2119)
+    [junit] 	at practiceUno.Human.GetPlayerChoice(Human.java:151)
+    [junit] 	at practiceUno.Human.PlayAHand(Human.java:79)
+    [junit] 	at practiceUno.HumanTest.testPlayAHand(HumanTest.java:69)
+    [junit] 
+    [junit] 
+    [junit] Testsuite: practiceUno.NumberCardTest
+    [junit] Constructor
+    [junit] 10 YELLOW
+    [junit] 8 GREEN
+    [junit] Adding: DRTWO BLUE
+    [junit] Tests run: 5, Failures: 0, Errors: 0, Time elapsed: 0.096 sec
+    [junit] 
+    [junit] ------------- Standard Output ---------------
+    [junit] Constructor
+    [junit] 10 YELLOW
+    [junit] 8 GREEN
+    [junit] Adding: DRTWO BLUE
+    [junit] ------------- ---------------- ---------------
+    [junit] Testsuite: practiceUno.PlayerTest
+    [junit] WILDDRFOUR
+    [junit] [0]: WILDDRFOUR
+    [junit] [0]: WILDDRFOUR
+    [junit] [1]: WILDDRFOUR
+    [junit] [0]: WILDDRFOUR
+    [junit] [1]: WILDDRFOUR
+    [junit] [2]: WILDDRFOUR
+    [junit] [0]: WILDDRFOUR
+    [junit] [1]: WILDDRFOUR
+    [junit] [2]: WILDDRFOUR
+    [junit] [3]: WILDDRFOUR
+    [junit] [0]: WILDDRFOUR
+    [junit] [1]: WILDDRFOUR
+    [junit] [2]: WILDDRFOUR
+    [junit] [3]: WILDDRFOUR
+    [junit] [4]: WILD
+    [junit] [0]: WILDDRFOUR
+    [junit] [1]: WILDDRFOUR
+    [junit] [2]: WILDDRFOUR
+    [junit] [3]: WILDDRFOUR
+    [junit] [4]: WILD
+    [junit] [5]: WILD
+    [junit] [0]: WILDDRFOUR
+    [junit] [1]: WILDDRFOUR
+    [junit] [2]: WILDDRFOUR
+    [junit] [3]: WILDDRFOUR
+    [junit] [4]: WILD
+    [junit] [5]: WILD
+    [junit] [6]: WILD
+    [junit] Tests run: 10, Failures: 0, Errors: 0, Time elapsed: 0.108 sec
+    [junit] 
+    [junit] ------------- Standard Output ---------------
+    [junit] WILDDRFOUR
+    [junit] [0]: WILDDRFOUR
+    [junit] [0]: WILDDRFOUR
+    [junit] [1]: WILDDRFOUR
+    [junit] [0]: WILDDRFOUR
+    [junit] [1]: WILDDRFOUR
+    [junit] [2]: WILDDRFOUR
+    [junit] [0]: WILDDRFOUR
+    [junit] [1]: WILDDRFOUR
+    [junit] [2]: WILDDRFOUR
+    [junit] [3]: WILDDRFOUR
+    [junit] [0]: WILDDRFOUR
+    [junit] [1]: WILDDRFOUR
+    [junit] [2]: WILDDRFOUR
+    [junit] [3]: WILDDRFOUR
+    [junit] [4]: WILD
+    [junit] [0]: WILDDRFOUR
+    [junit] [1]: WILDDRFOUR
+    [junit] [2]: WILDDRFOUR
+    [junit] [3]: WILDDRFOUR
+    [junit] [4]: WILD
+    [junit] [5]: WILD
+    [junit] [0]: WILDDRFOUR
+    [junit] [1]: WILDDRFOUR
+    [junit] [2]: WILDDRFOUR
+    [junit] [3]: WILDDRFOUR
+    [junit] [4]: WILD
+    [junit] [5]: WILD
+    [junit] [6]: WILD
+    [junit] ------------- ---------------- ---------------
+    [junit] Testsuite: practiceUno.RobotTest
+    [junit] Adding: WILDDRFOUR
+    [junit] Steve played 7 BLUE
+    [junit] Steve played WILDDRFOUR BLUE
+    [junit] Adding: REVERSE BLUE
+    [junit] steve played 5 BLUE
+    [junit] steve played 5 GREEN
+    [junit] steve played 5 YELLOW
+    [junit] steve played 5 RED
+    [junit] steve played SKIP RED
+    [junit] steve played WILDDRFOUR GREEN
+    [junit] steve played DRTWO BLUE
+    [junit] steve played REVERSE GREEN
+    [junit] steve played WILDDRFOUR BLUE
+    [junit] steve played WILDDRFOUR BLUE
+    [junit] steve played WILDDRFOUR RED
+    [junit] steve played WILD BLUE
+    [junit] steve played WILD BLUE
+    [junit] steve played WILD BLUE
+    [junit] steve played WILD RED
+    [junit] steve played DRTWO YELLOW
+    [junit] steve played DRTWO YELLOW
+    [junit] steve played DRTWO GREEN
+    [junit] steve played DRTWO GREEN
+    [junit] steve played DRTWO RED
+    [junit] steve played DRTWO RED
+    [junit] steve played DRTWO BLUE
+    [junit] steve played DRTWO BLUE
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve played REVERSE BLUE
+    [junit] steve played REVERSE YELLOW
+    [junit] steve played SKIP YELLOW
+    [junit] steve passes.
+    [junit] steve played 9 YELLOW
+    [junit] steve played 9 YELLOW
+    [junit] steve played 8 YELLOW
+    [junit] steve played 8 YELLOW
+    [junit] steve played 7 YELLOW
+    [junit] steve played 7 YELLOW
+    [junit] steve played 6 YELLOW
+    [junit] steve played 6 YELLOW
+    [junit] steve played 5 YELLOW
+    [junit] steve played 5 YELLOW
+    [junit] steve played 4 YELLOW
+    [junit] steve played 4 YELLOW
+    [junit] steve played 3 YELLOW
+    [junit] steve played 3 YELLOW
+    [junit] steve played 2 YELLOW
+    [junit] steve played 2 YELLOW
+    [junit] steve played 1 YELLOW
+    [junit] steve played 1 YELLOW
+    [junit] steve played 0 YELLOW
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve played 0 GREEN
+    [junit] steve played REVERSE GREEN
+    [junit] steve played REVERSE GREEN
+    [junit] steve played REVERSE RED
+    [junit] steve played REVERSE RED
+    [junit] steve played REVERSE BLUE
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve played 9 BLUE
+    [junit] steve played 9 GREEN
+    [junit] steve played 9 GREEN
+    [junit] steve played 8 GREEN
+    [junit] steve played 8 GREEN
+    [junit] steve played 7 GREEN
+    [junit] steve played 7 GREEN
+    [junit] steve played 6 GREEN
+    [junit] steve played 6 GREEN
+    [junit] steve played 5 GREEN
+    [junit] steve played 5 GREEN
+    [junit] steve played 4 GREEN
+    [junit] steve played 4 GREEN
+    [junit] steve played 3 GREEN
+    [junit] steve played 3 GREEN
+    [junit] steve played 2 GREEN
+    [junit] steve played 2 GREEN
+    [junit] steve played 1 GREEN
+    [junit] steve played 1 GREEN
+    [junit] steve played 1 RED
+    [junit] steve played 9 RED
+    [junit] steve played 9 RED
+    [junit] steve played 8 RED
+    [junit] steve played 8 RED
+    [junit] steve played 7 RED
+    [junit] steve played 7 RED
+    [junit] steve played 6 RED
+    [junit] steve played 6 RED
+    [junit] steve played 5 RED
+    [junit] steve played 5 RED
+    [junit] steve played 4 RED
+    [junit] steve played 4 RED
+    [junit] steve played 3 RED
+    [junit] steve played 3 RED
+    [junit] steve played 2 RED
+    [junit] steve played 2 RED
+    [junit] steve played 1 RED
+    [junit] steve played 0 RED
+    [junit] Adding: WILD
+    [junit] Steve played 5 BLUE
+    [junit] Adding: 5 BLUE
+    [junit] Steve played 5 BLUE
+    [junit] Adding: REVERSE GREEN
+    [junit] Steve played WILDDRFOUR RED
+    [junit] Name of class Robot
+    [junit] Tests run: 7, Failures: 0, Errors: 0, Time elapsed: 0.18 sec
+    [junit] 
+    [junit] ------------- Standard Output ---------------
+    [junit] Adding: WILDDRFOUR
+    [junit] Steve played 7 BLUE
+    [junit] Steve played WILDDRFOUR BLUE
+    [junit] Adding: REVERSE BLUE
+    [junit] steve played 5 BLUE
+    [junit] steve played 5 GREEN
+    [junit] steve played 5 YELLOW
+    [junit] steve played 5 RED
+    [junit] steve played SKIP RED
+    [junit] steve played WILDDRFOUR GREEN
+    [junit] steve played DRTWO BLUE
+    [junit] steve played REVERSE GREEN
+    [junit] steve played WILDDRFOUR BLUE
+    [junit] steve played WILDDRFOUR BLUE
+    [junit] steve played WILDDRFOUR RED
+    [junit] steve played WILD BLUE
+    [junit] steve played WILD BLUE
+    [junit] steve played WILD BLUE
+    [junit] steve played WILD RED
+    [junit] steve played DRTWO YELLOW
+    [junit] steve played DRTWO YELLOW
+    [junit] steve played DRTWO GREEN
+    [junit] steve played DRTWO GREEN
+    [junit] steve played DRTWO RED
+    [junit] steve played DRTWO RED
+    [junit] steve played DRTWO BLUE
+    [junit] steve played DRTWO BLUE
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve played REVERSE BLUE
+    [junit] steve played REVERSE YELLOW
+    [junit] steve played SKIP YELLOW
+    [junit] steve passes.
+    [junit] steve played 9 YELLOW
+    [junit] steve played 9 YELLOW
+    [junit] steve played 8 YELLOW
+    [junit] steve played 8 YELLOW
+    [junit] steve played 7 YELLOW
+    [junit] steve played 7 YELLOW
+    [junit] steve played 6 YELLOW
+    [junit] steve played 6 YELLOW
+    [junit] steve played 5 YELLOW
+    [junit] steve played 5 YELLOW
+    [junit] steve played 4 YELLOW
+    [junit] steve played 4 YELLOW
+    [junit] steve played 3 YELLOW
+    [junit] steve played 3 YELLOW
+    [junit] steve played 2 YELLOW
+    [junit] steve played 2 YELLOW
+    [junit] steve played 1 YELLOW
+    [junit] steve played 1 YELLOW
+    [junit] steve played 0 YELLOW
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve played 0 GREEN
+    [junit] steve played REVERSE GREEN
+    [junit] steve played REVERSE GREEN
+    [junit] steve played REVERSE RED
+    [junit] steve played REVERSE RED
+    [junit] steve played REVERSE BLUE
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve passes.
+    [junit] steve played 9 BLUE
+    [junit] steve played 9 GREEN
+    [junit] steve played 9 GREEN
+    [junit] steve played 8 GREEN
+    [junit] steve played 8 GREEN
+    [junit] steve played 7 GREEN
+    [junit] steve played 7 GREEN
+    [junit] steve played 6 GREEN
+    [junit] steve played 6 GREEN
+    [junit] steve played 5 GREEN
+    [junit] steve played 5 GREEN
+    [junit] steve played 4 GREEN
+    [junit] steve played 4 GREEN
+    [junit] steve played 3 GREEN
+    [junit] steve played 3 GREEN
+    [junit] steve played 2 GREEN
+    [junit] steve played 2 GREEN
+    [junit] steve played 1 GREEN
+    [junit] steve played 1 GREEN
+    [junit] steve played 1 RED
+    [junit] steve played 9 RED
+    [junit] steve played 9 RED
+    [junit] steve played 8 RED
+    [junit] steve played 8 RED
+    [junit] steve played 7 RED
+    [junit] steve played 7 RED
+    [junit] steve played 6 RED
+    [junit] steve played 6 RED
+    [junit] steve played 5 RED
+    [junit] steve played 5 RED
+    [junit] steve played 4 RED
+    [junit] steve played 4 RED
+    [junit] steve played 3 RED
+    [junit] steve played 3 RED
+    [junit] steve played 2 RED
+    [junit] steve played 2 RED
+    [junit] steve played 1 RED
+    [junit] steve played 0 RED
+    [junit] Adding: WILD
+    [junit] Steve played 5 BLUE
+    [junit] Adding: 5 BLUE
+    [junit] Steve played 5 BLUE
+    [junit] Adding: REVERSE GREEN
+    [junit] Steve played WILDDRFOUR RED
+    [junit] Name of class Robot
+    [junit] ------------- ---------------- ---------------
+    [junit] Testsuite: practiceUno.SpecialCardTest
+    [junit] GetColor
+    [junit] Print
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] GetSpecial
+    [junit] Skip
+    [junit] Current Player: 0
+    [junit] Next Player: 2
+    [junit] Current Player: 1
+    [junit] Next Player: 3
+    [junit] Current Player: 2
+    [junit] Next Player: 0
+    [junit] Current Player: 3
+    [junit] Next Player: 1
+    [junit] Current Player: 0
+    [junit] Next Player: 2
+    [junit] Current Player: 1
+    [junit] Next Player: 3
+    [junit] Current Player: 2
+    [junit] Next Player: 0
+    [junit] Current Player: 3
+    [junit] Next Player: 1
+    [junit] Current Player: 0
+    [junit] Next Player: 2
+    [junit] Current Player: 1
+    [junit] Next Player: 3
+    [junit] Current Player: 2
+    [junit] Next Player: 0
+    [junit] Current Player: 3
+    [junit] Next Player: 1
+    [junit] Current Player: 0
+    [junit] Next Player: 2
+    [junit] Current Player: 1
+    [junit] Next Player: 3
+    [junit] Current Player: 2
+    [junit] Next Player: 0
+    [junit] Current Player: 3
+    [junit] Next Player: 1
+    [junit] Reverse
+    [junit] Current Player: 0
+    [junit] Next Player: 2
+    [junit] Current Player: 1
+    [junit] Next Player: 2
+    [junit] Tests run: 6, Failures: 1, Errors: 0, Time elapsed: 0.112 sec
+    [junit] 
+    [junit] ------------- Standard Output ---------------
+    [junit] GetColor
+    [junit] Print
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] GetSpecial
+    [junit] Skip
+    [junit] Current Player: 0
+    [junit] Next Player: 2
+    [junit] Current Player: 1
+    [junit] Next Player: 3
+    [junit] Current Player: 2
+    [junit] Next Player: 0
+    [junit] Current Player: 3
+    [junit] Next Player: 1
+    [junit] Current Player: 0
+    [junit] Next Player: 2
+    [junit] Current Player: 1
+    [junit] Next Player: 3
+    [junit] Current Player: 2
+    [junit] Next Player: 0
+    [junit] Current Player: 3
+    [junit] Next Player: 1
+    [junit] Current Player: 0
+    [junit] Next Player: 2
+    [junit] Current Player: 1
+    [junit] Next Player: 3
+    [junit] Current Player: 2
+    [junit] Next Player: 0
+    [junit] Current Player: 3
+    [junit] Next Player: 1
+    [junit] Current Player: 0
+    [junit] Next Player: 2
+    [junit] Current Player: 1
+    [junit] Next Player: 3
+    [junit] Current Player: 2
+    [junit] Next Player: 0
+    [junit] Current Player: 3
+    [junit] Next Player: 1
+    [junit] Reverse
+    [junit] Current Player: 0
+    [junit] Next Player: 2
+    [junit] Current Player: 1
+    [junit] Next Player: 2
+    [junit] ------------- ---------------- ---------------
+    [junit] Testcase: testReverse(practiceUno.SpecialCardTest):	FAILED
+    [junit] expected:<-1> but was:<2>
+    [junit] junit.framework.AssertionFailedError: expected:<-1> but was:<2>
+    [junit] 	at practiceUno.SpecialCardTest.testReverse(SpecialCardTest.java:173)
+    [junit] 
+    [junit] 
+    [junit] Testsuite: practiceUno.WildCardTest
+    [junit] Apr 06, 2013 1:13:16 AM practiceUno.WildCard Wild
+    [junit] SEVERE: The color value is null!
+    [junit] WILD
+    [junit] WILDDRFOUR
+    [junit] Tests run: 6, Failures: 1, Errors: 0, Time elapsed: 0.116 sec
+    [junit] 
+    [junit] ------------- Standard Output ---------------
+    [junit] WILD
+    [junit] WILDDRFOUR
+    [junit] ------------- ---------------- ---------------
+    [junit] ------------- Standard Error -----------------
+    [junit] Apr 06, 2013 1:13:16 AM practiceUno.WildCard Wild
+    [junit] SEVERE: The color value is null!
+    [junit] ------------- ---------------- ---------------
+    [junit] Testcase: testMatch(practiceUno.WildCardTest):	FAILED
+    [junit] expected:<false> but was:<true>
+    [junit] junit.framework.AssertionFailedError: expected:<false> but was:<true>
+    [junit] 	at practiceUno.WildCardTest.testMatch(WildCardTest.java:166)
+    [junit] 
+    [junit] 
+
+test-report:
+
+-post-test-run:

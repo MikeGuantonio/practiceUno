@@ -82,7 +82,11 @@ public class SpecialCard extends Card implements SpecialActions
         int index = 0;  
         int actualPlayers = playerSize -1; 
         
-        if(currentPlayerIndex == actualPlayers-2 && actualPlayers > 3) 
+        if(actualPlayers == 1)
+        {
+            index = currentPlayerIndex; 
+        }
+        else if(currentPlayerIndex == actualPlayers-2 && actualPlayers > 3) 
         { 
             index = 0;
         
@@ -118,8 +122,11 @@ public class SpecialCard extends Card implements SpecialActions
         int index = 0;  
         int actualPlayers = playerSize-1;
         
-        
-        if(currentPlayerIndex <= 0)
+        if(actualPlayers == 1)
+        {
+            index = currentPlayerIndex; 
+        }
+        else if(currentPlayerIndex <= 0)
         {
             index = actualPlayers;
             

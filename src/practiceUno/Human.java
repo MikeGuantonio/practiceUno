@@ -63,11 +63,12 @@ public class Human extends Player
 	return c;
     }
       
-    @Override
+    @Override  
     public boolean PlayAHand(Deck d, ArrayList<Player> p)
     {
         int state = 0; 
         boolean done = false;
+        boolean drawn = false; 
         String color;
         Card c = null;
         
@@ -82,25 +83,37 @@ public class Human extends Player
                 case 1: PlayMenu();
                         int card = GetPlayerChoice();
                         if(card == -1)
-                            state = 2; 
+                        {
+                            if(drawn)
+                            {
+                                state = 5;
+                                System.out.println("Already drew this turn");
+                            }
+                            else
+                                state = 2;
+                        }
                         else
                         {
                             c = this.Discard(card);
-                            System.out.println("You choose " + c.toString());
-                            if(c == null)
+                            if(this.Match(c, d.TopDiscard()))
                             {
-                               ReplayMenu(); 
-                               state = 1;
-                            }
-                            else if(c.getClass().equals(WildCard.class))
-                            {
-                                state = 4;
+                                if(c.getClass().equals(WildCard.class))
+                                {
+                                    state = 4; 
+                                }
+                                else
+                                {
+                                    d.AddDiscard(c, p, input, this.GetPlayerPos());
+                                    this.hand.remove(c);
+                                    state = 5;
+                                }
                             }
                             else
                             {
-                                d.AddDiscard(c, p, input, this.GetPlayerPos());
-                                this.hand.remove(c);
-                                state = 5;
+                                ReplayMenu();
+                                state = 1; 
+                                if(c != null)
+                                    this.GetCard(c);
                             }
                             
                         }
@@ -111,6 +124,7 @@ public class Human extends Player
                         System.out.println("You got " + c.toString());
                         DrawMenu();
                         state = this.GetPlayerChoice();
+                        drawn = true; 
                         break;
                     
                 case 3: System.out.println(this.GetName() + " passes");
@@ -129,6 +143,14 @@ public class Human extends Player
             }
         }
         return true; 
+    }
+    
+    private boolean Match(Card c, Card discard)
+    {
+       boolean possible = false;
+       if(c != null)
+           possible = c.match(discard); 
+       return possible;
     }
     
     private void ReplayMenu()
