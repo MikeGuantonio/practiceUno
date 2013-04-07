@@ -117,7 +117,16 @@ public class Deck {
         Card    discard  = discardDeck.peek();
         String cardName = cardToBePlayed.getClass().getSimpleName();
         
-        canPlace = cardToBePlayed.match(discard);
+        if(cardName.equals("WildCard"))
+        {
+            canPlace = true; 
+        }
+        else
+        {
+            canPlace = cardToBePlayed.match(discard);
+        }
+        
+        System.out.println("Trying to play a card: " + canPlace);
         if(canPlace)
         {    
             switch(cardName)
@@ -126,7 +135,8 @@ public class Deck {
                                     newpos = sp.PlaySpecial(p, this, pos);
                                     break;
                     
-                case "WildCard":    WildCard wild     = (WildCard) cardToBePlayed;
+                case "WildCard":    System.out.println("Entering Wild Card in Add Discard");
+                                    WildCard wild     = (WildCard) cardToBePlayed;
                                     wild.PlayWild(in, p, this, pos);
                                     break;
                    

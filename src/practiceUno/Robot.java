@@ -140,69 +140,64 @@ public class Robot extends Player {
     }
 
     
-    private int Decide(Card c)
+    private int Decide(Card discard)
     {
         log.entering("Decide", name);
 
         int choice;
-        Card discard = c;
         playingCard = null;
-        String cardName = discard.getClass().getSimpleName();
         
-        this.Match(c);
-                
-        if(playingCard == null )
-            PlayAWild(); 
-                
-        if (playingCard != null)
+        if(this.Match(discard))
         {
-            choice = 1;
+            choice = 1; 
         }
-        else 
+        else
         {
-            choice = 2;
+            if(this.PlayAWild())
+            {
+                choice = 1; 
+            }
+            else
+            {
+                choice = 2;
+            }
         }
 
         log.exiting("Decide", name);
         return choice;
     }
     
-    private void MakeWildDeck()
-    {
+    
+    private boolean PlayAWild()
+    { 
+        boolean isWild = false;
         for(Card c : hand)
         {
             if(c.getClass().equals(WildCard.class))
             {
-                wildSet.push(c);
-            }
-        }
-    }
-    
-   
-    private void PlayAWild()
-    { 
-        MakeWildDeck(); 
-        if(playingCard == null && !wildSet.empty() )
-        {
-            playingCard = wildSet.pop(); 
-        }
-        wildSet.clear();
-    }
-    
-    public void Match(Card c)
-    {
-        for(Card inPlay : hand)
-        {
-            if(c.match(inPlay))
-            {
-                System.out.println("Matched");
-                System.out.println(c.toString());
-                System.out.println(inPlay.toString());
-                c.Print();
-                playingCard = inPlay; 
+                playingCard = c;
+                isWild = true;
                 break;
             }
         }
+        return isWild; 
+    }
+    
+    public boolean Match(Card c)
+    {
+        boolean possible = false; 
+        for(Card inPlay : hand)
+        {
+            if(!inPlay.getClass().equals(WildCard.class) && c.match(inPlay))
+            {
+                System.out.println("Matched " + c.toString() + " " + inPlay.toString());
+                playingCard = inPlay;
+                possible = true;
+                break;
+            }
+        }
+        
+        return possible; 
     }
     
     
