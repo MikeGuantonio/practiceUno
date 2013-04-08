@@ -8,6 +8,7 @@ package practiceUno;
 //~--- JDK imports ------------------------------------------------------------
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 import java.util.Scanner;
 import java.util.Stack;
@@ -58,6 +59,28 @@ public class Robot extends Player {
         hand.remove(c);
     }
 
+    public ListIterator PlayAHand2(Deck d, ListIterator<Player> p)
+    {
+        log.entering("Play a hand2", name);
+        boolean done = false;
+        boolean tried = false;
+        int pos = 0; 
+
+        log.fine("Trying to decide");
+
+        int state = Decide(d.TopDiscard());
+
+        if (state == 1)
+        {
+            log.fine(String.format("Decided %s %s", state, playingCard.toString()));
+        }
+        else
+        {
+            log.fine(String.format("decided %s", state));
+        }
+        
+        return p;
+    }
     
     public int PlayAHand(Deck d, ArrayList<Player> p)
     {

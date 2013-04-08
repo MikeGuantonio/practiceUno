@@ -4,9 +4,8 @@
  */
 package practiceUno;
 
-import java.io.Console;
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.ListIterator;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -32,10 +31,11 @@ public class UnoClone {
         
         int pos = 0; 
         boolean endGame = false; 
-        
         log.config("Creating players, deck"); 
         UnoClone uno = new UnoClone();
         ArrayList<Player> players = new ArrayList<>(); 
+        ListIterator currentPlayer = players.listIterator();
+        
         Deck deck = new Deck(); 
         
         log.config("Initalizing players, deck");
@@ -46,8 +46,12 @@ public class UnoClone {
         log.fine("Game loop");
         log.fine(String.format("Number of Players %s", players.size()));
         System.out.println(String.format("Starting a game of uno with %s players", players.size()));
+        
+        Player currentPlayeriter = (Player)currentPlayer.next();
+        
         do
         {
+            
             Player current = players.get(pos);
             System.out.println((String.format("%s's turn. %s sees %s", current.GetName(), current.GetName(), deck.TopDiscard().toString())));
 
@@ -55,6 +59,8 @@ public class UnoClone {
 
             log.fine(String.format("%s's turn Deck Shows:  %s", current.GetName(), deck.TopDiscard().toString()));
 
+            pos = currentPlayeriter.PlayAHand(deck, players);
+            
             pos = current.PlayAHand(deck, players); 
             endGame = uno.CheckForEndGame(current);
 
@@ -62,6 +68,8 @@ public class UnoClone {
             {
                 System.out.println(current.GetName() + " won!");
                 uno.Report(players);
+                
+                
                 break;
             }
             else
@@ -192,6 +200,85 @@ public class UnoClone {
         } 
         log.exiting("Wrap", null);
         return pos; 
+        
+    }
+    
+    public class UnoIter 
+    {
+        private ListIterator<Player> iter;
+        private boolean forward = true; 
+        
+        UnoIter(ArrayList<Player> p)
+        {
+            iter = p.listIterator();
+        }
+        
+        public Player GoToStart()
+        {
+            Player p; 
+            while(iter.hasPrevious())
+            {
+                iter.previous();
+            }
+            p = (Player)iter;
+            return p;
+        }
+        
+        public Player GoToEnd()
+        {
+            Player p = null; 
+            while(iter.hasNext())
+            {
+                iter.next();
+            }           
+            p = (Player)iter; 
+            return p;
+        }
+        
+        public void Move()
+        {
+            if(forward)
+            {
+                this.Next();
+            }
+            else
+            {
+                this.Previous();
+            }
+        }
+        public Player Next()
+        {
+            Player p = null; 
+            if(iter.hasNext())
+                p = iter.next();
+            else
+                p = this.GoToStart();
+            return p;
+        }
+        
+        public void Previous()
+        {
+            Player p = null; 
+            if(iter.hasPrevious())
+                p = iter.previous();
+            else
+                p = this.GoToEnd();
+        }
+        
+        public void Set(Player p)
+        {
+            iter.set(p);
+        }
+        
+        public boolean isClockWise()
+        {
+            return forward;
+        }
+        
+        public void setMotion(Boolean move)
+        {
+            forward = move; 
+        }
         
     }
     

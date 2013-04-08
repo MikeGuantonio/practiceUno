@@ -5,6 +5,7 @@
 package practiceUno;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 import java.util.logging.Logger;
 
 /**
@@ -58,6 +59,88 @@ public class SpecialCard extends Card implements SpecialActions
         return sp; 
     }
     
+    
+   public ListIterator PlaySpecial2(ArrayList<Player> p, ListIterator<Player> current, Deck d) //may want the arraylist and define iter later.
+   {
+       switch(this.sp)
+       {
+          case SKIP : p = this.Skip2(p, current);
+                      break;
+              
+          case REVERSE: this.Reverse2(p, current);
+                        break;
+              
+          case DRTWO : this.DrawTwo2(d, p, current);
+                       break;
+       }
+       
+       return p;
+   }
+   
+   public Player Skip2(ArrayList<Player> p, ListIterator<Player> c)
+   {
+        ListIterator<Player> start = p.listIterator();
+        Player cp = null; 
+        
+        if(c.hasNext())
+        {
+            cp = c.next();
+            if(c.hasNext())
+            {
+                cp = c.next();
+            }
+            else
+            {
+                cp = start.next();
+            }
+        }
+        else
+        {
+            cp = start.next(); 
+            cp = start.next(); 
+        }
+        return cp;
+         
+    }
+   
+   public Player Reverse2(ArrayList<Player> p, ListIterator<Player> c)
+   {
+       Player cp = null;
+       ListIterator<Player> start = p.listIterator();
+       
+       if(c.hasPrevious())
+       {
+           cp = c.previous();
+       }
+       else
+       {
+           cp = p.get(p.size()-1);
+       }
+       return cp; 
+         
+    }
+   
+   public Player DrawTwo2(Deck theDeck, ArrayList<Player> p, ListIterator<Player> c)
+    {        
+         Player cp = null; 
+         ListIterator<Player> start = p.listIterator();
+         
+         if(c.hasNext())
+         {
+             cp = c.next();
+             cp.GetCard(theDeck.DrawNext());
+             cp.GetCard(theDeck.DrawNext());
+         }
+         else
+         {
+             cp = start.next();
+             cp.GetCard(theDeck.DrawNext());
+             cp.GetCard(theDeck.DrawNext());
+         }
+         return cp;
+         
+    }
+   
    public int PlaySpecial(ArrayList<Player> p , Deck d, int pos)
    {
        int newPos = pos;
