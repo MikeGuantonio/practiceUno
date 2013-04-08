@@ -25,18 +25,18 @@ public class UnoClone {
      *
      * @param args
      */
-    public static void main(String[] args)
+    public void main(String[] args)
     {  
         SetUpLogger("testScripts/unoClone.xml"); 
         
-        int pos = 0; 
-        boolean endGame = false; 
-        log.config("Creating players, deck"); 
-        UnoClone uno = new UnoClone();
+        log.config("Creating players, deck");
+        boolean endGame = false;
+        UnoClone uno = new UnoClone(); 
         ArrayList<Player> players = new ArrayList<>(); 
-        ListIterator currentPlayer = players.listIterator();
-        
-        Deck deck = new Deck(); 
+        UnoIter iter = new UnoIter(players);
+        Deck deck = new Deck();  
+        Player current = null; 
+        Card inPlayCard = null; 
         
         log.config("Initalizing players, deck");
         deck.Shuffle();
@@ -45,39 +45,46 @@ public class UnoClone {
         
         log.fine("Game loop");
         log.fine(String.format("Number of Players %s", players.size()));
+        
         System.out.println(String.format("Starting a game of uno with %s players", players.size()));
         
-        Player currentPlayeriter = (Player)currentPlayer.next();
-        
+        current = iter.CurrentPlayer();
         do
         {
-            
-            Player current = players.get(pos);
-            System.out.println((String.format("%s's turn. %s sees %s", current.GetName(), current.GetName(), deck.TopDiscard().toString())));
-
-            uno.Sleep(1_000); 
-
-            log.fine(String.format("%s's turn Deck Shows:  %s", current.GetName(), deck.TopDiscard().toString()));
-
-            pos = currentPlayeriter.PlayAHand(deck, players);
-            
-            pos = current.PlayAHand(deck, players); 
-            endGame = uno.CheckForEndGame(current);
-
-            if(endGame)
+            inPlayCard = current.PlayAHand(deck.TopDiscard());
+            uno.Sleep(1_000);
+            if(inPlayCard == null)
             {
-                System.out.println(current.GetName() + " won!");
-                uno.Report(players);
-                
-                
-                break;
+                System.out.println(current.GetName() + " passes");
             }
             else
             {
-                log.fine(String.format("End %s turn ", current.GetName()));
-                pos = uno.Wrap((pos+1), players.size()); //Do we check a wrap as next player if there
-                uno.Report(players);                     //is a side effect.
-            }    
+                switch(inPlayCard.getClass().getSimpleName())
+                {
+                    case "NumberCard" : iter.Move();
+                                        break;
+                        
+                    case "SpecialCard" : SpecialCard sp = (SpecialCard)c;
+                                         sp.PlaySpecial(players, deck, pos); //Look at what a special needs
+                                         //Possible...
+                                            iter.Move();
+                                         //Or
+                                            iter.Move(newPos); 
+                                         break;
+                        
+                    case "WildCard": WildCard w = (WildCard)c;
+                                     w.PlayWild(input, players, deck, pos)// look at what a wild needs.
+                                     iter.Move();
+                                     break;
+                }
+                deck.AddDiscard(inPlayCard);
+            }
+            
+            endGame = uno.CheckForEndGame(current);
+            if(endGame)
+                System.out.println(current.GetName() + " won!");
+            uno.Report(players);
+               
         } while(!endGame);     
     }
 
@@ -181,27 +188,6 @@ public class UnoClone {
         log.exiting("SetupPlayers", "Main");
     }
     
-   
-    
-    /**
-     *
-     * @param pos
-     * @param maxSize
-     * @return
-     */
-    public int Wrap(int pos, int maxSize)
-    {
-        log.entering("Wrap", null);
-        if(pos > maxSize-1) {
-            pos = 0; 
-        } 
-        else if(pos < 0) {
-            pos = maxSize;
-        } 
-        log.exiting("Wrap", null);
-        return pos; 
-        
-    }
     
     public class UnoIter 
     {
@@ -246,6 +232,7 @@ public class UnoClone {
                 this.Previous();
             }
         }
+        
         public Player Next()
         {
             Player p = null; 
@@ -278,6 +265,11 @@ public class UnoClone {
         public void setMotion(Boolean move)
         {
             forward = move; 
+        }
+        
+        public Player CurrentPlayer()
+        {
+            return (Player)iter; 
         }
         
     }
