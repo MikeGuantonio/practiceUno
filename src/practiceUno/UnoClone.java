@@ -21,73 +21,7 @@ public class UnoClone {
     private static final Logger log = Logger.getLogger(UnoClone.class.getName()); 
     public Scanner input= new Scanner(System.in); 
     
-    /**
-     *
-     * @param args
-     */
-    public void main(String[] args)
-    {  
-        SetUpLogger("testScripts/unoClone.xml"); 
-        
-        log.config("Creating players, deck");
-        boolean endGame = false;
-        UnoClone uno = new UnoClone(); 
-        ArrayList<Player> players = new ArrayList<>(); 
-        UnoIter iter = new UnoIter(players);
-        Deck deck = new Deck();  
-        Player current = null; 
-        Card inPlayCard = null; 
-        
-        log.config("Initalizing players, deck");
-        deck.Shuffle();
-        SetUpPlayers(players, deck, 2);
-        deck.SetUpDiscard(uno.input);
-        
-        log.fine("Game loop");
-        log.fine(String.format("Number of Players %s", players.size()));
-        
-        System.out.println(String.format("Starting a game of uno with %s players", players.size()));
-        
-        current = iter.CurrentPlayer();
-        do
-        {
-            inPlayCard = current.PlayAHand(deck.TopDiscard(), deck);
-            uno.Sleep(1_000);
-            if(inPlayCard == null)
-            {
-                System.out.println(current.GetName() + " passes");
-            }
-            else
-            {
-                switch(inPlayCard.getClass().getSimpleName())
-                {
-                    case "NumberCard" : iter.Move();
-                                        break;
-                        
-                    case "SpecialCard" : SpecialCard sp = (SpecialCard)inPlayCard;
-                                         //sp.PlaySpecial(players, deck, pos); //Look at what a special needs
-                                         //Possible...
-                                            iter.Move();
-                                         //Or
-                                            //iter.Move(newPos); 
-                                         break;
-                        
-                    case "WildCard": WildCard w = (WildCard)inPlayCard;
-                                     //w.PlayWild(input, players, deck, pos)// look at what a wild needs.
-                                     iter.Move();
-                                     break;
-                }
-                deck.AddDiscard(inPlayCard);
-            }
-            
-            endGame = uno.CheckForEndGame(current);
-            if(endGame)
-                System.out.println(current.GetName() + " won!");
-            uno.Report(players);
-               
-        } while(!endGame);     
-    }
-
+   
     
     public void Sleep(long sleepTime)
     {
@@ -191,70 +125,81 @@ public class UnoClone {
     
     public class UnoIter 
     {
-        private ListIterator<Player> iter;
+        private ArrayList<Player> players = null; 
+        private int pos = -1 ; //start at -1 in order to start at 0;
         private boolean forward = true; 
         
-        UnoIter(ArrayList<Player> p)
+        UnoIter(ArrayList<Player> players)
         {
-            iter = p.listIterator();
+            this.players = players;
         }
         
-        public Player GoToStart()
+        private Player GoToStart()
         {
             Player p; 
-            while(iter.hasPrevious())
-            {
-                iter.previous();
-            }
-            p = (Player)iter;
+            p = players.get(0);
+            pos = 0; 
+            return p;
+            
+        }
+        
+        private Player GoToEnd()
+        { 
+            Player p; 
+            p = players.get(players.size()-1);
+            pos = players.size()-1;
             return p;
         }
         
-        public Player GoToEnd()
+        public Player Move()
         {
-            Player p = null; 
-            while(iter.hasNext())
-            {
-                iter.next();
-            }           
-            p = (Player)iter; 
-            return p;
-        }
-        
-        public void Move()
-        {
+            Player p;
             if(forward)
             {
-                this.Next();
+                p = this.Next();
             }
             else
             {
-                this.Previous();
+                p = this.Previous();
             }
+            return p;
+           
         }
         
-        public Player Next()
+        private Player Next()
         {
-            Player p = null; 
-            if(iter.hasNext())
-                p = iter.next();
+            int newPos = pos +1;
+            Player p; 
+            if(newPos >= players.size())
+            {
+               p = this.GoToStart();
+            }
             else
-                p = this.GoToStart();
+            {
+                pos++;
+                p = players.get(pos);
+            }
             return p;
         }
         
-        public void Previous()
-        {
-            Player p = null; 
-            if(iter.hasPrevious())
-                p = iter.previous();
-            else
+        private Player Previous()
+        { 
+            int newPos = pos-1;
+            Player p; 
+            if(newPos < 0)
+            {
                 p = this.GoToEnd();
+            }
+            else
+            {
+                p = this.Previous();
+            }
+            return p;
         }
         
         public void Set(Player p)
         {
-            iter.set(p);
+           players.get(pos).clone(p); 
         }
         
         public boolean isClockWise()
@@ -266,12 +211,74 @@ public class UnoClone {
         {
             forward = move; 
         }
+       
+    }
+    
+    public static void main(String[] args)
+    {  
+        SetUpLogger("testScripts/unoClone.xml"); 
         
-        public Player CurrentPlayer()
+        log.config("Creating players, deck");
+        boolean endGame = false;
+        UnoClone uno = new UnoClone(); 
+        ArrayList<Player> players = new ArrayList<>(); 
+        UnoClone.UnoIter iter = new UnoClone().new UnoIter(players);
+        
+        Deck deck = new Deck();  
+        Player current = null; 
+        Card inPlayCard = null; 
+        
+        log.config("Initalizing players, deck");
+        deck.Shuffle();
+        SetUpPlayers(players, deck, 2);
+        deck.SetUpDiscard(uno.input);
+        
+        log.fine("Game loop");
+        log.fine(String.format("Number of Players %s", players.size()));
+        
+        System.out.println(String.format("Starting a game of uno with %s players", players.size()));
+        System.out.println("The card on the discard deck is " + deck.TopDiscard().toString());
+        
+        do
         {
-            return (Player)iter; 
-        }
-        
+            current = iter.Move();
+            System.out.println(current.GetPlayerPos());
+            System.out.println("Before call to inplay");
+            inPlayCard = current.PlayAHand(inPlayCard, deck);
+            System.out.println("After call to inplay.");
+            System.out.println(inPlayCard.toString());
+            uno.Sleep(1_000);
+            if(inPlayCard == null)
+            {
+                System.out.println(current.GetName() + " passes");
+            }
+            else
+            {
+                switch(inPlayCard.getClass().getSimpleName())
+                {
+                    case "NumberCard" : //iter.Move();
+                                        iter.Move();
+                                        break;
+                        
+                    case "SpecialCard" : SpecialCard sp = (SpecialCard)inPlayCard;
+                                         //sp.PlaySpecial(players, deck, pos); //Look at what a special needs
+                                         iter.Move();
+                                         break;
+                        
+                    case "WildCard": WildCard w = (WildCard)inPlayCard;
+                                     //w.PlayWild(input, players, deck, pos)// look at what a wild needs.
+                                     iter.Move();
+                                     break;
+                }
+                deck.AddDiscard(inPlayCard);
+            }
+            
+            endGame = uno.CheckForEndGame(current);
+            if(endGame)
+                System.out.println(current.GetName() + " won!");
+            uno.Report(players);
+               
+        } while(!endGame);     
     }
     
 }

@@ -15,6 +15,18 @@ abstract class Player
     abstract Card PlayAHand(Card topCard, Deck d); 
     abstract Card Discard(int dex);
     
+    public Player clone(Player p)
+    {
+        for(Card c : p.hand)
+        {
+            this.GetCard(c);
+        }
+        
+        this.name = p.name;
+        this.playerPos = p.playerPos;
+        return this;
+    }
+    
     public int FindCard(Card c)
     {
         return hand.indexOf(c);

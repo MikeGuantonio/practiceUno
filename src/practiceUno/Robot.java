@@ -72,6 +72,7 @@ public class Robot extends Player {
 
         log.fine("Trying to decide");
 
+        System.out.println("Deciding");
         int state = Decide(topCard);
 
         if (state == 1)
@@ -82,7 +83,8 @@ public class Robot extends Player {
         {
             log.fine(String.format("decided %s", state));
         }
-
+        System.out.println("Done decideing");
+        
         while (!done)
         {
            switch (state)
@@ -127,7 +129,7 @@ public class Robot extends Player {
                 case 5: log.fine("End turn");
                         done = true;
                         toPlay = playingCard;
-                        playingCard = null; // <-- may be segfault...
+                        //playingCard = null; // <-- may be segfault...
                         break;
 
                 default: log.severe("I don't know what to do");
@@ -186,6 +188,8 @@ public class Robot extends Player {
     public boolean Match(Card c)
     {
         boolean possible = false; 
+        System.out.println("I have "+  this.TotalCards());
+        this.ShowHand();
         for(Card inPlay : hand)
         {
             if(!inPlay.getClass().equals(WildCard.class) && c.match(inPlay))
@@ -195,8 +199,12 @@ public class Robot extends Player {
                 possible = true;
                 break;
             }
+            else if(inPlay.getClass().equals(WildCard.class))
+            {
+                System.out.println("inplay: " + inPlay.toString());
+            }
         }
-        
+        System.out.println("End of call.");
         return possible; 
     }
     

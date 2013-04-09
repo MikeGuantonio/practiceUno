@@ -1,8 +1,6 @@
-    [junit] Test practiceUno.HumanTest FAILED
-    [junit] Test practiceUno.SpecialCardTest FAILED
-    [junit] Test practiceUno.WildCardTest FAILED
 
 BUILD FAILED
-/home/mike/langsToLearn/java/projects/UnoClone/nbproject/build-impl.xml:1320: Some tests failed; see details above.
+/home/mike/langsToLearn/java/projects/UnoClone/nbproject/build-impl.xml:1281: The following error occurred while executing this line:
+/home/mike/langsToLearn/java/projects/UnoClone/nbproject/build-impl.xml:296: Compile failed; see the compiler error output for details.
 
-Total time: 14 seconds
+Total time: 6 seconds

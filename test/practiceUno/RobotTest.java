@@ -67,7 +67,7 @@ public class RobotTest {
             r.GetCard(d.DrawNext());
         }
         
-        r.PlayAHand(d, p );
+        r.PlayAHand(d.TopDiscard(), d );
         
     }
     
@@ -87,7 +87,7 @@ public class RobotTest {
         {
             r.GetCard(d.DrawNext());
         }
-        r.PlayAHand(d, p);
+        r.PlayAHand(d.TopDiscard(), d);
     }
     
     /**
@@ -118,7 +118,7 @@ public class RobotTest {
         boolean done = false; 
         while(!done)
         {
-            r.PlayAHand(d, p);
+            r.PlayAHand(d.TopDiscard(), d);
             if(r.TotalCards() == 0)
             {
                 done = true; 
@@ -151,7 +151,7 @@ public class RobotTest {
         r.GetCard(new NumberCard(5, Card.cardColor.BLUE));
         r.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED));
         
-        r.PlayAHand(d, p);
+        r.PlayAHand(d.TopDiscard(), d);
         
     }
     
@@ -169,7 +169,7 @@ public class RobotTest {
         r.GetCard(new NumberCard(5, Card.cardColor.BLUE));
         r.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED));
         
-        r.PlayAHand(d, p);
+        r.PlayAHand(d.TopDiscard(), d);
     }
     
     /**
@@ -187,7 +187,7 @@ public class RobotTest {
         r.GetCard(new NumberCard(5, Card.cardColor.BLUE));
         r.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.RED));
         
-        r.PlayAHand(d, p);
+        r.PlayAHand(d.TopDiscard(), d);
         System.out.println("Name of class " + r.getClass().getSimpleName());
     }
     private static final Logger LOG = Logger.getLogger(RobotTest.class.getName());
