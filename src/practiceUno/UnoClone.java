@@ -239,7 +239,7 @@ public class UnoClone {
         
         log.config("Initalizing players, deck");
         deck.Shuffle();
-        SetUpPlayers(players, deck, 2);
+        SetUpPlayers(players, deck, 3);
         deck.SetUpDiscard(uno.input);
         
         log.fine("Game loop");

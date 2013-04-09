@@ -127,6 +127,8 @@ public class Human extends Player
                         break;
                     
                 case 4: WildMenu();
+                        WildCard w = (WildCard)c;
+                        w.Wild(input);
                         state = 5; 
                         break;
                     
