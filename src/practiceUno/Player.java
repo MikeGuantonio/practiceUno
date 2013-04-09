@@ -12,7 +12,7 @@ abstract class Player
     protected String name; 
     protected int playerPos; 
     
-    abstract int PlayAHand(Deck d, ArrayList<Player> p); 
+    abstract Card PlayAHand(Card topCard, Deck d); 
     abstract Card Discard(int dex);
     
     public int FindCard(Card c)
@@ -20,9 +20,7 @@ abstract class Player
         return hand.indexOf(c);
     }
     
-    /**
-     *
-     */
+   
     public void ShowHand()
     {
         
@@ -39,20 +37,13 @@ abstract class Player
         else
             return false; 
     }
-    /**
-     *
-     * @param c
-     */
+   
     public void GetCard(Card c)
     {
 	hand.add(c);
     }
 
     
-    /**
-     *
-     * @return
-     */
     public int TotalCards()
     {
 	return hand.size(); 

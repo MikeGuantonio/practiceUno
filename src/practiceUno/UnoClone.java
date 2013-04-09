@@ -51,7 +51,7 @@ public class UnoClone {
         current = iter.CurrentPlayer();
         do
         {
-            inPlayCard = current.PlayAHand(deck.TopDiscard());
+            inPlayCard = current.PlayAHand(deck.TopDiscard(), deck);
             uno.Sleep(1_000);
             if(inPlayCard == null)
             {
@@ -64,16 +64,16 @@ public class UnoClone {
                     case "NumberCard" : iter.Move();
                                         break;
                         
-                    case "SpecialCard" : SpecialCard sp = (SpecialCard)c;
-                                         sp.PlaySpecial(players, deck, pos); //Look at what a special needs
+                    case "SpecialCard" : SpecialCard sp = (SpecialCard)inPlayCard;
+                                         //sp.PlaySpecial(players, deck, pos); //Look at what a special needs
                                          //Possible...
                                             iter.Move();
                                          //Or
-                                            iter.Move(newPos); 
+                                            //iter.Move(newPos); 
                                          break;
                         
-                    case "WildCard": WildCard w = (WildCard)c;
-                                     w.PlayWild(input, players, deck, pos)// look at what a wild needs.
+                    case "WildCard": WildCard w = (WildCard)inPlayCard;
+                                     //w.PlayWild(input, players, deck, pos)// look at what a wild needs.
                                      iter.Move();
                                      break;
                 }

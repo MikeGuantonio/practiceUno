@@ -37,7 +37,7 @@ public class Robot extends Player {
 
     
     @Override
-    public Card Discard(int dex)
+    public Card Discard(int dex) //this function needs fixed as well...
     {
         log.entering("Discard", name);
         Card retC;
@@ -59,40 +59,20 @@ public class Robot extends Player {
         hand.remove(c);
     }
 
-    public ListIterator PlayAHand2(Deck d, ListIterator<Player> p)
-    {
-        log.entering("Play a hand2", name);
-        boolean done = false;
-        boolean tried = false;
-        int pos = 0; 
-
-        log.fine("Trying to decide");
-
-        int state = Decide(d.TopDiscard());
-
-        if (state == 1)
-        {
-            log.fine(String.format("Decided %s %s", state, playingCard.toString()));
-        }
-        else
-        {
-            log.fine(String.format("decided %s", state));
-        }
-        
-        return p;
-    }
-    
-    public int PlayAHand(Deck d, ArrayList<Player> p)
+   
+    @Override
+    public Card PlayAHand(Card topCard, Deck d)
     {
         log.entering("Play a hand", name);
 
         boolean done = false;
         boolean tried = false;
         int pos = 0; 
+        Card toPlay = null; 
 
         log.fine("Trying to decide");
 
-        int state = Decide(d.TopDiscard());
+        int state = Decide(topCard);
 
         if (state == 1)
         {
@@ -107,15 +87,14 @@ public class Robot extends Player {
         {
            switch (state)
            {
-                case 1: log.fine(String.format("Trying to play a card %s %s", playingCard.toString(), d.TopDiscard().toString()));
+                case 1: log.fine(String.format("Trying to play a card %s %s", playingCard.toString(), topCard.toString()));
                         if (playingCard.getClass().equals(WildCard.class))
                         {
                             state = 4;
                         }
                         else
                         {
-                            pos = d.AddDiscard(playingCard, p, null, this.GetPlayerPos());
-                            hand.remove(FindCard(playingCard));
+                            toPlay = hand.remove(FindCard(playingCard));
                             state = 5;
                         }
                         break;
@@ -135,22 +114,20 @@ public class Robot extends Player {
                         state = 5;
                         break;
 
-                case 4: log.fine("Time for a wild card.");
+                case 4: //We are not doing this anymore. Need to move it outside into uno.
+                        log.fine("Time for a wild card.");
                         int colorChoice = (int)(Math.random() * 3);
                         ByteArrayInputStream in = new ByteArrayInputStream(colorValues[colorChoice].toString().getBytes());
                         System.setIn(in);
-                        pos = d.AddDiscard(playingCard, p, new Scanner(System.in), this.GetPlayerPos());
+                        //pos = d.AddDiscard(playingCard, p, new Scanner(System.in), this.GetPlayerPos());
                         hand.remove(FindCard(playingCard));
                         state = 5;
                         break;
 
                 case 5: log.fine("End turn");
                         done = true;
-                        if(playingCard != null)
-                        {
-                            System.out.println(String.format("%s played %s", GetName(), playingCard.toString()));
-                            playingCard = null; 
-                        }
+                        toPlay = playingCard;
+                        playingCard = null; // <-- may be segfault...
                         break;
 
                 default: log.severe("I don't know what to do");
@@ -159,7 +136,7 @@ public class Robot extends Player {
         }
 
         log.exiting("Play a Hand", name);
-        return pos;
+        return toPlay;
     }
 
     

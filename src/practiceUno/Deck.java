@@ -108,56 +108,11 @@ public class Deck {
         return c;
     }
 
-    public ListIterator AddDiscard2(Card c, ArrayList<Player> ps, ListIterator<Player> p, Scanner in)
-    {
-        boolean canPlace = false; 
-        Card    discard  = discardDeck.peek();
-        String cardName = c.getClass().getSimpleName();
-        ListIterator<Player> newp = null;
         
-        if(cardName.equals("WildCard"))
-        {
-            canPlace = true; 
-        }
-        else
-        {
-            canPlace = c.match(discard);
-        }
-        System.out.println("Trying to play a card: " + canPlace);
-        
-        if(canPlace)
-        {    
-            switch(cardName)
-            {
-                case "NumberCard" : p.next();
-                                    break;
-                    
-                case "SpecialCard": SpecialCard sp = (SpecialCard)c;
-                                    p = sp.PlaySpecial2(ps, p, this );
-                                    break;
-                    
-                case "WildCard":    System.out.println("Entering Wild Card in Add Discard");
-                                    WildCard wild     = (WildCard) c;
-                                    wild.PlayWild(in, p, this, pos);
-                                    p.next();
-                                    break;
-                   
-            }
-            discardDeck.push(c);
-        }
-        else
-        {
-            log.info("No card can be played.");
-        }
-        newp = p;
-        return newp;
-    }
-    
-    public int AddDiscard(Card cardToBePlayed, ArrayList<Player> p, Scanner in, int pos)
+    public boolean AddDiscard(Card cardToBePlayed)
     {  
         boolean canPlace = false;
-        int newpos = pos; 
-        Card    discard  = discardDeck.peek();
+        Card    discard  = this.discardDeck.peek();
         String cardName = cardToBePlayed.getClass().getSimpleName();
         
         if(cardName.equals("WildCard"))
@@ -171,30 +126,8 @@ public class Deck {
         
         System.out.println("Trying to play a card: " + canPlace);
         if(canPlace)
-        {    
-            switch(cardName)
-            {
-                case "NumberCard" : newpos++;
-                                    break;
-                    
-                case "SpecialCard": SpecialCard sp = (SpecialCard)cardToBePlayed;
-                                    newpos = sp.PlaySpecial(p, this, pos);
-                                    break;
-                    
-                case "WildCard":    System.out.println("Entering Wild Card in Add Discard");
-                                    WildCard wild     = (WildCard) cardToBePlayed;
-                                    wild.PlayWild(in, p, this, pos);
-                                    newpos++;
-                                    break;
-                   
-            }
             discardDeck.push(cardToBePlayed);
-        }
-        else
-        {
-            log.info("No card can be played.");
-        }
-        return newpos;
+        return canPlace;
     }
 
      
