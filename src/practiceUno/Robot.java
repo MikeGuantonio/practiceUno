@@ -72,7 +72,6 @@ public class Robot extends Player {
 
         log.fine("Trying to decide");
 
-        System.out.println("Deciding");
         int state = Decide(topCard);
 
         if (state == 1)
@@ -83,13 +82,12 @@ public class Robot extends Player {
         {
             log.fine(String.format("decided %s", state));
         }
-        System.out.println("Done decideing");
         
         while (!done)
         {
            switch (state)
            {
-                case 1: log.fine(String.format("Trying to play a card %s %s", playingCard.toString(), topCard.toString()));
+                case 1: 
                         if (playingCard.getClass().equals(WildCard.class))
                         {
                             state = 4;
@@ -101,7 +99,8 @@ public class Robot extends Player {
                         }
                         break;
 
-                case 2: log.fine("Need to draw a card");
+                case 2: 
+                        log.fine("Need to draw a card");
                         super.GetCard(d.DrawNext());
                         state = Decide(d.TopDiscard());
                         tried = true;
@@ -117,6 +116,7 @@ public class Robot extends Player {
                         break;
 
                 case 4: //We are not doing this anymore. Need to move it outside into uno.
+                        System.out.println("Wild Card");
                         log.fine("Time for a wild card.");
                         int colorChoice = (int)(Math.random() * 3);
                         ByteArrayInputStream in = new ByteArrayInputStream(colorValues[colorChoice].toString().getBytes());
@@ -129,7 +129,6 @@ public class Robot extends Player {
                 case 5: log.fine("End turn");
                         done = true;
                         toPlay = playingCard;
-                        //playingCard = null; // <-- may be segfault...
                         break;
 
                 default: log.severe("I don't know what to do");
@@ -142,14 +141,15 @@ public class Robot extends Player {
     }
 
     
-    private int Decide(Card discard)
+    private int Decide(Card topCard)
     {
         log.entering("Decide", name);
 
+        
         int choice;
         playingCard = null;
         
-        if(this.Match(discard))
+        if(this.Match(topCard))
         {
             choice = 1; 
         }
@@ -158,13 +158,15 @@ public class Robot extends Player {
             if(this.PlayAWild())
             {
                 choice = 1; 
+                
             }
             else
             {
                 choice = 2;
+                
             }
         }
-
+        
         log.exiting("Decide", name);
         return choice;
     }
@@ -185,26 +187,29 @@ public class Robot extends Player {
         return isWild; 
     }
     
-    public boolean Match(Card c)
+    public boolean Match(Card c) //topDiscard
     {
         boolean possible = false; 
-        System.out.println("I have "+  this.TotalCards());
-        this.ShowHand();
-        for(Card inPlay : hand)
+        
+        for(Card inPlay : this.hand)
         {
-            if(!inPlay.getClass().equals(WildCard.class) && c.match(inPlay))
+            if(!inPlay.getClass().equals(WildCard.class)) 
             {
-                System.out.println("Matched " + c.toString() + " " + inPlay.toString());
-                playingCard = inPlay;
-                possible = true;
-                break;
+                
+                boolean match = c.match(inPlay);
+                if(match)
+                {
+                    playingCard = inPlay;
+                    possible = true;
+                    break;   
+                }
+                
             }
-            else if(inPlay.getClass().equals(WildCard.class))
-            {
-                System.out.println("inplay: " + inPlay.toString());
-            }
+            
+                        
+                            
         }
-        System.out.println("End of call.");
+        
         return possible; 
     }
     

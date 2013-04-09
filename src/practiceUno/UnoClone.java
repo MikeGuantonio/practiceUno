@@ -109,7 +109,7 @@ public class UnoClone {
            /*if(i == 0 )
                players.add(new Human("Job", i));
            else*/
-               players.add(new Robot("Com"+i, i));   
+               players.add(new Robot("Com"+i, i));
        }
 
         for (int i = 0; i < 7; i++)
@@ -118,6 +118,7 @@ public class UnoClone {
             {
                 current.GetCard(deck.DrawNext());
             }
+            
         }
         log.exiting("SetupPlayers", "Main");
     }
@@ -153,6 +154,7 @@ public class UnoClone {
         
         public Player Move()
         {
+            System.out.println("Entering Move of iter.");
             Player p;
             if(forward)
             {
@@ -162,6 +164,7 @@ public class UnoClone {
             {
                 p = this.Previous();
             }
+            System.out.println("Moved -> " + p.GetName());
             return p;
            
         }
@@ -241,12 +244,11 @@ public class UnoClone {
         
         do
         {
+            System.out.println("Before moving the current iter");
             current = iter.Move();
-            System.out.println(current.GetPlayerPos());
-            System.out.println("Before call to inplay");
-            inPlayCard = current.PlayAHand(inPlayCard, deck);
-            System.out.println("After call to inplay.");
-            System.out.println(inPlayCard.toString());
+            inPlayCard = current.PlayAHand(deck.TopDiscard(), deck);
+            
+            
             uno.Sleep(1_000);
             if(inPlayCard == null)
             {
@@ -254,6 +256,9 @@ public class UnoClone {
             }
             else
             {
+                System.out.println(current.GetName() +  " played " + inPlayCard.toString() + " against " + deck.TopDiscard().toString());
+                iter.Set(current);
+                
                 switch(inPlayCard.getClass().getSimpleName())
                 {
                     case "NumberCard" : //iter.Move();
@@ -270,6 +275,7 @@ public class UnoClone {
                                      iter.Move();
                                      break;
                 }
+                
                 deck.AddDiscard(inPlayCard);
             }
             

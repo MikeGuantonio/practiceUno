@@ -79,7 +79,7 @@ public class DeckTest {
         ByteArrayInputStream in = new ByteArrayInputStream("RED".getBytes());
         System.setIn(in);
         instance.SetUpDiscard(new Scanner(System.in));
-        instance.AddDiscard(c, p, new Scanner(System.in), p.get(0).GetPlayerPos());
+        instance.AddDiscard(c);
     }
     
     /**
@@ -98,7 +98,7 @@ public class DeckTest {
             for (int i = 0; i < 10; i++) 
             {
                 NumberCard n = new NumberCard(i, c); 
-                d.AddDiscard(n, null, new Scanner(System.in), 0);
+                d.AddDiscard(n);
                 d.ShowDiscard();
             }
         }
@@ -120,7 +120,7 @@ public class DeckTest {
         for(Card.cardColor oc : Card.cardColor.values())
         {
             NumberCard n = new NumberCard(5, oc);
-            d.AddDiscard(n, null, new Scanner(System.in), 0);
+            d.AddDiscard(n);
             d.ShowDiscard();
         }
     }
@@ -141,7 +141,7 @@ public class DeckTest {
         for(Card.cardColor c : Card.cardColor.values())
         {
             NumberCard n = new NumberCard(9, c); 
-            d.AddDiscard(n, null, new Scanner(System.in), 0);
+            d.AddDiscard(n);
             d.ShowDiscard();
         }
     }
@@ -165,7 +165,7 @@ public class DeckTest {
        for(Card.cardColor c: Card.cardColor.values())
        {
            SpecialCard discard = new SpecialCard(SpecialCard.cardValues.SKIP, c);
-           d.AddDiscard(discard, p, new Scanner(System.in), 0);
+           d.AddDiscard(discard);
            d.ShowDiscard();
        }
        
@@ -193,7 +193,7 @@ public class DeckTest {
         for(Card.cardColor c : Card.cardColor.values())
         {
             SpecialCard sp = new SpecialCard(SpecialCard.cardValues.DRTWO, c);
-            d.AddDiscard(sp, p, new Scanner(System.in), 0);
+            d.AddDiscard(sp);
             d.ShowDiscard();
         }
     }
@@ -218,7 +218,7 @@ public class DeckTest {
             for(SpecialCard.cardValues v : SpecialCard.cardValues.values())
             {
                 SpecialCard s = new SpecialCard(v, c);
-                d.AddDiscard(s, p, new Scanner(System.in), 0);
+                d.AddDiscard(s);
                 d.ShowDiscard();
             }
         }
@@ -243,7 +243,7 @@ public class DeckTest {
         
         d.ShowDiscard();
         WildCard w = new WildCard(WildCard.cardWild.WILD);
-        d.AddDiscard(w, p, new Scanner(System.in), 0);
+        d.AddDiscard(w);
         d.ShowDiscard();
         
     }
@@ -266,7 +266,7 @@ public class DeckTest {
         
         d.ShowDiscard();
         WildCard w = new WildCard(WildCard.cardWild.WILD);
-        canPlace = d.AddDiscard(w, p, new Scanner(System.in), 0);
+        d.AddDiscard(w);
         assertEquals(canPlace, r.GetPlayerPos());
         d.ShowDiscard();
     }
@@ -290,7 +290,7 @@ public class DeckTest {
             ByteArrayInputStream in = new ByteArrayInputStream("YELLOW".getBytes());
             System.setIn(in);
             WildCard discard = new WildCard(wc);
-            d.AddDiscard(discard, p, new Scanner(System.in), 0);
+            d.AddDiscard(discard);
             d.ShowDiscard();
         }
     }
@@ -352,7 +352,7 @@ public class DeckTest {
     public void testSideEffectDrTwo()
     {
         //Should also check for wrap cases. 
-        int expResult = 2; 
+        boolean canPlace = false;
         Robot first = new Robot("Steve", 0); 
         Robot second = new Robot("Bob", 1);
         ArrayList<Player> p = new ArrayList<>(); 
@@ -362,15 +362,15 @@ public class DeckTest {
         
         d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.BLUE));
         first.GetCard(new SpecialCard(SpecialCard.cardValues.DRTWO, Card.cardColor.BLUE));
-        d.AddDiscard(first.Discard(0), p, null, p.get(0).GetPlayerPos());
+        canPlace = d.AddDiscard(first.Discard(0));
         first.Remove(first.Discard(0));
         
         System.out.println(d.TopDiscard().toString());
         System.out.println(String.format("First: %s", first.TotalCards()));
         System.out.println(String.format("Second: %s", second.TotalCards()));
         
-        assertEquals(0, first.TotalCards());
-        assertEquals(expResult, second.TotalCards());
+        assertEquals(canPlace, true);
+        
     }
     
     @Test
@@ -383,45 +383,49 @@ public class DeckTest {
     public void testSideEffectReverseFirstToLast()
     {
         System.out.println("SideEffect Reverse");
-        int newPos = 0;
+        boolean canPlace = false;
         Robot first = new Robot("Steve", 0); 
         Robot second = new Robot("Bob", 1);
         Robot third = new Robot("Bill", 2);
-        ArrayList<Player> p = new ArrayList<>(); 
+        ArrayList<Player> p = new ArrayList<>();
+        
         p.add(first);
         p.add(second);
         p.add(third);
+        
         Deck d = new Deck(); 
         d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.RED));
         
         System.out.println("Assiming that the last player was the last palyer in list.");
         first.GetCard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.RED));
-        newPos = d.AddDiscard(first.Discard(0), p, null, p.get(0).GetPlayerPos());
+        canPlace = d.AddDiscard(first.Discard(0));
         first.Remove(first.Discard(0));
         
-        assertEquals(newPos, 2);
+        assertEquals(canPlace, true);
     }
     
     @Test
     public void testSideEffectReverseLastToFirst()
     {
-       int newPos = 0;
+        boolean canPlace = false; 
         Robot first = new Robot("Steve", 0); 
         Robot second = new Robot("Bob", 1);
         Robot third = new Robot("Bill", 2);
-        ArrayList<Player> p = new ArrayList<>(); 
+        ArrayList<Player> p = new ArrayList<>();
+        
         p.add(first);
         p.add(second);
         p.add(third);
+        
         Deck d = new Deck(); 
         d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.RED));
         
         System.out.println("Last player to the second");
         third.GetCard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.RED));
-        newPos = d.AddDiscard(third.Discard(0), p, null, p.get(2).GetPlayerPos());
+        canPlace = d.AddDiscard(third.Discard(0));
         third.Remove(third.Discard(0));
         
-        assertEquals(newPos, 1);
+        assertEquals(canPlace, true);
  
     }
     
@@ -429,43 +433,47 @@ public class DeckTest {
     @Test
     public void testSideEffectSkip()
     {
-        int newPos = 0;
+        boolean canPlace = false; 
         Robot first = new Robot("Steve", 0); 
         Robot second = new Robot("Bob", 1);
         Robot third = new Robot("Bill", 2);
-        ArrayList<Player> p = new ArrayList<>(); 
+        ArrayList<Player> p = new ArrayList<>();
+        
         p.add(first);
         p.add(second);
         p.add(third);
+        
         Deck d = new Deck(); 
         d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.YELLOW));
         
         first.GetCard(new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.YELLOW));
-        newPos = d.AddDiscard(first.Discard(0), p, null, p.get(0).GetPlayerPos());
+        canPlace = d.AddDiscard(first.Discard(0));
         first.Remove(first.Discard(0));
         
-        assertEquals(newPos, 2);
+        assertEquals(canPlace, true);
     }
     
     @Test //nee to check for other edge cases. 
     public void testSideEffectSkipLastPlayer()
     {
-        int newPos = 0;
+        boolean canPlace = false; 
         Robot first = new Robot("Steve", 0); 
         Robot second = new Robot("Bob", 1);
         Robot third = new Robot("Bill", 2);
-        ArrayList<Player> p = new ArrayList<>(); 
+        ArrayList<Player> p = new ArrayList<>();
+        
         p.add(first);
         p.add(second);
         p.add(third);
+        
         Deck d = new Deck(); 
         d.puppetSetupDiscard(new NumberCard(5, Card.cardColor.YELLOW));
         
         third.GetCard(new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.YELLOW));
-        newPos = d.AddDiscard(third.Discard(0), p, null, p.get(2).GetPlayerPos());
+        canPlace = d.AddDiscard(third.Discard(0));
         third.Remove(third.Discard(0));
         
-        assertEquals(newPos, 1);
+        assertEquals(canPlace, true);
     }
     
     @Test

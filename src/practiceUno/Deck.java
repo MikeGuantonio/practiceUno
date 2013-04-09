@@ -123,8 +123,6 @@ public class Deck {
         {
             canPlace = cardToBePlayed.match(discard);
         }
-        
-        System.out.println("Trying to play a card: " + canPlace);
         if(canPlace)
             discardDeck.push(cardToBePlayed);
         return canPlace;

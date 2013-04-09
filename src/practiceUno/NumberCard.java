@@ -17,6 +17,7 @@ public class NumberCard extends Card {
     
     public NumberCard(int newNum, Card.cardColor color)
     {
+        //shouldn't be able to set a card from -1 to 10...
         face = newNum; 
         super.color = color; 
         log.setLevel(Level.SEVERE);

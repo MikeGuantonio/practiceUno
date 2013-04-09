@@ -116,7 +116,7 @@ public class RobotTest {
         d.puppetSetupDiscard(new SpecialCard(SpecialCard.cardValues.REVERSE, Card.cardColor.BLUE));
        
         boolean done = false; 
-        while(!done)
+        do
         {
             r.PlayAHand(d.TopDiscard(), d);
             if(r.TotalCards() == 0)
@@ -125,8 +125,10 @@ public class RobotTest {
             }
             else if(r.TotalCards() == 1 )
             {
+                System.out.println("Uno");
             }
         }
+        while(!done);
         
     }
     

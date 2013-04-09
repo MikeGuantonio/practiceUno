@@ -32,11 +32,13 @@ abstract class Card {
     public boolean colorMatch(Card c)
     {
         
+   
         boolean possible = false; 
         if(c.GetColor() != null && this.color != null && this.color.equals(c.GetColor()))
         {
             possible = true; 
         }
+        
         return possible;
     }
     

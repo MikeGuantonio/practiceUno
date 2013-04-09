@@ -216,6 +216,7 @@ public class SpecialCardTest {
     public void testSkipWithTwo()
     {
         System.out.println("Test skip with two.");
+        boolean canPlace = false;
         ArrayList<Player> p = new ArrayList<>(); 
         Deck d = new Deck(); 
         d.puppetSetupDiscard(new SpecialCard(SpecialCard.cardValues.SKIP, Card.cardColor.RED));
@@ -236,10 +237,11 @@ public class SpecialCardTest {
            System.out.println("Card " + p.get(pos).TotalCards());
            System.out.println("Start pos " + pos);
            c = p.get(pos).Discard(0); 
-           pos =  d.AddDiscard(c, p, null, pos);
+           canPlace =  d.AddDiscard(c);
            System.out.println("End Pos "+ pos);
            System.out.println("Card Played " + p.get(pos).GetName() + " " + c.toString());
         }
+        assertEquals(canPlace, true);
         
     }
     

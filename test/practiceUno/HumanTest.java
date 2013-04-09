@@ -68,7 +68,7 @@ public class HumanTest {
         Deck d = new Deck(); 
         
         d.SetUpDiscard(null);
-        h.PlayAHand(d, null);
+        h.PlayAHand(d.TopDiscard(), d);
     }
     
      

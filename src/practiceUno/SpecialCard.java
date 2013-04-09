@@ -190,7 +190,6 @@ public class SpecialCard extends Card implements SpecialActions
     {
         boolean possible = false;
         
-        
         if(this.colorMatch(c))
         {
             possible = true; 
