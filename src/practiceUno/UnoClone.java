@@ -154,7 +154,6 @@ public class UnoClone {
         
         public Player Move()
         {
-            System.out.println("Entering Move of iter.");
             Player p;
             if(forward)
             {
@@ -164,7 +163,6 @@ public class UnoClone {
             {
                 p = this.Previous();
             }
-            System.out.println("Moved -> " + p.GetName());
             return p;
            
         }
@@ -202,7 +200,7 @@ public class UnoClone {
         
         public void Set(Player p)
         {
-           players.get(pos).clone(p); 
+            players.set(pos, p);
         }
         
         public boolean isClockWise()
@@ -242,44 +240,43 @@ public class UnoClone {
         System.out.println(String.format("Starting a game of uno with %s players", players.size()));
         System.out.println("The card on the discard deck is " + deck.TopDiscard().toString());
         
+        current = iter.Move();
         do
         {
-            System.out.println("Before moving the current iter");
-            current = iter.Move();
             inPlayCard = current.PlayAHand(deck.TopDiscard(), deck);
-            
             
             uno.Sleep(1_000);
             if(inPlayCard == null)
             {
                 System.out.println(current.GetName() + " passes");
+                current = iter.Move();
             }
             else
             {
                 System.out.println(current.GetName() +  " played " + inPlayCard.toString() + " against " + deck.TopDiscard().toString());
                 iter.Set(current);
+                endGame = uno.CheckForEndGame(current);
                 
                 switch(inPlayCard.getClass().getSimpleName())
                 {
-                    case "NumberCard" : //iter.Move();
-                                        iter.Move();
+                    case "NumberCard" : 
+                                        current = iter.Move();
                                         break;
                         
                     case "SpecialCard" : SpecialCard sp = (SpecialCard)inPlayCard;
                                          //sp.PlaySpecial(players, deck, pos); //Look at what a special needs
-                                         iter.Move();
+                                         current = iter.Move();
                                          break;
                         
                     case "WildCard": WildCard w = (WildCard)inPlayCard;
                                      //w.PlayWild(input, players, deck, pos)// look at what a wild needs.
-                                     iter.Move();
+                                     current = iter.Move();
                                      break;
                 }
-                
                 deck.AddDiscard(inPlayCard);
             }
             
-            endGame = uno.CheckForEndGame(current);
+            
             if(endGame)
                 System.out.println(current.GetName() + " won!");
             uno.Report(players);
@@ -288,5 +285,3 @@ public class UnoClone {
     }
     
 }
-
-

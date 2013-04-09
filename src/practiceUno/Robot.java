@@ -111,17 +111,17 @@ public class Robot extends Player {
                         break;
 
                 case 3: log.fine("Pass");
-                        System.out.println(String.format("%s passes.", GetName()));
                         state = 5;
                         break;
 
-                case 4: //We are not doing this anymore. Need to move it outside into uno.
+                case 4: WildCard tmp = (WildCard)playingCard;
                         System.out.println("Wild Card");
                         log.fine("Time for a wild card.");
                         int colorChoice = (int)(Math.random() * 3);
                         ByteArrayInputStream in = new ByteArrayInputStream(colorValues[colorChoice].toString().getBytes());
                         System.setIn(in);
-                        //pos = d.AddDiscard(playingCard, p, new Scanner(System.in), this.GetPlayerPos());
+                        tmp.Wild(new Scanner(System.in));
+                        playingCard = (Card)tmp;
                         hand.remove(FindCard(playingCard));
                         state = 5;
                         break;
