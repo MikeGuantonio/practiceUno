@@ -147,8 +147,8 @@ public class UnoClone {
         private Player GoToEnd()
         { 
             Player p; 
-            p = players.get(players.size()-1);
             pos = players.size()-1;
+            p = players.get(pos);
             return p;
         }
         
@@ -193,7 +193,8 @@ public class UnoClone {
             }
             else
             {
-                p = this.Previous();
+                pos--;
+                p = players.get(pos);
             }
             return p;
         }
@@ -208,9 +209,16 @@ public class UnoClone {
             return forward;
         }
         
-        public void setMotion(Boolean move)
+        public void setMotion(String motion)
         {
-            forward = move; 
+            switch(motion)
+            {
+                case "c": forward = true;
+                          break;
+                    
+                case "cc": forward = false;
+                           break;
+            }
         }
        
     }
@@ -259,18 +267,43 @@ public class UnoClone {
                 
                 switch(inPlayCard.getClass().getSimpleName())
                 {
-                    case "NumberCard" : 
-                                        current = iter.Move();
+                    case "NumberCard" : current = iter.Move();
                                         break;
                         
                     case "SpecialCard" : SpecialCard sp = (SpecialCard)inPlayCard;
-                                         //sp.PlaySpecial(players, deck, pos); //Look at what a special needs
-                                         current = iter.Move();
+                                         boolean clockwise = iter.isClockWise();
+                                         
+                                         switch(sp.GetSpecial())
+                                         {
+                                             case REVERSE: if(clockwise)
+                                                           {
+                                                               iter.setMotion("cc");
+                                                           }
+                                                           else
+                                                           {
+                                                               iter.setMotion("c");
+                                                           }
+                                                           current = iter.Move();
+                                                           break;
+                                                 
+                                             case SKIP: iter.Move(); 
+                                                        current = iter.Move();
+                                                        break;
+                                                 
+                                             case DRTWO: current = iter.Move();
+                                                         for(int i =0; i < 2; i++)
+                                                             current.GetCard(deck.DrawNext());
+                                                         break;
+                                         }
                                          break;
                         
-                    case "WildCard": WildCard w = (WildCard)inPlayCard;
-                                     //w.PlayWild(input, players, deck, pos)// look at what a wild needs.
-                                     current = iter.Move();
+                    case "WildCard": current = iter.Move(); 
+                                     WildCard w = (WildCard)inPlayCard;
+                                     if(w.GetWild().equals(WildCard.cardWild.WILDDRFOUR))
+                                     {
+                                         for(int i =0; i < 4; i++)
+                                             current.GetCard(deck.DrawNext());
+                                     }
                                      break;
                 }
                 deck.AddDiscard(inPlayCard);

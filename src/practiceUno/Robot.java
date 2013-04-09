@@ -115,7 +115,6 @@ public class Robot extends Player {
                         break;
 
                 case 4: WildCard tmp = (WildCard)playingCard;
-                        System.out.println("Wild Card");
                         log.fine("Time for a wild card.");
                         int colorChoice = (int)(Math.random() * 3);
                         ByteArrayInputStream in = new ByteArrayInputStream(colorValues[colorChoice].toString().getBytes());
