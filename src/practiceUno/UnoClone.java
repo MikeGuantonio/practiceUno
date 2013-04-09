@@ -264,6 +264,8 @@ public class UnoClone {
                 System.out.println(current.GetName() +  " played " + inPlayCard.toString() + " against " + deck.TopDiscard().toString());
                 iter.Set(current);
                 endGame = uno.CheckForEndGame(current);
+                if(endGame)
+                    System.out.println(current.GetName() + " won!");
                 
                 switch(inPlayCard.getClass().getSimpleName())
                 {
@@ -308,10 +310,6 @@ public class UnoClone {
                 }
                 deck.AddDiscard(inPlayCard);
             }
-            
-            
-            if(endGame)
-                System.out.println(current.GetName() + " won!");
             uno.Report(players);
                
         } while(!endGame);     
